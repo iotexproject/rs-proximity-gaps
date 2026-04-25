@@ -39,7 +39,7 @@ class GF2t:
         known = {
             4: 0b10011,       # x^4 + x + 1
             8: 0b100011011,   # x^8 + x^4 + x^3 + x + 1
-            12: 0b1000001001111, # x^12 + x^6 + x^3 + x^2 + x + 1... need to verify
+            12: 0b1000001010011, # x^12 + x^6 + x^4 + x + 1 (verified irreducible)
             16: 0b10000000000101011, # x^16 + x^5 + x^3 + x + 1
         }
         if t in known:

@@ -80,8 +80,7 @@ def all_witnesses(lam):
                 hv = (h0 + h1 * L[i]) % p
                 if hv == target[i]:
                     agree_idx.append(i)
-                    if len(agree_idx) > 2 * threshold:  # sparse early-abort
-                        break
+                    # No early-abort: collect full agreement set for alignment analysis
             if len(agree_idx) >= threshold:
                 witnesses.append((h0, h1, tuple(agree_idx)))
     return witnesses

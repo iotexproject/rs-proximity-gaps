@@ -24,7 +24,7 @@ def run(n, k):
     p, omega = find_params(n)
     w = int(math.floor((1 - math.sqrt(k/n)) * n))
     if w < 1: w = 1
-    n2, k2 = n//2, k//2
+    n2, k2 = n//2, (k + 1)//2
     w2 = int(math.floor((1 - math.sqrt(k2/n2)) * n2))
     if w2 < 1: w2 = 1
 
@@ -168,7 +168,7 @@ def run(n, k):
 
         while cur_n >= 4 and cur_k >= 2 and len(cur_list) > 0:
             al = random.randrange(1, p)
-            nn, nk = cur_n//2, cur_k//2
+            nn, nk = cur_n//2, (cur_k + 1)//2
             if nk < 1: break
             nw = int(math.floor((1-math.sqrt(nk/nn))*nn))
             if nw < 1: nw = 1

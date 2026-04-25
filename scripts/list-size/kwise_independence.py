@@ -204,7 +204,7 @@ def main():
     # Now check HIGHER-ORDER dependence
     print(f"\n{'='*70}")
     print("Higher-order (4-wise, 5-wise) independence check")
-    print("='*70")
+    print("=" * 70)
 
     # For RS[8,4] over F_17: w=3, normals in F_17^4
     # Max independent set: 4 (dimension of space)
