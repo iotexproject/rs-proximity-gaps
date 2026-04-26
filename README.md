@@ -47,26 +47,36 @@ The core correlated agreement bound (Theorem 3.1 in the paper) is **fully machin
 | `commit_phase_count_bound` | Commit bad-challenge numerator <= nR | `Probability.lean` |
 | `query_phase_miss_count_bound` | Query miss numerator <= (n-d)^q | `Probability.lean` |
 | `fri_soundness_above_johnson_counting` | Counting skeleton for the nR/|F| + query term bound | `Probability.lean` |
+| `RSIsomorphismWitness` | Explicit algebraic interface for concrete RS even/odd isomorphism | `RSCode.lean` |
+| `rs_iso_forward` | RS even/odd decomposition theorem under `RSIsomorphismWitness` | `RSCode.lean` |
+| `rs_iso_surj` | RS isomorphism surjectivity theorem under `RSIsomorphismWitness` | `RSCode.lean` |
+| `UniformTranscriptModel` | Finite PMF transcript-event model with uniform sampling | `Probability.lean` |
+| `uniform_transcript_pmf_apply` | Point mass for the uniform transcript PMF | `Probability.lean` |
+| `uniform_transcript_event_probability_bound` | PMF transcript event bound via finite rational counting | `Probability.lean` |
+| `uniform_probability_bound` | Uniform finite probability monotonicity over rational quotients | `Probability.lean` |
+| `fri_soundness_above_johnson_probability` | Rational-probability wrapper for the FRI counting skeleton | `Probability.lean` |
+| `schwartz_zippel_fri` | Nonzero univariate polynomial has <= natDegree distinct roots | `Coupling.lean` |
 | `batch_ca_per_coord` | Per-coordinate batch CA (for STIR/WHIR) | `BatchCA.lean` |
 | `gen_coupling_pointwise` | Char-2 coupling (no NeZero(2:F) needed) | `Char2.lean` |
 
 ### Remaining formalization gap
 
-The probability-level theorem is now represented by finite counting numerators
-that build under Lean.  The remaining work is to package these counts in
-Mathlib's probability monad and connect the abstract transcript acceptance event
-to `fri_soundness_above_johnson_counting`.  The RS isomorphism axioms also need
-an algebraic FRI-pairing interface relating `α (fst y)`, `α (snd y)`, and
-`α' y`; the current abstract `FRIPairing` only stores the pairing and separation
-factor, which is not enough to prove degree preservation.
+The probability-level theorem is now represented by finite counting numerators,
+rational uniform-probability quotients, and a finite PMF transcript-event model
+that build under Lean.  The remaining probability work is to instantiate the
+abstract transcript event with the concrete interactive/non-interactive FRI
+acceptance predicate.
 
-### Axioms (4, all standard)
+The RS isomorphism statements are no longer global axioms.  They are Lean
+theorems under `RSIsomorphismWitness`, an explicit algebraic interface for the
+concrete domain identities relating `α (fst y)`, `α (snd y)`, `sep y`, and
+`α' y`.  The remaining RS work is to instantiate that witness for the concrete
+multiplicative FRI domain.
+
+### Axioms (1, external)
 
 | Axiom | Source | Status |
 |-------|--------|--------|
-| `rs_iso_forward` | RS even/odd decomposition | Standard polynomial degree bound |
-| `rs_iso_surj` | RS isomorphism surjectivity | Standard polynomial degree bound |
-| `schwartz_zippel_fri` | Root count <= degree | In Mathlib (`Polynomial.card_roots_le_degree`) |
 | `bciks_proximity_gap` | BCIKS Theorem 1.2 (FOCS 2020) | External published result |
 
 ### Building

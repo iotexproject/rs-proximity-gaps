@@ -180,24 +180,96 @@ theorem coupling_counting
   rw [hunion, hcardF, hcardS] at hle
   linarith
 
-/-! ## RS isomorphism (axiomatized)
+/-! ## RS isomorphism interface
 
 For even k: g ∈ RS_k implies (fEven g, fOdd g) ∈ RS_{k/2}², and conversely.
-This requires showing even/odd coefficient extraction preserves degree bounds.
-Axiomatized for Phase 2. -/
+This requires algebraic facts about the concrete FRI domain pairing, not just
+the abstract pairing/counting data above.  The witness below makes those facts
+explicit: the concrete domain must supply the polynomial even/odd degree
+preservation identities, after which the RS isomorphism statements are ordinary
+Lean theorems rather than global axioms. -/
 
-axiom rs_iso_forward
-    {L L' : Type*} [Fintype L] [Fintype L'] [DecidableEq L] [DecidableEq L']
-    {F : Type*} [Field F] [DecidableEq F]
-    (P : FRIPairing L L' F) (α : L → F) (α' : L' → F) (k : ℕ) (hk : 2 ∣ k)
+/--
+Algebraic RS-isomorphism witness for a concrete FRI pairing.
+
+`FRIPairing` only records the combinatorial pair partition and separation
+factor.  To prove that RS codewords decompose into two half-rate RS codewords,
+we also need the concrete polynomial identities relating `α (fst y)`,
+`α (snd y)`, `sep y`, and `α' y`.  For the usual multiplicative FRI domain,
+these are the even/odd coefficient extraction identities under the squaring
+map.  This structure isolates exactly that remaining concrete-domain proof.
+-/
+structure RSIsomorphismWitness
+    {L L' : Type*} [Fintype L] [Fintype L']
+    {F : Type*} [Field F]
+    (P : FRIPairing L L' F) (α : L → F) (α' : L' → F) (k : ℕ) where
+  forward :
+    ∀ p : F[X], p.degree < (k : WithBot ℕ) →
+      ∃ pE pO : F[X],
+        pE.degree < ((k / 2 : ℕ) : WithBot ℕ) ∧
+        pO.degree < ((k / 2 : ℕ) : WithBot ℕ) ∧
+        ∀ y : L',
+          (p.eval (α (P.fst y)) + p.eval (α (P.snd y))) / 2 =
+            pE.eval (α' y) ∧
+          (p.eval (α (P.fst y)) - p.eval (α (P.snd y))) / P.sep y =
+            pO.eval (α' y)
+  surj :
+    ∀ pE pO : F[X],
+      pE.degree < ((k / 2 : ℕ) : WithBot ℕ) →
+      pO.degree < ((k / 2 : ℕ) : WithBot ℕ) →
+      ∃ p : F[X],
+        p.degree < (k : WithBot ℕ) ∧
+        ∀ y : L',
+          (p.eval (α (P.fst y)) + p.eval (α (P.snd y))) / 2 =
+            pE.eval (α' y) ∧
+          (p.eval (α (P.fst y)) - p.eval (α (P.snd y))) / P.sep y =
+            pO.eval (α' y)
+
+theorem rs_iso_forward
+    {L L' : Type*} [Fintype L] [Fintype L']
+    {F : Type*} [Field F]
+    (P : FRIPairing L L' F) (α : L → F) (α' : L' → F) (k : ℕ)
+    (H : RSIsomorphismWitness P α α' k)
     (g : L → F) (hg : g ∈ RSCode α k) :
-    fEven P g ∈ RSCode α' (k / 2) ∧ fOdd P g ∈ RSCode α' (k / 2)
+    fEven P g ∈ RSCode α' (k / 2) ∧ fOdd P g ∈ RSCode α' (k / 2) := by
+  rcases hg with ⟨p, hpdeg, hp_eval⟩
+  rcases H.forward p hpdeg with ⟨pE, pO, hpE, hpO, hvals⟩
+  constructor
+  · refine ⟨pE, hpE, ?_⟩
+    intro y
+    rw [fEven, hp_eval (P.fst y), hp_eval (P.snd y)]
+    exact (hvals y).1
+  · refine ⟨pO, hpO, ?_⟩
+    intro y
+    rw [fOdd, hp_eval (P.fst y), hp_eval (P.snd y)]
+    exact (hvals y).2
 
-axiom rs_iso_surj
-    {L L' : Type*} [Fintype L] [Fintype L'] [DecidableEq L] [DecidableEq L']
-    {F : Type*} [Field F] [DecidableEq F]
-    (P : FRIPairing L L' F) (α : L → F) (α' : L' → F) (k : ℕ) (hk : 2 ∣ k)
+theorem rs_iso_surj
+    {L L' : Type*} [Fintype L] [Fintype L']
+    {F : Type*} [Field F]
+    (P : FRIPairing L L' F) (α : L → F) (α' : L' → F) (k : ℕ)
+    (H : RSIsomorphismWitness P α α' k)
     (g₁ g₂ : L' → F) (hg₁ : g₁ ∈ RSCode α' (k / 2)) (hg₂ : g₂ ∈ RSCode α' (k / 2)) :
-    ∃ g ∈ RSCode α k, fEven P g = g₁ ∧ fOdd P g = g₂
+    ∃ g ∈ RSCode α k, fEven P g = g₁ ∧ fOdd P g = g₂ := by
+  rcases hg₁ with ⟨pE, hpEdeg, hpE_eval⟩
+  rcases hg₂ with ⟨pO, hpOdeg, hpO_eval⟩
+  rcases H.surj pE pO hpEdeg hpOdeg with ⟨p, hpdeg, hvals⟩
+  let g : L → F := fun x => p.eval (α x)
+  refine ⟨g, ?_, ?_, ?_⟩
+  · exact ⟨p, hpdeg, fun x => rfl⟩
+  · funext y
+    rw [fEven]
+    calc
+      (g (P.fst y) + g (P.snd y)) / 2
+          = (p.eval (α (P.fst y)) + p.eval (α (P.snd y))) / 2 := rfl
+      _ = pE.eval (α' y) := (hvals y).1
+      _ = g₁ y := (hpE_eval y).symm
+  · funext y
+    rw [fOdd]
+    calc
+      (g (P.fst y) - g (P.snd y)) / P.sep y
+          = (p.eval (α (P.fst y)) - p.eval (α (P.snd y))) / P.sep y := rfl
+      _ = pO.eval (α' y) := (hvals y).2
+      _ = g₂ y := (hpO_eval y).symm
 
 end FRISoundness

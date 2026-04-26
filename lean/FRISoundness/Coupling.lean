@@ -18,7 +18,7 @@ The proximity gap theorem combines:
 1. FRI coupling: Δ(f, RS_k) > δ ⟹ Δ_joint((fE, fO), RS_{k/2}²) > δ
 2. ca_halved: joint distance > 2d ⟹ at most 1 bad α
 
-Step 1 requires the RS isomorphism (axiomatized in RSCode.lean).
+Step 1 requires the RS isomorphism witness from RSCode.lean.
 Step 2 is fully proved in CA.lean.
 
 We prove the proximity gap modulo the coupling premise.
@@ -60,22 +60,27 @@ Proof structure:
   · Consistency check catches with probability ≥ 1 - (1-δ/2)^q
 -/
 
-/-- **Schwartz-Zippel** (building block).
-A nonzero polynomial of degree ≤ d over a finite field F
-has at most d roots. This is `Polynomial.card_roots_le_natDegree` in Mathlib.
+/-- **Schwartz-Zippel / root-count building block**.
+A nonzero univariate polynomial over a field has at most `natDegree` distinct
+roots.  This is the Mathlib root-count lemma, converted from multiset roots to
+the distinct-root `toFinset` form used by the FRI soundness interface.
 
 For FRI Strategy A: the syndrome polynomial is multilinear of degree ≤ R,
 so Pr[all syndromes vanish] ≤ R/|F| by union over R variables.
-We state the FRI-relevant form as an axiom; the underlying polynomial
-root bound is in Mathlib. -/
-axiom schwartz_zippel_fri
-    {F : Type*} [Field F] [Fintype F] [DecidableEq F]
+The multivariate/multilinear syndrome reduction is still outside this lemma;
+this theorem discharges only the univariate root-count axiom. -/
+theorem schwartz_zippel_fri
+    {F : Type*} [Field F] [DecidableEq F]
     (p : Polynomial F) (hp : p ≠ 0) :
-    -- A nonzero polynomial of degree d has at most d roots.
-    -- Mathlib has this as Polynomial.card_roots_le_degree; we axiomatize
-    -- the FRI-relevant consequence: the multilinear syndrome polynomial
-    -- of degree ≤ R has at most R roots per variable.
-    p.roots.toFinset.card ≤ p.natDegree
+    p.roots.toFinset.card ≤ p.natDegree := by
+  have hfin : p.roots.toFinset.card ≤ p.roots.card :=
+    Multiset.toFinset_card_le p.roots
+  have hroot : (p.roots.card : WithBot ℕ) ≤ p.degree :=
+    Polynomial.card_roots hp
+  have h : (p.roots.toFinset.card : WithBot ℕ) ≤ p.degree := by
+    exact (WithBot.coe_le_coe.mpr hfin).trans hroot
+  rw [Polynomial.degree_eq_natDegree hp] at h
+  exact WithBot.coe_le_coe.mp h
 
 /-- **BCIKS Proximity Gap** (Theorem 1.2, FOCS 2020).
 At unique-decoding radius γ < (1-ρ)/2: for all but ≤ n values of α,
@@ -132,8 +137,8 @@ We decompose this into its combinatorial and probabilistic components:
 | RS code definition | **FULLY PROVED** | RSCode.lean |
 | proximity_gap | **PROVED** (via ca_halved) | this file |
 | bad_alpha_count | **FULLY PROVED** | this file |
-| RS isomorphism | axiomatized (2 axioms) | RSCode.lean |
+| RS isomorphism | **PROVED** under explicit `RSIsomorphismWitness` | RSCode.lean |
 | BCIKS | axiomatized | this file |
-| Schwartz-Zippel | axiomatized | this file |
+| Schwartz-Zippel root count | **FULLY PROVED** | this file |
 -/
 end FRISoundness
