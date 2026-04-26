@@ -69,7 +69,7 @@ so Pr[all syndromes vanish] ≤ R/|F| by union over R variables.
 We state the FRI-relevant form as an axiom; the underlying polynomial
 root bound is in Mathlib. -/
 axiom schwartz_zippel_fri
-    {F : Type*} [Field F] [Fintype F]
+    {F : Type*} [Field F] [Fintype F] [DecidableEq F]
     (p : Polynomial F) (hp : p ≠ 0) :
     -- A nonzero polynomial of degree d has at most d roots.
     -- Mathlib has this as Polynomial.card_roots_le_degree; we axiomatize
@@ -91,7 +91,7 @@ axiom bciks_proximity_gap
     -- At unique-decoding radius d < (1-ρ)/2 · n:
     -- the set of α ∈ F for which the fold f_α is NOT d-close to the folded code
     -- has cardinality ≤ card L. (BCIKS Theorem 1.2, FOCS 2020)
-    (hud : 2 * d < card L)  -- unique-decoding regime
+    (hud : 2 * d < card L) -- unique-decoding regime
     : ∃ (bad : Finset F), bad.card ≤ card L ∧
         ∀ α, α ∉ bad → ∃ g ∈ C, card L ≤ (agreeSet (linComb f f α) g).card + d
     -- Note: the linComb here is a placeholder for the FRI fold operation;
@@ -105,7 +105,7 @@ theorem bad_alpha_count (n R : ℕ) (hn : 0 < n) (hR : 0 < R) :
   rw [Nat.mul_comm R' n]
   omega
 
-/--
+/-
 **Theorem fri-full** — FRI Soundness Above the Johnson Bound (Theorem 5.1).
 
 The full theorem states:

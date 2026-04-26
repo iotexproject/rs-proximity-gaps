@@ -15,6 +15,7 @@ rs-proximity-gaps/
       CA.lean               Theorem ca-halved: FULLY PROVED (0 sorry)
       RSCode.lean           RS code definition, FRI fold, coupling lemma
       Coupling.lean         Proximity gap, bad-alpha count
+      Probability.lean      Counting wrapper for probability-level soundness
       BatchCA.lean          Batch CA for STIR/WHIR
       Char2.lean            Characteristic-2 generalization
     lakefile.toml           Build configuration (Mathlib dependency)
@@ -43,8 +44,21 @@ The core correlated agreement bound (Theorem 3.1 in the paper) is **fully machin
 | `ca_halved` | Half-threshold CA: at most 1 bad gamma | `CA.lean` |
 | `coupling_pointwise` | FRI fold preserves agreement pointwise | `RSCode.lean` |
 | `coupling_counting` | 2 * \|jointAgree\| <= \|agree\| | `RSCode.lean` |
+| `commit_phase_count_bound` | Commit bad-challenge numerator <= nR | `Probability.lean` |
+| `query_phase_miss_count_bound` | Query miss numerator <= (n-d)^q | `Probability.lean` |
+| `fri_soundness_above_johnson_counting` | Counting skeleton for the nR/|F| + query term bound | `Probability.lean` |
 | `batch_ca_per_coord` | Per-coordinate batch CA (for STIR/WHIR) | `BatchCA.lean` |
 | `gen_coupling_pointwise` | Char-2 coupling (no NeZero(2:F) needed) | `Char2.lean` |
+
+### Remaining formalization gap
+
+The probability-level theorem is now represented by finite counting numerators
+that build under Lean.  The remaining work is to package these counts in
+Mathlib's probability monad and connect the abstract transcript acceptance event
+to `fri_soundness_above_johnson_counting`.  The RS isomorphism axioms also need
+an algebraic FRI-pairing interface relating `α (fst y)`, `α (snd y)`, and
+`α' y`; the current abstract `FRIPairing` only stores the pairing and separation
+factor, which is not enough to prove degree preservation.
 
 ### Axioms (4, all standard)
 
