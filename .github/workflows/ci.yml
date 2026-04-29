@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lean-build:
+    name: Lean 4 build (FRISoundness)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lean
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan (Lean version manager)
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Show toolchain
+        run: |
+          lean --version
+          lake --version
+
+      - name: Cache Mathlib + .lake
+        uses: actions/cache@v4
+        with:
+          path: |
+            lean/.lake
+          key: lean-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain', 'lean/lakefile.toml') }}
+          restore-keys: |
+            lean-${{ runner.os }}-
+
+      - name: lake update + cache get
+        run: |
+          lake update
+          lake exe cache get || true
+
+      - name: lake build
+        run: lake build
+
+      - name: Verify zero sorry in named theorems
+        run: |
+          # Match `sorry` as a real Lean token (not as a backticked reference
+          # in a docstring like `\`sorry\``). We strip backtick-wrapped occurrences
+          # and any obviously-comment lines before searching.
+          hits=$(grep -RIn --include='*.lean' -E '\bsorry\b' FRISoundness/ \
+                 | grep -v '\`sorry\`' \
+                 | grep -v -E '^[^:]+:[0-9]+:\s*--' \
+                 || true)
+          if [ -n "$hits" ]; then
+            echo "::error::Found sorry in Lean source"
+            echo "$hits"
+            exit 1
+          fi
+          echo "OK: no sorry in FRISoundness/"
+
+      - name: List axioms (informational)
+        run: |
+          echo "Axioms used (excluding standard logic):"
+          grep -RIn --include='*.lean' '^axiom ' FRISoundness/ || true
+
+  python-scripts:
+    name: Python verification scripts (sample)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run sample verification scripts
+        run: |
+          set -e
+          # Quick smoke tests of representative scripts from each topic.
+          # Each script is self-contained and uses only the standard library.
+          python3 scripts/ca-bound/audit_critical_inequality.py
+          python3 scripts/op1-barrier/op1_scaling.py
+          python3 scripts/fri-coupling/audit_fri_coupling.py
