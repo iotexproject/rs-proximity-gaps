@@ -6,3 +6,4 @@ import FRISoundness.Coupling
 import FRISoundness.BatchCA
 import FRISoundness.Char2
 import FRISoundness.Probability
+import FRISoundness.Berlekamp
