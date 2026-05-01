@@ -41,7 +41,7 @@ This is the **PHASE TRANSITION at c=3**: c=2 is exponential, c≥3 is linear.
 
 ## Files Created (this session)
 
-- `STUDIO_TODO.md` — task tracking
+- (project-internal task doc, not in public repo)
 - `notes/0091-berlekamp-c322-state.md` — initial state
 - `notes/0092-open-set-rank-lemma-failure.md` — c=2 witness analysis
 - `notes/0093-cstar-equals-3-conjecture.md` — c*=3 conjecture

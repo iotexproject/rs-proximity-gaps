@@ -87,7 +87,7 @@ Currently observed: with $r = 3, m = 2$, $|\mathcal{V}(\mathbb{F}_p)| \sim p \cd
 - This puts us in the **arithmetic-geometric** machinery shared by the sequence-school cross-correlation literature *and* mainstream algebraic geometry — broader than just "subgroup lattice".
 - The 2m - 2 condition count is a sharp invariant — subgroup-cosets are the "guaranteed" rational solutions, but the variety has more.
 
-## Action items (transferred to STUDIO_TODO.md)
+## Action items (transferred to project-internal task doc)
 
 - **S1**: Bigger $n$ (up to 200), with **proper** multiplicative subgroups (not full $\mathbb{F}_p^*$).
 - **S2**: Classify the residue shapes $R$ — are they all algebraic perturbations of subgroup-cosets?

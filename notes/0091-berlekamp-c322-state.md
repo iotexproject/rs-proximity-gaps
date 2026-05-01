@@ -122,11 +122,11 @@ Fit: `max_bad ≈ 0.63 × 1.356^n`. Exponential.
 3. **Phase 3** (general proof): `c ≥ c*`, all rates
 4. **Paper 1 §6.6**: write up the theorem + phase diagram
 
-See `STUDIO_TODO.md` for detailed task breakdown.
+(Detailed task breakdown lives in the project-internal task doc.)
 
 ## Files this branch will produce
 
-- `STUDIO_TODO.md` — top-level task tracking
+- (project-internal task doc, not in public repo)
 - `notes/0091-berlekamp-c322-state.md` — this file
 - `notes/0092-berlekamp-phase-diagram.md` — Phase 1 deliverable
 - `notes/0093-rate-half-c-johnson.md` — Phase 2 deliverable

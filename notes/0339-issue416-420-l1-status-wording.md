@@ -32,5 +32,5 @@ and rate-`1/2` deployment statements.
 
 ## Scope
 
-Changed only status prose in `paper2.tex` and `STATE.md`.  The actual sweeps
+Changed only status prose in `paper2.tex` (and the project-internal status doc).  The actual sweeps
 requested by #416 and #420 remain open.
