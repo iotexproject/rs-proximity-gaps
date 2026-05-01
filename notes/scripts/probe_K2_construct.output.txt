@@ -1,0 +1,23 @@
+# probe_K2_construct — direct construction of candidate K≥2 above-J f
+# Setup: p=97, n_0=32, k_0=8, R=2, n_R=8, w_R=3, w_J=16
+# Pairs (T1,T2,ε1,ε2): 50, f's per pair: 30, seed=4242
+# Total f's to test: 1500
+
+# Progress: 20/50 pairs, 600 f's, 600 above-J, 600 K≥2, 600 BOTH, elapsed 26.0s
+# Progress: 40/50 pairs, 1200 f's, 1200 above-J, 1200 K≥2, 1200 BOTH, elapsed 52.0s
+
+# === Summary ===
+# Total f's tested: 1500
+# Above-J: 1500 (100.0%)
+# Rank distribution: [(2, 1500)]
+# K distribution (rank-2 only): [(2, 1470), (3, 30)]
+# K ≥ 2: 1500 (K=2: 1470, K≥3: 30)
+# Above-J AND K ≥ 2: 1500 ★
+
+# ✗ HYPOTHESIS FAILS: found 1500 above-J f's with K ≥ 2
+# Examples:
+#   T1=(0, 1, 6), T2=(1, 4, 7), overlap=1, K=2, dim_distr={0: 54, 1: 2}, pair=0, f=0
+#   T1=(0, 1, 6), T2=(1, 4, 7), overlap=1, K=2, dim_distr={0: 54, 1: 2}, pair=0, f=1
+#   T1=(0, 1, 6), T2=(1, 4, 7), overlap=1, K=2, dim_distr={0: 54, 1: 2}, pair=0, f=2
+#   T1=(0, 1, 6), T2=(1, 4, 7), overlap=1, K=2, dim_distr={0: 54, 1: 2}, pair=0, f=3
+#   T1=(0, 1, 6), T2=(1, 4, 7), overlap=1, K=2, dim_distr={0: 54, 1: 2}, pair=0, f=4

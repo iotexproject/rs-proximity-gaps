@@ -1,0 +1,28 @@
+=== (n=8, k=2, a=2, b=6) sign-paired ===
+
+CERT EQUATIONS:
+  cert[2] = -p0 + p1*p3 + p2**2 - p2*p3**2 + rho
+  cert[3] = -p1 + 2*p2*p3 - p3**3
+
+DIV EQUATIONS:
+  div[3] = 2*p0*p3 + 2*p1*p2 - 3*p1*p3**2 - 3*p2**2*p3 + 4*p2*p3**3 - p3**5
+  div[2] = 2*p0*p2 - p0*p3**2 + p1**2 - 4*p1*p2*p3 + p1*p3**3 - p2**3 + 3*p2**2*p3**2 - p2*p3**4
+  div[1] = 2*p0*p1 - 2*p0*p2*p3 + p0*p3**3 - 2*p1**2*p3 - p1*p2**2 + 3*p1*p2*p3**2 - p1*p3**4
+  div[0] = p0**2 - 2*p0*p1*p3 - p0*p2**2 + 3*p0*p2*p3**2 - p0*p3**4 - 1
+
+Total nonzero generators: 6
+
+LEX GB:
+  G[0] = p0 - rho**3
+  G[1] = p1
+  G[2] = p2**2 - rho**3 + rho
+  G[3] = p2*rho**2 + p2
+  G[4] = p3
+  G[5] = rho**4 - 1
+
+EXPLICIT COFACTOR EXTRACTION:
+(For each G[i], find h_j such that G[i] = sum_j h_j · eq_j)
+
+Target G[5] = rho**4 - 1
+  remainder = rho**4 - 1
+  cofactors:

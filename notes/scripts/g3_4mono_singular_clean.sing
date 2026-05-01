@@ -1,0 +1,66 @@
+// g3_4mono_singular_clean.sing — Singular GB for ALL 35 4-mono cases at (8, 2).
+// Computes deg_α(Φ) per case. Output: max deg_α = K_4 RIGOROUS at base.
+
+ring R = 0, (z, p0, p1, p2, p3, alpha, rho1, rho2, rho3), (dp(1), lp(8));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+// reduce z^a mod sigma — same approach
+poly z2 = reduce(z^2, std(sigma));
+poly z3 = reduce(z^3, std(sigma));
+poly z4 = reduce(z^4, std(sigma));
+poly z5 = reduce(z^5, std(sigma));
+poly z6 = reduce(z^6, std(sigma));
+poly z7 = reduce(z^7, std(sigma));
+
+list zs = z, z2, z3, z4, z5, z6, z7;
+
+// div: z^8 - 1 mod σ → 4 polynomial constraints
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+proc compute_phi(int a, int b, int c, int d) {
+    poly h = rho1 * zs[a] + rho2 * zs[b] + rho3 * zs[c] + alpha * zs[d];
+    matrix M = coeffs(h, z);
+    poly cert2 = M[3, 1];
+    poly cert3 = M[4, 1];
+    ideal I = cert2, cert3, div0, div1, div2, div3;
+    ideal E = eliminate(I, p0*p1*p2*p3);
+    return(E);
+}
+
+// Loop
+print("=== 4-mono cases at (8, 2) ===");
+int max_deg = 0;
+intvec max_case = 0, 0, 0, 0;
+int a, b, c, d, g;
+for (a = 1; a <= 4; a++) {
+    for (b = a+1; b <= 5; b++) {
+        for (c = b+1; c <= 6; c++) {
+            for (d = c+1; d <= 7; d++) {
+                g = gcd(gcd(gcd(gcd(a, b), c), d), 8);
+                if (g == 1) {
+                    ideal E = compute_phi(a, b, c, d);
+                    poly phi = E[size(E)];
+                    int deg_a = deg(phi, intvec(0,0,0,0,0,1,0,0,0));  // alpha is 6th var
+                    string s = "(" + string(a) + ", " + string(b) + ", " + string(c) + ", " + string(d) + "): deg_alpha = " + string(deg_a);
+                    print(s);
+                    if (deg_a > max_deg) {
+                        max_deg = deg_a;
+                        max_case = a, b, c, d;
+                    }
+                }
+            }
+        }
+    }
+}
+
+print("");
+print("=== SUMMARY ===");
+print("Max deg_alpha across 4-mono cases: " + string(max_deg));
+print("Achieved at: (" + string(max_case[1]) + ", " + string(max_case[2]) + ", " + string(max_case[3]) + ", " + string(max_case[4]) + ")");
+
+exit;

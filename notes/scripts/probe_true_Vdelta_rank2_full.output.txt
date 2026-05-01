@@ -1,0 +1,24 @@
+# probe_true_Vdelta_rank2_full
+# Setup: p=97, n_0=32, R=2, w_R=3, target |V_δ| ≤ 194
+# n_workers=10, n_random=2000, seed=2026
+
+# Generated 2276 specs.
+
+#  50/2276  rate 1.29/sec  {'ABOVE_J_RANK_1': 16, 'ABOVE_J_RANK_2': 32, 'BELOW_J': 2}
+#  100/2276  rate 1.45/sec  {'ABOVE_J_RANK_1': 29, 'ABOVE_J_RANK_2': 66, 'BELOW_J': 5}
+#  150/2276  rate 1.54/sec  {'ABOVE_J_RANK_1': 40, 'ABOVE_J_RANK_2': 96, 'BELOW_J': 14}
+#  200/2276  rate 1.62/sec  {'ABOVE_J_RANK_1': 47, 'ABOVE_J_RANK_2': 120, 'BELOW_J': 33}
+#  250/2276  rate 1.63/sec  {'ABOVE_J_RANK_1': 61, 'ABOVE_J_RANK_2': 153, 'BELOW_J': 36}
+#  300/2276  rate 1.65/sec  {'ABOVE_J_RANK_1': 73, 'ABOVE_J_RANK_2': 181, 'BELOW_J': 37, 'ABOVE_J_RANK_3': 9}
+#  350/2276  rate 1.68/sec  {'ABOVE_J_RANK_1': 78, 'ABOVE_J_RANK_2': 207, 'BELOW_J': 38, 'ABOVE_J_RANK_3': 27}
+#  400/2276  rate 1.69/sec  {'ABOVE_J_RANK_1': 80, 'ABOVE_J_RANK_2': 239, 'BELOW_J': 39, 'ABOVE_J_RANK_3': 42}
+#  450/2276  rate 1.68/sec  {'ABOVE_J_RANK_1': 85, 'ABOVE_J_RANK_2': 272, 'BELOW_J': 39, 'ABOVE_J_RANK_3': 54}
+#  500/2276  rate 1.68/sec  {'ABOVE_J_RANK_1': 85, 'ABOVE_J_RANK_2': 304, 'BELOW_J': 42, 'ABOVE_J_RANK_3': 69}
+#  550/2276  rate 1.64/sec  {'ABOVE_J_RANK_1': 86, 'ABOVE_J_RANK_2': 344, 'BELOW_J': 42, 'ABOVE_J_RANK_3': 78}
+#  600/2276  rate 1.62/sec  {'ABOVE_J_RANK_1': 89, 'ABOVE_J_RANK_2': 379, 'BELOW_J': 42, 'ABOVE_J_RANK_3': 90}
+#  650/2276  rate 1.61/sec  {'ABOVE_J_RANK_1': 92, 'ABOVE_J_RANK_2': 411, 'BELOW_J': 46, 'ABOVE_J_RANK_3': 101}
+#  700/2276  rate 1.63/sec  {'ABOVE_J_RANK_1': 96, 'ABOVE_J_RANK_2': 443, 'BELOW_J': 48, 'ABOVE_J_RANK_3': 113}
+#  750/2276  rate 1.61/sec  {'ABOVE_J_RANK_1': 97, 'ABOVE_J_RANK_2': 481, 'BELOW_J': 48, 'ABOVE_J_RANK_3': 124}
+#  800/2276  rate 1.59/sec  {'ABOVE_J_RANK_1': 100, 'ABOVE_J_RANK_2': 518, 'BELOW_J': 48, 'ABOVE_J_RANK_3': 134}
+#  850/2276  rate 1.60/sec  {'ABOVE_J_RANK_1': 103, 'ABOVE_J_RANK_2': 546, 'BELOW_J': 51, 'ABOVE_J_RANK_3': 150}
+#  900/2276  rate 1.60/sec  {'ABOVE_J_RANK_1': 104, 'ABOVE_J_RANK_2': 580, 'BELOW_J': 51, 'ABOVE_J_RANK_3': 165}

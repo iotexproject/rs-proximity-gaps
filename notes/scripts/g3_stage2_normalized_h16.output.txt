@@ -1,0 +1,3 @@
+h=16: vars=15, eqs=45, max deg_s=2
+  GB time=200.131s  basis_len=15  failures=0
+  PASS — ideal = <x_1, ..., x_15>

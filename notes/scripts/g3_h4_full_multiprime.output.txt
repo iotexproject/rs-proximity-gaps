@@ -1,0 +1,14 @@
+Testing FULL Stage 2 system at h=4 for 10 primes (all p ≡ 1 mod 24)
+
+    p   rho  GB size  result
+------------------------------------------------------------
+   73    12        6  non-trivial: b3, b2, b1, a3, a2, a1
+   97    14        6  non-trivial: b3, b2, b1, a3, a2, a1
+  193    34        6  non-trivial: b3, b2, b1, a3, a2, a1
+  241    22        6  non-trivial: b3, b2, b1, a3, a2, a1
+  313    24        6  non-trivial: b3, b2, b1, a3, a2, a1
+  337    26        6  non-trivial: b3, b2, b1, a3, a2, a1
+  409    35        6  non-trivial: b3, b2, b1, a3, a2, a1
+  433    69        6  non-trivial: b3, b2, b1, a3, a2, a1
+  457    37        6  non-trivial: b3, b2, b1, a3, a2, a1
+  577    23        6  non-trivial: b3, b2, b1, a3, a2, a1

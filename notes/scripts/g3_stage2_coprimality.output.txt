@@ -1,0 +1,11 @@
+q^(0)(y) = -eps - rho**3*y/2 + rho*y**3 + y**4
+r^(0)(y) = eps - rho**3*y/2 + rho**2*y**2 - rho*y**3 + y**4
+
+Res_y(q^(0), r^(0)) = 16*eps**4 - 32*eps**3*rho**4 + 17*eps**2*rho**8 - eps*rho**12/2
+
+Res after eps=rho^4/4: rho**16/2
+
+q0 * r0 (after eps=rho^4/4) - (y^8 - 1) = 1 - rho**8/16
+(should equal 1 - rho^8/16, vanishing under rho^8 = 16)
+
+Direct gcd(q0, r0) over Q[y, rho, eps]: 1

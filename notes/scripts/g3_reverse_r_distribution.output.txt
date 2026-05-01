@@ -1,0 +1,39 @@
+
+=== Scale (32, 8), p=97, n_2 = 8 ===
+DFT structure (|c_supp|, |d_supp|) distribution: [((0, 3), 50), ((1, 2), 201), ((2, 1), 202), ((3, 0), 47)]
+r distribution (for 2-position pencils): [(1, 28), (2, 27), (3, 30), (4, 16)]
+r_min = 1, gcd(r_min, n_2) = 1
+Worst orbit size = n_2/gcd(r_min, n_2) = 8
+Predicted K ≤ 1 + 8 + 1 = 10
+Sample pencil structures (first 5):
+  sup=(10, 14, 15): c_pos=[2, 3], d_pos=[3], r=1
+  sup=(10, 11, 27): c_pos=[2], d_pos=[2, 6], r=4
+  sup=(10, 11, 26): c_pos=[2, 6], d_pos=[2], r=4
+  sup=(6, 7, 11): c_pos=[1], d_pos=[1, 2], r=1
+  sup=(6, 30, 31): c_pos=[1, 7], d_pos=[7], r=2
+
+=== Scale (128, 32), p=257, n_2 = 32 ===
+DFT structure (|c_supp|, |d_supp|) distribution: [((0, 3), 57), ((1, 2), 198), ((2, 1), 193), ((3, 0), 52)]
+r distribution (for 2-position pencils): [(1, 1), (2, 1), (3, 2), (4, 3), (5, 1), (6, 1), (7, 2), (8, 1), (9, 2), (10, 1), (11, 1), (12, 3), (13, 2), (14, 2), (15, 2)]
+r_min = 1, gcd(r_min, n_2) = 1
+Worst orbit size = n_2/gcd(r_min, n_2) = 32
+Predicted K ≤ 1 + 32 + 1 = 34
+Sample pencil structures (first 5):
+  sup=(30, 31, 106): c_pos=[7, 26], d_pos=[7], r=13
+  sup=(10, 11, 102): c_pos=[2, 25], d_pos=[2], r=9
+  sup=(26, 27, 127): c_pos=[6], d_pos=[6, 31], r=7
+  sup=(87, 98, 99): c_pos=[24], d_pos=[21, 24], r=3
+  sup=(82, 83, 91): c_pos=[20], d_pos=[20, 22], r=2
+
+=== Scale (256, 64), p=257, n_2 = 64 ===
+DFT structure (|c_supp|, |d_supp|) distribution: [((0, 3), 56), ((1, 2), 186), ((2, 1), 191), ((3, 0), 67)]
+r distribution (for 2-position pencils): [(1, 1), (2, 1), (4, 1), (11, 1), (12, 1), (14, 1), (18, 1), (19, 1), (20, 1), (23, 1), (27, 1)]
+r_min = 1, gcd(r_min, n_2) = 1
+Worst orbit size = n_2/gcd(r_min, n_2) = 64
+Predicted K ≤ 1 + 64 + 1 = 66
+Sample pencil structures (first 5):
+  sup=(66, 67, 246): c_pos=[16, 61], d_pos=[16], r=19
+  sup=(30, 31, 102): c_pos=[7, 25], d_pos=[7], r=18
+  sup=(59, 74, 75): c_pos=[18], d_pos=[14, 18], r=4
+  sup=(46, 47, 94): c_pos=[11, 23], d_pos=[11], r=12
+  sup=(6, 7, 62): c_pos=[1, 15], d_pos=[1], r=14

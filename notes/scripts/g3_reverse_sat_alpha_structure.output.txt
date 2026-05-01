@@ -1,0 +1,38 @@
+=== Saturating α_1 structure: (15,18,19) at (32,8), q=97 ===
+  L_0 = [1, 28, 8, 30, 64, 46]... (n=32)
+  L_1 = [1, 8, 64, 27, 22, 79]... (n=16)
+  L_2 = [1, 64, 22, 50, 96, 33, 75, 47]
+  z^4 on L_2: [1, 96, 1, 96, 1, 96, 1, 96]  (sign character)
+
+  Generator of L_2 (order 8): g = 64
+  g^2 = 22 (generates order-4 subgroup)
+  g^4 = 96 (= -1 mod p; sign generator)
+  g^8 = 1 (= 1)
+
+--- Trial 0, coefs=[16, 41, 65] ---
+  Saturating α_1's (9): [0, 5, 8, 23, 31, 32, 68, 86, 88]
+  α_1 - α_1[0] (sorted): [0, 5, 8, 23, 31, 32, 68, 86, 88]
+  0 ∈ saturating set, ratios skipped
+  (f_e)_o on L_2: [41, 56, 41, 56, 41, 56, 41, 56]
+  (f_o)_o on L_2: [81, 56, 4, 86, 49, 8, 29, 75]
+  α_1 with h(α_1) bad on L_2 (9): [0, 5, 8, 23, 31, 32, 68, 86, 88]
+  match sat_a1 == bad_h? True
+
+--- Trial 1, coefs=[14, 60, 11] ---
+  Saturating α_1's (9): [0, 7, 9, 34, 38, 76, 78, 91, 92]
+  α_1 - α_1[0] (sorted): [0, 7, 9, 34, 38, 76, 78, 91, 92]
+  0 ∈ saturating set, ratios skipped
+  (f_e)_o on L_2: [60, 37, 60, 37, 60, 37, 60, 37]
+  (f_o)_o on L_2: [25, 10, 91, 12, 94, 65, 28, 63]
+  α_1 with h(α_1) bad on L_2 (9): [0, 7, 9, 34, 38, 76, 78, 91, 92]
+  match sat_a1 == bad_h? True
+
+--- Trial 2, coefs=[46, 23, 91] ---
+  Saturating α_1's (9): [0, 15, 30, 34, 40, 53, 78, 80, 95]
+  α_1 - α_1[0] (sorted): [0, 15, 30, 34, 40, 53, 78, 80, 95]
+  0 ∈ saturating set, ratios skipped
+  (f_e)_o on L_2: [23, 74, 23, 74, 23, 74, 23, 74]
+  (f_o)_o on L_2: [40, 75, 49, 40, 45, 34, 36, 69]
+  α_1 with h(α_1) bad on L_2 (9): [0, 15, 30, 34, 40, 53, 78, 80, 95]
+  match sat_a1 == bad_h? True
+

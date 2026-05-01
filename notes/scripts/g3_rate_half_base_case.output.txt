@@ -1,0 +1,24 @@
+=== Rate-1/2 base case K-bound enumeration ===
+paper2 thm:universal-K10 at rate 1/4 needs extension to rate 1/2 for ABF §6.3.
+This script computes max K(a,b) for (n,k) ∈ {(4,2), (8,4)} above-J.
+
+--- (n, k) = (4, 2), rate 0.500, J-agreement t* = 2, above-J agree ≤ 2, δ·n = 2 ---
+  Above-J coprime (a, b) pairs: [(2, 3)]
+  q=17, (a,b)=(2, 3): K = 16
+  q=17: max K = 16 at (a, b) = (2, 3)
+  q=41, (a,b)=(2, 3): K = 40
+  q=41: max K = 40 at (a, b) = (2, 3)
+  q=73, (a,b)=(2, 3): K = 72
+  q=73: max K = 72 at (a, b) = (2, 3)
+
+--- (n, k) = (8, 4), rate 0.500, J-agreement t* = 5, above-J agree ≤ 5, δ·n = 3 ---
+  Above-J coprime (a, b) pairs: [(4, 5), (4, 7), (5, 6), (5, 7), (6, 7)]
+  q=17, (a,b)=(4, 5): K = 16
+  q=17, (a,b)=(4, 7): K = 8
+  q=17, (a,b)=(5, 6): K = 16
+  q=17, (a,b)=(5, 7): K = 16
+  q=17, (a,b)=(6, 7): K = 16
+  q=17: max K = 16 at (a, b) = (4, 5)
+  q=41, (a,b)=(4, 5): K = 40
+  q=41, (a,b)=(4, 7): K = 8
+  q=41, (a,b)=(5, 6): K = 24

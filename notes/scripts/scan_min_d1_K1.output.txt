@@ -1,0 +1,12 @@
+=== q=97 ===
+  Min d_1 (above-J K=1 odd-odd): 9, achieved at pair/coefs: (15, 23, 10, 17)
+  Predicted tie_upper ≈ 0.4491
+=== q=193 ===
+  Min d_1 (above-J K=1 odd-odd): 10, achieved at pair/coefs: (9, 13, 1, 1)
+  Predicted tie_upper ≈ 0.3808
+=== q=257 ===
+  Min d_1 (above-J K=1 odd-odd): 10, achieved at pair/coefs: (9, 13, 1, 1)
+  Predicted tie_upper ≈ 0.3794
+=== q=449 ===
+  Min d_1 (above-J K=1 odd-odd): 10, achieved at pair/coefs: (9, 13, 1, 1)
+  Predicted tie_upper ≈ 0.3775

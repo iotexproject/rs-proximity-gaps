@@ -1,0 +1,6 @@
+Issue #396 no-full 4-support (2,2) certifier
+q=449, L2=(16,4), support_window=[16,64), supports=C(48,4)=194580, workers=16
+
+
+hist={'all_alpha_subsets': 0, 'alpha_zero': 47463056, 'candidate_subsets': 47463104, 'class:rank<2': 48, 'side:(0, 4)': 10626, 'side:(1, 3)': 48576, 'side:(2, 2)': 76176, 'side:(3, 1)': 48576, 'side:(4, 0)': 10626, 'supports': 194580}
+first_counterexample=None

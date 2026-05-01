@@ -1,0 +1,24 @@
+
+=== (n=8, k=2, a=2, b=6) sign-paired ===
+  computing Groebner (2 cert + 4 div eqs in 5 vars)...
+  Groebner done in 0.0s, basis size 6
+  forced-zero p_i (i ∉ {0, 2}): [1, 3]
+  ALL p_i (i ∉ {0, 2}) forced to 0 → COSET-RIGIDITY HOLDS
+  rho-only polys: [(rho - 1)*(rho + 1)*(rho**2 + 1)]
+
+=== (n=8, k=2, a=3, b=7) sign-paired ===
+  computing Groebner (2 cert + 4 div eqs in 5 vars)...
+  Groebner done in 3.8s, basis size 6
+  forced-zero p_i (i ∉ {0, 2}): [1, 3]
+  ALL p_i (i ∉ {0, 2}) forced to 0 → COSET-RIGIDITY HOLDS
+  rho-only polys: [(rho - 1)*(rho + 1)*(rho**2 + 1)]
+
+=== (n=16, k=4, a=4, b=12) sign-paired ===
+  computing Groebner (4 cert + 8 div eqs in 9 vars)...
+  Groebner done in 1.8s, basis size 10
+  forced-zero p_i (i ∉ {0, 4}): [1, 2, 3, 5, 6, 7]
+  ALL p_i (i ∉ {0, 4}) forced to 0 → COSET-RIGIDITY HOLDS
+  rho-only polys: [(rho - 1)*(rho + 1)*(rho**2 + 1)]
+
+=== (n=16, k=4, a=5, b=13) sign-paired ===
+  computing Groebner (4 cert + 8 div eqs in 9 vars)...

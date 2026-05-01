@@ -1,0 +1,13 @@
+q=13, ζ_12=2, ζ_6=4, ζ_3=3, ι=8
+μ_6 = [1, 4, 3, 12, 9, 10]
+primitive 12-th non-6-th (roots of x^6+1) = [2, 8, 6, 11, 5, 7]
+z^3 = 1 (in μ_6): [1, 3, 9]
+z^3 = -1 (in μ_6): [4, 12, 10]
+z^3 = ι in primitive 12-th: [2, 6, 5]
+z^3 = -ι in primitive 12-th: [8, 11, 7]
+ρ = 1+ι = 9
+ρ^4 mod q = 9, expected -4 = 9
+
+Total valid configurations: 0
+Sparse: 0, Non-sparse: 0
+✓ MIXED CASE INFEASIBLE: only sparse σ_+ at (k, 2k) k=3 mixed.

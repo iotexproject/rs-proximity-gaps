@@ -1,0 +1,120 @@
+# fit_G_alpha — fit deg-≤2 polynomial G(α) vanishing on V_δ
+# Setup: p=97, n_0=32, k_0=8, R=2, n_R=8, w_R=3
+# Schwartz-Zippel target: deg-2 G nonzero ⇒ |V_δ| ≤ 2q = 194
+
+=== falsifier #1: positions=(12, 18, 22), coefs=(59, 73, 36) ===
+  |V_δ| = 0
+  dim(linear vanishing forms) = 3
+    L = 1
+    L = α₁
+    L = α₂
+  dim(deg-≤2 vanishing forms) = 6
+    G = 1
+    G = α₁
+    G = α₂
+    G = α₁²  ←  (1α₁ + 0α₂) · (1α₁ + 0α₂)
+    G = α₁α₂  ←  (1α₁ + 0α₂) · (0α₁ + 1α₂)
+    G = α₂²  ←  (0α₁ + 1α₂) · (0α₁ + 1α₂)
+  using G_basis[0]: |Z(G)| = 0, V ⊆ Z(G): True
+
+=== falsifier #2: positions=(14, 18, 31), coefs=(90, 90, 88) ===
+  |V_δ| = 193
+  dim(linear vanishing forms) = 0
+  dim(deg-≤2 vanishing forms) = 1
+    G = 10·α₂ + α₁α₂
+  using G_basis[0]: |Z(G)| = 193, V ⊆ Z(G): True
+
+=== falsifier #3: positions=(9, 19, 27), coefs=(16, 86, 49) ===
+  |V_δ| = 193
+  dim(linear vanishing forms) = 0
+  dim(deg-≤2 vanishing forms) = 1
+    G = 32·α₁ + α₁α₂
+  using G_basis[0]: |Z(G)| = 193, V ⊆ Z(G): True
+
+=== falsifier #4: positions=(13, 22, 30), coefs=(23, 17, 17) ===
+  |V_δ| = 97
+  dim(linear vanishing forms) = 1
+    L = -47·α₁ + α₂
+  dim(deg-≤2 vanishing forms) = 3
+    G = -47·α₁ + α₂
+    G = -47·α₁² + α₁α₂  ←  (1α₁ + 0α₂) · (1α₁ + 33α₂)
+    G = 22·α₁² + α₂²  ←  (1α₁ + 33α₂) · (1α₁ + 64α₂)
+  using G_basis[0]: |Z(G)| = 97, V ⊆ Z(G): True
+
+=== falsifier #5: positions=(9, 10, 22, 25, 26), coefs=(30, 38, 58, 50, 69) ===
+  |V_δ| = 97
+  dim(linear vanishing forms) = 1
+    L = 8·α₁ + α₂
+  dim(deg-≤2 vanishing forms) = 3
+    G = 8·α₁ + α₂
+    G = 8·α₁² + α₁α₂  ←  (1α₁ + 0α₂) · (1α₁ + 85α₂)
+    G = 33·α₁² + α₂²  ←  (1α₁ + 85α₂) · (1α₁ + 12α₂)
+  using G_basis[0]: |Z(G)| = 97, V ⊆ Z(G): True
+
+=== falsifier #6: positions=(14, 18, 28, 30), coefs=(91, 88, 70, 22) ===
+  |V_δ| = 97
+  dim(linear vanishing forms) = 1
+    L = -32·1 + α₂
+  dim(deg-≤2 vanishing forms) = 3
+    G = -32·1 + α₂
+    G = -32·α₁ + α₁α₂
+    G = 43·1 + α₂²
+  using G_basis[0]: |Z(G)| = 97, V ⊆ Z(G): True
+
+
+# === Additional rank-2 above-J cases for sanity ===
+
+=== extra #1: positions=(11, 13, 19), coefs=(56, 34, 72) ===
+  |V_δ| = 97
+  dim(linear vanishing forms) = 1
+    L = α₁
+  dim(deg-≤2 vanishing forms) = 3
+    G = α₁
+    G = α₁²  ←  (1α₁ + 0α₂) · (1α₁ + 0α₂)
+    G = α₁α₂  ←  (1α₁ + 0α₂) · (0α₁ + 1α₂)
+  using G_basis[0]: |Z(G)| = 97, V ⊆ Z(G): True
+
+=== extra #2: positions=(24, 31), coefs=(53, 75) ===
+  |V_δ| = 0
+  dim(linear vanishing forms) = 3
+    L = 1
+    L = α₁
+    L = α₂
+  dim(deg-≤2 vanishing forms) = 6
+    G = 1
+    G = α₁
+    G = α₂
+    G = α₁²  ←  (1α₁ + 0α₂) · (1α₁ + 0α₂)
+    G = α₁α₂  ←  (1α₁ + 0α₂) · (0α₁ + 1α₂)
+    G = α₂²  ←  (0α₁ + 1α₂) · (0α₁ + 1α₂)
+  using G_basis[0]: |Z(G)| = 0, V ⊆ Z(G): True
+
+=== extra #3: positions=(8, 18), coefs=(59, 44) ===
+  |V_δ| = 0
+  dim(linear vanishing forms) = 3
+    L = 1
+    L = α₁
+    L = α₂
+  dim(deg-≤2 vanishing forms) = 6
+    G = 1
+    G = α₁
+    G = α₂
+    G = α₁²  ←  (1α₁ + 0α₂) · (1α₁ + 0α₂)
+    G = α₁α₂  ←  (1α₁ + 0α₂) · (0α₁ + 1α₂)
+    G = α₂²  ←  (0α₁ + 1α₂) · (0α₁ + 1α₂)
+  using G_basis[0]: |Z(G)| = 0, V ⊆ Z(G): True
+
+=== extra #4: positions=(24, 30), coefs=(96, 54) ===
+  |V_δ| = 0
+  dim(linear vanishing forms) = 3
+    L = 1
+    L = α₁
+    L = α₂
+  dim(deg-≤2 vanishing forms) = 6
+    G = 1
+    G = α₁
+    G = α₂
+    G = α₁²  ←  (1α₁ + 0α₂) · (1α₁ + 0α₂)
+    G = α₁α₂  ←  (1α₁ + 0α₂) · (0α₁ + 1α₂)
+    G = α₂²  ←  (0α₁ + 1α₂) · (0α₁ + 1α₂)
+  using G_basis[0]: |Z(G)| = 0, V ⊆ Z(G): True

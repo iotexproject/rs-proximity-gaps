@@ -1,0 +1,23 @@
+=== Deployment-scale verification at (n_0=64, k_0=16, q=193) ===
+n_1 = 32, k_1 = 8, w_J = 32 = 32
+info sets size: C(32, 8) = 10518300
+
+Sampling 5000 info sets for d_1 estimate
+
+--- Sparse 2-term test at (n_0=64, k_0=16) ---
+For f = x^i + x^j with i < j ≤ 31 = 31, expect d_1 ≥ 32 - ⌊j/2⌋
+
+    (i, j)   pred d_1    min d_1     tie_d1    check
+------------------------------------------------------------
+  ( 16,  17)      23       0  0.2539     ✗
+  ( 16,  31)      16      21  0.3326     ✓
+  ( 17,  31)      16      21  0.3472     ✓
+  ( 24,  31)      16      20  0.3335     ✓
+  ( 16,  25)      19      20  0.3394     ✓
+  ( 17,  25)      19      20  0.3782     ✓
+  ( 16,  24)      20      20  0.3750     ✓
+  ( 24,  25)      19       0  0.3161     ✗
+
+=== Conclusion ===
+If all checks pass: polynomial-degree witness extends to n_0 = 64.
+This strongly supports the deployment-scale Master Theorem.

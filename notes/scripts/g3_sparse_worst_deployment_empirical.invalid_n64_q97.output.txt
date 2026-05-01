@@ -1,0 +1,1 @@
+ERROR: no multiplicative subgroup of size n=64 in prime field F_97: n must divide q-1=96

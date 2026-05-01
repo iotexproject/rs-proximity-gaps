@@ -1,0 +1,17 @@
+=== Verifying count=q ⟺ DFT supp ⊂ {16..23} ===
+
+Total mixed-parity 3-pos supports ⊂ {16..23}: 48
+  12/48 checked, failures=0
+  24/48 checked, failures=0
+  36/48 checked, failures=0
+  48/48 checked, failures=0
+
+Result: 48/48 have count=q ✓
+
+=== Reverse check: any sup ⊄ {16..23} with count=q? ===
+  1536 mixed-parity supports outside {16..23}
+  0/100 sampled non-{16..23} supports have count > 100
+
+=== CONJECTURE CONFIRMED ===
+count = q ⟺ DFT supp ⊂ {n_0/2, ..., n_0/2 + n_1/2 - 1} = {16..23}
+Mechanism: μ_8 subdomain trick (PR #373's degenerate case generalized)

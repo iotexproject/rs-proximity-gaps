@@ -1,0 +1,11 @@
+Searching for case T1=(0,1,6), T2=(0,2,5) in seed range [5000, 5060)...
+  Found at seed_offset=46, ov=1, dist(f,C_0) lower bound = 18
+
+  d_1 distribution: [(7, 1), (8, 7), (9, 89)]
+  |E(f)| = 8
+  Exceptional (α_1, d_1): [(6, 8), (45, 8), (50, 8), (63, 8), (73, 8), (75, 8), (85, 7), (95, 8)]
+  #deep (d_1 < 8): 1
+  #boundary (d_1 = 8): 7
+
+  ★★★ NEW EMPIRICAL MAX |E(f)| = 8, exceeding prior 7 (from K=2 (18,8))
+     (T1, T2, ov) = ((0, 1, 6), (0, 2, 5), 1)

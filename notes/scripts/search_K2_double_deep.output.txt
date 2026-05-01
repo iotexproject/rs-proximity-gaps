@@ -1,0 +1,43 @@
+==== Run 1 (60 attempts, seed_base=5000) ====
+
+Search for K=2 above-J f's with 2+ DEEP α_1's (d_1 < 8)
+  Attempts: 60, seed_base: 5000
+
+  progress: 20/60 attempts, 20 above-J, 0 with ≥1 deep, 0 with ≥2 deep, 420s
+  progress: 40/60 attempts, 40 above-J, 1 with ≥1 deep, 0 with ≥2 deep, 847s
+  progress: 60/60 attempts, 60 above-J, 2 with ≥1 deep, 0 with ≥2 deep, 1265s
+
+  Distribution of #deep α_1's: [(0, 58), (1, 2)]
+  Cases with ≥ 2 deep: 0
+
+  ✓ Conjecture 130.1(1) UPHELD across 60 cases.
+
+  Sample 1-deep cases:
+    T1=(0, 2, 6) T2=(1, 2, 3) ov=1 deep=[(10, 6)]  #boundary=0  (|E|=1)
+    T1=(0, 1, 6) T2=(0, 2, 5) ov=1 deep=[(85, 7)]  #boundary=7  ★★★ |E|=8 NEW MAX
+
+==== Run 2 (80 attempts, seed_base=5100) ====
+
+Search for K=2 above-J f's with 2+ DEEP α_1's (d_1 < 8)
+  Attempts: 80, seed_base: 5100
+
+  progress: 20/80 attempts, 20 above-J, 1 with ≥1 deep, 0 with ≥2 deep, 431s
+  progress: 40/80 attempts, 40 above-J, 1 with ≥1 deep, 0 with ≥2 deep, 845s
+  progress: 60/80 attempts, 60 above-J, 1 with ≥1 deep, 0 with ≥2 deep, 1266s
+  progress: 80/80 attempts, 80 above-J, 1 with ≥1 deep, 0 with ≥2 deep, 1687s
+
+  Distribution of #deep α_1's: [(0, 79), (1, 1)]
+  Cases with ≥ 2 deep: 0
+
+  ✓ Conjecture 130.1(1) UPHELD across 80 cases.
+
+  Sample 1-deep case:
+    T1=(3, 4, 6) T2=(0, 2, 7) ov=0 deep=[(81, 6)]  #boundary=0  (|E|=1)
+
+==== AGGREGATE ====
+
+Total K=2 above-J cases tested: 140 (random) + 7 (audited breaches) = 147
+Cases with #deep ≥ 2: 0/147
+Empirical max |E(f)|: 8 (at T1=(0,1,6), T2=(0,2,5), seed_base=5000, offset=46)
+
+Strong empirical support for Conjecture 130.1(1): #deep ≤ 1 universally.

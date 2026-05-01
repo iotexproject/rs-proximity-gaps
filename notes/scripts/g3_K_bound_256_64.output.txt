@@ -1,0 +1,35 @@
+=== K bound at (256, 64), q=257 ===
+  L_0 order 256, L_1 order 128, L_2 order 64
+  w_J: L_0=128, L_1=64, L_2=32
+  M_max(L_1)=65, M_max(L_2)=33
+  Test: K ≤ 10 (universal) vs larger?
+
+  Sampled info_sets at L_2: 3000
+Precomputing Lagrange pairs at L_2...
+  Done in 5s
+
+--- sup=(175, 198, 203), mod-4=(3, 2, 3) ---
+  coefs=[152, 80, 238], d_f at L_0 = 187 (need > 128)
+  max d(fold¹(α_1)) at L_1 = 93 (need > 64)
+  Running bilinear sweep (257² = 66,049 iterations)...
+    [α_1=50/257, elapsed=10s]
+    [α_1=100/257, elapsed=20s]
+    [α_1=150/257, elapsed=30s]
+    [α_1=200/257, elapsed=40s]
+    [α_1=250/257, elapsed=50s]
+  K = 1 (B1=0, K_col=1), |V_δ| = 257
+  K ≤ 10? YES
+  Sweep time: 52s
+
+--- sup=(171, 174, 175), mod-4=(3, 2, 3) ---
+  coefs=[233, 132, 156], d_f at L_0 = 186 (need > 128)
+  max d(fold¹(α_1)) at L_1 = 92 (need > 64)
+  Running bilinear sweep (257² = 66,049 iterations)...
+    [α_1=50/257, elapsed=10s]
+    [α_1=100/257, elapsed=20s]
+    [α_1=150/257, elapsed=30s]
+    [α_1=200/257, elapsed=40s]
+    [α_1=250/257, elapsed=50s]
+  K = 1 (B1=0, K_col=1), |V_δ| = 257
+  K ≤ 10? YES
+  Sweep time: 51s

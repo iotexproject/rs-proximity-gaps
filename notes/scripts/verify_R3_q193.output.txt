@@ -1,0 +1,45 @@
+=== R=3 at q=193 ===
+Chain: n = [32, 16, 8, 4], k = [8, 4, 2, 1], δn = [16, 8, 4, 2]
+q^3 = 7,189,057 tuples per f
+
+--- (15, 23) coefs (10, 17) ---
+   α_1 25/193, elapsed=3s, ETA=21s
+   α_1 50/193, elapsed=5s, ETA=21s
+   α_1 75/193, elapsed=8s, ETA=21s
+   α_1 100/193, elapsed=11s, ETA=21s
+   α_1 125/193, elapsed=13s, ETA=21s
+   α_1 150/193, elapsed=16s, ETA=21s
+   α_1 175/193, elapsed=19s, ETA=21s
+  tie_upper^(3) = 0.3231, #d_3 ≤ 2 = 111169
+  d_3 dist top: {0: 111169, 3: 7077888}
+
+--- (15, 23) coefs (1, 1) ---
+   α_1 25/193, elapsed=3s, ETA=21s
+   α_1 50/193, elapsed=5s, ETA=21s
+   α_1 75/193, elapsed=8s, ETA=21s
+   α_1 100/193, elapsed=11s, ETA=21s
+   α_1 125/193, elapsed=13s, ETA=21s
+   α_1 150/193, elapsed=16s, ETA=21s
+   α_1 175/193, elapsed=19s, ETA=21s
+  tie_upper^(3) = 0.3231, #d_3 ≤ 2 = 111169
+  d_3 dist top: {0: 111169, 3: 7077888}
+
+--- (13, 21) coefs (1, 1) ---
+   α_1 25/193, elapsed=3s, ETA=21s
+   α_1 50/193, elapsed=5s, ETA=21s
+   α_1 75/193, elapsed=8s, ETA=21s
+   α_1 100/193, elapsed=11s, ETA=21s
+   α_1 125/193, elapsed=13s, ETA=21s
+   α_1 150/193, elapsed=16s, ETA=21s
+   α_1 175/193, elapsed=19s, ETA=21s
+  tie_upper^(3) = 0.3196, #d_3 ≤ 2 = 74305
+  d_3 dist top: {0: 74305, 3: 7114752}
+
+=== Summary q=193 ===
+  (15, 23) coefs (10, 17): tie^(3) = 0.3231
+  (15, 23) coefs (1, 1): tie^(3) = 0.3231
+  (13, 21) coefs (1, 1): tie^(3) = 0.3196
+
+Max K=1 leader tie_upper^(3) at q=193: 0.3231
+At q=97 R=3: K=1 leader = 0.4547
+Target √ρ = 0.5

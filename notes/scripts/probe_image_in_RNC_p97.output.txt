@@ -1,0 +1,15 @@
+# Setup: p=97, n_0=16, k_0=4, R=2
+# n_R=4, k_R=1, w_J=8, m=3
+# Test: image(φ) ⊆ Cone(RNC)? Random above-J f sweep.
+
+  trial 0: 1 above-J, 0 image⊆RNC
+  trial 20: 21 above-J, 0 image⊆RNC
+  ★ FOUND: trial 38, sparse_[5, 7], dist_C0>8, image ⊆ Cone(RNC)
+  trial 40: 41 above-J, 1 image⊆RNC
+  ★ FOUND: trial 46, sparse_[4, 5], dist_C0>8, image ⊆ Cone(RNC)
+  trial 60: 59 above-J, 2 image⊆RNC
+  trial 80: 76 above-J, 2 image⊆RNC
+
+# === SUMMARY ===
+# Trials: 100, above-J: 95
+# Above-J with image ⊆ Cone(RNC): 2

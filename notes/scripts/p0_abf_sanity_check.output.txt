@@ -1,0 +1,90 @@
+ABF \S 6.3 argument-size formula sanity check
+Formula: bits = t * (256 * log2(2097152/s) + 62 * s)
+Tolerance: 0.05 KiB absolute (ABF tables are 1-decimal).
+
+=== Table 2 (IRS, t=128)  -- s <= 2^8 (headline range) ===
+     s     t    ABF KiB    formula    |delta|  status
+     2   128       81.9     81.938      0.037  OK
+     4   128       79.9     79.875      0.025  OK
+     8   128       79.8     79.750      0.050  OK
+    16   128       83.5     83.500      0.000  OK
+    32   128       95.0     95.000      0.000  OK
+    64   128      122.0    122.000      0.000  OK
+   128   128      180.0    180.000      0.000  OK
+   256   128      300.0    300.000      0.000  OK
+
+=== Table 2 (IRS, t=128)  -- s >= 2^9 (termination overhead range) ===
+     s     t    ABF KiB    formula    |delta|  status
+   512   128      544.0    544.000      0.000  OK
+  1024   128     1033.2   1036.000      2.800  FAIL
+  2048   128     2027.5   2024.000      3.500  FAIL
+  4096   128     4003.8   4004.000      0.200  FAIL
+
+=== Table 3 (IRS, 128-bit target)  -- s <= 2^8 (headline range) ===
+     s     t    ABF KiB    formula    |delta|  status
+     1   259      171.9    171.929      0.029  OK
+     2   259      165.8    165.795      0.005  OK
+     4   259      161.6    161.622      0.022  OK
+     8   259      161.4    161.369      0.031  OK
+    16   259      169.0    168.957      0.043  OK
+    32   259      192.2    192.227      0.027  OK
+    64   259      246.9    246.859      0.041  OK
+   128   259      364.2    364.219      0.019  OK
+   256   259      607.0    607.031      0.031  OK
+
+=== Table 3 (IRS, 128-bit target)  -- s >= 2^9 (termination overhead range) ===
+     s     t    ABF KiB    formula    |delta|  status
+   512   260     1105.9   1105.000      0.900  FAIL
+  1024   260     2109.4   2104.375      5.025  FAIL
+  2048   260     4116.0   4111.250      4.750  FAIL
+  4096   259     8099.8   8101.844      2.044  FAIL
+
+=== Table 4 (FRS, t=128, s>=2^5)  -- s <= 2^8 (headline range) ===
+     s     t    ABF KiB    formula    |delta|  status
+    32   128       95.0     95.000      0.000  OK
+    64   128      122.0    122.000      0.000  OK
+   128   128      180.0    180.000      0.000  OK
+   256   128      300.0    300.000      0.000  OK
+
+=== Table 4 (FRS, t=128, s>=2^5)  -- s >= 2^9 (termination overhead range) ===
+     s     t    ABF KiB    formula    |delta|  status
+   512   128      544.0    544.000      0.000  OK
+  1024   128     1033.2   1036.000      2.800  FAIL
+  2048   128     2027.5   2024.000      3.500  FAIL
+  4096   128     4003.8   4004.000      0.200  FAIL
+
+=== Table 5 (FRS, 128-bit target)  -- s <= 2^8 (headline range) ===
+     s     t    ABF KiB    formula    |delta|  status
+    32   563      417.9    417.852      0.048  OK
+    64   295      281.2    281.172      0.028  OK
+   128   218      306.6    306.562      0.038  OK
+   256   182      426.6    426.562      0.038  OK
+
+=== Table 5 (FRS, 128-bit target)  -- s >= 2^9 (termination overhead range) ===
+     s     t    ABF KiB    formula    |delta|  status
+   512   163      692.8    692.750      0.050  OK
+  1024   151     1218.6   1222.156      3.556  FAIL
+  2048   144     2273.7   2277.000      3.300  FAIL
+  4096   139     4352.0   4348.094      3.906  FAIL
+
+TOTAL rows checked: 41
+Headline range (s <= 2^8):    max abs err 0.0500 KiB, 0 mismatches
+Termination range (s >= 2^9): max abs err 5.0250 KiB, 13 mismatches (multi-round/final-poly overhead)
+
+RESULT: PASS at the headline range.
+The formula `t * (256 * log2(sn/s) + 62 * s)` reproduces ABF
+Tables 2-5 KiB across all s <= 2^8 rows to within 0.05 KiB,
+including:
+  - Table 2 s=2^3 (IRS optimum at t=128):     ABF 79.8,  ours 79.750
+  - Table 3 s=2^3 (IRS optimum at 128-bit):   ABF 161.4, ours 161.369
+  - Table 5 s=2^6 (FRS optimum at 128-bit):   ABF 281.2, ours 281.172
+Hence the head-to-head 79.7 vs 161.4 vs 281.2 KiB headline in
+paper2 \S 6 uses ABF's own argument-size accounting at the
+relevant optima and is apples-to-apples at 128-bit security.
+
+The s >= 2^9 rows differ by up to ~0.5% (max delta
+5.03 KiB), consistent with the first-order formula
+not modelling final-polynomial / multi-round termination overhead.
+Those rows are deep in the suboptimal tail (e.g. ABF FRS at
+s=2^11 is 2273.7 KiB vs the s=2^6 optimum 281.2 KiB) so the
+discrepancy does not affect the head-to-head comparison.

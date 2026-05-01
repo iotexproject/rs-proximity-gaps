@@ -1,0 +1,96 @@
+
+=== (8, 2, 2, 6) support=(0, 2) ===
+Cert eqs (2 polynomials, deg up to 14):
+  deg 2: -p0 + p2**2 + rho
+  deg 3: 0
+Div eqs (3):
+  div[0]: 2*p0*p2 - p2**3
+  div[1]: 0
+  div[2]: p0**2 - p0*p2**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p2], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: p0 - rho**3
+    G[1]: p2**2 - rho**3 + rho
+    G[2]: p2*(rho**2 + 1)
+    G[3]: (rho - 1)*(rho + 1)*(rho**2 + 1)
+
+  Rho-only polys in basis:
+    (rho - 1)*(rho + 1)*(rho**2 + 1)
+
+=== (16, 4, 4, 12) support=(0, 4) ===
+Cert eqs (4 polynomials, deg up to 30):
+  deg 4: -p0 + p4**2 + rho
+  deg 5: 0
+  deg 6: 0
+  deg 7: 0
+Div eqs (5):
+  div[0]: 2*p0*p4 - p4**3
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: p0**2 - p0*p4**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p4], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: p0 - rho**3
+    G[1]: p4**2 - rho**3 + rho
+    G[2]: p4*(rho**2 + 1)
+    G[3]: (rho - 1)*(rho + 1)*(rho**2 + 1)
+
+  Rho-only polys in basis:
+    (rho - 1)*(rho + 1)*(rho**2 + 1)
+
+=== (16, 4, 4, 8) support=(0, 4) ===
+Cert eqs (4 polynomials, deg up to 30):
+  deg 4: -p4 + rho
+  deg 5: 0
+  deg 6: 0
+  deg 7: 0
+Div eqs (5):
+  div[0]: 2*p0*p4 - p4**3
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: p0**2 - p0*p4**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p4], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: 2*p0**2 - rho**4 - 2
+    G[1]: rho*(2*p0 - rho**2)
+    G[2]: p4 - rho
+    G[3]: rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+  Rho-only polys in basis:
+    rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+=== (16, 4, 4, 10) support=(0, 2, 4, 6) ===
+Cert eqs (4 polynomials, deg up to 30):
+  deg 4: -p2 + p4*p6 + rho
+  deg 5: 0
+  deg 6: -p4 + p6**2
+  deg 7: 0
+Div eqs (7):
+  div[0]: 2*p0*p6 + 2*p2*p4 - 3*p2*p6**2 - 3*p4**2*p6 + 4*p4*p6**3 - p6**5
+  div[1]: 0
+  div[2]: 2*p0*p4 - p0*p6**2 + p2**2 - 4*p2*p4*p6 + p2*p6**3 - p4**3 + 3*p4**2*p6**2 - p4*p6**4
+  div[3]: 0
+  div[4]: 2*p0*p2 - 2*p0*p4*p6 + p0*p6**3 - 2*p2**2*p6 - p2*p4**2 + 3*p2*p4*p6**2 - p2*p6**4
+  div[5]: 0
+  div[6]: p0**2 - 2*p0*p2*p6 - p0*p4**2 + 3*p0*p4*p6**2 - p0*p6**4 - 1
+
+Groebner basis (lex order, eliminating [p0, p2, p4, p6], then rho):
+  done in 0.0s, basis size 6
+  Polynomials in basis:
+    G[0]: (p0 - 1)*(p0 + 1)
+    G[1]: rho*(4*p0 - rho**4)
+    G[2]: p2 + rho
+    G[3]: 4*p4 - rho**6
+    G[4]: 2*p6 + rho**3
+    G[5]: rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+  Rho-only polys in basis:
+    rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)

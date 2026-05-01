@@ -1,0 +1,15 @@
+Exact above-J verification (C(32,8)=10.5M info sets per candidate)
+  w_J = 16 ⟹ above-J iff dist(f, C_0) > 16
+
+--- (14, 22) coefs (72, 45), reported tie=0.5052 ---
+  exact dist = 16  (above-J: False)  (22s, 10518300 info sets)
+  ⚠ FALSE POSITIVE — sampling missed close codeword (dist=16 ≤ w_J=16)
+--- (8, 16) coefs (65, 77), reported tie=0.5000 ---
+  exact dist = 16  (above-J: False)  (22s, 10518300 info sets)
+  ⚠ FALSE POSITIVE — sampling missed close codeword (dist=16 ≤ w_J=16)
+--- (16, 24) coefs (15, 73), reported tie=0.5000 ---
+  exact dist = 16  (above-J: False)  (22s, 10518300 info sets)
+  ⚠ FALSE POSITIVE — sampling missed close codeword (dist=16 ≤ w_J=16)
+--- (15, 23) coefs (10, 17), reported tie=0.4490 ---
+  exact dist = 18  (above-J: True)  (22s, 10518300 info sets)
+  ✓ GENUINELY above-J (dist=18 > w_J=16)

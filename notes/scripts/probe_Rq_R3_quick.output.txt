@@ -1,0 +1,3 @@
+# Quick R=3 probe at p=97, n0=32, k0=8: looking at cs_lift family
+# n_R=4, w_R=1, R/q = 3.092784e-02
+# Above-Johnson dist > 17

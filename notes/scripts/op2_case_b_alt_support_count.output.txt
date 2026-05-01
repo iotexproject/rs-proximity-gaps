@@ -1,0 +1,16 @@
+
+=== n=12 c=3 p=1009: D=6 w=3 T=3 ===
+  trial 0: M=4 (case A: 4, case B: 0, T=3)
+  trial 1: M=4 (case A: 4, case B: 0, T=3)
+  trial 2: M=4 (case A: 4, case B: 0, T=3)
+  trial 3: M=4 (case A: 4, case B: 0, T=3)
+  trial 4: M=4 (case A: 4, case B: 0, T=3)
+  Total across 5 trials: case A=20, case B=0
+
+=== n=16 c=4 p=257: D=8 w=4 T=3 ===
+  trial 0: M=5 (case A: 5, case B: 0, T=3)
+  trial 1: M=4 (case A: 4, case B: 0, T=3)
+  trial 2: M=5 (case A: 5, case B: 0, T=3)
+  trial 3: M=5 (case A: 5, case B: 0, T=3)
+  trial 4: M=5 (case A: 5, case B: 0, T=3)
+  Total across 5 trials: case A=24, case B=0

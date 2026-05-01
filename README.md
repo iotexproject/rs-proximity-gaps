@@ -1,27 +1,42 @@
-# Computational Companion: FRI Soundness Above the Johnson Bound
+# Computational Companion: Reed--Solomon Proximity Gaps Series
 
-Lean 4 formalization and Python verification scripts accompanying:
+Lean 4 formalization, Python verification scripts, and research notes
+accompanying three papers by Raullen Chai and Xinxin Fan (IoTeX Network):
 
-> **FRI Soundness Above the Johnson Bound via Threshold Halving**
-> Raullen Chai, Xinxin Fan (IoTeX Network), 2026.
-> Cryptology ePrint Archive (link to be added).
+> **Paper 1 — FRI Soundness Above the Johnson Bound via Threshold Halving.**
+> Cryptology ePrint Archive, 2026 (link to be added).
+>
+> **Paper 2 — Action-Orbit FRI Soundness above Johnson:
+> Universal $K$-Bounds at Ethereum-Deployed Reed--Solomon Parameters.**
+> Cryptology ePrint Archive, 2026 (link to be added).
+>
+> **Paper 3 — Codim-$2(c{-}1)$ Reed--Solomon Proximity Bounds via the
+> Berlekamp Realizer.**
+> Cryptology ePrint Archive, 2026 (link to be added).
 
-The paper proves the first unconditional FRI / STIR / WHIR soundness
-theorem in the open zone above the Johnson bound — the deployment regime of
-every FRI-based STARK on Ethereum's roadmap (SP1, RISC Zero, Plonky3, Stwo,
-the ~30 zkVMs on EthProofs, the post-quantum signature aggregation layer).
+The three papers together attack the open intermediate zone
+(Johnson radius $< \delta < $ list-decoding capacity) of the Reed--Solomon
+proximity-gap problem, the deployment regime of every FRI-based STARK on
+Ethereum's roadmap (SP1, RISC Zero, Plonky3, Stwo, the ~30 zkVMs on
+EthProofs, the post-quantum signature aggregation layer).
+
 This repository provides:
 
-1. **A Lean 4 formalization** of the core combinatorial bounds (`lean/`).
-   All named theorems in the `FRISoundness` namespace (≥ 18, including the
-   half-threshold CA, equal-threshold CA, FRI coupling, RS isomorphism
-   under the explicit `RSIsomorphismWitness` interface, batch CA, the PMF
-   transcript model, and a characteristic-agnostic generalized coupling)
-   are machine-checked with **zero `sorry`**. Only one external result
-   (`bciks_proximity_gap`, BCIKS FOCS 2020) remains as an axiom. The
-   earlier Schwartz–Zippel and RS isomorphism axioms have been discharged.
-2. **Python verification scripts** for every numerical claim in the paper
-   (`scripts/`), with saved outputs in `outputs/`.
+1. **Lean 4 formalization** of the core combinatorial bounds for Paper 1
+   (`lean/`).  All named theorems in the `FRISoundness` namespace
+   (≥ 18, including the half-threshold CA, equal-threshold CA, FRI
+   coupling, RS isomorphism under the explicit `RSIsomorphismWitness`
+   interface, batch CA, the PMF transcript model, and a
+   characteristic-agnostic generalized coupling) are machine-checked
+   with **zero `sorry`**.  Only one external result
+   (`bciks_proximity_gap`, BCIKS FOCS 2020) remains as an axiom.
+2. **Python verification scripts** for every numerical claim in
+   Paper 1 (`scripts/`), with saved outputs in `outputs/`.
+3. **Research notes** for Paper 2 and Paper 3 (`notes/`), including
+   numbered notes 0001--0344 and the supporting Singular Gröbner /
+   sweep / multiprime certificate scripts under `notes/scripts/`.
+   Paper 2 and Paper 3 cross-reference these notes directly by
+   number (e.g., `Note 0320`, `Note 0337`).
 
 [![CI](https://github.com/iotexproject/rs-proximity-gaps/actions/workflows/ci.yml/badge.svg)](https://github.com/iotexproject/rs-proximity-gaps/actions/workflows/ci.yml)
 
@@ -31,7 +46,7 @@ This repository provides:
 
 ```
 rs-proximity-gaps/
-  lean/                Lean 4 + Mathlib formalization
+  lean/                Lean 4 + Mathlib formalization (Paper 1)
     FRISoundness/
       Defs.lean              Agreement / error sets, linear comb     (fully proved)
       CA.lean                Theorem 5: half-threshold CA            (fully proved)
@@ -44,28 +59,35 @@ rs-proximity-gaps/
     lakefile.toml      Build (Mathlib v4.30.0-rc2)
     lean-toolchain     Lean 4 v4.30.0-rc2
 
-  scripts/             Python verification scripts (stdlib only)
+  scripts/             Python verification scripts for Paper 1 (stdlib only)
     ca-bound/          Half- and equal-threshold CA
     list-size/         List-size moment / pairwise-independence / k-wise tests
     fri-coupling/      FRI even/odd coupling and proximity gap
     op1-barrier/       Equal-threshold CA = C(n,w)/|F|
     op2-obstruction/   M_max ≥ 2 at FRI parameters
     char2-circle/      Char-2 / circle-FRI extensions
-    cs-construction/   Crites–Stewart construction sweep
+    cs-construction/   Crites--Stewart construction sweep
     archive/           Earlier exploratory scripts (see archive/README.md)
 
-  outputs/             Saved script outputs (mirrors scripts/)
+  outputs/             Saved script outputs for Paper 1 (mirrors scripts/)
     archive/           Outputs of earlier exploratory phases
 
+  notes/               Research notes for Paper 2 and Paper 3
+    0001 – 0344        Numbered research notes (Markdown)
+    scripts/           Singular Gröbner / sweep / multiprime certificate scripts
+                       referenced by Paper 2 and Paper 3 by name
+
+  REPRODUCING.md       One-shot reproduction instructions for Paper 1
+  PROOF_CHAIN.md       Mechanization-ready proof skeleton for Paper 1
   .github/workflows/   CI (lake build + sample Python runs)
   LICENSE              Apache 2.0
 ```
 
 ---
 
-## Paper → Code Map
+## Paper 1 → Code Map
 
-Every formal claim in the paper that has a code witness is listed here.
+Every formal claim in Paper 1 that has a code witness is listed here.
 **Lean** = machine-checked theorem name (`namespace.theorem`).
 **Script** = Python verifier (under `scripts/`).
 **Output** = saved output (under `outputs/`).
@@ -117,7 +139,42 @@ Every formal claim in the paper that has a code witness is listed here.
 
 ---
 
-## Lean 4 Formalization
+## Paper 2 / Paper 3 → Notes Map
+
+Paper 2 and Paper 3 do not have a separate Lean formalization at this
+revision; the verification artifacts are Singular Gröbner certificates,
+multiprime sweep outputs, and the numbered research notes that document
+their structural arguments.
+
+Notes referenced directly by Paper 2 or Paper 3 (representative; see
+each note's header for branch/date provenance):
+
+- `notes/0286-K8-rigorous-deployment-2mono.md` — base-case 2-monomial
+  bound for `thm:universal-K10` (Paper 2)
+- `notes/0288-…`, `notes/0294-…`, `notes/0297-…` — Substitution
+  Principle scale-uniform lift (Paper 2)
+- `notes/0320-K_q-1-saturation-supp-n2.md` — `lem:q17-mu16-saturation`
+  (Paper 2)
+- `notes/0333-issue396-no-full-primitive-theorem.md` — local path-(c)
+  no-full primitive theorem (Paper 2 Layer 3)
+- `notes/0334-issue396-scale-lift-tail-lemma.md`,
+  `notes/0337-issue396-scale-lift-tail-proof.md` — scale-lift to
+  arbitrary `n = 4k` (Paper 2 `thm:dyadic-tail-scale-lift`)
+- `notes/0340-issue396-defect-allocation-normal-form.md`,
+  `notes/0344-issue419-l3-global-attachment-drill.md` — Layer 3
+  defect-allocation reduction (Paper 2)
+- `notes/scripts/issue396_no_full_4support_cert.q*.output.txt`,
+  `notes/scripts/issue396_no_full_5support_cert.q*.output.txt` —
+  multiprime no-full certificates supporting `rem:sparse-worst-empirical`
+  (Paper 2)
+
+The `notes/scripts/` directory contains the Python and Singular
+verification scripts referenced by these notes.  Outputs are committed
+alongside their scripts as `<script>.output.txt`.
+
+---
+
+## Lean 4 Formalization (Paper 1)
 
 ### Status summary
 
@@ -202,9 +259,12 @@ and verifies that no `sorry` appears in the `FRISoundness/` source.
 ## Python Verification Scripts
 
 Pure Python 3 stdlib (no NumPy / SciPy / Sage / GPU requirements) for the
-canonical scripts; one or two archived scripts use NumPy.
+canonical Paper 1 scripts; one or two archived scripts use NumPy.  The
+Paper 2 / Paper 3 scripts under `notes/scripts/` use `sympy` for finite
+field arithmetic and shell out to `Singular` for Gröbner-basis vdim
+computations where stated.
 
-Run any script directly:
+Run any Paper 1 script directly:
 
 ```bash
 python3 scripts/op1-barrier/op1_scaling.py | tee outputs/op1-barrier/op1_scaling.output.txt
@@ -212,7 +272,7 @@ python3 scripts/op1-barrier/op1_scaling.py | tee outputs/op1-barrier/op1_scaling
 
 The CI workflow (`.github/workflows/ci.yml`) runs three smoke-test scripts
 on every push as a sanity check; for the full reproduction set, see the
-per-topic mapping in the **Paper → Code Map** section above. Each saved
+per-topic mapping in the **Paper 1 → Code Map** section above. Each saved
 output in `outputs/<topic>/` corresponds to the same-named script in
 `scripts/<topic>/` and can be regenerated by re-running it.
 
@@ -228,9 +288,26 @@ output in `outputs/<topic>/` corresponds to the same-named script in
   howpublished = {Cryptology ePrint Archive, Paper 2026/XXXX},
   note   = {Companion repository: \url{https://github.com/iotexproject/rs-proximity-gaps}}
 }
+
+@misc{ChaiFan2026ActionOrbit,
+  author = {Chai, Raullen and Fan, Xinxin},
+  title  = {Action-Orbit {FRI} Soundness above {J}ohnson:
+            Universal $K$-Bounds at Ethereum-Deployed {R}eed--{S}olomon Parameters},
+  year   = {2026},
+  howpublished = {Cryptology ePrint Archive, Paper 2026/XXXX},
+  note   = {Companion repository: \url{https://github.com/iotexproject/rs-proximity-gaps}}
+}
+
+@misc{ChaiFan2026Codim,
+  author = {Chai, Raullen and Fan, Xinxin},
+  title  = {Codim-$2(c{-}1)$ {R}eed--{S}olomon Proximity Bounds via the Berlekamp Realizer},
+  year   = {2026},
+  howpublished = {Cryptology ePrint Archive, Paper 2026/XXXX},
+  note   = {Companion repository: \url{https://github.com/iotexproject/rs-proximity-gaps}}
+}
 ```
 
-(Replace `XXXX` once the ePrint number is assigned.)
+(Replace `XXXX` with each paper's ePrint number once assigned.)
 
 ---
 

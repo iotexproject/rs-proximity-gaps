@@ -1,0 +1,67 @@
+// g3_4mono_factor_phi.sing — factor Φ for the deg=12 4-mono cases at (8, 2).
+// Goal: identify which factor corresponds to true bad-α component.
+
+ring R = 0, (z, p0, p1, p2, p3, alpha, rho1, rho2, rho3), (dp(1), lp(8));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+poly z_1 = z;
+poly z_2 = reduce(z^2, std(sigma));
+poly z_3 = reduce(z^3, std(sigma));
+poly z_5 = reduce(z^5, std(sigma));
+poly z_6 = reduce(z^6, std(sigma));
+poly z_7 = reduce(z^7, std(sigma));
+poly z_4 = reduce(z^4, std(sigma));
+
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+// Case (1, 2, 5, 6)
+print("=== Case (1, 2, 5, 6) ===");
+poly h126 = rho1 * z_1 + rho2 * z_2 + rho3 * z_5 + alpha * z_6;
+matrix M126 = coeffs(h126, z);
+poly cert126_2 = M126[3, 1];
+poly cert126_3 = M126[4, 1];
+ideal I126 = cert126_2, cert126_3, div0, div1, div2, div3;
+ideal E126 = eliminate(I126, p0*p1*p2*p3);
+poly phi126 = E126[size(E126)];
+print("Φ:");
+print(phi126);
+print("");
+print("Factored:");
+print(factorize(phi126));
+
+print("");
+print("=== Case (1, 3, 4, 7) ===");
+poly h137 = rho1 * z_1 + rho2 * z_3 + rho3 * z_4 + alpha * z_7;
+matrix M137 = coeffs(h137, z);
+poly cert137_2 = M137[3, 1];
+poly cert137_3 = M137[4, 1];
+ideal I137 = cert137_2, cert137_3, div0, div1, div2, div3;
+ideal E137 = eliminate(I137, p0*p1*p2*p3);
+poly phi137 = E137[size(E137)];
+print("Φ:");
+print(phi137);
+print("");
+print("Factored:");
+print(factorize(phi137));
+
+print("");
+print("=== Case (1, 2, 6, 7) ===");
+poly h267 = rho1 * z_1 + rho2 * z_2 + rho3 * z_6 + alpha * z_7;
+matrix M267 = coeffs(h267, z);
+poly cert267_2 = M267[3, 1];
+poly cert267_3 = M267[4, 1];
+ideal I267 = cert267_2, cert267_3, div0, div1, div2, div3;
+ideal E267 = eliminate(I267, p0*p1*p2*p3);
+poly phi267 = E267[size(E267)];
+print("Φ:");
+print(phi267);
+print("");
+print("Factored:");
+print(factorize(phi267));
+
+exit;

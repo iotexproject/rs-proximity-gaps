@@ -1,0 +1,9 @@
+=== rd-Pattern-C-star at c=4, n=16, p=97 ===
+
+n=16, k=8, D=8, c=4, w=4
+  total supports of size 4: 1820
+  Stars sampled: 100
+    all_minors_zero=False, rd=False: 100
+    all_minors_zero=False, rd=True: 0
+    all_minors_zero=True, rd=False: 0
+    all_minors_zero=True, rd=True: 0

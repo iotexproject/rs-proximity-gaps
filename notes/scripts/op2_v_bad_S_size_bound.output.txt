@@ -1,0 +1,92 @@
+# Wider sweep — verifying |S*| ≤ w + floor(w/T) (Note 0119 bound):
+
+=== n=12 c=3 p=1009: D=6 w=3 T=3, bound=4, case-b: True ===
+  attempts=34, witnesses=20
+  |S*| distribution: {1: 14, 2: 5, 4: 1}
+  pct |S*| ≤ 4: 100.0%  (violations: 0, search range up to 7)
+
+=== n=14 c=3 p=1009: D=7 w=4 T=4, bound=5, case-b: True ===
+  attempts=44, witnesses=20
+  |S*| distribution: {1: 16, 2: 4}
+  pct |S*| ≤ 5: 100.0%  (violations: 0, search range up to 8)
+
+=== n=16 c=4 p=257: D=8 w=4 T=3, bound=5, case-b: True ===
+  attempts=24, witnesses=20
+  |S*| distribution: {1: 11, 2: 6, 3: 3}
+  pct |S*| ≤ 5: 100.0%  (violations: 0, search range up to 8)
+
+=== n=16 c=3 p=257: D=8 w=5 T=5, bound=6, case-b: True ===
+  attempts=75, witnesses=20
+  |S*| distribution: {1: 18, 2: 2}
+  pct |S*| ≤ 6: 100.0%  (violations: 0, search range up to 9)
+
+=== n=18 c=3 p=1009: D=9 w=6 T=5, bound=7, case-b: True ===
+  attempts=64, witnesses=20
+  |S*| distribution: {1: 16, 2: 4}
+  pct |S*| ≤ 7: 100.0%  (violations: 0, search range up to 10)
+
+=== n=18 c=5 p=1009: D=9 w=4 T=3, bound=5, case-b: False ===
+  attempts=20, witnesses=20
+  |S*| distribution: {1: 12, 2: 6, 3: 2}
+  pct |S*| ≤ 5: 100.0%  (violations: 0, search range up to 8)
+
+=== n=20 c=5 p=41: D=10 w=5 T=3, bound=6, case-b: True ===
+  attempts=23, witnesses=20
+  |S*| distribution: {1: 9, 2: 9, 3: 2}
+  pct |S*| ≤ 6: 100.0%  (violations: 0, search range up to 9)
+
+=== n=20 c=4 p=41: D=10 w=6 T=4, bound=7, case-b: True ===
+  attempts=24, witnesses=20
+  |S*| distribution: {1: 10, 2: 5, 3: 5}
+  pct |S*| ≤ 7: 100.0%  (violations: 0, search range up to 10)
+
+=== n=24 c=4 p=1009: D=12 w=8 T=5, bound=9, case-b: True ===
+  attempts=35, witnesses=20
+  |S*| distribution: {1: 12, 2: 8}
+  pct |S*| ≤ 9: 100.0%  (violations: 0, search range up to 12)
+
+=== n=24 c=6 p=1009: D=12 w=6 T=3, bound=8, case-b: True ===
+  attempts=18, witnesses=20
+  |S*| distribution: {1: 13, 2: 4, 3: 3}
+  pct |S*| ≤ 8: 100.0%  (violations: 0, search range up to 11)
+
+=== n=24 c=5 p=1009: D=12 w=7 T=4, bound=8, case-b: True ===
+  attempts=29, witnesses=20
+  |S*| distribution: {1: 14, 2: 6}
+  pct |S*| ≤ 8: 100.0%  (violations: 0, search range up to 11)
+
+=== n=28 c=4 p=1009: D=14 w=10 T=6, bound=11, case-b: True ===
+  attempts=53, witnesses=20
+  |S*| distribution: {1: 18, 2: 2}
+  pct |S*| ≤ 11: 100.0%  (violations: 0, search range up to 14)
+
+=== n=28 c=6 p=1009: D=14 w=8 T=4, bound=10, case-b: True ===
+  attempts=20, witnesses=20
+  |S*| distribution: {1: 10, 2: 7, 3: 3}
+  pct |S*| ≤ 10: 100.0%  (violations: 0, search range up to 13)
+
+=== n=28 c=7 p=1009: D=14 w=7 T=3, bound=9, case-b: True ===
+  attempts=12, witnesses=20
+  |S*| distribution: {1: 5, 2: 13, 3: 2}
+  pct |S*| ≤ 9: 100.0%  (violations: 0, search range up to 12)
+
+=== n=30 c=3 p=4051: D=15 w=12 T=9, bound=13, case-b: True ===
+  attempts=545, witnesses=20
+  |S*| distribution: {1: 20}
+  pct |S*| ≤ 13: 100.0%  (violations: 0, search range up to 16)
+
+=== n=30 c=5 p=4051: D=15 w=10 T=5, bound=12, case-b: True ===
+  attempts=38, witnesses=20
+  |S*| distribution: {1: 13, 2: 7}
+  pct |S*| ≤ 12: 100.0%  (violations: 0, search range up to 15)
+# Continuation: n ∈ {32, 36, 40}
+
+=== n=32 c=4 p=257: D=16 w=12 T=7, bound=13, case-b: True ===
+  attempts=92, witnesses=15
+  |S*| distribution: {1: 15}
+  pct |S*| ≤ 13: 100.0%  (violations: 0, search range up to 16)
+
+=== n=32 c=6 p=257: D=16 w=10 T=5, bound=12, case-b: True ===
+  attempts=41, witnesses=15
+  |S*| distribution: {1: 13, 2: 2}
+  pct |S*| ≤ 12: 100.0%  (violations: 0, search range up to 15)

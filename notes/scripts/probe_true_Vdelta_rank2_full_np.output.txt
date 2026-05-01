@@ -1,0 +1,47 @@
+# probe_true_Vdelta_rank2_full_np — vectorized
+# Setup: p=97, n_0=32, R=2, w_R=3, target |V_δ| ≤ 194
+# n_workers=24, n_random=2000, seed=2026
+
+# Generated 2276 specs.
+
+#  100/2276  rate 42.0/sec  {'ABOVE_J_RANK_2': 65, 'BELOW_J': 8, 'ABOVE_J_RANK_1': 27}
+#  200/2276  rate 56.4/sec  {'ABOVE_J_RANK_2': 125, 'BELOW_J': 30, 'ABOVE_J_RANK_1': 45}
+#  300/2276  rate 63.0/sec  {'ABOVE_J_RANK_2': 183, 'BELOW_J': 37, 'ABOVE_J_RANK_1': 73, 'ABOVE_J_RANK_3': 7}
+#  400/2276  rate 66.4/sec  {'ABOVE_J_RANK_2': 244, 'BELOW_J': 39, 'ABOVE_J_RANK_1': 79, 'ABOVE_J_RANK_3': 38}
+#  500/2276  rate 69.5/sec  {'ABOVE_J_RANK_2': 306, 'BELOW_J': 42, 'ABOVE_J_RANK_1': 85, 'ABOVE_J_RANK_3': 67}
+#  600/2276  rate 71.1/sec  {'ABOVE_J_RANK_2': 382, 'BELOW_J': 44, 'ABOVE_J_RANK_1': 88, 'ABOVE_J_RANK_3': 86}
+#  700/2276  rate 70.9/sec  {'ABOVE_J_RANK_2': 448, 'BELOW_J': 47, 'ABOVE_J_RANK_1': 94, 'ABOVE_J_RANK_3': 111}
+#  800/2276  rate 72.1/sec  {'ABOVE_J_RANK_2': 519, 'BELOW_J': 48, 'ABOVE_J_RANK_1': 99, 'ABOVE_J_RANK_3': 134}
+#  900/2276  rate 73.3/sec  {'ABOVE_J_RANK_2': 581, 'BELOW_J': 51, 'ABOVE_J_RANK_1': 104, 'ABOVE_J_RANK_3': 164}
+#  1000/2276  rate 73.4/sec  {'ABOVE_J_RANK_2': 646, 'BELOW_J': 53, 'ABOVE_J_RANK_1': 108, 'ABOVE_J_RANK_3': 193}
+#  1100/2276  rate 74.1/sec  {'ABOVE_J_RANK_2': 717, 'BELOW_J': 56, 'ABOVE_J_RANK_1': 114, 'ABOVE_J_RANK_3': 213}
+#  1200/2276  rate 74.5/sec  {'ABOVE_J_RANK_2': 785, 'BELOW_J': 60, 'ABOVE_J_RANK_1': 119, 'ABOVE_J_RANK_3': 236}
+#  1300/2276  rate 75.2/sec  {'ABOVE_J_RANK_2': 849, 'BELOW_J': 62, 'ABOVE_J_RANK_1': 122, 'ABOVE_J_RANK_3': 266, 'ABOVE_J_RANK_4': 1}
+#  1400/2276  rate 75.7/sec  {'ABOVE_J_RANK_2': 893, 'BELOW_J': 65, 'ABOVE_J_RANK_1': 131, 'ABOVE_J_RANK_3': 304, 'ABOVE_J_RANK_4': 7}
+#  1500/2276  rate 76.2/sec  {'ABOVE_J_RANK_2': 939, 'BELOW_J': 67, 'ABOVE_J_RANK_1': 140, 'ABOVE_J_RANK_3': 342, 'ABOVE_J_RANK_4': 12}
+#  1600/2276  rate 76.6/sec  {'ABOVE_J_RANK_2': 994, 'BELOW_J': 73, 'ABOVE_J_RANK_1': 145, 'ABOVE_J_RANK_3': 371, 'ABOVE_J_RANK_4': 17}
+#  1700/2276  rate 77.1/sec  {'ABOVE_J_RANK_2': 1035, 'BELOW_J': 78, 'ABOVE_J_RANK_1': 157, 'ABOVE_J_RANK_3': 409, 'ABOVE_J_RANK_4': 21}
+#  1800/2276  rate 77.5/sec  {'ABOVE_J_RANK_2': 1085, 'BELOW_J': 80, 'ABOVE_J_RANK_1': 163, 'ABOVE_J_RANK_3': 447, 'ABOVE_J_RANK_4': 25}
+#  1900/2276  rate 77.8/sec  {'ABOVE_J_RANK_2': 1138, 'BELOW_J': 82, 'ABOVE_J_RANK_1': 171, 'ABOVE_J_RANK_3': 479, 'ABOVE_J_RANK_4': 30}
+#  2000/2276  rate 78.2/sec  {'ABOVE_J_RANK_2': 1187, 'BELOW_J': 85, 'ABOVE_J_RANK_1': 183, 'ABOVE_J_RANK_3': 512, 'ABOVE_J_RANK_4': 33}
+#  2100/2276  rate 78.5/sec  {'ABOVE_J_RANK_2': 1237, 'BELOW_J': 90, 'ABOVE_J_RANK_1': 190, 'ABOVE_J_RANK_3': 546, 'ABOVE_J_RANK_4': 37}
+#  2200/2276  rate 78.8/sec  {'ABOVE_J_RANK_2': 1278, 'BELOW_J': 95, 'ABOVE_J_RANK_1': 199, 'ABOVE_J_RANK_3': 587, 'ABOVE_J_RANK_4': 41}
+
+# === DONE in 29s (78.9 f/sec) ===
+#   ABOVE_J_RANK_2: 1316
+#   BELOW_J: 96
+#   ABOVE_J_RANK_1: 212
+#   ABOVE_J_RANK_3: 610
+#   ABOVE_J_RANK_4: 42
+
+# === Rank-2 above-J: 1316 cases ===
+#   max |V_δ| = 193, target = 194, breaches = 0
+#   |V_δ| histogram (top 20 values):
+#         1:   78
+#         2:  542
+#        96:    2
+#        97:  690
+#       193:    4
+
+# ✓ Direction A bound holds for all 1316 rank-2 above-J cases.
+#   max |V_δ| = 193/194 = 0.995

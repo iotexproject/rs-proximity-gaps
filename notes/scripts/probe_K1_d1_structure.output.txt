@@ -1,0 +1,32 @@
+K=1 d_1 structure probe at p=97, n_1=16, k_1=4
+  Test: for K=1 above-J f, is supp(fold_1 - c) constant across α_1?
+  Conjecture: yes, with possibly 1-2 exceptional α_1 (curves)
+
+sample 1: positions=(25, 27) coefs=(54, 74) d_lb=20
+  d_1 values across 30 α_1: [0, 10]
+  unique support sets: 2
+    T=(0, 5, 7, 8, 9, 10, 11, 13, 14, 15)  size=10  α_1 count=29: first few = [1, 2, 3, 4, 5]
+    T=()  size=0  α_1 count=1: first few = [0]
+
+sample 2: positions=(10, 11) coefs=(37, 13) d_lb=21
+  d_1 values across 30 α_1: [0, 11]
+  unique support sets: 2
+    T=(0, 1, 2, 3, 5, 6, 7, 9, 10, 12, 14)  size=11  α_1 count=29: first few = [0, 1, 2, 3, 4]
+    T=()  size=0  α_1 count=1: first few = [27]
+
+sample 3: positions=(17, 25) coefs=(37, 59) d_lb=21
+  d_1 values across 30 α_1: [0, 11]
+  unique support sets: 2
+    T=(0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 12)  size=11  α_1 count=29: first few = [1, 2, 3, 4, 5]
+    T=()  size=0  α_1 count=1: first few = [0]
+
+sample 4: positions=(12, 28) coefs=(91, 92) d_lb=21
+  d_1 values across 30 α_1: [11]
+  unique support sets: 1
+    T=(0, 1, 2, 3, 4, 5, 6, 7, 11, 13, 14)  size=11  α_1 count=30: first few = [0, 1, 2, 3, 4]
+
+sample 5: positions=(8, 24) coefs=(74, 29) d_lb=21
+  d_1 values across 30 α_1: [11]
+  unique support sets: 1
+    T=(0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 14)  size=11  α_1 count=30: first few = [0, 1, 2, 3, 4]
+

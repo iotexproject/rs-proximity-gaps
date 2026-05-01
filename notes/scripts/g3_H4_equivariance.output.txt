@@ -1,0 +1,91 @@
+=== H_h equivariance classification at q=1153, (32,8) ===
+
+fe_m4 fo_m4 fe_m2 fo_m2   | count_supports
+  (False, True, False, True) | 432
+  (False, True, True, True) | 216
+  (True, False, True, False) | 432
+  (True, False, True, True) | 216
+  (True, True, True, True) | 288
+
+=== Sampled σ-patterns per class ===
+
+--- class (True, True, True, True): fe_mod4_single, fo_mod4_single, fe_mod2_single, fo_mod2_single (288 total) ---
+  sup=(9, 20, 25) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(9, 20, 25) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+  sup=(13, 18, 21) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(13, 18, 21) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+  sup=(19, 20, 28) trial 0: count=0
+  sup=(19, 20, 28) trial 1: count=0
+
+  sup=(19, 27, 28) trial 0: count=0
+  sup=(19, 27, 28) trial 1: count=0
+
+  sup=(9, 17, 20) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(9, 17, 20) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+--- class (True, False, True, True): fe_mod4_single, fe_mod2_single, fo_mod2_single (216 total) ---
+  sup=(13, 17, 28) trial 0: count=2, σ vanish=[1], closed under α→-α: True
+  sup=(13, 17, 28) trial 1: count=2, σ vanish=[1], closed under α→-α: True
+
+  sup=(9, 16, 29) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(9, 16, 29) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+  sup=(17, 21, 24) trial 0: count=0
+  sup=(17, 21, 24) trial 1: count=0
+
+  sup=(19, 20, 23) trial 0: count=1153, σ vanish=[1, 2, 3, 4, 5], closed under α→-α: True
+  sup=(19, 20, 23) trial 1: count=1153, σ vanish=[1, 2, 3, 4, 5], closed under α→-α: True
+
+  sup=(19, 22, 31) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(19, 22, 31) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+--- class (True, False, True, False): fe_mod4_single, fe_mod2_single (432 total) ---
+  sup=(13, 26, 27) trial 0: count=0
+  sup=(13, 26, 27) trial 1: count=0
+
+  sup=(10, 17, 23) trial 0: count=0
+  sup=(10, 17, 23) trial 1: count=0
+
+  sup=(9, 15, 16) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(9, 15, 16) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+  sup=(17, 18, 19) trial 0: count=1153, σ vanish=[1, 2, 3, 4, 5], closed under α→-α: True
+  sup=(17, 18, 19) trial 1: count=1153, σ vanish=[1, 2, 3, 4, 5], closed under α→-α: True
+
+  sup=(18, 27, 29) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(18, 27, 29) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+--- class (False, True, True, True): fo_mod4_single, fe_mod2_single, fo_mod2_single (216 total) ---
+  sup=(17, 18, 30) trial 0: count=0
+  sup=(17, 18, 30) trial 1: count=0
+
+  sup=(8, 12, 17) trial 0: count=0
+  sup=(8, 12, 17) trial 1: count=0
+
+  sup=(25, 26, 30) trial 0: count=0
+  sup=(25, 26, 30) trial 1: count=0
+
+  sup=(10, 22, 23) trial 0: count=8, σ vanish=[], closed under α→-α: False
+  sup=(10, 22, 23) trial 1: count=8, σ vanish=[], closed under α→-α: False
+
+  sup=(10, 27, 30) trial 0: count=0
+  sup=(10, 27, 30) trial 1: count=0
+
+--- class (False, True, False, True): fo_mod4_single, fo_mod2_single (432 total) ---
+  sup=(17, 22, 24) trial 0: count=0
+  sup=(17, 22, 24) trial 1: count=0
+
+  sup=(20, 23, 30) trial 0: count=0
+  sup=(20, 23, 30) trial 1: count=0
+
+  sup=(16, 22, 31) trial 0: count=1, σ vanish=[1], closed under α→-α: True
+  sup=(16, 22, 31) trial 1: count=1, σ vanish=[1], closed under α→-α: True
+
+  sup=(12, 13, 14) trial 0: count=0
+  sup=(12, 13, 14) trial 1: count=0
+
+  sup=(9, 12, 22) trial 0: count=0
+  sup=(9, 12, 22) trial 1: count=0
+

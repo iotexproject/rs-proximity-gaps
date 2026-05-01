@@ -1,0 +1,47 @@
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=193, L2=(16,4), support_window=[16,80), supports=C(64,3)=41664, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+progress supports=18000
+progress supports=19000
+progress supports=20000
+progress supports=21000
+progress supports=22000
+progress supports=23000
+progress supports=24000
+progress supports=25000
+progress supports=26000
+progress supports=27000
+progress supports=28000
+progress supports=29000
+progress supports=30000
+progress supports=31000
+progress supports=32000
+progress supports=33000
+progress supports=34000
+progress supports=35000
+progress supports=36000
+progress supports=37000
+progress supports=38000
+progress supports=39000
+progress supports=40000
+progress supports=41000
+
+hist={'all_alpha_subsets': 6101792, 'candidate_subsets': 105753397, 'class:full': 3138048, 'class:rank<2': 102607157, 'class:stabilizer': 8192, 'supports': 41664}
+first_counterexample=None

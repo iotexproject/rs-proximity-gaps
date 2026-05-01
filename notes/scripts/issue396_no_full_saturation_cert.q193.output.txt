@@ -1,0 +1,19 @@
+Issue #396 no-full Singular saturation certificate
+q=193, L2=(16,4), support_window=[16,64), skip_alpha_zero=True
+hist={'all_alpha_subsets': 0, 'candidate_subsets': 22055749, 'saturation_cases': 2181, 'skipped_alpha_zero': 22053568, 'supports': 17296}
+saturation_cases=2181
+first_case={support: (16, 25, 56), alpha1: 84, S: (0, 2, 3, 5, 8, 10, 11, 13), occupancy: (2, 2, 2, 2)}
+last_case={support: (44, 53, 61), alpha1: 101, S: (2, 4, 5, 7, 10, 12, 13, 15), occupancy: (2, 2, 2, 2)}
+
+chunk 1: cases=256, returncode=0, good=256, bad=0
+chunk 2: cases=256, returncode=0, good=256, bad=0
+chunk 3: cases=256, returncode=0, good=256, bad=0
+chunk 4: cases=256, returncode=0, good=256, bad=0
+chunk 5: cases=256, returncode=0, good=256, bad=0
+chunk 6: cases=256, returncode=0, good=256, bad=0
+chunk 7: cases=256, returncode=0, good=256, bad=0
+chunk 8: cases=256, returncode=0, good=256, bad=0
+chunk 9: cases=133, returncode=0, good=133, bad=0
+
+total_good=2181
+total_bad=0

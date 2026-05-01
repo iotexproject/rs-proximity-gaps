@@ -1,0 +1,116 @@
+=== P1 Coverage: Deployment Fields × Deployment Scales ===
+
+Bad characteristics (from Note 0286 lemma B): {2, 7}
+
+--- KoalaBear (q = 2^31 - 2^24 + 1 = 2130706433) ---
+  (    32,     8): PASS
+  (    64,    16): PASS
+  (   128,    32): PASS
+  (   256,    64): PASS
+  (  1024,   256): PASS
+  (  4096,  1024): PASS
+  ( 16384,  4096): PASS
+  ( 65536, 16384): PASS
+  (262144, 65536): PASS
+  (524288, 131072): PASS
+
+--- BabyBear (q = 15 · 2^27 + 1 = 2013265921) ---
+  (    32,     8): PASS
+  (    64,    16): PASS
+  (   128,    32): PASS
+  (   256,    64): PASS
+  (  1024,   256): PASS
+  (  4096,  1024): PASS
+  ( 16384,  4096): PASS
+  ( 65536, 16384): PASS
+  (262144, 65536): PASS
+  (524288, 131072): PASS
+
+--- Mersenne31 (q = 2^31 - 1 = 2147483647) ---
+  (    32,     8): FAIL
+      [subgroup] n=32 ∤ (q-1)=2147483646
+  (    64,    16): FAIL
+      [subgroup] n=64 ∤ (q-1)=2147483646
+  (   128,    32): FAIL
+      [subgroup] n=128 ∤ (q-1)=2147483646
+  (   256,    64): FAIL
+      [subgroup] n=256 ∤ (q-1)=2147483646
+  (  1024,   256): FAIL
+      [subgroup] n=1024 ∤ (q-1)=2147483646
+  (  4096,  1024): FAIL
+      [subgroup] n=4096 ∤ (q-1)=2147483646
+  ( 16384,  4096): FAIL
+      [subgroup] n=16384 ∤ (q-1)=2147483646
+  ( 65536, 16384): FAIL
+      [subgroup] n=65536 ∤ (q-1)=2147483646
+  (262144, 65536): FAIL
+      [subgroup] n=262144 ∤ (q-1)=2147483646
+  (524288, 131072): FAIL
+      [subgroup] n=524288 ∤ (q-1)=2147483646
+
+--- Goldilocks (q = 2^64 - 2^32 + 1 = 18446744069414584321) ---
+  (    32,     8): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  (    64,    16): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  (   128,    32): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  (   256,    64): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  (  1024,   256): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  (  4096,  1024): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  ( 16384,  4096): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  ( 65536, 16384): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  (262144, 65536): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+  (524288, 131072): PASS
+      (note) q ≥ 2^31, Singular char-p limit (FYI only — coverage independent)
+
+
+=== COVERAGE MATRIX ===
+
+Field        | (32,8) | (64,16) | (128,32) | (256,64) | (1024,256) | (4096,1024) | (16384,4096) | (65536,16384) | (262144,65536) | (524288,131072)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+KoalaBear    |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |
+BabyBear     |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |
+Mersenne31   |   FAIL   |   FAIL   |   FAIL   |   FAIL   |   FAIL   |   FAIL   |   FAIL   |   FAIL   |   FAIL   |   FAIL   |
+Goldilocks   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |   PASS   |
+
+=== Field extensions (Mersenne31 needs extension to deploy) ===
+
+For Mersenne31 (q = 2^31 - 1, q-1 = 2 · 3^2 · 7 · 11 · 31 · 151 · 331):
+  No deployment-scale n_0 = 2^k for k ≥ 2 divides q-1 in base prime field.
+  Standard fix: deploy over EXTENSION F_{q^d} for d ≥ 2.
+  In F_{q^2}, |F^*| = q^2 - 1 = (q-1)(q+1) = (q-1) · 2^32 ·
+    (since q+1 = 2^31 has order 2^31).
+  So F_{q^2} supports n_0 up to 2^32 — covers all deployment scales.
+
+ABF §6.3 itself: KoalaBear sextic F_{q^6}, k=2^20, ρ=1/2, t=128.
+  → Subgroup of order n_0 always exists in F^* (n_0 | q-1 → n_0 | q^d-1).
+  → K10 bound 10/|F| automatically tightens since |F| = q^d ≫ q.
+  → Extensions inherit coverage from base; no extra check needed.
+
+=== OUTCOME ===
+Total checks: 40 (30 PASS, 10 FAIL)
+
+  KoalaBear: ALL deployment scales PASS — paper2 thm:universal-K10
+    applies unconditionally at every (n_0, k_0).
+  BabyBear: ALL deployment scales PASS — paper2 thm:universal-K10
+    applies unconditionally at every (n_0, k_0).
+  Mersenne31: 0/10 PASS.
+    (32, 8) FAIL: subgroup(32 ∤ q-1)
+    (64, 16) FAIL: subgroup(64 ∤ q-1)
+    (128, 32) FAIL: subgroup(128 ∤ q-1)
+    (256, 64) FAIL: subgroup(256 ∤ q-1)
+    (1024, 256) FAIL: subgroup(1024 ∤ q-1)
+    (4096, 1024) FAIL: subgroup(4096 ∤ q-1)
+    (16384, 4096) FAIL: subgroup(16384 ∤ q-1)
+    (65536, 16384) FAIL: subgroup(65536 ∤ q-1)
+    (262144, 65536) FAIL: subgroup(262144 ∤ q-1)
+    (524288, 131072) FAIL: subgroup(524288 ∤ q-1)
+  Goldilocks: ALL deployment scales PASS — paper2 thm:universal-K10
+    applies unconditionally at every (n_0, k_0).

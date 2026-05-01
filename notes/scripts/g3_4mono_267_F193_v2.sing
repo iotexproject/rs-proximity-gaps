@@ -1,0 +1,62 @@
+// g3_4mono_267_F193_v2.sing — factor Φ_{(1,2,6,7)} over F_193[α] via subst then specialize.
+
+// First, compute Φ over Q[α, ρ_2, ρ_3], then specialize, then move to F_193.
+
+ring RQ = 0, (z, p0, p1, p2, p3, alpha, rho2, rho3), (dp(1), lp(7));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+poly z_1 = z;
+poly z_2 = reduce(z^2, std(sigma));
+poly z_6 = reduce(z^6, std(sigma));
+poly z_7 = reduce(z^7, std(sigma));
+
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+// h = z + ρ_2 z^2 + ρ_3 z^6 + α z^7 (ρ_1 = 1)
+poly h = z_1 + rho2 * z_2 + rho3 * z_6 + alpha * z_7;
+matrix M = coeffs(h, z);
+poly cert2 = M[3, 1];
+poly cert3 = M[4, 1];
+ideal I = cert2, cert3, div0, div1, div2, div3;
+ideal E = eliminate(I, p0*p1*p2*p3);
+poly phi_Q = E[size(E)];
+
+print("=== Φ over Q (ρ_1 = 1) ===");
+print(phi_Q);
+print("");
+
+// Specialize ρ_2 = 1, ρ_3 = 7
+poly phi_Q_spec = subst(phi_Q, rho2, 1, rho3, 7);
+print("=== Φ specialized ρ_2=1, ρ_3=7 ===");
+print(phi_Q_spec);
+print("");
+
+// Move to F_193[α]
+ring R193 = 193, alpha, dp;
+poly phi_193 = imap(RQ, phi_Q_spec);
+print("=== Over F_193[α] ===");
+print(phi_193);
+print("");
+print("Factored:");
+print(factorize(phi_193));
+
+print("");
+print("=== Try other (ρ_2, ρ_3) ===");
+list samples = list(1, 7), list(3, 11), list(5, 13), list(7, 23), list(11, 17);
+int i;
+for (i = 1; i <= size(samples); i++) {
+    setring RQ;
+    poly phi_temp = subst(phi_Q, rho2, number(samples[i][1]), rho3, number(samples[i][2]));
+    setring R193;
+    poly phi_temp_193 = imap(RQ, phi_temp);
+    print("(" + string(samples[i][1]) + ", " + string(samples[i][2]) + "): factored = ");
+    print(factorize(phi_temp_193));
+    print("");
+}
+
+exit;

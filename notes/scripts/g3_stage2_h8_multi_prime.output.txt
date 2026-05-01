@@ -1,0 +1,199 @@
+========== h=8 multi-prime grevlex ==========
+
+=== h=8, char=17, rho=3, eps=16 ===
+  System built in 0.11s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.45s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=41, rho=8, eps=40 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.54s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=73, rho=12, eps=1 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.50s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=97, rho=14, eps=1 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.49s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=113, rho=14, eps=112 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.49s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=137, rho=31, eps=1 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.55s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=193, rho=34, eps=1 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.49s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=241, rho=22, eps=1 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.52s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True
+
+=== h=8, char=257, rho=15, eps=256 ===
+  System built in 0.02s, 28 eqs.
+  vars=14, eqs=28
+  Computing GB (grevlex)...
+  GB (14 polys, grevlex) in 1.49s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+  All p_vars → 0: True

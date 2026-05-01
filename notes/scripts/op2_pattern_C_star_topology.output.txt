@@ -1,0 +1,11 @@
+=== Pattern C topology vs rank deficit at n=12 c=3 ===
+
+Pattern C configs sampled: 1000
+
+            topology    total    with rank deficit
+  other-(1, 1, 1, 1)      136                    0
+  other-(2, 1, 1, 0)      189                    0
+                path      577                    0
+                star       98                    2
+
+=> bad-realizing Pattern C is concentrated in topologies with rank deficit.

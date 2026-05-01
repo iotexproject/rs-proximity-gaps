@@ -1,0 +1,24 @@
+info_sets_n2 size: 1820
+
+=== K bound at (64, 16) deployment, RECURSIVE above-J, q=193 ===
+  Sample: 150 supports, filter d_f > 32 AND ∃α_1 fold¹ above-J
+  Predicted K ≤ n_1 - s + 2 = 18 (Bluher-Hilbert90)
+  Stronger hypothesis: K ≤ 10 (universal across scales?)
+
+  [progress: 25/150, aboveJ-L0=25, aboveJ-rec=25, max K=10, max VD=1921, elapsed=93s]
+  [progress: 50/150, aboveJ-L0=50, aboveJ-rec=49, max K=10, max VD=1921, elapsed=185s]
+  [progress: 75/150, aboveJ-L0=75, aboveJ-rec=74, max K=10, max VD=1921, elapsed=282s]
+  [progress: 100/150, aboveJ-L0=99, aboveJ-rec=98, max K=10, max VD=1921, elapsed=372s]
+  [progress: 125/150, aboveJ-L0=124, aboveJ-rec=122, max K=10, max VD=1921, elapsed=459s]
+  [progress: 150/150, aboveJ-L0=149, aboveJ-rec=147, max K=10, max VD=1921, elapsed=553s]
+
+q=193: total=150, aboveJ-L0=149, aboveJ-recursive=147, max K=10, max |V_δ|=1921
+  K dist: {2: 15, 0: 77, 1: 52, 10: 1, 3: 1, 5: 1}
+  K ≤ 10 hypothesis: PASS
+  K ≤ 18 hypothesis: PASS
+  |V_δ| ≤ 10q-9: PASS
+  |V_δ| ≤ 18q-17: PASS
+  elapsed: 553s
+
+Max-K examples (top 1):
+  sup=(43, 50, 51), K=10 (B1=9, K_col=1), |V_δ|=1921, d_f=44, d_fo=21, d_fe=22, d_fold_max=22

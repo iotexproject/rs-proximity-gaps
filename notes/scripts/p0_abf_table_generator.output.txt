@@ -1,0 +1,38 @@
+==== ABF §6.3 deployment table — Paper 2 action-orbit form (Thm 5.1) ====
+  Field: KoalaBear sextic extension, log2|F| = 185.93
+  k = 2^20, sn = 2^21, ρ = 0.5000, t = 128
+  Johnson δ_J = 0.2929,  chosen δ = 0.4990,  capacity 1-ρ = 0.5000
+  FRI termination threshold n_term = 16
+
+     s    R  commit log2  query log2   security    arg KiB
+------------------------------------------------------------
+     2   17      -162.84     -127.63     127.63      81.94
+     4    9      -163.76     -127.63     127.63      79.88
+     8    6      -164.35     -127.63     127.63      79.75
+    16    5      -164.61     -127.63     127.63      83.50
+    32    4      -164.93     -127.63     127.63      95.00
+    64    3      -165.35     -127.63     127.63     122.00
+   128    3      -165.35     -127.63     127.63     180.00
+   256    3      -165.35     -127.63     127.63     300.00
+   512    2      -165.93     -127.63     127.63     544.00
+  1024    2      -165.93     -127.63     127.63    1036.00
+  2048    2      -165.93     -127.63     127.63    2024.00
+  4096    2      -165.93     -127.63     127.63    4004.00
+
+Notes
+  - commit log2 = R · (n_0/4 + 2) / |F| (Paper 2 Thm 5.1 + P2 conservative)
+  - query log2  = (1 - δ)^t
+  - security    = -log2(commit + query)
+  - arg KiB     = t · (256·log2(sn/s) + 62·s) / 8 / 1024  (ABF \S 6.3 native)
+                  verified against Tables 2-5 by p0_abf_sanity_check.py
+
+P2 commit-margin check (conservative R-prefactor)
+  commit log2 in [-165.93, -162.84], target -128
+  margin to target: at least 34.8 bits
+  Since the commit term is uniformly << 2^-128 across all (s, R),
+  the soundness expression is query-phase-bottlenecked at every
+  ABF \S 6.3 row, so the conservative R-prefactor is not on the
+  critical path for deployment scoring.  This empirically discharges
+  the open Problem P2 (#380) at the deployment instance, modulo a
+  pen-and-paper proof of the multi-round closure.
+  CSV written: notes/scripts/p0_abf_table.csv

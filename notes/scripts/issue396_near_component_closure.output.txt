@@ -1,0 +1,30 @@
+Issue #396 near-component closure
+q=193, L2=(16,4)
+Checks exhaustive saturated components against quarter-pair + defect-root generation.
+
+=== 3pos-known ===
+sup=(33, 35, 47) mod4=(1, 3, 3) hist={'closed': 192, 'full': 1}
+sup=(33, 44, 45) mod4=(1, 0, 1) hist={'closed': 193}
+sup=(39, 40, 41) mod4=(3, 0, 1) hist={'closed': 193}
+sup=(38, 40, 46) mod4=(2, 0, 2) hist={'closed': 193}
+sup=(17, 19, 21) mod4=(1, 3, 1) hist={'closed': 192, 'full': 1}
+sup=(17, 19, 23) mod4=(1, 3, 3) hist={'closed': 192, 'full': 1}
+sup=(19, 21, 23) mod4=(3, 1, 3) hist={'closed': 192, 'full': 1}
+sup=(16, 17, 18) mod4=(0, 1, 2) hist={'closed': 193}
+sup=(16, 32, 48) mod4=(0, 0, 0) hist={'closed': 193}
+sup=(17, 33, 49) mod4=(1, 1, 1) hist={'closed': 192, 'full': 1}
+sup=(16, 17, 33) mod4=(0, 1, 1) hist={'closed': 193}
+panel_total={'closed': 2118, 'full': 5}
+
+=== 4pos-probes ===
+sup=(29, 39, 53, 61) mod4=(1, 3, 1, 1) hist={'closed': 192, 'full': 1}
+sup=(16, 17, 18, 19) mod4=(0, 1, 2, 3) hist={'closed': 193}
+sup=(16, 20, 24, 28) mod4=(0, 0, 0, 0) hist={'closed': 193}
+sup=(17, 21, 25, 29) mod4=(1, 1, 1, 1) hist={'closed': 192, 'full': 1}
+sup=(24, 35, 46, 57) mod4=(0, 3, 2, 1) hist={'closed': 193}
+sup=(31, 37, 43, 49) mod4=(3, 1, 3, 1) hist={'closed': 192, 'full': 1}
+sup=(33, 35, 44, 47) mod4=(1, 3, 0, 3) hist={'closed': 193}
+sup=(38, 40, 44, 46) mod4=(2, 0, 0, 2) hist={'closed': 193}
+panel_total={'closed': 1541, 'full': 3}
+
+grand_total={'closed': 3659, 'full': 8}

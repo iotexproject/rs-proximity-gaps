@@ -1,0 +1,41 @@
+<repo>/notes/scripts/probe_VS_codim.py:6: SyntaxWarning: "\ " is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\ "? A raw string is also an option.
+  - For each T ⊂ L_R with 1 ≤ |T| ≤ w_R: V_T \ V_exact
+# Setup: p=97, n_0=16, k_0=4, R=2, δ=0.45
+# n_R=4, k_R=1, w_R=1, n_R-k_R=3
+# q^R=9409, R/q=2.061856e-02
+# Bound R·q^{R-1}=194
+# Precomputing image(H_T) for all T's of size 1..1...
+# Total T's: 4
+
+## f = CS:X^7+X^6
+  |V_exact| = 193  (ratio to q^R: 2.0512e-02, to R/q: 0.995)
+  |V_δ \ V_exact| = 0  (ratio to q^R: 0.0000e+00)
+  |V_δ| = 193  (ratio to q^R: 2.0512e-02, to R/q: 0.995)
+  (0.2s)
+
+## f = CS-alt:X^9+X^8
+  |V_exact| = 97  (ratio to q^R: 1.0309e-02, to R/q: 0.500)
+  |V_δ \ V_exact| = 0  (ratio to q^R: 0.0000e+00)
+  |V_δ| = 97  (ratio to q^R: 1.0309e-02, to R/q: 0.500)
+  (0.2s)
+
+## f = sparse_[5, 9, 12, 13]
+  |V_exact| = 0  (ratio to q^R: 0.0000e+00, to R/q: 0.000)
+  |V_δ \ V_exact| = 97  (ratio to q^R: 1.0309e-02)
+  |V_δ| = 97  (ratio to q^R: 1.0309e-02, to R/q: 0.500)
+  Per-T |V_T \ V_exact| (nonzero only, top 10):
+    T=(2,): count=97, codim_pred=2, |V_T| bound=4, ratio_to_bound=24.250
+  (0.2s)
+
+## f = sparse_[10, 12, 13, 14]
+  |V_exact| = 1  (ratio to q^R: 1.0628e-04, to R/q: 0.005)
+  |V_δ \ V_exact| = 0  (ratio to q^R: 0.0000e+00)
+  |V_δ| = 1  (ratio to q^R: 1.0628e-04, to R/q: 0.005)
+  (0.2s)
+
+## f = sparse_[4, 5, 7, 13]
+  |V_exact| = 0  (ratio to q^R: 0.0000e+00, to R/q: 0.000)
+  |V_δ \ V_exact| = 0  (ratio to q^R: 0.0000e+00)
+  |V_δ| = 0  (ratio to q^R: 0.0000e+00, to R/q: 0.000)
+  (0.2s)
+

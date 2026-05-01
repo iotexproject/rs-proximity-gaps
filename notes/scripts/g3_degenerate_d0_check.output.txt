@@ -1,0 +1,18 @@
+=== d_0 above-J check at q=1153, (32,8), w_J=16 ===
+  d_0 > w_J ⟺ max_extras < 8 (over all C(32,8)=10518300 info sets)
+
+  sup=(8, 17, 24) coeffs=(1, 1, 1) [all-1 (degenerate)]: max_extras=9, NOT above-J (d_0 ≤ 15)  [10s]
+  sup=(8, 17, 24) coeffs=(1, 2, 1) [c_a=c_{a+16}=1, c_b=2 (deg)]: max_extras=8, NOT above-J (d_0 ≤ 16)  [10s]
+  sup=(8, 17, 24) coeffs=(3, 5, 3) [c_a=c_{a+16}=3, c_b=5 (deg)]: max_extras=8, NOT above-J (d_0 ≤ 16)  [10s]
+  sup=(8, 17, 24) coeffs=(1, 1, 2) [GENERIC (1, 1, 2)]: max_extras=2, STRICT above-J  [31s]
+
+  sup=(9, 16, 25) coeffs=(1, 1, 1) [all-1 (degenerate)]: max_extras=9, NOT above-J (d_0 ≤ 15)  [10s]
+  sup=(9, 16, 25) coeffs=(1, 2, 1) [c_a=c_{a+16}=1, c_b=2 (deg)]: max_extras=8, NOT above-J (d_0 ≤ 16)  [10s]
+  sup=(9, 16, 25) coeffs=(3, 5, 3) [c_a=c_{a+16}=3, c_b=5 (deg)]: max_extras=8, NOT above-J (d_0 ≤ 16)  [10s]
+  sup=(9, 16, 25) coeffs=(1, 1, 2) [GENERIC (1, 1, 2)]: max_extras=2, STRICT above-J  [32s]
+
+  sup=(10, 19, 26) coeffs=(1, 1, 1) [all-1 (degenerate)]: max_extras=9, NOT above-J (d_0 ≤ 15)  [11s]
+  sup=(10, 19, 26) coeffs=(1, 2, 1) [c_a=c_{a+16}=1, c_b=2 (deg)]: max_extras=8, NOT above-J (d_0 ≤ 16)  [10s]
+  sup=(10, 19, 26) coeffs=(3, 5, 3) [c_a=c_{a+16}=3, c_b=5 (deg)]: max_extras=8, NOT above-J (d_0 ≤ 16)  [10s]
+  sup=(10, 19, 26) coeffs=(1, 1, 2) [GENERIC (1, 1, 2)]: max_extras=2, STRICT above-J  [31s]
+

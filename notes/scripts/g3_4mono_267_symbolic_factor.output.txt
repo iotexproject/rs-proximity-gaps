@@ -1,0 +1,26 @@
+=== Computing Φ_{(1,2,6,7)} symbolic over Q[ρ_2, ρ_3, α] ===
+Starting elimination of p_0, p_1, p_2, p_3...
+Done. E size:
+6
+Φ degree in α:
+12
+
+Φ = 
+alpha^12+24*alpha^8*rho2^3*rho3-24*alpha^8*rho2*rho3^3-180*alpha^4*rho2^6*rho3^2-86*alpha^4*rho2^4*rho3^4+204*alpha^4*rho2^2*rho3^6+46*alpha^4*rho3^8-64*rho2^7*rho3^5+32*rho2^5*rho3^7+64*rho2^3*rho3^9-32*rho2*rho3^11
+
+-64*rho2^7*rho3^5-180*rho2^6*rho3^2*alpha^4+32*rho2^5*rho3^7-86*rho2^4*rho3^4*alpha^4+64*rho2^3*rho3^9+24*rho2^3*rho3*alpha^8+204*rho2^2*rho3^6*alpha^4-32*rho2*rho3^11-24*rho2*rho3^3*alpha^8+46*rho3^8*alpha^4+alpha^12
+Φ in (ρ_2, ρ_3, α) ring:
+-64*rho2^7*rho3^5-180*rho2^6*rho3^2*alpha^4+32*rho2^5*rho3^7-86*rho2^4*rho3^4*alpha^4+64*rho2^3*rho3^9+24*rho2^3*rho3*alpha^8+204*rho2^2*rho3^6*alpha^4-32*rho2*rho3^11-24*rho2*rho3^3*alpha^8+46*rho3^8*alpha^4+alpha^12
+
+Coefficient of α^0:
+1
+All α-coefficients (powers and coefs):
+alpha^12,alpha^8,  alpha^4,  1,       
+1,       Cphi[2,2],Cphi[2,3],Cphi[2,4]
+
+=== Factor Φ over Q[ρ_2, ρ_3, α] ===
+[1]:
+   _[1]=-1
+   _[2]=64*rho2^7*rho3^5+180*rho2^6*rho3^2*alpha^4-32*rho2^5*rho3^7+86*rho2^4*rho3^4*alpha^4-64*rho2^3*rho3^9-24*rho2^3*rho3*alpha^8-204*rho2^2*rho3^6*alpha^4+32*rho2*rho3^11+24*rho2*rho3^3*alpha^8-46*rho3^8*alpha^4-alpha^12
+[2]:
+   1,1

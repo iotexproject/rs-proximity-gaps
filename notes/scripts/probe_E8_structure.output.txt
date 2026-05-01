@@ -1,0 +1,60 @@
+K=2 |E(f)|=8 case: T1=(0, 1, 6), T2=(0, 2, 5), dist(f,C_0)=18
+
+  d_1 distribution: [(7, 1), (8, 7), (9, 89)]
+  |E(f)| = 8
+  E(f) = [(6, 8), (45, 8), (50, 8), (63, 8), (73, 8), (75, 8), (85, 7), (95, 8)]
+
+  α_1 → S_1(α_1):
+    α=  6 (d_1=8): |S|=8, S=[0, 3, 4, 7, 11, 12, 13, 15]
+    α= 45 (d_1=8): |S|=8, S=[0, 1, 3, 4, 7, 11, 12, 15]
+    α= 50 (d_1=8): |S|=8, S=[0, 3, 4, 6, 7, 11, 12, 15]
+    α= 63 (d_1=8): |S|=8, S=[0, 2, 3, 4, 7, 11, 12, 15]
+    α= 73 (d_1=8): |S|=8, S=[0, 3, 4, 5, 7, 11, 12, 15]
+    α= 75 (d_1=8): |S|=8, S=[0, 3, 4, 7, 9, 11, 12, 15]
+    α= 85 (d_1=7): |S|=9, S=[0, 3, 4, 7, 8, 10, 11, 12, 15]
+    α= 95 (d_1=8): |S|=8, S=[0, 3, 4, 7, 11, 12, 14, 15]
+
+  S_1^** (= ∩ S_1(α_1) over E(f)) = [0, 3, 4, 7, 11, 12, 15], size = 7
+
+  Pairwise |S_1(α) ∩ S_1(α')|:
+    6 ∩ 45: |intersection| = 7
+    6 ∩ 50: |intersection| = 7
+    6 ∩ 63: |intersection| = 7
+    6 ∩ 73: |intersection| = 7
+    6 ∩ 75: |intersection| = 7
+    6 ∩ 85: |intersection| = 7
+    6 ∩ 95: |intersection| = 7
+    45 ∩ 50: |intersection| = 7
+    45 ∩ 63: |intersection| = 7
+    45 ∩ 73: |intersection| = 7
+    45 ∩ 75: |intersection| = 7
+    45 ∩ 85: |intersection| = 7
+    45 ∩ 95: |intersection| = 7
+    50 ∩ 63: |intersection| = 7
+    50 ∩ 73: |intersection| = 7
+    50 ∩ 75: |intersection| = 7
+    50 ∩ 85: |intersection| = 7
+    50 ∩ 95: |intersection| = 7
+    63 ∩ 73: |intersection| = 7
+    63 ∩ 75: |intersection| = 7
+    63 ∩ 85: |intersection| = 7
+    63 ∩ 95: |intersection| = 7
+    73 ∩ 75: |intersection| = 7
+    73 ∩ 85: |intersection| = 7
+    73 ∩ 95: |intersection| = 7
+    75 ∩ 85: |intersection| = 7
+    75 ∩ 95: |intersection| = 7
+    85 ∩ 95: |intersection| = 7
+
+  Decomposition of E(f):
+    |S_1^**| = 7 (stable common positions)
+    boundary α=6: extends S^** by [13]
+    boundary α=45: extends S^** by [1]
+    boundary α=50: extends S^** by [6]
+    boundary α=63: extends S^** by [2]
+    boundary α=73: extends S^** by [5]
+    boundary α=75: extends S^** by [9]
+    boundary α=95: extends S^** by [14]
+    deep α=85: extends S^** by [8, 10]
+  All boundary extensions distinct? True
+  All boundary extensions singletons? True

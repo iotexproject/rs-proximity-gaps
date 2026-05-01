@@ -1,0 +1,32 @@
+# Setup: p=97, n_0=16, k_0=4, R=2, δ=0.45
+# n_R=4, k_R=1, w_R=1, m=n_R-k_R=3, q^R=9409
+# Phase 1 bound: R q^{R-1} = 194
+# RNC bound: 2R q^{R-1} = 388
+
+# === Sanity check: H_j on RNC ===
+#   j=0: H_j=[1, 1, 1], all_minors_zero=True
+#   j=1: H_j=[75, 96, 22], all_minors_zero=True
+#   j=2: H_j=[96, 1, 96], all_minors_zero=True
+#   j=3: H_j=[22, 96, 75], all_minors_zero=True
+
+# === Test: V_δ ⊆ {Q∘φ = 0} ===
+# f                                           |V_δ|  all in RNC?  |RNC pre|  ≤ 2R q^{R-1}?
+------------------------------------------------------------------------------------------
+  CS:X^7+X^6                                    193          YES       9409           NO ⚠
+  sparse_[9, 12]                                  0      vacuous         97            YES
+  sparse_[7, 13]                                 97          YES        193            YES
+  sparse_[11, 12, 13]                             1          YES        193            YES
+  sparse_[5, 13]                                 97          YES         97            YES
+  sparse_[4, 11]                                  0      vacuous        193            YES
+  sparse_[7, 8, 9, 10]                            2          YES         97            YES
+  sparse_[5, 9, 14, 15]                           1          YES        192            YES
+  sparse_[6, 13, 14]                              1          YES        193            YES
+  sparse_[9, 10, 11]                             96          YES         96            YES
+  sparse_[5, 10, 11, 12]                          4          YES         95            YES
+  sparse_[10, 11, 13]                             1          YES        193            YES
+  sparse_[4, 6, 7, 12]                            0      vacuous         96            YES
+  sparse_[6, 11, 15]                             97          YES        289            YES
+  sparse_[11, 12, 14, 15]                         1          YES        193            YES
+  sparse_[12, 14, 15]                            96          YES       9409           NO ⚠
+
+# Summary: V_δ ⊆ φ^{-1}(RNC cone) = sanity + SZ → |V_δ| ≤ 2R q^{R-1}

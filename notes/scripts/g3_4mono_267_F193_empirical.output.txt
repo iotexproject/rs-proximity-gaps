@@ -1,0 +1,26 @@
+=== Φ at (ρ_2, ρ_3) = (88, 105) corresp. empirical max ===
+alpha^12-727594560*alpha^8+1248187750652760750*alpha^4+9877644628911918381600000
+
+Over F_193[α]:
+alpha^12+49*alpha^4
+
+Factored:
+[1]:
+   _[1]=1
+   _[2]=alpha+56
+   _[3]=alpha+75
+   _[4]=alpha+92
+   _[5]=alpha+96
+   _[6]=alpha-96
+   _[7]=alpha-92
+   _[8]=alpha-75
+   _[9]=alpha-56
+   _[10]=alpha
+[2]:
+   1,1,1,1,1,1,1,1,1,4
+
+=== Try empirical max for (1,2,5,6): ρ = (1, 158, 21) (q=193) ===
+   ? `z_4` is not defined
+   ? error occurred in or before g3_4mono_267_F193_empirical.sing line 46: `_125 = z_1 + rho2 * z_2 + rho3 * z_5 + alpha * z_2 * z_4;  // z^6 = z^2 · z^4`
+   ? expected poly-expression. type 'help poly;'
+Skip: case (1,2,5,6) was already factored as deg-8 + deg-4 (Note 0297)

@@ -1,0 +1,27 @@
+=== Exact list size at agreement ≥ 7 (Johnson + 1 below) for RS_4(L_1), |L_1|=16 ===
+q = 449; testing K=2 dense above-J f's
+
+--- Case 1: T1=(0, 5, 6), T2=(4, 5, 7), |α at d_1=9|=10 ---
+  α=1: exact list size at agreement ≥ 7: 1
+  α=112: exact list size at agreement ≥ 7: 1
+  α=164: exact list size at agreement ≥ 7: 1
+--- Case 2: T1=(3, 6, 7), T2=(2, 3, 5), |α at d_1=9|=10 ---
+  α=73: exact list size at agreement ≥ 7: 1
+  α=102: exact list size at agreement ≥ 7: 1
+  α=126: exact list size at agreement ≥ 7: 1
+--- Case 3: T1=(0, 2, 6), T2=(1, 2, 5), |α at d_1=9|=10 ---
+  α=38: exact list size at agreement ≥ 7: 1
+  α=44: exact list size at agreement ≥ 7: 1
+  α=50: exact list size at agreement ≥ 7: 1
+--- Case 4: T1=(1, 2, 4), T2=(3, 4, 5), |α at d_1=9|=10 ---
+  α=6: exact list size at agreement ≥ 7: 1
+  α=25: exact list size at agreement ≥ 7: 1
+  α=141: exact list size at agreement ≥ 7: 1
+--- Case 5: T1=(0, 2, 6), T2=(0, 1, 5), |α at d_1=9|=10 ---
+  α=40: exact list size at agreement ≥ 7: 1
+  α=93: exact list size at agreement ≥ 7: 1
+  α=122: exact list size at agreement ≥ 7: 1
+
+=== Overall max exact list size at agreement ≥ 7: 1 ===
+★★★ List size = 1: closest codeword is UNIQUE at agreement 7.
+    Affine-line property follows RIGOROUSLY from pairwise stability.

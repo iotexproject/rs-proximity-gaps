@@ -1,0 +1,31 @@
+Testing supports: [(215, 230, 231), (171, 174, 175), (175, 198, 203), (87, 90, 91), (139, 154, 155)]
+Sample size at L_2: 50000 of C(64,16) = 488T (~10^-10)
+
+=== sup=(215, 230, 231), coefs=[91, 53, 177] ===
+  c DFT supp on L_2: [(57, 53)]
+  d DFT supp on L_2: [(53, 91), (57, 177)]
+  N (sampled) = 0
+
+=== sup=(171, 174, 175), coefs=[233, 132, 156] ===
+  c DFT supp on L_2: [(43, 132)]
+  d DFT supp on L_2: [(42, 233), (43, 156)]
+  N (sampled) = 3
+  Sample bad α: [103, 110, 206]
+  Distinct dists: [31]
+
+=== sup=(175, 198, 203), coefs=[152, 80, 238] ===
+  c DFT supp on L_2: [(49, 80)]
+  d DFT supp on L_2: [(43, 152), (50, 238)]
+  N (sampled) = 0
+
+=== sup=(87, 90, 91), coefs=[226, 248, 243] ===
+  c DFT supp on L_2: [(22, 248)]
+  d DFT supp on L_2: [(21, 226), (22, 243)]
+  N (sampled) = 0
+
+=== sup=(139, 154, 155), coefs=[236, 12, 48] ===
+  c DFT supp on L_2: [(38, 12)]
+  d DFT supp on L_2: [(34, 236), (38, 48)]
+  N (sampled) = 9
+  Sample bad α: [70, 75, 125, 144, 173, 180, 188, 228]
+  Distinct dists: [28]

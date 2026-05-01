@@ -1,0 +1,11 @@
+<repo>/notes/scripts/probe_VS_codim_falsify.py:8: SyntaxWarning: "\V" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\V"? A raw string is also an option.
+  - "Anti-aligned": construct fhat to maximize syn_rank and V_T\V_exact
+Traceback (most recent call last):
+  File "<repo>/notes/scripts/probe_VS_codim_falsify.py", line 194, in <module>
+    main()
+    ~~~~^^
+  File "<repo>/notes/scripts/probe_VS_codim_falsify.py", line 100, in main
+    chain = setup_chain(p, n0, k0, R=R)
+  File "<repo>/notes/scripts/fri_2round_attack.py", line 215, in setup_chain
+    raise ValueError(f"no primitive {n0}-th root mod {p}")
+ValueError: no primitive 32-th root mod 17

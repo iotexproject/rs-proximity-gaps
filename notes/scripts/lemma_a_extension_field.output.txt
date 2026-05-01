@@ -1,0 +1,39 @@
+B1 — Extension-field FRI/uniform ratio test
+==============================================================================
+
+=== F_17 (k=1) c=2: n=8, c=2, q=17=17^1, D=6, w=4, T=5 ===
+  C(n, w+1) = 56, pred E[N]/line = 3.2941e+00
+  precomputed 70 kernels  (0.0s)
+  uniform: avg=1.7447, max=  6, total=2617 (1500 lines, 49.2s)
+  FRI:     avg=1.6960, max=  8, total=2544 (1500 curves, 48.4s)
+  RATIO FRI/unif = 0.972 +/- 0.027  (unif=2617, FRI=2544)
+
+=== F_49 (k=2) c=2: n=8, c=2, q=49=7^2, D=6, w=4, T=5 ===
+  C(n, w+1) = 56, pred E[N]/line = 1.1429e+00
+  precomputed 70 kernels  (0.0s)
+  uniform: avg=0.4800, max=  3, total=240 (500 lines, 151.1s)
+  FRI:     avg=0.4260, max=  4, total=213 (500 curves, 149.4s)
+  RATIO FRI/unif = 0.888 +/- 0.084  (unif=240, FRI=213)
+
+=== F_81 (k=4) c=2: n=8, c=2, q=81=3^4, D=6, w=4, T=5 ===
+  C(n, w+1) = 56, pred E[N]/line = 6.9136e-01
+  precomputed 70 kernels  (0.0s)
+  uniform: avg=0.2300, max=  2, total=23 (100 lines, 97.7s)
+  FRI:     avg=0.2400, max=  2, total=24 (100 curves, 94.8s)
+  RATIO FRI/unif = 1.043 +/- 0.304  (unif=23, FRI=24)
+
+==============================================================================
+SUMMARY
+==============================================================================
+config                     n  c     q  unif tot   FRI tot      ratio
+------------------------------------------------------------------------------
+F_17 (k=1) c=2             8  2    17      2617      2544  0.97±0.03
+F_49 (k=2) c=2             8  2    49       240       213  0.89±0.08
+F_81 (k=4) c=2             8  2    81        23        24  1.04±0.30
+
+Interpretation:
+ - Baseline c322 (8, 3, 17): ratio 1.40 +/- 0.10 (4 sigma > 1)
+ - If extension rows give ratio ~ 1, Lemma A might survive on
+   extension-field deployment rows under regime restriction.
+ - If extension rows also give ratio > 1, Lemma A is dead at
+   deployment regardless of extension structure.

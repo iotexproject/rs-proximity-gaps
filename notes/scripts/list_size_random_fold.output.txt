@@ -1,0 +1,13 @@
+=== List size at agreement ≥ 7 for RANDOM r ∈ F_193^16, RS_4(L_1) ===
+
+
+Tested 0 random r with min distance = 9 to RS_4(L_1)
+List size distribution: {}
+Traceback (most recent call last):
+  File "<repo>/notes/scripts/list_size_random_fold.py", line 94, in <module>
+    main()
+    ~~~~^^
+  File "<repo>/notes/scripts/list_size_random_fold.py", line 86, in main
+    if max(list_size_dist) > 1:
+       ~~~^^^^^^^^^^^^^^^^
+ValueError: max() iterable argument is empty

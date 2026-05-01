@@ -1,0 +1,39 @@
+======================================================================
+BASE CASE ENUMERATION at (n, k) = (4, 1) and (8, 2)
+By Note 0284 Substitution Principle, ALL higher-scale (a, b) reduce
+to one of these base cases via u = z^d substitution (d = gcd(a, b, n)).
+======================================================================
+
+=== (n, k) = (4, 1) — irreducible (gcd(a, b, n) = 1, a, b ≥ k) ===
+  (1, 2): |B| = 4 | Φ = rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)  <<< MAX so far
+  (1, 3): |B| = 4 | Φ = (rho - 1)*(rho + 1)*(rho**2 + 1)
+  (2, 3): |B| = 4 | Φ = (2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+
+=== (n, k) = (8, 2) — irreducible (gcd(a, b, n) = 1, a, b ≥ k) ===
+  (2, 3): |B| = -1 | Φ = constant (no constraint)
+  (2, 5): |B| = 8 | Φ = rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)  <<< MAX so far
+  (2, 7): |B| = -1 | Φ = constant (no constraint)
+  (3, 4): |B| = 8 | Φ = rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (3, 5): |B| = 4 | Φ = rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (3, 6): |B| = -1 | Φ = constant (no constraint)
+  (3, 7): |B| = 4 | Φ = (rho - 1)*(rho + 1)*(rho**2 + 1)
+  (4, 5): |B| = -1 | Φ = degenerate (p_j × ρ): p3*(rho - 1)*(rho + 1)*(rho**2 + 1)*(rho**4 + 1)
+  (4, 7): |B| = -1 | Φ = TIMEOUT
+  (5, 6): |B| = 8 | Φ = (2*rho**2 - 1)*(2*rho**2 + 1)*(2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (5, 7): |B| = -1 | Φ = TIMEOUT
+  (6, 7): |B| = -1 | Φ = TIMEOUT
+
+=== SUMMARY ===
+max |B| over irreducible base cases: 8
+Non-trivial base cases:
+  (4, 1, a=1, b=2): |B| = 4
+  (4, 1, a=1, b=3): |B| = 4
+  (4, 1, a=2, b=3): |B| = 4
+  (8, 2, a=2, b=5): |B| = 8
+  (8, 2, a=3, b=4): |B| = 8
+  (8, 2, a=3, b=5): |B| = 4
+  (8, 2, a=3, b=7): |B| = 4
+  (8, 2, a=5, b=6): |B| = 8
+
+By Substitution Principle (Note 0284):
+  K ≤ 8 for ALL above-J 2-monomial pencils at deployment scale.

@@ -1,0 +1,168 @@
+=== q=97 ===
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=97, L2=(16,4), support_window=[16,64), supports=C(48,3)=17296, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'all_alpha_subsets': 16, 'candidate_subsets': 22056250, 'class:rank<2': 22056250, 'supports': 17296}
+first_counterexample=None
+=== q=193 ===
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=193, L2=(16,4), support_window=[16,64), supports=C(48,3)=17296, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'all_alpha_subsets': 0, 'candidate_subsets': 22055749, 'class:rank<2': 22055749, 'supports': 17296}
+first_counterexample=None
+=== q=257 ===
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=257, L2=(16,4), support_window=[16,64), supports=C(48,3)=17296, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'all_alpha_subsets': 0, 'candidate_subsets': 22055799, 'class:rank<2': 22055799, 'supports': 17296}
+first_counterexample=None
+=== q=449 ===
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=449, L2=(16,4), support_window=[16,64), supports=C(48,3)=17296, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'all_alpha_subsets': 0, 'candidate_subsets': 22055949, 'class:rank<2': 22055949, 'supports': 17296}
+first_counterexample=None
+=== q=577 ===
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=577, L2=(16,4), support_window=[16,64), supports=C(48,3)=17296, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'all_alpha_subsets': 0, 'candidate_subsets': 22055630, 'class:rank<2': 22055630, 'supports': 17296}
+first_counterexample=None
+=== q=769 ===
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=769, L2=(16,4), support_window=[16,64), supports=C(48,3)=17296, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'all_alpha_subsets': 0, 'candidate_subsets': 22055639, 'class:rank<2': 22055639, 'supports': 17296}
+first_counterexample=None
+=== q=1153 ===
+Issue #396 symbolic-alpha no-full primitive rank-2 certifier
+q=1153, L2=(16,4), support_window=[16,64), supports=C(48,3)=17296, workers=20
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'all_alpha_subsets': 0, 'candidate_subsets': 22055609, 'class:rank<2': 22055609, 'supports': 17296}
+first_counterexample=None

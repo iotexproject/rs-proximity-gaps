@@ -1,0 +1,30 @@
+=== q=97: candidates=200, workers=8 ===
+  [5/200] above-J dist=20 count=1 bad=[(64, 8)] pos=[14, 18, 22, 23, 27]
+  [14/200] above-J dist=20 count=6 bad=[(2, 8), (5, 8), (24, 8), (32, 8), (48, 8), (87, 8)] pos=[15, 22, 23, 30, 31]
+  [40/200] above-J dist=21 count=2 bad=[(9, 7), (31, 8)]
+    progress 100/200 | strict above-J so far: 98 | elapsed 276s
+  [142/200] above-J dist=20 count=1 bad=[(0, 8)]
+  [153/200] above-J dist=19 count=9 bad=[(10, 8), (22, 8), (38, 8), (46, 8), (51, 8), (56, 8), (64, 8), (80, 8), (92, 8)] pos=[20, 24, 25]
+    progress 200/200 | strict above-J so far: 197 | elapsed 534s
+  Done q=97: total 200 in 534s (2.67s/cand)
+  Strict above-J: 197 | not above-J: 3 | zero-saturated: 0
+  Count distribution: {0: 156, 1: 36, 2: 2, 3: 1, 6: 1, 9: 1}
+  Max count: 9
+  Max witness: (153, 19, 9, [(10, 8), (22, 8), (38, 8), (46, 8), (51, 8), (56, 8), (64, 8), (80, 8), (92, 8)], [20, 24, 25], [78, 43, 41])
+
+=== Conjecture D universality test on q=97 ===
+  total strict above-J:        197
+  trivial (|bad|<=1):          192
+  whole F_q* (|bad|=q-1):      0
+  cyclotomic (Conj D PASS):    2
+  non-cyclotomic (Conj D FAIL):3
+  cyclotomic |H| distribution: {2: 2}
+  elapsed: 534s
+
+*** 3 COUNTEREXAMPLES TO CONJECTURE D ***
+  positions=[15, 22, 23, 30, 31], coeffs=[71, 37, 35, 79, 35], dist=20
+    bad=[2, 5, 24, 32, 48, 87]
+  positions=[20, 24, 25], coeffs=[78, 43, 41], dist=19
+    bad=[10, 22, 38, 46, 51, 56, 64, 80, 92]
+  positions=[12, 13, 17, 20, 28, 29], coeffs=[89, 8, 31, 87, 29, 61], dist=20
+    bad=[25, 78, 85]

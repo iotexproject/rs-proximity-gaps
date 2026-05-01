@@ -1,0 +1,292 @@
+
+========== h=5 ==========
+
+=== h=5, char=17, rho=3, eps=16 ===
+  System built in 0.05s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.07s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=41, rho=8, eps=40 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.03s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=73, rho=12, eps=1 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.03s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=97, rho=14, eps=1 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.06s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=113, rho=14, eps=112 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.03s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=137, rho=31, eps=1 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.03s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=193, rho=34, eps=1 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.03s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=241, rho=22, eps=1 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.07s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=5, char=257, rho=15, eps=256 ===
+  System built in 0.00s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.03s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+========== h=6 ==========
+
+=== h=6, char=17, rho=3, eps=16 ===
+  System built in 0.04s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 6.15s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=41, rho=8, eps=40 ===
+  System built in 0.01s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 7.92s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=73, rho=12, eps=1 ===
+  System built in 0.01s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 7.33s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=97, rho=14, eps=1 ===
+  System built in 0.00s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 7.31s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=113, rho=14, eps=112 ===
+  System built in 0.00s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 8.24s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=137, rho=31, eps=1 ===
+  System built in 0.00s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 7.00s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=193, rho=34, eps=1 ===
+  System built in 0.00s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 8.33s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=241, rho=22, eps=1 ===
+  System built in 0.00s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 8.29s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True
+
+=== h=6, char=257, rho=15, eps=256 ===
+  System built in 0.00s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 8.46s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True

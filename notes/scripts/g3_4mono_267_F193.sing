@@ -1,0 +1,49 @@
+// g3_4mono_267_F193.sing — factor Φ_{(1,2,6,7)} over F_193[α] at concrete (ρ_2, ρ_3).
+
+ring R = 193, (z, p0, p1, p2, p3, alpha), (dp(1), lp(6));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+poly z_1 = z;
+poly z_2 = reduce(z^2, std(sigma));
+poly z_6 = reduce(z^6, std(sigma));
+poly z_7 = reduce(z^7, std(sigma));
+
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+// Try (ρ_2, ρ_3) = (1, 7) — non-special
+poly h = z_1 + 1 * z_2 + 7 * z_6 + alpha * z_7;
+matrix M = coeffs(h, z);
+poly cert2 = M[3, 1];
+poly cert3 = M[4, 1];
+ideal I = cert2, cert3, div0, div1, div2, div3;
+ideal E = eliminate(I, p0*p1*p2*p3);
+
+print("=== Φ_{(1,2,6,7)} at (ρ_1, ρ_2, ρ_3) = (1, 1, 7) over F_193[α] ===");
+print(E);
+print("");
+print("Last poly (Φ):");
+poly phi = E[size(E)];
+print(phi);
+print("");
+print("Factored over F_193[α]:");
+print(factorize(phi));
+
+// Try a few other (ρ_2, ρ_3)
+print("");
+print("=== Try (ρ_2, ρ_3) = (3, 11) ===");
+poly h2 = z_1 + 3 * z_2 + 11 * z_6 + alpha * z_7;
+matrix M2 = coeffs(h2, z);
+ideal I2 = M2[3, 1], M2[4, 1], div0, div1, div2, div3;
+ideal E2 = eliminate(I2, p0*p1*p2*p3);
+poly phi2 = E2[size(E2)];
+print("Φ = ");
+print(phi2);
+print("Factored:");
+print(factorize(phi2));
+
+exit;

@@ -1,0 +1,32 @@
+=== Dense-vs-Sparse Sweep (q=17, n=16, k=4, δ·n=9) ===
+Johnson radius: t* = sqrt(n*k) = 8 agreement
+Above-J means agreement ≤ 7, i.e. distance ≥ 9
+Testing δ·n = 9 (agreement = 7)
+Workers: 8
+L = ⟨3⟩ ⊂ F_17*, |L| = 16
+
+Enumerating 83521 RS codewords...
+  done in 0.3s
+Above-Johnson position range: [4, 15] (12 positions)
+
+--- SPARSE: sampling 2000 3-pos sparse pairs ---
+  done in 409.5s
+  K distribution: min=5, max=17, mean=13.76
+  Top 5 K values:
+    K= 17  supp1=(11, 12, 13)  supp2=(4, 6, 12)
+    K= 17  supp1=(5, 8, 15)  supp2=(9, 12, 14)
+    K= 17  supp1=(5, 9, 14)  supp2=(9, 12, 14)
+    K= 17  supp1=(5, 7, 11)  supp2=(7, 8, 11)
+    K= 17  supp1=(8, 11, 12)  supp2=(5, 7, 9)
+
+--- DENSE: sampling 2000 random pairs (above-J both f_i) ---
+  done in 2041.5s, 1997/2000 passed above-J filter
+  K distribution: min=7, max=16, mean=13.14
+
+=== CONCLUSION ===
+K_sparse_max = 17
+K_dense_max  = 16
+  ✓ Sparse-worst conjecture HOLDS empirically: dense ≤ sparse
+  K10 unconditional sparse bound covers dense in this scale.
+
+Total wall: 2451.0s (40.8 min)

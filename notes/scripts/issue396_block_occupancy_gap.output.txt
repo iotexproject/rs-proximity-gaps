@@ -1,0 +1,34 @@
+Issue #396 block-occupancy gap audit
+q=193, L2=(16,4)
+Non-full components are audited by occupancy across the four residue classes mod 4.
+
+=== 3pos-known ===
+sup=(33, 35, 47) mod4=(1, 3, 3) rows={full-row:1, nonfull-nonempty:192} occ={(0, 4, 0, 4):192, (4, 0, 4, 0):192}
+sup=(33, 44, 45) mod4=(1, 0, 1) rows={nonfull-nonempty:193} occ={(0, 3, 1, 4):16, (0, 4, 0, 4):193, (0, 4, 1, 3):16, (1, 3, 0, 4):16, (1, 4, 0, 3):16, (3, 0, 4, 1):16, (3, 1, 4, 0):16, (4, 0, 3, 1):16, (4, 0, 4, 0):193, (4, 1, 3, 0):16}
+sup=(39, 40, 41) mod4=(3, 0, 1) rows={nonfull-nonempty:193} occ={(0, 4, 0, 4):193, (4, 0, 4, 0):193}
+sup=(38, 40, 46) mod4=(2, 0, 2) rows={nonfull-nonempty:193} occ={(0, 4, 0, 4):193, (4, 0, 4, 0):193}
+sup=(17, 19, 21) mod4=(1, 3, 1) rows={empty-row:192, full-row:1} occ={}
+sup=(17, 19, 23) mod4=(1, 3, 3) rows={empty-row:192, full-row:1} occ={}
+sup=(19, 21, 23) mod4=(3, 1, 3) rows={empty-row:192, full-row:1} occ={}
+sup=(16, 17, 18) mod4=(0, 1, 2) rows={empty-row:193} occ={}
+sup=(16, 32, 48) mod4=(0, 0, 0) rows={empty-row:193} occ={}
+sup=(17, 33, 49) mod4=(1, 1, 1) rows={empty-row:192, full-row:1} occ={}
+sup=(16, 17, 33) mod4=(0, 1, 1) rows={empty-row:188, nonfull-nonempty:5} occ={(0, 0, 4, 4):1, (0, 4, 0, 4):1, (0, 4, 4, 0):1, (4, 0, 0, 4):1, (4, 0, 4, 0):1, (4, 4, 0, 0):1}
+panel_rows={empty-row:1342, full-row:5, nonfull-nonempty:776}
+panel_occ={(0, 0, 4, 4):1, (0, 3, 1, 4):16, (0, 4, 0, 4):772, (0, 4, 1, 3):16, (0, 4, 4, 0):1, (1, 3, 0, 4):16, (1, 4, 0, 3):16, (3, 0, 4, 1):16, (3, 1, 4, 0):16, (4, 0, 0, 4):1, (4, 0, 3, 1):16, (4, 0, 4, 0):772, (4, 1, 3, 0):16, (4, 4, 0, 0):1}
+
+=== 4pos-probes ===
+sup=(29, 39, 53, 61) mod4=(1, 3, 1, 1) rows={empty-row:192, full-row:1} occ={}
+sup=(16, 17, 18, 19) mod4=(0, 1, 2, 3) rows={empty-row:193} occ={}
+sup=(16, 20, 24, 28) mod4=(0, 0, 0, 0) rows={empty-row:193} occ={}
+sup=(17, 21, 25, 29) mod4=(1, 1, 1, 1) rows={empty-row:192, full-row:1} occ={}
+sup=(24, 35, 46, 57) mod4=(0, 3, 2, 1) rows={empty-row:191, nonfull-nonempty:2} occ={(0, 4, 0, 4):1, (4, 0, 4, 0):1}
+sup=(31, 37, 43, 49) mod4=(3, 1, 3, 1) rows={empty-row:192, full-row:1} occ={}
+sup=(33, 35, 44, 47) mod4=(1, 3, 0, 3) rows={nonfull-nonempty:193} occ={(0, 4, 0, 4):193, (4, 0, 4, 0):193}
+sup=(38, 40, 44, 46) mod4=(2, 0, 0, 2) rows={nonfull-nonempty:193} occ={(0, 4, 0, 4):193, (4, 0, 4, 0):193}
+panel_rows={empty-row:1153, full-row:3, nonfull-nonempty:388}
+panel_occ={(0, 4, 0, 4):387, (4, 0, 4, 0):387}
+
+grand_rows={empty-row:2495, full-row:8, nonfull-nonempty:1164}
+grand_occ={(0, 0, 4, 4):1, (0, 3, 1, 4):16, (0, 4, 0, 4):1159, (0, 4, 1, 3):16, (0, 4, 4, 0):1, (1, 3, 0, 4):16, (1, 4, 0, 3):16, (3, 0, 4, 1):16, (3, 1, 4, 0):16, (4, 0, 0, 4):1, (4, 0, 3, 1):16, (4, 0, 4, 0):1159, (4, 1, 3, 0):16, (4, 4, 0, 0):1}
+no_full_component_examples=[]

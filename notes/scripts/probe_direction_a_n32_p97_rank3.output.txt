@@ -1,0 +1,158 @@
+# probe_direction_a_n32.py — Direction A subclaim test
+# Setup: p=97, n_0=32, k_0=8, R=2, δ=0.45
+# n_R=8, k_R=2, m=6, w_J=16, w_R=3
+# Subclaim (rank-2): # bad lines ≤ R = 2, so |U ∩ B_w| ≤ 193 = 193
+# Subclaim (rank-r, r ≤ R): # bad lines ≤ (R q^(r-1) - 1)/(q-1)
+#   r=2: ≤ 2 (= 2 for q ≥ 3)
+#   r=3: ≤ 196 (≈ 197)
+#   r=4: ≤ 19014
+# max_rank for line enumeration: 3
+# n_workers=10, n_random=500, seed=2026
+
+# 776 candidate f-specs. Dispatching to 10 workers...
+
+#  20/776  rate 10.43/sec
+#  40/776  rate 19.18/sec
+#  60/776  rate 16.05/sec
+#  80/776  rate 20.53/sec
+#  100/776  rate 18.64/sec
+#  120/776  rate 20.81/sec
+#  140/776  rate 20.14/sec
+#  160/776  rate 21.79/sec
+#  180/776  rate 22.55/sec
+#  200/776  rate 23.20/sec
+#  220/776  rate 23.21/sec
+#  240/776  rate 22.86/sec
+#  260/776  rate 23.16/sec
+#  280/776  rate 22.67/sec
+#  300/776  rate 13.80/sec
+#  320/776  rate 10.26/sec
+#  340/776  rate 8.72/sec
+#  360/776  rate 8.70/sec
+#  380/776  rate 7.69/sec
+#  400/776  rate 7.67/sec
+#  420/776  rate 6.94/sec
+#  440/776  rate 7.08/sec
+#  460/776  rate 6.82/sec
+#  480/776  rate 6.62/sec
+#  500/776  rate 6.28/sec
+#  520/776  rate 6.16/sec
+#  540/776  rate 5.60/sec
+#  560/776  rate 5.35/sec
+#  580/776  rate 5.28/sec
+#  600/776  rate 5.18/sec
+#  620/776  rate 5.03/sec
+#  640/776  rate 5.04/sec
+#  660/776  rate 5.09/sec
+#  680/776  rate 4.92/sec
+#  700/776  rate 4.87/sec
+#  720/776  rate 4.61/sec
+#  740/776  rate 4.48/sec
+#  760/776  rate 4.52/sec
+
+# === DONE in 178s (4.36 f/sec) ===
+# Total f's: 776
+#   ABOVE_J_RANK_0: 0
+#   ABOVE_J_RANK_1: 109
+#   ABOVE_J_RANK_2: 443
+#   ABOVE_J_RANK_3: 162
+#   ABOVE_J_RANK_4: 8
+#   BELOW_J: 54
+#   SKIPPED_HIGH_RANK: 8
+
+# === RANK-1 ABOVE-J: 109 processed ===
+#   n_lines per f = (q^1-1)/(q-1) = 1
+#   Target bound on |U ∩ B_w|: R q^(r-1) = 2
+#   Target bound on # bad lines: 0
+#   Max # bad lines observed: 0
+#   Max |U ∩ B_w| observed: 1
+#   # bad lines distribution: {0: 109}
+#   Worst f: positions=(8, 9), bad=0, |U∩B_w|=1
+#   ✓ All within bound 0
+
+# === RANK-2 ABOVE-J: 443 processed ===
+#   n_lines per f = (q^2-1)/(q-1) = 98
+#   Target bound on |U ∩ B_w|: R q^(r-1) = 194
+#   Target bound on # bad lines: 2
+#   Max # bad lines observed: 0
+#   Max |U ∩ B_w| observed: 1
+#   # bad lines distribution: {0: 443}
+#   Worst f: positions=(8, 21), bad=0, |U∩B_w|=1
+#   ✓ All within bound 2
+
+# === RANK-3 ABOVE-J: 162 processed ===
+#   n_lines per f = (q^3-1)/(q-1) = 9507
+#   Target bound on |U ∩ B_w|: R q^(r-1) = 18818
+#   Target bound on # bad lines: 196
+#   Max # bad lines observed: 10
+#   Max |U ∩ B_w| observed: 961
+#   # bad lines distribution: {0: 102, 1: 3, 3: 1, 4: 17, 8: 38, 10: 1}
+#   Worst f: positions=(8, 14, 21, 23, 30), bad=10, |U∩B_w|=961
+#   ✓ All within bound 196
+
+# === Top 10 worst rank-1 cases (by bad_count) ===
+#   pos=(8, 9), dist_lb=23, bad=0, |U∩B_w|=1
+#   pos=(8, 10), dist_lb=22, bad=0, |U∩B_w|=1
+#   pos=(8, 11), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(8, 12), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(9, 11), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(9, 13), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 16), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(9, 17), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(8, 28), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 20), dist_lb=20, bad=0, |U∩B_w|=1
+
+# === Top 10 worst rank-2 cases (by bad_count) ===
+#   pos=(8, 21), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 22), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 23), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(9, 23), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(9, 24), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(9, 26), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(9, 12), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(9, 14), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 13), dist_lb=19, bad=0, |U∩B_w|=1
+#   pos=(8, 14), dist_lb=20, bad=0, |U∩B_w|=1
+
+# === Top 10 worst rank-3 cases (by bad_count) ===
+#   pos=(8, 14, 21, 23, 30), dist_lb=20, bad=10, |U∩B_w|=961
+#     bad_rep_v=(1, 25, 0, 69, 0, 72), sw=3, T=(4, 5, 6)
+#     bad_rep_v=(1, 25, 0, 92, 0, 72), sw=3, T=(0, 2, 5)
+#     bad_rep_v=(1, 32, 0, 63, 0, 65), sw=3, T=(0, 6, 7)
+#   pos=(12, 17, 23), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(0, 0, 1, 1, 0, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(0, 0, 1, 22, 0, 0), sw=3, T=(0, 4, 6)
+#     bad_rep_v=(0, 0, 1, 33, 0, 0), sw=3, T=(1, 3, 5)
+#   pos=(16, 23, 29), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(0, 0, 1, 1, 0, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(0, 0, 1, 22, 0, 0), sw=3, T=(0, 4, 6)
+#     bad_rep_v=(0, 0, 1, 33, 0, 0), sw=3, T=(1, 3, 5)
+#   pos=(15, 17, 22), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(0, 0, 1, 1, 0, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(0, 0, 1, 22, 0, 0), sw=3, T=(0, 4, 6)
+#     bad_rep_v=(0, 0, 1, 33, 0, 0), sw=3, T=(1, 3, 5)
+#   pos=(11, 20, 25), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(1, 0, 0, 1, 1, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(1, 0, 0, 22, 1, 0), sw=3, T=(0, 2, 4)
+#     bad_rep_v=(1, 0, 0, 33, 96, 0), sw=3, T=(1, 3, 7)
+#   pos=(18, 23, 28), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(0, 0, 1, 1, 0, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(0, 0, 1, 22, 0, 0), sw=3, T=(0, 4, 6)
+#     bad_rep_v=(0, 0, 1, 33, 0, 0), sw=3, T=(1, 3, 5)
+#   pos=(13, 16, 22), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(0, 0, 1, 1, 0, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(0, 0, 1, 22, 0, 0), sw=3, T=(0, 4, 6)
+#     bad_rep_v=(0, 0, 1, 33, 0, 0), sw=3, T=(1, 3, 5)
+#   pos=(9, 23, 24), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(1, 0, 0, 1, 1, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(1, 0, 0, 22, 1, 0), sw=3, T=(0, 2, 4)
+#     bad_rep_v=(1, 0, 0, 33, 96, 0), sw=3, T=(1, 3, 7)
+#   pos=(10, 20, 27), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(1, 0, 0, 1, 1, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(1, 0, 0, 22, 1, 0), sw=3, T=(0, 2, 4)
+#     bad_rep_v=(1, 0, 0, 33, 96, 0), sw=3, T=(1, 3, 7)
+#   pos=(14, 17, 23), dist_lb=20, bad=8, |U∩B_w|=769
+#     bad_rep_v=(0, 0, 1, 1, 0, 0), sw=3, T=(0, 2, 6)
+#     bad_rep_v=(0, 0, 1, 22, 0, 0), sw=3, T=(0, 4, 6)
+#     bad_rep_v=(0, 0, 1, 33, 0, 0), sw=3, T=(1, 3, 5)
+

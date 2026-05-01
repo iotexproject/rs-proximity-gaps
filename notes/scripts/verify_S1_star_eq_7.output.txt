@@ -1,0 +1,20 @@
+=== Verify |S_1*| = 7 for K=2 above-J at asymptotic q ===
+
+--- q = 769 ---
+  attempt 1: N=10, |S_1*| = 6, T1=(4, 5, 6), T2=(1, 2, 6)
+  attempt 2: N=10, |S_1*| = 6, T1=(1, 4, 5), T2=(0, 2, 5)
+  attempt 6: N=10, |S_1*| = 6, T1=(0, 2, 3), T2=(3, 6, 7)
+  attempt 10: N=10, |S_1*| = 6, T1=(4, 5, 6), T2=(1, 3, 6)
+  attempt 12: N=10, |S_1*| = 6, T1=(0, 3, 6), T2=(2, 3, 7)
+  q=769: |S_1*| values = [6, 6, 6, 6, 6]
+--- q = 1153 ---
+  attempt 3: N=10, |S_1*| = 6, T1=(0, 3, 7), T2=(0, 1, 6)
+  attempt 4: N=10, |S_1*| = 6, T1=(0, 4, 7), T2=(4, 5, 6)
+  attempt 6: N=10, |S_1*| = 6, T1=(0, 2, 3), T2=(2, 6, 7)
+  attempt 7: N=10, |S_1*| = 6, T1=(0, 2, 3), T2=(0, 1, 6)
+  attempt 8: N=10, |S_1*| = 6, T1=(2, 3, 6), T2=(1, 3, 7)
+  q=1153: |S_1*| values = [6, 6, 6, 6, 6]
+
+=== Summary across q ∈ [769, 1153] ===
+|S_1*| distribution: {6: 10}
+|S_1*| ∈ {6, 7}. Asymptotic L_lines = 1 with sunflower kernel.

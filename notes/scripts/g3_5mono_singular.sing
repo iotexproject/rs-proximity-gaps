@@ -1,0 +1,67 @@
+// g3_5mono_singular.sing — 5-monomial pencil base case enumeration at (8, 2).
+// Pencil: ρ_1 z^a + ρ_2 z^b + ρ_3 z^c + ρ_4 z^d + α z^e on L_8.
+// 21 irreducible cases (gcd = 1).
+
+ring R = 0, (z, p0, p1, p2, p3, alpha, rho1, rho2, rho3, rho4), (dp(1), lp(9));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+poly z_1 = z;
+poly z_2 = reduce(z^2, std(sigma));
+poly z_3 = reduce(z^3, std(sigma));
+poly z_4 = reduce(z^4, std(sigma));
+poly z_5 = reduce(z^5, std(sigma));
+poly z_6 = reduce(z^6, std(sigma));
+poly z_7 = reduce(z^7, std(sigma));
+
+list zs = z_1, z_2, z_3, z_4, z_5, z_6, z_7;
+
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+proc compute_phi5(int a, int b, int c, int d, int e) {
+    poly h = rho1 * zs[a] + rho2 * zs[b] + rho3 * zs[c] + rho4 * zs[d] + alpha * zs[e];
+    matrix M = coeffs(h, z);
+    poly cert2 = M[3, 1];
+    poly cert3 = M[4, 1];
+    ideal I = cert2, cert3, div0, div1, div2, div3;
+    ideal E = eliminate(I, p0*p1*p2*p3);
+    return(E);
+}
+
+print("=== 5-mono cases at (8, 2) ===");
+int max_deg = 0;
+intvec max_case = 0, 0, 0, 0, 0;
+int a, b, c, d, e, g;
+for (a = 1; a <= 3; a++) {
+    for (b = a+1; b <= 4; b++) {
+        for (c = b+1; c <= 5; c++) {
+            for (d = c+1; d <= 6; d++) {
+                for (e = d+1; e <= 7; e++) {
+                    g = gcd(gcd(gcd(gcd(gcd(a, b), c), d), e), 8);
+                    if (g == 1) {
+                        ideal E = compute_phi5(a, b, c, d, e);
+                        poly phi = E[size(E)];
+                        int deg_a = deg(phi, intvec(0,0,0,0,0,1,0,0,0,0));
+                        string s = "(" + string(a) + "," + string(b) + "," + string(c) + "," + string(d) + "," + string(e) + "): deg_alpha = " + string(deg_a);
+                        print(s);
+                        if (deg_a > max_deg) {
+                            max_deg = deg_a;
+                            max_case = a, b, c, d, e;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+print("");
+print("=== SUMMARY ===");
+print("Max deg_alpha across 5-mono cases: " + string(max_deg));
+print("Achieved at: (" + string(max_case[1]) + ", " + string(max_case[2]) + ", " + string(max_case[3]) + ", " + string(max_case[4]) + ", " + string(max_case[5]) + ")");
+
+exit;

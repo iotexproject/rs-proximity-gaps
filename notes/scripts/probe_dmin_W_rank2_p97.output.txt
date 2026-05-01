@@ -1,0 +1,70 @@
+# probe_dmin_W_rank2.py — exact d_min(W) for rank-2 above-J f
+# Setup: p=97, n_0=32, k_0=8, R=2, w_R=3
+# n_R=8, k_R+r=4=4, MDS bound d_min(W) ≤ 5
+# n_workers=10, n_random=2000, seed=2026
+
+# Generated 2276 candidate f-specs.
+
+#  50/2276  rate 15.0/sec  counts: {'ABOVE_J_RANK_2': 34, 'BELOW_J': 3, 'ABOVE_J_RANK_1': 13}
+#  100/2276  rate 18.8/sec  counts: {'ABOVE_J_RANK_2': 68, 'BELOW_J': 5, 'ABOVE_J_RANK_1': 27}
+#  150/2276  rate 22.5/sec  counts: {'ABOVE_J_RANK_2': 98, 'BELOW_J': 15, 'ABOVE_J_RANK_1': 37}
+#  200/2276  rate 24.8/sec  counts: {'ABOVE_J_RANK_2': 123, 'BELOW_J': 32, 'ABOVE_J_RANK_1': 45}
+#  250/2276  rate 24.5/sec  counts: {'ABOVE_J_RANK_2': 156, 'BELOW_J': 36, 'ABOVE_J_RANK_1': 58}
+#  300/2276  rate 24.5/sec  counts: {'ABOVE_J_RANK_2': 183, 'BELOW_J': 37, 'ABOVE_J_RANK_1': 73, 'ABOVE_J_RANK_3': 7}
+#  350/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 211, 'BELOW_J': 38, 'ABOVE_J_RANK_1': 76, 'ABOVE_J_RANK_3': 25}
+#  400/2276  rate 24.4/sec  counts: {'ABOVE_J_RANK_2': 244, 'BELOW_J': 39, 'ABOVE_J_RANK_1': 79, 'ABOVE_J_RANK_3': 38}
+#  450/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 273, 'BELOW_J': 39, 'ABOVE_J_RANK_1': 85, 'ABOVE_J_RANK_3': 53}
+#  500/2276  rate 24.7/sec  counts: {'ABOVE_J_RANK_2': 306, 'BELOW_J': 42, 'ABOVE_J_RANK_1': 85, 'ABOVE_J_RANK_3': 67}
+#  550/2276  rate 24.0/sec  counts: {'ABOVE_J_RANK_2': 346, 'BELOW_J': 42, 'ABOVE_J_RANK_1': 86, 'ABOVE_J_RANK_3': 76}
+#  600/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 382, 'BELOW_J': 44, 'ABOVE_J_RANK_1': 88, 'ABOVE_J_RANK_3': 86}
+#  650/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 412, 'BELOW_J': 46, 'ABOVE_J_RANK_1': 92, 'ABOVE_J_RANK_3': 100}
+#  700/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 448, 'BELOW_J': 47, 'ABOVE_J_RANK_1': 94, 'ABOVE_J_RANK_3': 111}
+#  750/2276  rate 23.9/sec  counts: {'ABOVE_J_RANK_2': 485, 'BELOW_J': 48, 'ABOVE_J_RANK_1': 96, 'ABOVE_J_RANK_3': 121}
+#  800/2276  rate 23.9/sec  counts: {'ABOVE_J_RANK_2': 519, 'BELOW_J': 48, 'ABOVE_J_RANK_1': 99, 'ABOVE_J_RANK_3': 134}
+#  850/2276  rate 23.9/sec  counts: {'ABOVE_J_RANK_2': 552, 'BELOW_J': 51, 'ABOVE_J_RANK_1': 102, 'ABOVE_J_RANK_3': 145}
+#  900/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 581, 'BELOW_J': 51, 'ABOVE_J_RANK_1': 104, 'ABOVE_J_RANK_3': 164}
+#  950/2276  rate 23.9/sec  counts: {'ABOVE_J_RANK_2': 613, 'BELOW_J': 52, 'ABOVE_J_RANK_1': 106, 'ABOVE_J_RANK_3': 179}
+#  1000/2276  rate 24.0/sec  counts: {'ABOVE_J_RANK_2': 647, 'BELOW_J': 53, 'ABOVE_J_RANK_1': 108, 'ABOVE_J_RANK_3': 192}
+#  1050/2276  rate 24.0/sec  counts: {'ABOVE_J_RANK_2': 681, 'BELOW_J': 53, 'ABOVE_J_RANK_1': 110, 'ABOVE_J_RANK_3': 206}
+#  1100/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 718, 'BELOW_J': 54, 'ABOVE_J_RANK_1': 114, 'ABOVE_J_RANK_3': 214}
+#  1150/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 758, 'BELOW_J': 59, 'ABOVE_J_RANK_1': 116, 'ABOVE_J_RANK_3': 217}
+#  1200/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 785, 'BELOW_J': 60, 'ABOVE_J_RANK_1': 119, 'ABOVE_J_RANK_3': 236}
+#  1250/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 822, 'BELOW_J': 60, 'ABOVE_J_RANK_1': 120, 'ABOVE_J_RANK_3': 248}
+#  1300/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 851, 'BELOW_J': 62, 'ABOVE_J_RANK_1': 122, 'ABOVE_J_RANK_3': 263, 'ABOVE_J_RANK_4': 2}
+#  1350/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 869, 'BELOW_J': 64, 'ABOVE_J_RANK_1': 128, 'ABOVE_J_RANK_3': 285, 'ABOVE_J_RANK_4': 4}
+#  1400/2276  rate 24.3/sec  counts: {'ABOVE_J_RANK_2': 893, 'BELOW_J': 65, 'ABOVE_J_RANK_1': 131, 'ABOVE_J_RANK_3': 304, 'ABOVE_J_RANK_4': 7}
+#  1450/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 916, 'BELOW_J': 65, 'ABOVE_J_RANK_1': 138, 'ABOVE_J_RANK_3': 323, 'ABOVE_J_RANK_4': 8}
+#  1500/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 939, 'BELOW_J': 67, 'ABOVE_J_RANK_1': 140, 'ABOVE_J_RANK_3': 342, 'ABOVE_J_RANK_4': 12}
+#  1550/2276  rate 24.3/sec  counts: {'ABOVE_J_RANK_2': 964, 'BELOW_J': 70, 'ABOVE_J_RANK_1': 144, 'ABOVE_J_RANK_3': 358, 'ABOVE_J_RANK_4': 14}
+#  1600/2276  rate 24.4/sec  counts: {'ABOVE_J_RANK_2': 994, 'BELOW_J': 73, 'ABOVE_J_RANK_1': 145, 'ABOVE_J_RANK_3': 371, 'ABOVE_J_RANK_4': 17}
+#  1650/2276  rate 24.4/sec  counts: {'ABOVE_J_RANK_2': 1019, 'BELOW_J': 74, 'ABOVE_J_RANK_1': 150, 'ABOVE_J_RANK_3': 390, 'ABOVE_J_RANK_4': 17}
+#  1700/2276  rate 24.3/sec  counts: {'ABOVE_J_RANK_2': 1039, 'BELOW_J': 76, 'ABOVE_J_RANK_1': 156, 'ABOVE_J_RANK_3': 408, 'ABOVE_J_RANK_4': 21}
+#  1750/2276  rate 24.3/sec  counts: {'ABOVE_J_RANK_2': 1059, 'BELOW_J': 79, 'ABOVE_J_RANK_1': 161, 'ABOVE_J_RANK_3': 429, 'ABOVE_J_RANK_4': 22}
+#  1800/2276  rate 24.3/sec  counts: {'ABOVE_J_RANK_2': 1085, 'BELOW_J': 79, 'ABOVE_J_RANK_1': 162, 'ABOVE_J_RANK_3': 448, 'ABOVE_J_RANK_4': 26}
+#  1850/2276  rate 24.3/sec  counts: {'ABOVE_J_RANK_2': 1115, 'BELOW_J': 80, 'ABOVE_J_RANK_1': 166, 'ABOVE_J_RANK_3': 461, 'ABOVE_J_RANK_4': 28}
+#  1900/2276  rate 24.4/sec  counts: {'ABOVE_J_RANK_2': 1137, 'BELOW_J': 81, 'ABOVE_J_RANK_1': 173, 'ABOVE_J_RANK_3': 479, 'ABOVE_J_RANK_4': 30}
+#  1950/2276  rate 24.0/sec  counts: {'ABOVE_J_RANK_2': 1161, 'BELOW_J': 82, 'ABOVE_J_RANK_1': 179, 'ABOVE_J_RANK_3': 496, 'ABOVE_J_RANK_4': 32}
+#  2000/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 1189, 'BELOW_J': 85, 'ABOVE_J_RANK_1': 183, 'ABOVE_J_RANK_3': 511, 'ABOVE_J_RANK_4': 32}
+#  2050/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 1215, 'BELOW_J': 87, 'ABOVE_J_RANK_1': 188, 'ABOVE_J_RANK_3': 526, 'ABOVE_J_RANK_4': 34}
+#  2100/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 1239, 'BELOW_J': 90, 'ABOVE_J_RANK_1': 190, 'ABOVE_J_RANK_3': 544, 'ABOVE_J_RANK_4': 37}
+#  2150/2276  rate 24.1/sec  counts: {'ABOVE_J_RANK_2': 1261, 'BELOW_J': 93, 'ABOVE_J_RANK_1': 192, 'ABOVE_J_RANK_3': 567, 'ABOVE_J_RANK_4': 37}
+#  2200/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 1278, 'BELOW_J': 95, 'ABOVE_J_RANK_1': 199, 'ABOVE_J_RANK_3': 587, 'ABOVE_J_RANK_4': 41}
+#  2250/2276  rate 24.2/sec  counts: {'ABOVE_J_RANK_2': 1300, 'BELOW_J': 96, 'ABOVE_J_RANK_1': 209, 'ABOVE_J_RANK_3': 603, 'ABOVE_J_RANK_4': 42}
+
+# === DONE in 94s ===
+#   ABOVE_J_RANK_2: 1316
+#   BELOW_J: 96
+#   ABOVE_J_RANK_1: 212
+#   ABOVE_J_RANK_3: 610
+#   ABOVE_J_RANK_4: 42
+
+# === Rank-2 above-J: 1316 cases ===
+# d_min(W) distribution: {2: 2, 3: 4, 4: 933, 5: 377}
+
+# ★★★ FALSIFIES Lemma A: 6 cases with d_min(W) ≤ 3 ★★★
+#   positions=(12, 18, 22), coefs=(59, 73, 36), d_min=3
+#   positions=(14, 18, 31), coefs=(90, 90, 88), d_min=3
+#   positions=(9, 19, 27), coefs=(16, 86, 49), d_min=2
+#   positions=(13, 22, 30), coefs=(23, 17, 17), d_min=2
+#   positions=(9, 10, 22, 25, 26), coefs=(30, 38, 58, 50, 69), d_min=3
+#   positions=(14, 18, 28, 30), coefs=(91, 88, 70, 22), d_min=3

@@ -1,0 +1,21 @@
+
+=== h=2 ===
+  4 non-trivial equations, 2 unknowns.
+  rho=2: GB has 2 polys, all p_vars → 0: True
+  rho=3: GB has 2 polys, all p_vars → 0: True
+  rho=5: GB has 2 polys, all p_vars → 0: True
+  rho=7: GB has 2 polys, all p_vars → 0: True
+
+=== h=3 ===
+  8 non-trivial equations, 4 unknowns.
+  rho=2: GB has 4 polys, all p_vars → 0: True
+  rho=3: GB has 4 polys, all p_vars → 0: True
+  rho=5: GB has 4 polys, all p_vars → 0: True
+  rho=7: GB has 4 polys, all p_vars → 0: True
+
+=== h=4 ===
+  12 non-trivial equations, 6 unknowns.
+  rho=2: GB has 6 polys, all p_vars → 0: True
+  rho=3: GB has 6 polys, all p_vars → 0: True
+  rho=5: GB has 6 polys, all p_vars → 0: True
+  rho=7: GB has 6 polys, all p_vars → 0: True

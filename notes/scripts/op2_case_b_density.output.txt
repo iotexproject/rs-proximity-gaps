@@ -1,0 +1,44 @@
+# Density of V_bad ∩ V_S × V_S for varying |S|
+
+## |S| = w+1 (leading component, expected ~100% bad)
+
+=== n=12 c=3 p=1009 D=6 w=3 T=3 |S|=4 (δ=0) ===
+  M stats: min=4 mean=4.00 max=4 T=3
+  bad fraction (M > T): 1.0000 (30/30)
+
+=== n=16 c=4 p=257 D=8 w=4 T=3 |S|=5 (δ=0) ===
+  M stats: min=5 mean=5.00 max=5 T=3
+  bad fraction (M > T): 1.0000 (30/30)
+
+=== n=20 c=5 p=41 D=10 w=5 T=3 |S|=6 (δ=0) ===
+  M stats: min=3 mean=5.33 max=6 T=3
+  bad fraction (M > T): 0.9667 (29/30)
+
+## |S| = w+2 (sub-leading δ=1, expected very rare bad)
+
+=== n=12 c=3 p=1009 D=6 w=3 T=3 |S|=5 (δ=1) ===
+  M stats: min=0 mean=0.01 max=1 T=3
+  bad fraction (M > T): 0.0000 (0/200)
+  Note 0119 sub-leading prediction: ≤ p^{-δ(T-1)} = p^{-2} = 9.82e-07
+
+=== n=16 c=4 p=257 D=8 w=4 T=3 |S|=6 (δ=1) ===
+  M stats: min=0 mean=0.04 max=1 T=3
+  bad fraction (M > T): 0.0000 (0/200)
+  Note 0119 sub-leading prediction: ≤ p^{-δ(T-1)} = p^{-2} = 1.51e-05
+
+=== n=20 c=5 p=41 D=10 w=5 T=3 |S|=7 (δ=1) ===
+  M stats: min=0 mean=0.44 max=2 T=3
+  bad fraction (M > T): 0.0000 (0/200)
+  Note 0119 sub-leading prediction: ≤ p^{-δ(T-1)} = p^{-2} = 5.95e-04
+
+## |S| = w+3 (sub-leading δ=2)
+
+=== n=12 c=3 p=1009 D=6 w=3 T=3 |S|=6 (δ=2) ===
+  M stats: min=0 mean=0.00 max=0 T=3
+  bad fraction (M > T): 0.0000 (0/200)
+  Note 0119 sub-leading prediction: ≤ p^{-δ(T-1)} = p^{-4} = 9.65e-13
+
+=== n=16 c=4 p=257 D=8 w=4 T=3 |S|=7 (δ=2) ===
+  M stats: min=0 mean=0.00 max=0 T=3
+  bad fraction (M > T): 0.0000 (0/200)
+  Note 0119 sub-leading prediction: ≤ p^{-δ(T-1)} = p^{-4} = 2.29e-10

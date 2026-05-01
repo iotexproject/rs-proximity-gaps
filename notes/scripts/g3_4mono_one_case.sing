@@ -1,0 +1,35 @@
+// g3_4mono_one_case.sing — single 4-mono case (1, 2, 4, 6) at (8, 2).
+// Empirical worst case from Note 0292: max |B(α)| = 7-8.
+// Compute Φ(α, ρ_1, ρ_2, ρ_3) via GB. deg_α(Φ) = K_4 for this case.
+
+ring R = 0, (z, p0, p1, p2, p3, alpha, rho1, rho2, rho3), (dp(1), lp(8));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+// h_α(z) = ρ_1 z^1 + ρ_2 z^2 + ρ_3 z^4 + α z^6
+poly h = rho1 * z + rho2 * z^2 + rho3 * z^4 + alpha * z^6;
+poly h_red = reduce(h, std(sigma));
+
+// cert: [z^j] h_red = 0 for j ∈ [k, 2k) = {2, 3}
+matrix M = coeffs(h_red, z);
+poly cert2 = M[3, 1];
+poly cert3 = M[4, 1];
+
+// div: [z^j] (z^8 - 1 mod σ) = 0 for j ∈ [0, 4)
+poly z8 = z^8;
+poly z8_red = reduce(z8 - 1, std(sigma));
+matrix Mn = coeffs(z8_red, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+ideal I = cert2, cert3, div0, div1, div2, div3;
+print("Computing GB elimination ideal of p_0..p_3...");
+ideal E = eliminate(I, p0*p1*p2*p3);
+print(E);
+
+print("--- deg_α of last polynomial ---");
+poly phi = E[size(E)];
+print(deg(phi, alpha));
+
+exit;

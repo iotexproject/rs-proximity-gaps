@@ -1,0 +1,30 @@
+=== issue #403 support-focused sparse search ===
+cell: q=193, n=32, k=8, delta_n=17, agreement_target=15
+L=<omega>, omega=185; membership_samples=50000, batch=2048
+one-word miss probability at target agreement: 5.141e-14
+one-pencil all-alpha miss union bound: 9.923e-12
+supports=80, coeff_trials_per_support=2
+
+  supports 20/80; attempts=40, accepted=40, top_K_lb=1
+  supports 40/80; attempts=80, accepted=80, top_K_lb=1
+  supports 60/80; attempts=120, accepted=120, top_K_lb=1
+  supports 80/80; attempts=160, accepted=160, top_K_lb=2
+done in 192.0s; attempts=160, accepted=160
+top witnesses:
+  K_lb=  2, best_agree_seen=17, gen_best_agree=(11,11), supp1=(15, 18, 22, 31), coeffs1=(20, 78, 163, 76), supp2=(15, 18, 22, 31), coeffs2=(97, 73, 56, 155)
+  K_lb=  2, best_agree_seen=16, gen_best_agree=(11,12), supp1=(15, 18, 22, 31), coeffs1=(135, 172, 154, 61), supp2=(15, 18, 22, 31), coeffs2=(34, 160, 91, 75)
+  K_lb=  1, best_agree_seen=17, gen_best_agree=(11,11), supp1=(18, 20, 21, 25), coeffs1=(34, 40, 103, 171), supp2=(18, 20, 21, 25), coeffs2=(18, 150, 28, 95)
+  K_lb=  1, best_agree_seen=17, gen_best_agree=(11,12), supp1=(18, 19, 21, 31), coeffs1=(93, 33, 10, 174), supp2=(18, 19, 21, 31), coeffs2=(182, 54, 172, 75)
+  K_lb=  1, best_agree_seen=17, gen_best_agree=(11,11), supp1=(17, 20, 23, 28), coeffs1=(118, 149, 161, 156), supp2=(17, 20, 23, 28), coeffs2=(140, 78, 8, 139)
+  K_lb=  1, best_agree_seen=16, gen_best_agree=(11,11), supp1=(18, 20, 21, 25), coeffs1=(61, 132, 161, 188), supp2=(18, 20, 21, 25), coeffs2=(165, 174, 178, 49)
+  K_lb=  1, best_agree_seen=16, gen_best_agree=(11,12), supp1=(18, 19, 21, 31), coeffs1=(25, 37, 127, 101), supp2=(18, 19, 21, 31), coeffs2=(117, 190, 173, 70)
+  K_lb=  1, best_agree_seen=16, gen_best_agree=(11,11), supp1=(17, 20, 23, 28), coeffs1=(128, 30, 8, 20), supp2=(17, 20, 23, 28), coeffs2=(157, 134, 19, 188)
+  K_lb=  1, best_agree_seen=16, gen_best_agree=(11,11), supp1=(13, 16, 17, 21), coeffs1=(168, 179, 136, 134), supp2=(13, 16, 17, 21), coeffs2=(116, 175, 30, 135)
+  K_lb=  1, best_agree_seen=16, gen_best_agree=(11,11), supp1=(13, 16, 17, 21), coeffs1=(147, 143, 142, 170), supp2=(13, 16, 17, 21), coeffs2=(10, 52, 140, 44)
+  K_lb=  1, best_agree_seen=16, gen_best_agree=(11,12), supp1=(13, 15, 29, 31), coeffs1=(135, 19, 139, 51), supp2=(13, 15, 29, 31), coeffs2=(107, 178, 34, 173)
+  K_lb=  1, best_agree_seen=16, gen_best_agree=(12,11), supp1=(10, 16, 17, 20), coeffs1=(99, 55, 162, 68), supp2=(10, 16, 17, 20), coeffs2=(9, 33, 61, 152)
+
+=== support-search row ===
+| q | n | k | delta_n | membership_samples | one-word miss | supports | coeff_trials | attempts | accepted | top_K_sparse_lb | runtime_s |
+| 193 | 32 | 8 | 17 | 50000 | 5.141e-14 | 80 | 2 | 160 | 160 | 2 | 192.0 |
+sampled-run all-tested-pencils miss union bound: 1.588e-09

@@ -1,0 +1,54 @@
+========================================================================
+AUDIT: K=2 breach (note 0114) → two-round acceptance P_avg(f)
+Params: n_0=32, k_0=8, p=97, R=2
+  δ at round 0 = w_J/n_0 = 16/32 = 0.5000
+  Per-α FRI bound (BCIKS):    P ≤ 1-δ/2 = 0.7500
+  Per-α hypothetical strict:  P ≤ 1-δ   = 0.5000
+  V_δ-based naive:            P ≤ 287/97² ≈ 0.0305 (per-α counting only)
+========================================================================
+
+[Step 1] Reproducing 7 K=2 breach examples by replaying rng...
+  Reproduced 7 breaches in 0.1s
+
+Breach metadata:
+  #0: pair=1, f=5, T1=(0, 5, 6), T2=(2, 4, 7), overlap=0
+  #1: pair=2, f=8, T1=(2, 4, 7), T2=(0, 6, 7), overlap=1
+  #2: pair=4, f=2, T1=(0, 5, 6), T2=(1, 2, 4), overlap=0
+  #3: pair=8, f=0, T1=(1, 3, 4), T2=(0, 1, 5), overlap=1
+  #4: pair=18, f=8, T1=(3, 6, 7), T2=(1, 2, 3), overlap=1
+  #5: pair=25, f=3, T1=(3, 5, 7), T2=(0, 2, 4), overlap=0
+  #6: pair=25, f=6, T1=(3, 5, 7), T2=(0, 2, 4), overlap=0
+
+[Step 2] Strategy B (cheat-at-last) — full 97×97 = 9409 α pairs each.
+  P_B(α_1, α_2) = 1 - d_2/n_2; this is the BCIKS-tight cheater model.
+  #    P_avg    P_max    P_min    #α≥1-δ/2    #α≥1-δ   #α: d2=0   time
+------------------------------------------------------------------------
+  0   0.3019   1.0000   0.2500           1       288          1    40s
+  1   0.3840   1.0000   0.3750           2       381          2    34s
+  2   0.3015   1.0000   0.2500           2       287          2    42s
+  3   0.3840   1.0000   0.3750           2       381          2    30s
+  4   0.3840   1.0000   0.3750           2       381          2    38s
+  5   0.3027   1.0000   0.2500           2       287          2    42s
+  6   0.3027   1.0000   0.2500           2       287          2    41s
+
+d_2 distribution (combined across all 7 breaches):
+  d_2 = 0:    13 pairs ( 0.02%)  → P_B = 1.0000
+  d_2 = 3:  1997 pairs ( 3.03%)  → P_B = 0.6250
+  d_2 = 4:   282 pairs ( 0.43%)  → P_B = 0.5000
+  d_2 = 5: 39341 pairs (59.73%)  → P_B = 0.3750
+  d_2 = 6: 24230 pairs (36.79%)  → P_B = 0.2500
+
+========================================================================
+VERDICT
+========================================================================
+  Across 7 K=2 dense breaches:
+    max P_avg = 0.3840
+    max P_max = 1.0000  (single-α worst case)
+    1-δ/2 (BCIKS bound)        = 0.7500
+    1-δ   (hypothetical tight) = 0.5000
+
+  ✓ P_avg < 1-δ for all breaches.
+    The V_δ = 287 > 2q phenomenon does NOT translate to a FRI soundness
+    breach. The (1-δ/2)^q BCIKS bound stands. Direction A's V_δ-route is
+    coarse — the right quantity is the COUPLED two-round acceptance.
+========================================================================

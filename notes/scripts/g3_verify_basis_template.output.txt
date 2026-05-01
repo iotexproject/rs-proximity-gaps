@@ -1,0 +1,80 @@
+
+=== verifying basis template at (n=8, k=2, a=2, b=6) ===
+  (D1) Reducing G (6 generators) modulo (cert+div=6 eqs)...
+  D1 FAIL: 6 generators NOT in ideal.
+    G[0] = p1: reduces to p1
+    G[1] = p3: reduces to p3
+    G[2] = p0 - rho**3: reduces to p0 - rho**3
+  (D2) Reducing (cert+div=6 eqs) modulo G (6 gens)...
+  D2 FAIL: 3 eqs NOT in proposed-basis ideal.
+    eq[0] = -p0 + p1*p3 + p2**2 - p2*p3**2 + rho: reduces to -p0 + p2**2 + rho
+    eq[3] = 2*p0*p2 - p0*p3**2 + p1**2 - 4*p1*p2*p3 + p1*p3**3 - p2**3 + 3*p2**2*p3**2 - p2*p3**4: reduces to 2*p0*p2 - p2**3
+    eq[5] = p0**2 - 2*p0*p1*p3 - p0*p2**2 + 3*p0*p2*p3**2 - p0*p3**4 - 1: reduces to p0**2 - p0*p2**2 - 1
+
+=== verifying basis template at (n=8, k=2, a=3, b=7) ===
+  (D1) Reducing G (6 generators) modulo (cert+div=6 eqs)...
+  D1 FAIL: 6 generators NOT in ideal.
+    G[0] = p1: reduces to p1
+    G[1] = p3: reduces to p3
+    G[2] = p0 - rho**3: reduces to p0 - rho**3
+  (D2) Reducing (cert+div=6 eqs) modulo G (6 gens)...
+  D2 FAIL: 3 eqs NOT in proposed-basis ideal.
+    eq[1] = -p0 + 2*p1*p3 + p2**2 - 3*p2*p3**2 + p3**4 + rho: reduces to -p0 + p2**2 + rho
+    eq[3] = 2*p0*p2 - p0*p3**2 + p1**2 - 4*p1*p2*p3 + p1*p3**3 - p2**3 + 3*p2**2*p3**2 - p2*p3**4: reduces to 2*p0*p2 - p2**3
+    eq[5] = p0**2 - 2*p0*p1*p3 - p0*p2**2 + 3*p0*p2*p3**2 - p0*p3**4 - 1: reduces to p0**2 - p0*p2**2 - 1
+
+=== verifying basis template at (n=16, k=4, a=4, b=12) ===
+  (D1) Reducing G (10 generators) modulo (cert+div=12 eqs)...
+  D1 FAIL: 10 generators NOT in ideal.
+    G[0] = p1: reduces to p1
+    G[1] = p2: reduces to p2
+    G[2] = p3: reduces to p3
+  (D2) Reducing (cert+div=12 eqs) modulo G (10 gens)...
+  D2 FAIL: 3 eqs NOT in proposed-basis ideal.
+    eq[0] = -p0 + p1*p7 + p2*p6 - p2*p7**2 + p3*p5 - 2*p3*p6*p7 + p3*p7**3 + p4**2 - 2*p4*p5*p7 - p4*p6**2 + 3*p4*p6*p7**2 - p4*p7**4 + rho: reduces to -p0 + p4**2 + rho
+    eq[7] = 2*p0*p4 - 2*p0*p5*p7 - p0*p6**2 + 3*p0*p6*p7**2 - p0*p7**4 + 2*p1*p3 - 4*p1*p4*p7 - 2*p1*p5*p6 + 3*p1*p5*p7**2 + 3*p1*p6**2*p7 - 4*p1*p6*p7**3 + p1*p7**5 + p2**2 - 4*p2*p3*p7 - 4*p2*p4*p6 + 6*p2*p4*p7**2 - p2*p5**2 + 6*p2*p5*p6*p7 - 4*p2*p5*p7**3 + p2*p6**3 - 6*p2*p6**2*p7**2 + 5*p2*p6*p7**4 - p2*p7**6 - 2*p3**2*p6 + 3*p3**2*p7**2 - 4*p3*p4*p5 + 12*p3*p4*p6*p7 - 8*p3*p4*p7**3 + 3*p3*p5**2*p7 + 3*p3*p5*p6**2 - 12*p3*p5*p6*p7**2 + 5*p3*p5*p7**4 - 4*p3*p6**3*p7 + 10*p3*p6**2*p7**3 - 6*p3*p6*p7**5 + p3*p7**7 - p4**3 + 6*p4**2*p5*p7 + 3*p4**2*p6**2 - 12*p4**2*p6*p7**2 + 5*p4**2*p7**4 + 3*p4*p5**2*p6 - 6*p4*p5**2*p7**2 - 12*p4*p5*p6**2*p7 + 20*p4*p5*p6*p7**3 - 6*p4*p5*p7**5 - p4*p6**4 + 10*p4*p6**3*p7**2 - 15*p4*p6**2*p7**4 + 7*p4*p6*p7**6 - p4*p7**8: reduces to 2*p0*p4 - p4**3
+    eq[11] = p0**2 - 2*p0*p1*p7 - 2*p0*p2*p6 + 3*p0*p2*p7**2 - 2*p0*p3*p5 + 6*p0*p3*p6*p7 - 4*p0*p3*p7**3 - p0*p4**2 + 6*p0*p4*p5*p7 + 3*p0*p4*p6**2 - 12*p0*p4*p6*p7**2 + 5*p0*p4*p7**4 + 3*p0*p5**2*p6 - 6*p0*p5**2*p7**2 - 12*p0*p5*p6**2*p7 + 20*p0*p5*p6*p7**3 - 6*p0*p5*p7**5 - p0*p6**4 + 10*p0*p6**3*p7**2 - 15*p0*p6**2*p7**4 + 7*p0*p6*p7**6 - p0*p7**8 - 1: reduces to p0**2 - p0*p4**2 - 1
+
+=== verifying basis template at (n=16, k=4, a=5, b=13) ===
+  (D1) Reducing G (10 generators) modulo (cert+div=12 eqs)...
+  D1 FAIL: 10 generators NOT in ideal.
+    G[0] = p1: reduces to p1
+    G[1] = p2: reduces to p2
+    G[2] = p3: reduces to p3
+  (D2) Reducing (cert+div=12 eqs) modulo G (10 gens)...
+  D2 FAIL: 3 eqs NOT in proposed-basis ideal.
+    eq[1] = -p0 + p1*p7 + p2*p6 - p2*p7**2 + 2*p3*p5 - 2*p3*p6*p7 + p3*p7**3 + p4**2 - 4*p4*p5*p7 - p4*p6**2 + 3*p4*p6*p7**2 - p4*p7**4 - 2*p5**2*p6 + 3*p5**2*p7**2 + 3*p5*p6**2*p7 - 4*p5*p6*p7**3 + p5*p7**5 + rho: reduces to -p0 + p4**2 + rho
+    eq[7] = 2*p0*p4 - 2*p0*p5*p7 - p0*p6**2 + 3*p0*p6*p7**2 - p0*p7**4 + 2*p1*p3 - 4*p1*p4*p7 - 2*p1*p5*p6 + 3*p1*p5*p7**2 + 3*p1*p6**2*p7 - 4*p1*p6*p7**3 + p1*p7**5 + p2**2 - 4*p2*p3*p7 - 4*p2*p4*p6 + 6*p2*p4*p7**2 - p2*p5**2 + 6*p2*p5*p6*p7 - 4*p2*p5*p7**3 + p2*p6**3 - 6*p2*p6**2*p7**2 + 5*p2*p6*p7**4 - p2*p7**6 - 2*p3**2*p6 + 3*p3**2*p7**2 - 4*p3*p4*p5 + 12*p3*p4*p6*p7 - 8*p3*p4*p7**3 + 3*p3*p5**2*p7 + 3*p3*p5*p6**2 - 12*p3*p5*p6*p7**2 + 5*p3*p5*p7**4 - 4*p3*p6**3*p7 + 10*p3*p6**2*p7**3 - 6*p3*p6*p7**5 + p3*p7**7 - p4**3 + 6*p4**2*p5*p7 + 3*p4**2*p6**2 - 12*p4**2*p6*p7**2 + 5*p4**2*p7**4 + 3*p4*p5**2*p6 - 6*p4*p5**2*p7**2 - 12*p4*p5*p6**2*p7 + 20*p4*p5*p6*p7**3 - 6*p4*p5*p7**5 - p4*p6**4 + 10*p4*p6**3*p7**2 - 15*p4*p6**2*p7**4 + 7*p4*p6*p7**6 - p4*p7**8: reduces to 2*p0*p4 - p4**3
+    eq[11] = p0**2 - 2*p0*p1*p7 - 2*p0*p2*p6 + 3*p0*p2*p7**2 - 2*p0*p3*p5 + 6*p0*p3*p6*p7 - 4*p0*p3*p7**3 - p0*p4**2 + 6*p0*p4*p5*p7 + 3*p0*p4*p6**2 - 12*p0*p4*p6*p7**2 + 5*p0*p4*p7**4 + 3*p0*p5**2*p6 - 6*p0*p5**2*p7**2 - 12*p0*p5*p6**2*p7 + 20*p0*p5*p6*p7**3 - 6*p0*p5*p7**5 - p0*p6**4 + 10*p0*p6**3*p7**2 - 15*p0*p6**2*p7**4 + 7*p0*p6*p7**6 - p0*p7**8 - 1: reduces to p0**2 - p0*p4**2 - 1
+
+=== verifying basis template at (n=16, k=4, a=6, b=14) ===
+  (D1) Reducing G (10 generators) modulo (cert+div=12 eqs)...
+  D1 FAIL: 10 generators NOT in ideal.
+    G[0] = p1: reduces to p1
+    G[1] = p2: reduces to p2
+    G[2] = p3: reduces to p3
+  (D2) Reducing (cert+div=12 eqs) modulo G (10 gens)...
+  D2 FAIL: 3 eqs NOT in proposed-basis ideal.
+    eq[2] = -p0 + p1*p7 + 2*p2*p6 - p2*p7**2 + 2*p3*p5 - 4*p3*p6*p7 + p3*p7**3 + p4**2 - 4*p4*p5*p7 - 3*p4*p6**2 + 6*p4*p6*p7**2 - p4*p7**4 - 3*p5**2*p6 + 3*p5**2*p7**2 + 9*p5*p6**2*p7 - 8*p5*p6*p7**3 + p5*p7**5 + p6**4 - 6*p6**3*p7**2 + 5*p6**2*p7**4 - p6*p7**6 + rho: reduces to -p0 + p4**2 + rho
+    eq[7] = 2*p0*p4 - 2*p0*p5*p7 - p0*p6**2 + 3*p0*p6*p7**2 - p0*p7**4 + 2*p1*p3 - 4*p1*p4*p7 - 2*p1*p5*p6 + 3*p1*p5*p7**2 + 3*p1*p6**2*p7 - 4*p1*p6*p7**3 + p1*p7**5 + p2**2 - 4*p2*p3*p7 - 4*p2*p4*p6 + 6*p2*p4*p7**2 - p2*p5**2 + 6*p2*p5*p6*p7 - 4*p2*p5*p7**3 + p2*p6**3 - 6*p2*p6**2*p7**2 + 5*p2*p6*p7**4 - p2*p7**6 - 2*p3**2*p6 + 3*p3**2*p7**2 - 4*p3*p4*p5 + 12*p3*p4*p6*p7 - 8*p3*p4*p7**3 + 3*p3*p5**2*p7 + 3*p3*p5*p6**2 - 12*p3*p5*p6*p7**2 + 5*p3*p5*p7**4 - 4*p3*p6**3*p7 + 10*p3*p6**2*p7**3 - 6*p3*p6*p7**5 + p3*p7**7 - p4**3 + 6*p4**2*p5*p7 + 3*p4**2*p6**2 - 12*p4**2*p6*p7**2 + 5*p4**2*p7**4 + 3*p4*p5**2*p6 - 6*p4*p5**2*p7**2 - 12*p4*p5*p6**2*p7 + 20*p4*p5*p6*p7**3 - 6*p4*p5*p7**5 - p4*p6**4 + 10*p4*p6**3*p7**2 - 15*p4*p6**2*p7**4 + 7*p4*p6*p7**6 - p4*p7**8: reduces to 2*p0*p4 - p4**3
+    eq[11] = p0**2 - 2*p0*p1*p7 - 2*p0*p2*p6 + 3*p0*p2*p7**2 - 2*p0*p3*p5 + 6*p0*p3*p6*p7 - 4*p0*p3*p7**3 - p0*p4**2 + 6*p0*p4*p5*p7 + 3*p0*p4*p6**2 - 12*p0*p4*p6*p7**2 + 5*p0*p4*p7**4 + 3*p0*p5**2*p6 - 6*p0*p5**2*p7**2 - 12*p0*p5*p6**2*p7 + 20*p0*p5*p6*p7**3 - 6*p0*p5*p7**5 - p0*p6**4 + 10*p0*p6**3*p7**2 - 15*p0*p6**2*p7**4 + 7*p0*p6*p7**6 - p0*p7**8 - 1: reduces to p0**2 - p0*p4**2 - 1
+
+=== verifying basis template at (n=16, k=4, a=7, b=15) ===
+  (D1) Reducing G (10 generators) modulo (cert+div=12 eqs)...
+  D1 FAIL: 10 generators NOT in ideal.
+    G[0] = p1: reduces to p1
+    G[1] = p2: reduces to p2
+    G[2] = p3: reduces to p3
+  (D2) Reducing (cert+div=12 eqs) modulo G (10 gens)...
+  D2 FAIL: 3 eqs NOT in proposed-basis ideal.
+    eq[3] = -p0 + 2*p1*p7 + 2*p2*p6 - 3*p2*p7**2 + 2*p3*p5 - 6*p3*p6*p7 + 4*p3*p7**3 + p4**2 - 6*p4*p5*p7 - 3*p4*p6**2 + 12*p4*p6*p7**2 - 5*p4*p7**4 - 3*p5**2*p6 + 6*p5**2*p7**2 + 12*p5*p6**2*p7 - 20*p5*p6*p7**3 + 6*p5*p7**5 + p6**4 - 10*p6**3*p7**2 + 15*p6**2*p7**4 - 7*p6*p7**6 + p7**8 + rho: reduces to -p0 + p4**2 + rho
+    eq[7] = 2*p0*p4 - 2*p0*p5*p7 - p0*p6**2 + 3*p0*p6*p7**2 - p0*p7**4 + 2*p1*p3 - 4*p1*p4*p7 - 2*p1*p5*p6 + 3*p1*p5*p7**2 + 3*p1*p6**2*p7 - 4*p1*p6*p7**3 + p1*p7**5 + p2**2 - 4*p2*p3*p7 - 4*p2*p4*p6 + 6*p2*p4*p7**2 - p2*p5**2 + 6*p2*p5*p6*p7 - 4*p2*p5*p7**3 + p2*p6**3 - 6*p2*p6**2*p7**2 + 5*p2*p6*p7**4 - p2*p7**6 - 2*p3**2*p6 + 3*p3**2*p7**2 - 4*p3*p4*p5 + 12*p3*p4*p6*p7 - 8*p3*p4*p7**3 + 3*p3*p5**2*p7 + 3*p3*p5*p6**2 - 12*p3*p5*p6*p7**2 + 5*p3*p5*p7**4 - 4*p3*p6**3*p7 + 10*p3*p6**2*p7**3 - 6*p3*p6*p7**5 + p3*p7**7 - p4**3 + 6*p4**2*p5*p7 + 3*p4**2*p6**2 - 12*p4**2*p6*p7**2 + 5*p4**2*p7**4 + 3*p4*p5**2*p6 - 6*p4*p5**2*p7**2 - 12*p4*p5*p6**2*p7 + 20*p4*p5*p6*p7**3 - 6*p4*p5*p7**5 - p4*p6**4 + 10*p4*p6**3*p7**2 - 15*p4*p6**2*p7**4 + 7*p4*p6*p7**6 - p4*p7**8: reduces to 2*p0*p4 - p4**3
+    eq[11] = p0**2 - 2*p0*p1*p7 - 2*p0*p2*p6 + 3*p0*p2*p7**2 - 2*p0*p3*p5 + 6*p0*p3*p6*p7 - 4*p0*p3*p7**3 - p0*p4**2 + 6*p0*p4*p5*p7 + 3*p0*p4*p6**2 - 12*p0*p4*p6*p7**2 + 5*p0*p4*p7**4 + 3*p0*p5**2*p6 - 6*p0*p5**2*p7**2 - 12*p0*p5*p6**2*p7 + 20*p0*p5*p6*p7**3 - 6*p0*p5*p7**5 - p0*p6**4 + 10*p0*p6**3*p7**2 - 15*p0*p6**2*p7**4 + 7*p0*p6*p7**6 - p0*p7**8 - 1: reduces to p0**2 - p0*p4**2 - 1
+
+=== verifying basis template at (n=32, k=8, a=8, b=24) ===
+  (D1) Reducing G (18 generators) modulo (cert+div=24 eqs)...
+  D1 FAIL: 18 generators NOT in ideal.
+    G[0] = p1: reduces to p1
+    G[1] = p2: reduces to p2
+    G[2] = p3: reduces to p3
+  (D2) Reducing (cert+div=24 eqs) modulo G (18 gens)...

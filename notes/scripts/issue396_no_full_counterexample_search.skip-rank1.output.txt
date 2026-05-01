@@ -1,0 +1,24 @@
+Issue #396 no-full-block counterexample search
+q=193, L2=(16,4), supports=C(48,3)=17296, workers=12
+Scanning all alpha1; full-code rows are skipped; skip_rank1=True.
+
+progress supports=1000
+progress supports=2000
+progress supports=3000
+progress supports=4000
+progress supports=5000
+progress supports=6000
+progress supports=7000
+progress supports=8000
+progress supports=9000
+progress supports=10000
+progress supports=11000
+progress supports=12000
+progress supports=13000
+progress supports=14000
+progress supports=15000
+progress supports=16000
+progress supports=17000
+
+hist={'full_rows': 0, 'skipped_rank1': 799504, 'supports': 17296}
+first_counterexample=None

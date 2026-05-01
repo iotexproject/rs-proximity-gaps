@@ -1,0 +1,10 @@
+=== K-bound at (64, 16) q-universal under recursive above-J ===
+  Sample: 80 supports per q, q ∈ [193, 449]
+  Predicted: K ≤ 10, |V_δ| ≤ 10q-9 (scale-universal constant)
+
+q      aboveJ-L0  aboveJ-rec   max K  max |V_δ|  10q-9    PASS?    elapsed
+----------------------------------------------------------------------------------------------------
+193    30         30           10     1921       1921     PASS     106s  [0:14, 1:9, 2:5, 3:1, 10:1]
+      max-K example: sup=(43, 50, 51), K=10 (B_1=9, K_col=1), |V_δ|=1921
+449    30         30           10     4481       4481     PASS     326s  [0:14, 1:9, 2:5, 3:1, 10:1]
+      max-K example: sup=(43, 50, 51), K=10 (B_1=9, K_col=1), |V_δ|=4481

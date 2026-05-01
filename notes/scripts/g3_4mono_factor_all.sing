@@ -1,0 +1,69 @@
+// g3_4mono_factor_all.sing — factor Φ for ALL 35 4-mono cases at (8, 2).
+// For each case, output deg_α(Φ) and the deg of the largest factor (RIGOROUS K_4 contribution).
+
+ring R = 0, (z, p0, p1, p2, p3, alpha, rho1, rho2, rho3), (dp(1), lp(8));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+poly z_1 = z;
+poly z_2 = reduce(z^2, std(sigma));
+poly z_3 = reduce(z^3, std(sigma));
+poly z_4 = reduce(z^4, std(sigma));
+poly z_5 = reduce(z^5, std(sigma));
+poly z_6 = reduce(z^6, std(sigma));
+poly z_7 = reduce(z^7, std(sigma));
+
+list zs = z_1, z_2, z_3, z_4, z_5, z_6, z_7;
+
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+proc compute_phi4(int a, int b, int c, int d) {
+    poly h = rho1 * zs[a] + rho2 * zs[b] + rho3 * zs[c] + alpha * zs[d];
+    matrix M = coeffs(h, z);
+    poly cert2 = M[3, 1];
+    poly cert3 = M[4, 1];
+    ideal I = cert2, cert3, div0, div1, div2, div3;
+    ideal E = eliminate(I, p0*p1*p2*p3);
+    return(E[size(E)]);
+}
+
+print("=== 4-mono cases at (8, 2): deg_α and factor structure ===");
+int max_max_factor = 0;
+int a, b, c, d, g;
+for (a = 1; a <= 4; a++) {
+    for (b = a+1; b <= 5; b++) {
+        for (c = b+1; c <= 6; c++) {
+            for (d = c+1; d <= 7; d++) {
+                g = gcd(gcd(gcd(gcd(a, b), c), d), 8);
+                if (g == 1) {
+                    poly phi = compute_phi4(a, b, c, d);
+                    int deg_a = deg(phi, intvec(0,0,0,0,0,1,0,0,0));
+                    list F = factorize(phi);
+                    intvec degs = 0;
+                    int i;
+                    int max_factor_deg = 0;
+                    for (i = 1; i <= size(F[1]); i++) {
+                        int fd = deg(F[1][i], intvec(0,0,0,0,0,1,0,0,0));
+                        if (fd > max_factor_deg) { max_factor_deg = fd; }
+                    }
+                    string s = "(" + string(a) + "," + string(b) + "," + string(c) + "," + string(d) +
+                              "): deg_alpha = " + string(deg_a) +
+                              ", max_factor_deg = " + string(max_factor_deg) +
+                              ", factors_count = " + string(size(F[1]));
+                    print(s);
+                    if (max_factor_deg > max_max_factor) { max_max_factor = max_factor_deg; }
+                }
+            }
+        }
+    }
+}
+
+print("");
+print("=== SUMMARY ===");
+print("Max factor_deg across all 4-mono cases = K_4 RIGOROUS: " + string(max_max_factor));
+
+exit;

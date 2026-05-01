@@ -1,0 +1,187 @@
+========================================================================
+P_AVG OPTIMIZER  (issue #344: is (1-δ/2)^q tight for FRI?)
+  Params: n_0=32, k_0=8, p=97, R=2, w_J=16, δ=0.5000
+  Targets:
+    P_avg ≥ 1-δ/2 = 0.7500  → BCIKS bound TIGHT, settles #344 'yes'
+    P_avg ≥ 1-δ   = 0.5000  → improvement over random possible
+    P_avg < 1-δ stuck → coupling theorem target for c < 2
+  Search budget: 200 P_avg evaluations (≈ 133min)
+========================================================================
+[it    0/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3814 | thresh: 1-δ/2=0.750 | 32s | total 0.5min ★ NEW BEST
+[it    1/200 mode=sparse_random ] P_avg = 0.3079 | best = 0.3814 | thresh: 1-δ/2=0.750 | 40s | total 1.2min
+[it    2/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3814 | thresh: 1-δ/2=0.750 | 43s | total 1.9min
+[it    3/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3814 | thresh: 1-δ/2=0.750 | 43s | total 2.7min
+[it    5/200 mode=monomial_pair ] P_avg = 0.2654 | best = 0.3814 | thresh: 1-δ/2=0.750 | 43s | total 3.4min
+[it    6/200 mode=K2_dense      ] P_avg = 0.3839 | best = 0.3839 | thresh: 1-δ/2=0.750 | 39s | total 4.0min ★ NEW BEST
+[it    7/200 mode=sparse_random ] P_avg = 0.3075 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 4.7min
+[it    8/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 5.4min
+[it    9/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 6.2min
+[it   11/200 mode=monomial_pair ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 6.9min
+[it   12/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 32s | total 7.5min
+[it   13/200 mode=sparse_random ] P_avg = 0.3084 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 8.1min
+[it   14/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 8.9min
+[it   15/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 9.6min
+[it   17/200 mode=monomial_pair ] P_avg = 0.2985 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 10.3min
+[it   18/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 31s | total 10.8min
+[it   19/200 mode=sparse_random ] P_avg = 0.3077 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 11.5min
+[it   20/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 12.2min
+[it   21/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 13.0min
+[it   23/200 mode=monomial_pair ] P_avg = 0.2908 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 13.6min
+[it   24/200 mode=K2_dense      ] P_avg = 0.3002 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 14.3min
+[it   25/200 mode=sparse_random ] P_avg = 0.3082 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 15.0min
+[it   26/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 43s | total 15.7min
+[it   27/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 43s | total 16.4min
+[it   29/200 mode=monomial_pair ] P_avg = 0.2758 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 17.1min
+[it   30/200 mode=K2_dense      ] P_avg = 0.3015 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 17.8min
+[it   31/200 mode=sparse_random ] P_avg = 0.3072 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 18.4min
+[it   32/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 19.2min
+[it   33/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 19.9min
+[it   35/200 mode=monomial_pair ] P_avg = 0.2832 | best = 0.3839 | thresh: 1-δ/2=0.750 | 42s | total 20.6min
+[it   36/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 32s | total 21.1min
+[it   37/200 mode=sparse_random ] P_avg = 0.3065 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 21.8min
+[it   38/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 22.5min
+[it   39/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 23.3min
+[it   41/200 mode=monomial_pair ] P_avg = 0.2934 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 23.9min
+[it   42/200 mode=K2_dense      ] P_avg = 0.2964 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 24.6min
+[it   43/200 mode=sparse_random ] P_avg = 0.3078 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 25.3min
+[it   44/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 26.1min
+[it   45/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 26.8min
+[it   48/200 mode=K2_dense      ] P_avg = 0.2976 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 27.5min
+[it   49/200 mode=sparse_random ] P_avg = 0.3088 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 28.2min
+[it   50/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 28.9min
+[it   51/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 29.7min
+[it   53/200 mode=monomial_pair ] P_avg = 0.2832 | best = 0.3839 | thresh: 1-δ/2=0.750 | 42s | total 30.4min
+[it   54/200 mode=K2_dense      ] P_avg = 0.3839 | best = 0.3839 | thresh: 1-δ/2=0.750 | 27s | total 30.8min
+[it   55/200 mode=sparse_random ] P_avg = 0.3065 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 31.5min
+[it   56/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 32.2min
+[it   57/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 33.0min
+[it   60/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 39s | total 33.6min
+[it   61/200 mode=sparse_random ] P_avg = 0.3089 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 34.3min
+[it   62/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 35.1min
+[it   63/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 35.8min
+[it   65/200 mode=monomial_pair ] P_avg = 0.2883 | best = 0.3839 | thresh: 1-δ/2=0.750 | 42s | total 36.5min
+[it   66/200 mode=K2_dense      ] P_avg = 0.3826 | best = 0.3839 | thresh: 1-δ/2=0.750 | 35s | total 37.1min
+[it   67/200 mode=sparse_random ] P_avg = 0.3069 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 37.8min
+[it   68/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 38.5min
+[it   69/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 39.3min
+[it   71/200 mode=monomial_pair ] P_avg = 0.2706 | best = 0.3839 | thresh: 1-δ/2=0.750 | 43s | total 40.0min
+[it   72/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 39s | total 40.6min
+[it   73/200 mode=sparse_random ] P_avg = 0.3082 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 41.3min
+[it   74/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 42.1min
+[it   75/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 42.8min
+[it   77/200 mode=monomial_pair ] P_avg = 0.2500 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 43.6min
+[it   78/200 mode=K2_dense      ] P_avg = 0.2964 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 44.2min
+[it   79/200 mode=sparse_random ] P_avg = 0.3071 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 44.9min
+[it   80/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 45.7min
+[it   81/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 46.4min
+[it   83/200 mode=monomial_pair ] P_avg = 0.2758 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 47.1min
+[it   84/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 34s | total 47.7min
+[it   85/200 mode=sparse_random ] P_avg = 0.3071 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 48.3min
+[it   86/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 49.1min
+[it   87/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 49.8min
+[it   89/200 mode=monomial_pair ] P_avg = 0.2781 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 50.5min
+[it   90/200 mode=K2_dense      ] P_avg = 0.2951 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 51.2min
+[it   91/200 mode=sparse_random ] P_avg = 0.3084 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 51.8min
+[it   92/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 43s | total 52.6min
+[it   93/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 53.3min
+[it   95/200 mode=monomial_pair ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 54.0min
+[it   96/200 mode=K2_dense      ] P_avg = 0.2934 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 54.7min
+[it   97/200 mode=sparse_random ] P_avg = 0.3069 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 55.4min
+[it   98/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 56.2min
+[it   99/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 56.9min
+[it  101/200 mode=monomial_pair ] P_avg = 0.2832 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 57.6min
+[it  102/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 31s | total 58.1min
+[it  103/200 mode=sparse_random ] P_avg = 0.3078 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 58.8min
+[it  104/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 45s | total 59.5min
+[it  105/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 60.3min
+[it  107/200 mode=monomial_pair ] P_avg = 0.2705 | best = 0.3839 | thresh: 1-δ/2=0.750 | 43s | total 61.0min
+[it  108/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3839 | thresh: 1-δ/2=0.750 | 35s | total 61.6min
+[it  109/200 mode=sparse_random ] P_avg = 0.3081 | best = 0.3839 | thresh: 1-δ/2=0.750 | 41s | total 62.3min
+[it  110/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 63.0min
+[it  111/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3839 | thresh: 1-δ/2=0.750 | 44s | total 63.7min
+[it  113/200 mode=monomial_pair ] P_avg = 0.3087 | best = 0.3839 | thresh: 1-δ/2=0.750 | 40s | total 64.4min
+[it  114/200 mode=K2_dense      ] P_avg = 0.3852 | best = 0.3852 | thresh: 1-δ/2=0.750 | 33s | total 64.9min ★ NEW BEST
+[it  115/200 mode=sparse_random ] P_avg = 0.3071 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 65.6min
+[it  116/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 66.3min
+[it  117/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 67.0min
+[it  119/200 mode=monomial_pair ] P_avg = 0.2832 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 67.7min
+[it  120/200 mode=K2_dense      ] P_avg = 0.3826 | best = 0.3852 | thresh: 1-δ/2=0.750 | 38s | total 68.4min
+[it  121/200 mode=sparse_random ] P_avg = 0.3073 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 69.0min
+[it  122/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 69.7min
+[it  123/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 70.5min
+[it  125/200 mode=monomial_pair ] P_avg = 0.2704 | best = 0.3852 | thresh: 1-δ/2=0.750 | 41s | total 71.2min
+[it  126/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3852 | thresh: 1-δ/2=0.750 | 28s | total 71.6min
+[it  127/200 mode=sparse_random ] P_avg = 0.3075 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 72.3min
+[it  128/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 73.0min
+[it  129/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 73.7min
+[it  131/200 mode=monomial_pair ] P_avg = 0.2706 | best = 0.3852 | thresh: 1-δ/2=0.750 | 42s | total 74.4min
+[it  132/200 mode=K2_dense      ] P_avg = 0.2959 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 75.1min
+[it  133/200 mode=sparse_random ] P_avg = 0.3075 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 75.8min
+[it  134/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 76.5min
+[it  135/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 77.2min
+[it  137/200 mode=monomial_pair ] P_avg = 0.2500 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 77.9min
+[it  138/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3852 | thresh: 1-δ/2=0.750 | 27s | total 78.4min
+[it  139/200 mode=sparse_random ] P_avg = 0.3075 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 79.0min
+[it  140/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 79.8min
+[it  141/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 80.5min
+[it  143/200 mode=monomial_pair ] P_avg = 0.2781 | best = 0.3852 | thresh: 1-δ/2=0.750 | 41s | total 81.2min
+[it  144/200 mode=K2_dense      ] P_avg = 0.2955 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 81.8min
+[it  145/200 mode=sparse_random ] P_avg = 0.3069 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 82.5min
+[it  146/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 83.2min
+[it  147/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 84.0min
+[it  149/200 mode=monomial_pair ] P_avg = 0.2912 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 84.6min
+[it  150/200 mode=K2_dense      ] P_avg = 0.2946 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 85.3min
+[it  151/200 mode=sparse_random ] P_avg = 0.3078 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 86.0min
+[it  152/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 86.7min
+[it  153/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 87.4min
+[it  155/200 mode=monomial_pair ] P_avg = 0.2784 | best = 0.3852 | thresh: 1-δ/2=0.750 | 41s | total 88.1min
+[it  156/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3852 | thresh: 1-δ/2=0.750 | 37s | total 88.7min
+[it  157/200 mode=sparse_random ] P_avg = 0.3071 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 89.4min
+[it  158/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 90.1min
+[it  159/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 90.8min
+[it  162/200 mode=K2_dense      ] P_avg = 0.2972 | best = 0.3852 | thresh: 1-δ/2=0.750 | 41s | total 91.5min
+[it  163/200 mode=sparse_random ] P_avg = 0.3074 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 92.2min
+[it  164/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 44s | total 92.9min
+[it  165/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 44s | total 93.6min
+[it  168/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3852 | thresh: 1-δ/2=0.750 | 35s | total 94.2min
+[it  169/200 mode=sparse_random ] P_avg = 0.3068 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 94.9min
+[it  170/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 95.6min
+[it  171/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 96.3min
+[it  173/200 mode=monomial_pair ] P_avg = 0.2938 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 97.0min
+[it  174/200 mode=K2_dense      ] P_avg = 0.2951 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 97.7min
+[it  175/200 mode=sparse_random ] P_avg = 0.3071 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 98.3min
+[it  176/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 44s | total 99.1min
+[it  177/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 99.8min
+[it  180/200 mode=K2_dense      ] P_avg = 0.2939 | best = 0.3852 | thresh: 1-δ/2=0.750 | 41s | total 100.5min
+[it  181/200 mode=sparse_random ] P_avg = 0.3069 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 101.1min
+[it  182/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 44s | total 101.9min
+[it  183/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 102.6min
+[it  185/200 mode=monomial_pair ] P_avg = 0.3011 | best = 0.3852 | thresh: 1-δ/2=0.750 | 39s | total 103.3min
+[it  186/200 mode=K2_dense      ] P_avg = 0.3814 | best = 0.3852 | thresh: 1-δ/2=0.750 | 39s | total 103.9min
+[it  187/200 mode=sparse_random ] P_avg = 0.3083 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 104.6min
+[it  188/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 44s | total 105.3min
+[it  189/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 106.0min
+[it  191/200 mode=monomial_pair ] P_avg = 0.2985 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 106.7min
+[it  192/200 mode=K2_dense      ] P_avg = 0.2972 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 107.4min
+[it  193/200 mode=sparse_random ] P_avg = 0.3069 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 108.0min
+[it  194/200 mode=cs_lift       ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 108.7min
+[it  195/200 mode=cs_shifted    ] P_avg = 0.2577 | best = 0.3852 | thresh: 1-δ/2=0.750 | 43s | total 109.5min
+[it  198/200 mode=K2_dense      ] P_avg = 0.3827 | best = 0.3852 | thresh: 1-δ/2=0.750 | 36s | total 110.1min
+[it  199/200 mode=sparse_random ] P_avg = 0.3072 | best = 0.3852 | thresh: 1-δ/2=0.750 | 40s | total 110.7min
+
+========================================================================
+FINAL (161 successful evals)
+========================================================================
+  Best P_avg = 0.3852  (mode: K2_dense)
+  Compare:  1-δ/2 = 0.7500  |  1-δ = 0.5000
+
+mode              count  max P_avg  mean P_avg
+--------------------------------------------------
+K2_dense             34     0.3852      0.3468
+cs_lift              33     0.2577      0.2577
+cs_shifted           33     0.2577      0.2577
+monomial_pair        27     0.3087      0.2795
+sparse_random        34     0.3089      0.3075
+
+  Reference: 0114 K=2 breaches achieve P_avg ≈ 0.39 (from audit_K2_breach_acceptance)
+  Random above-J for comparison: typical P_avg ≈ 1 - (n-k_R)/n = 0.2500

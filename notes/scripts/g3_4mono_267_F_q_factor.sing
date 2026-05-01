@@ -1,0 +1,46 @@
+// g3_4mono_267_F_q_factor.sing — factor Φ_{(1,2,6,7)} over F_193[α].
+// Specialize ρ_2, ρ_3 to non-special values, then factor over F_193.
+
+ring R = (193, t), (z, p0, p1, p2, p3, alpha), (dp(1), lp(6));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+poly z_1 = z;
+poly z_2 = reduce(z^2, std(sigma));
+poly z_6 = reduce(z^6, std(sigma));
+poly z_7 = reduce(z^7, std(sigma));
+
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+// h = z + ρ_2 z^2 + ρ_3 z^6 + α z^7
+// Specialize ρ_2 = t, ρ_3 = 1
+poly h = z_1 + t * z_2 + z_6 + alpha * z_7;
+matrix M = coeffs(h, z);
+poly cert2 = M[3, 1];
+poly cert3 = M[4, 1];
+ideal I = cert2, cert3, div0, div1, div2, div3;
+ideal E = eliminate(I, p0*p1*p2*p3);
+poly phi = E[size(E)];
+
+print("=== Φ_{(1,2,6,7)} over F_193[α] with ρ_2 = t, ρ_3 = 1 ===");
+print(phi);
+print("");
+print("Factored over F_193[α, t]:");
+print(factorize(phi));
+
+print("");
+// Substitute t = 7 (concrete F_193 element)
+ring R2 = 193, alpha, dp;
+poly phi_193 = imap(R, phi);
+phi_193 = subst(phi_193, t, 7);
+print("Specialized Φ_193(α) at t = 7:");
+print(phi_193);
+print("");
+print("Factored over F_193[α]:");
+print(factorize(phi_193));
+
+exit;

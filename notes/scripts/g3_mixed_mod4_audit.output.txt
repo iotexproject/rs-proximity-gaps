@@ -1,0 +1,99 @@
+=== Mixed mod-4 audit at q=97 (32, 8) ===
+  w_J(L_0)=16, w_J(L_1)=8, w_J(L_2)=4
+  Total 3-pos supports in {8..31}: 2024
+  Mod-4 class counts:
+    all{0,1}: 220
+    all{2,3}: 220
+    mixed[1:2]: 792
+    mixed[2:1]: 792
+
+=== Mixed-class samples: |V_δ| structure ===
+  Mixed classes: ['mixed[1:2]', 'mixed[2:1]']
+
+  --- Class mixed[1:2] (sampling 8/792) ---
+    sup=(18, 25, 26) mod4=(2, 1, 2) d_f≥20
+      |B_1|=0, |V_δ|=481, |V_δ|/q=4.96
+      per-α₁ slice dist (top 5): [(5, 96), (1, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(9, 19, 27) mod4=(1, 3, 3) d_f≥20
+      |B_1|=1, |V_δ|=673, |V_δ|/q=6.94
+      per-α₁ slice dist (top 5): [(6, 96), (97, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(8, 14, 23) mod4=(0, 2, 3) d_f≥19
+      |B_1|=0, |V_δ|=56, |V_δ|/q=0.58
+      per-α₁ slice dist (top 5): [(0, 69), (2, 28)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(23, 25, 31) mod4=(3, 1, 3) d_f≥20
+      |B_1|=1, |V_δ|=97, |V_δ|/q=1.00
+      per-α₁ slice dist (top 5): [(0, 96), (97, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(11, 16, 23) mod4=(3, 0, 3) d_f≥20
+      |B_1|=1, |V_δ|=193, |V_δ|/q=1.99
+      per-α₁ slice dist (top 5): [(1, 96), (97, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(11, 12, 30) mod4=(3, 0, 2) d_f≥21
+      |B_1|=0, |V_δ|=68, |V_δ|/q=0.70
+      per-α₁ slice dist (top 5): [(0, 56), (2, 24), (1, 16), (4, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(10, 24, 30) mod4=(2, 0, 2) d_f≥21
+      |B_1|=0, |V_δ|=194, |V_δ|/q=2.00
+      per-α₁ slice dist (top 5): [(2, 97)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(10, 12, 14) mod4=(2, 0, 2) d_f≥20
+      |B_1|=0, |V_δ|=0, |V_δ|/q=0.00
+      per-α₁ slice dist (top 5): [(0, 97)]
+      vs closed form: MIXED — no closed pred, deviation = None
+
+  --- Class mixed[2:1] (sampling 8/792) ---
+    sup=(21, 29, 30) mod4=(1, 1, 2) d_f≥20
+      |B_1|=0, |V_δ|=481, |V_δ|/q=4.96
+      per-α₁ slice dist (top 5): [(5, 96), (1, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(8, 21, 26) mod4=(0, 1, 2) d_f≥21
+      |B_1|=0, |V_δ|=220, |V_δ|/q=2.27
+      per-α₁ slice dist (top 5): [(2, 72), (3, 24), (4, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(19, 21, 24) mod4=(3, 1, 0) d_f≥20
+      |B_1|=0, |V_δ|=32, |V_δ|/q=0.33
+      per-α₁ slice dist (top 5): [(0, 73), (1, 16), (2, 8)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(22, 24, 29) mod4=(2, 0, 1) d_f≥20
+      |B_1|=0, |V_δ|=64, |V_δ|/q=0.66
+      per-α₁ slice dist (top 5): [(0, 64), (1, 24), (4, 8), (8, 1)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(15, 21, 24) mod4=(3, 1, 0) d_f≥20
+      |B_1|=0, |V_δ|=64, |V_δ|/q=0.66
+      per-α₁ slice dist (top 5): [(0, 57), (2, 24), (1, 16)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(8, 18, 29) mod4=(0, 2, 1) d_f≥20
+      |B_1|=0, |V_δ|=60, |V_δ|/q=0.62
+      per-α₁ slice dist (top 5): [(0, 64), (1, 24), (4, 9)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(16, 23, 24) mod4=(0, 3, 0) d_f≥19
+      |B_1|=0, |V_δ|=0, |V_δ|/q=0.00
+      per-α₁ slice dist (top 5): [(0, 97)]
+      vs closed form: MIXED — no closed pred, deviation = None
+    sup=(13, 14, 16) mod4=(1, 2, 0) d_f≥21
+      |B_1|=0, |V_δ|=873, |V_δ|/q=9.00
+      per-α₁ slice dist (top 5): [(9, 97)]
+      vs closed form: MIXED — no closed pred, deviation = None
+
+
+=== SUMMARY: deviation from closed-form by mixed class ===
+               class                  sup  B_1   |V_δ|   |V_δ|/q    V_δ - 0·q
+          mixed[1:2]         (18, 25, 26)    0     481      4.96          481
+          mixed[1:2]          (9, 19, 27)    1     673      6.94          576
+          mixed[1:2]          (8, 14, 23)    0      56      0.58           56
+          mixed[1:2]         (23, 25, 31)    1      97      1.00            0
+          mixed[1:2]         (11, 16, 23)    1     193      1.99           96
+          mixed[1:2]         (11, 12, 30)    0      68      0.70           68
+          mixed[1:2]         (10, 24, 30)    0     194      2.00          194
+          mixed[1:2]         (10, 12, 14)    0       0      0.00            0
+          mixed[2:1]         (21, 29, 30)    0     481      4.96          481
+          mixed[2:1]          (8, 21, 26)    0     220      2.27          220
+          mixed[2:1]         (19, 21, 24)    0      32      0.33           32
+          mixed[2:1]         (22, 24, 29)    0      64      0.66           64
+          mixed[2:1]         (15, 21, 24)    0      64      0.66           64
+          mixed[2:1]          (8, 18, 29)    0      60      0.62           60
+          mixed[2:1]         (16, 23, 24)    0       0      0.00            0
+          mixed[2:1]         (13, 14, 16)    0     873      9.00          873

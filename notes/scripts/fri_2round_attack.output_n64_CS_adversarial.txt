@@ -1,0 +1,12 @@
+  Lift: f(x) = X^{34} + X^{33} on L_0 (degrees 34, 33)
+Setup: n_0=64, k_0=33, p=193, FRI lift of CS at L_1 (k_1=16, m=1, r=17, s=32)
+  CS-predicted bad α_1 count at L_1 fold: s_1 = 32 (out of 193 α_1 values)
+  Equivalent FRI bad-α fraction: ≥ 32/193 = 0.1658
+
+Running R=2 fold on FRI-lift CS adversarial f, sampling all (64+) α_1 candidates...
+  d_R hist (sample 400 tuples) = {0: 3, 8: 397}
+  min=0, max=8
+  P_typical (d_R = max)/n_R = 0.5000
+  P_max     (d_R = min)/n_R = 1.0000
+  P_avg                  = 0.5038
+  Compare: (1-δ)=0.5312, (1-δ/2)=0.7656

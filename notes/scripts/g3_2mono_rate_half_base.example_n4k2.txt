@@ -1,0 +1,7 @@
+CASE: (a, b) = (2, 3) at (n, k) = (4, 2) rate 2/4
+Starting elimination of p_i...
+Done. E size:
+2
+phi:
+alpha
+CASE_RESULT (a=2, b=3, n=4, k=2): deg_alpha = 1

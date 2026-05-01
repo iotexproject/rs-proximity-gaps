@@ -1,0 +1,13 @@
+=== Find dense K=2 with |{α : d_1=9}| = 10 at q=449 ===
+  attempt 3: |{α : d_1=9}| = 10, T1=(0, 5, 6), T2=(4, 5, 7)
+  α values: [1, 112, 164, 175, 259, 265, 287, 329, 375, 418]
+  Number of distinct pairwise ratios: 82
+  Number of distinct pairwise sums: 53
+  Vanishing polynomial coefficients: [414, 13, 129, 51, 196, 234, 319, 143, 436, 309, 1]
+  S[0]/S[1] generates group of order 112
+  Agreement sets S_α (size 7) for first 5 α's:
+    α=1: S_α = [1, 2, 3, 5, 9, 10, 11]
+    α=112: S_α = [1, 2, 3, 9, 10, 11, 15]
+    α=164: S_α = [1, 2, 3, 4, 9, 10, 11]
+    α=175: S_α = [1, 2, 3, 7, 9, 10, 11]
+    α=259: S_α = [1, 2, 3, 9, 10, 11, 13]

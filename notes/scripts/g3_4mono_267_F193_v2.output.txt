@@ -1,0 +1,64 @@
+=== Φ over Q (ρ_1 = 1) ===
+alpha^12+24*alpha^8*rho2^3*rho3-24*alpha^8*rho2*rho3^3-180*alpha^4*rho2^6*rho3^2-86*alpha^4*rho2^4*rho3^4+204*alpha^4*rho2^2*rho3^6+46*alpha^4*rho3^8-64*rho2^7*rho3^5+32*rho2^5*rho3^7+64*rho2^3*rho3^9-32*rho2*rho3^11
+
+=== Φ specialized ρ_2=1, ρ_3=7 ===
+alpha^12-8064*alpha^8+288965936*alpha^4-60666547200
+
+=== Over F_193[α] ===
+alpha^12+42*alpha^8-33*alpha^4-87
+
+Factored:
+[1]:
+   _[1]=1
+   _[2]=alpha^12+42*alpha^8-33*alpha^4-87
+[2]:
+   1,1
+
+=== Try other (ρ_2, ρ_3) ===
+(1, 7): factored = 
+[1]:
+   _[1]=1
+   _[2]=alpha^12+42*alpha^8-33*alpha^4-87
+[2]:
+   1,1
+
+// ** redefining phi_temp (temp = subst(phi_Q, rho2, number(samples[i][1]), rho3, number(samples[i][2]));) g3_4mono_267_F193_v2.sing:54
+// ** redefining phi_temp_193 (    poly phi_temp_193 = imap(RQ, phi_temp);) g3_4mono_267_F193_v2.sing:56
+(3, 11): factored = 
+[1]:
+   _[1]=1
+   _[2]=alpha^4+40
+   _[3]=alpha^8+36*alpha^4-91
+[2]:
+   1,1,1
+
+// ** redefining phi_temp (temp = subst(phi_Q, rho2, number(samples[i][1]), rho3, number(samples[i][2]));) g3_4mono_267_F193_v2.sing:54
+// ** redefining phi_temp_193 (    poly phi_temp_193 = imap(RQ, phi_temp);) g3_4mono_267_F193_v2.sing:56
+(5, 13): factored = 
+[1]:
+   _[1]=1
+   _[2]=alpha^12+12*alpha^8+31*alpha^4+78
+[2]:
+   1,1
+
+// ** redefining phi_temp (temp = subst(phi_Q, rho2, number(samples[i][1]), rho3, number(samples[i][2]));) g3_4mono_267_F193_v2.sing:54
+// ** redefining phi_temp_193 (    poly phi_temp_193 = imap(RQ, phi_temp);) g3_4mono_267_F193_v2.sing:56
+(7, 23): factored = 
+[1]:
+   _[1]=1
+   _[2]=alpha^3+21*alpha^2+14*alpha-34
+   _[3]=alpha^3+36*alpha^2-14*alpha-52
+   _[4]=alpha^3-36*alpha^2-14*alpha+52
+   _[5]=alpha^3-21*alpha^2+14*alpha+34
+[2]:
+   1,1,1,1,1
+
+// ** redefining phi_temp (temp = subst(phi_Q, rho2, number(samples[i][1]), rho3, number(samples[i][2]));) g3_4mono_267_F193_v2.sing:54
+// ** redefining phi_temp_193 (    poly phi_temp_193 = imap(RQ, phi_temp);) g3_4mono_267_F193_v2.sing:56
+(11, 17): factored = 
+[1]:
+   _[1]=1
+   _[2]=alpha^12+67*alpha^8-60*alpha^4-91
+[2]:
+   1,1
+

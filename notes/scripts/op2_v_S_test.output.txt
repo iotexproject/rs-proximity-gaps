@@ -1,0 +1,42 @@
+
+=== n=16 c=4 p=1009: D=8 w=4 T=3 ===
+  S = [4, 7, 8, 10, 15] (|S|=5)
+  enumerating 1820 supports of size 4...
+  M stats: min=5, mean=5.00, max=5, T=3
+  M > T (= bad witness): 20/20
+
+=== n=20 c=5 p=41: D=10 w=5 T=3 ===
+  S = [0, 4, 5, 8, 10, 12] (|S|=6)
+  enumerating 15504 supports of size 5...
+  M stats: min=4, mean=5.35, max=6, T=3
+  M > T (= bad witness): 20/20
+
+=== n=24 c=4 p=1009: D=12 w=8 T=5 ===
+  S = [0, 1, 4, 5, 6, 9, 10, 13, 22] (|S|=9)
+  enumerating 735471 supports of size 8...
+  M stats: min=8, mean=8.75, max=9, T=5
+  M > T (= bad witness): 20/20
+
+=== n=24 c=5 p=1009: D=12 w=7 T=4 ===
+  S = [0, 1, 5, 6, 9, 11, 14, 23] (|S|=8)
+  enumerating 346104 supports of size 7...
+  M stats: min=7, mean=7.95, max=8, T=4
+  M > T (= bad witness): 20/20
+
+=== n=12 c=3 p=1009: D=6 w=3 T=3 ===
+  S = [3, 5, 6, 7] (|S|=4)
+  enumerating 220 supports of size 3...
+  M stats: min=4, mean=4.00, max=4, T=3
+  M > T (= bad witness): 20/20
+
+=== n=16 c=4 p=1009: D=8 w=4 T=3 ===
+  S = [0, 3, 4, 6, 7, 9] (|S|=6)
+  enumerating 1820 supports of size 4...
+  M stats: min=0, mean=0.00, max=0, T=3
+  M > T (= bad witness): 0/10
+
+=== n=16 c=4 p=1009: D=8 w=4 T=3 ===
+  S = [0, 1, 3, 4, 5, 6, 7, 15] (|S|=8)
+  enumerating 1820 supports of size 4...
+  M stats: min=0, mean=0.00, max=0, T=3
+  M > T (= bad witness): 0/10

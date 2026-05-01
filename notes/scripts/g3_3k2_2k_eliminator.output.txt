@@ -1,0 +1,20 @@
+=== k = 2, n = 8, a = 3, b = 4 ===
+  k=2: 4 eqs, 3 unknowns ([q0, q1], rho)
+  k=2: GB done 0.0s, |G|=4
+  k=2: last = rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+=== k = 4, n = 16, a = 6, b = 8 ===
+  k=4: 8 eqs, 5 unknowns ([q0, q1, q2, q3], rho)
+  k=4: GB done 0.0s, |G|=6
+  k=4: last = rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+=== k = 6, n = 24, a = 9, b = 12 ===
+  k=6: 12 eqs, 7 unknowns ([q0, q1, q2, q3, q4, q5], rho)
+  k=6: GB done 0.1s, |G|=8
+  k=6: last = rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+=== k = 8, n = 32, a = 12, b = 16 ===
+  k=8: 16 eqs, 9 unknowns ([q0, q1, q2, q3, q4, q5, q6, q7], rho)
+  k=8: GB done 4.6s, |G|=10
+  k=8: last = rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+

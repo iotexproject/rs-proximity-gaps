@@ -1,0 +1,39 @@
+
+=== h=16, char=17, rho=3, eps=16 ===
+  GB size 30, elapsed 0.09s, all p_vars → 0: True [OK]
+
+=== h=16, char=41, rho=8, eps=40 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+=== h=16, char=73, rho=12, eps=1 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+=== h=16, char=97, rho=14, eps=1 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+=== h=16, char=113, rho=14, eps=112 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+=== h=16, char=137, rho=31, eps=1 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+=== h=16, char=193, rho=34, eps=1 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+=== h=16, char=241, rho=22, eps=1 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+=== h=16, char=257, rho=15, eps=256 ===
+  GB size 30, elapsed 0.06s, all p_vars → 0: True [OK]
+
+========== SUMMARY ==========
+  h    k     n prime   GB  time(s)   OK?
+ 16   32   128    17   30     0.09   YES
+ 16   32   128    41   30     0.06   YES
+ 16   32   128    73   30     0.06   YES
+ 16   32   128    97   30     0.06   YES
+ 16   32   128   113   30     0.06   YES
+ 16   32   128   137   30     0.06   YES
+ 16   32   128   193   30     0.06   YES
+ 16   32   128   241   30     0.06   YES
+ 16   32   128   257   30     0.06   YES

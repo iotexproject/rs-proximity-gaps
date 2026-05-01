@@ -1,0 +1,21 @@
+info_sets_n0 sample size: 30000
+info_sets_n1 size: 1820
+
+=== 4-pos sparse K-bound at (32, 8), q=97 ===
+  Sample: 200 4-pos supports under recursive above-J
+  Predicted (3-pos analog): K ≤ 10? Or scales with sparsity?
+
+  [progress: 50/200, aboveJ=48, max K=4, max VD=865, elapsed=5s]
+  [progress: 100/200, aboveJ=98, max K=4, max VD=865, elapsed=10s]
+  [progress: 150/200, aboveJ=148, max K=7, max VD=865, elapsed=14s]
+  [progress: 200/200, aboveJ=198, max K=7, max VD=865, elapsed=19s]
+
+q=97: total=200, aboveJ-L0=198, aboveJ-rec=198, max K=7, max |V_δ|=865
+  K dist: {0: 115, 2: 31, 3: 4, 1: 46, 4: 1, 7: 1}
+  K ≤ 10 (3-pos analog): PASS
+  K ≤ 15: PASS
+  10q-9 = 961: VD ≤ ? True
+  elapsed: 19s
+
+Max-K examples (top 1):
+  sup=(13, 15, 23, 29), mod4=(0, 2, 0, 2), K=7 (B_1=1, K_col=6), |V_δ|=673, d_f=20, d_fold_max=11

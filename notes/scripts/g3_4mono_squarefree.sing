@@ -1,0 +1,60 @@
+// g3_4mono_squarefree.sing — check if (1, 2, 6, 7) Φ has multiple roots in α.
+// If sqfree degree < 12, then |V(Φ)| < 12 per ρ-fiber RIGOROUSLY.
+
+LIB "poly.lib";
+
+ring R = 0, (z, p0, p1, p2, p3, alpha, rho2, rho3), (dp(1), lp(7));
+poly sigma = z^4 + p3*z^3 + p2*z^2 + p1*z + p0;
+
+poly z_1 = z;
+poly z_2 = reduce(z^2, std(sigma));
+poly z_6 = reduce(z^6, std(sigma));
+poly z_7 = reduce(z^7, std(sigma));
+
+poly z8 = reduce(z^8 - 1, std(sigma));
+matrix Mn = coeffs(z8, z);
+poly div0 = Mn[1, 1];
+poly div1 = Mn[2, 1];
+poly div2 = Mn[3, 1];
+poly div3 = Mn[4, 1];
+
+// h = z + ρ_2 z^2 + ρ_3 z^6 + α z^7 (changed: ρ_1 = 1, since we can scale)
+poly h = z_1 + rho2 * z_2 + rho3 * z_6 + alpha * z_7;
+matrix M = coeffs(h, z);
+poly cert2 = M[3, 1];
+poly cert3 = M[4, 1];
+ideal I = cert2, cert3, div0, div1, div2, div3;
+ideal E = eliminate(I, p0*p1*p2*p3);
+poly phi = E[size(E)];
+
+print("=== Φ for (1, 2, 6, 7) (with ρ_1 = 1) ===");
+print(phi);
+print("");
+print("deg in α:");
+print(deg(phi, intvec(0,0,0,0,0,1,0,0)));
+print("");
+
+// Substitute ρ_2 = 1, ρ_3 = 7 (random non-special values) to get univariate
+poly phi_specialize = subst(phi, rho2, 1, rho3, 7);
+print("Φ specialized (ρ_2=1, ρ_3=7):");
+print(phi_specialize);
+print("");
+
+// Compute squarefree part = Φ / gcd(Φ, ∂Φ/∂α)
+ring R_uni = 0, alpha, dp;
+poly phi_uni = imap(R, phi_specialize);
+print("phi_uni in α:");
+print(phi_uni);
+print("");
+
+print("squarefree part:");
+poly sqf = squarefree(phi_uni);
+print(sqf);
+print("");
+print("deg(sqf):");
+print(deg(sqf));
+
+print("");
+print("===Number of distinct α-roots = deg(sqf)===");
+
+exit;

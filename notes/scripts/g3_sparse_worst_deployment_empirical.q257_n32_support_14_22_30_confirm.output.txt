@@ -1,0 +1,13 @@
+=== issue #403 support-focused sparse search ===
+cell: q=257, n=32, k=8, delta_n=17, agreement_target=15
+L=<omega>, omega=136; membership_samples=50000, batch=2000
+one-word miss probability at target agreement: 5.141e-14
+supports=1, coeff_trials_per_support=5
+
+done in 1.3s; attempts=1, accepted=1
+top witnesses:
+  K_lb=  6, best_agree_seen=16, gen_best_agree=(11,11), supp1=(14, 22, 30), coeffs1=(52, 84, 20), supp2=(14, 22, 30), coeffs2=(47, 84, 30)
+
+=== support-search row ===
+| q | n | k | delta_n | membership_samples | one-word miss | supports | coeff_trials | attempts | accepted | top_K_sparse_lb | runtime_s |
+| 257 | 32 | 8 | 17 | 50000 | 5.141e-14 | 1 | 5 | 1 | 1 | 6 | 1.3 |

@@ -1,0 +1,18 @@
+
+=== n=12 c=3 p=1009: D=6 w=3 T=3, target |S|=4 ===
+  attempts=59, witnesses found=30
+  |S| distribution: {1: 20, 2: 8, 4: 2}
+  pct with |S| = 4: 6.7%
+  pct with |S| ≤ 4: 100.0%
+
+=== n=16 c=4 p=257: D=8 w=4 T=3, target |S|=5 ===
+  attempts=34, witnesses found=30
+  |S| distribution: {1: 17, 2: 10, 3: 3}
+  pct with |S| = 5: 0.0%
+  pct with |S| ≤ 5: 100.0%
+
+=== n=20 c=5 p=41: D=10 w=5 T=3, target |S|=6 ===
+  attempts=33, witnesses found=30
+  |S| distribution: {1: 14, 2: 11, 3: 5}
+  pct with |S| = 6: 0.0%
+  pct with |S| ≤ 6: 100.0%

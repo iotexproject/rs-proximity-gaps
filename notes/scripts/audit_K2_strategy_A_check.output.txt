@@ -1,0 +1,24 @@
+Reproducing K=2 breach #0 (pair=1, f=5)...
+Got breach: pair=1, f=5, T1=(0, 5, 6), T2=(2, 4, 7)
+
+Full 97×97 = 9409 α-pairs, computing P_A and P_B per pair...
+Strategy A: round-1 cheat-at-not-last (closest cw at every level)
+Strategy B: cheat-at-last (only g_R must be RS-cw)
+
+Done in 672s.
+
+Strategy A (closest cw): P_avg_A = 0.1155
+Strategy B (cheat-at-last): P_avg_B = 0.3019
+max(A, B) — optimal cheater: P_avg_AB = 0.3019
+
+Δ from B-only (the 0115 audit): +0.0000
+  → at p=97 ratio: 0.00%
+
+# α where P_A > P_B: 0 / 9409 = 0.00%
+
+d_1 distribution (round-1 distance to RS_4 in F_p^16):
+  d_1 =  6:    1 α_1 ( 1.03%)  → |S_1|/n_1 = 0.6250
+  d_1 = 10:   44 α_1 (45.36%)  → |S_1|/n_1 = 0.3750
+  d_1 = 11:   52 α_1 (53.61%)  → |S_1|/n_1 = 0.3125
+
+✓ Strategy B dominates everywhere (≤1% correction). 0115 audit stands.

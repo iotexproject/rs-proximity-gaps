@@ -1,0 +1,31 @@
+k=2: σ_S(z) = z^4 + ρ z^3 - ρ^3/2 · z^1 - ρ^4/4
+  z^8 - 1 mod σ_S has 1 nonzero coefs (in z and ρ):
+    coef of z^0 (mod σ_S): (rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)/16
+
+k=4: σ_S(z) = z^8 + ρ z^6 - ρ^3/2 · z^2 - ρ^4/4
+  z^16 - 1 mod σ_S has 1 nonzero coefs (in z and ρ):
+    coef of z^0 (mod σ_S): (rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)/16
+
+k=6: σ_S(z) = z^12 + ρ z^9 - ρ^3/2 · z^3 - ρ^4/4
+  z^24 - 1 mod σ_S has 1 nonzero coefs (in z and ρ):
+    coef of z^0 (mod σ_S): (rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)/16
+
+k=8: σ_S(z) = z^16 + ρ z^12 - ρ^3/2 · z^4 - ρ^4/4
+  z^32 - 1 mod σ_S has 1 nonzero coefs (in z and ρ):
+    coef of z^0 (mod σ_S): (rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)/16
+
+k=10: σ_S(z) = z^20 + ρ z^15 - ρ^3/2 · z^5 - ρ^4/4
+  z^40 - 1 mod σ_S has 1 nonzero coefs (in z and ρ):
+    coef of z^0 (mod σ_S): (rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)/16
+
+k=12: σ_S(z) = z^24 + ρ z^18 - ρ^3/2 · z^6 - ρ^4/4
+  z^48 - 1 mod σ_S has 1 nonzero coefs (in z and ρ):
+    coef of z^0 (mod σ_S): (rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)/16
+
+============================================================
+Substitution test: σ_S = Π(z^{k/2}) where Π(u) = u^4 + ρ u^3 - (ρ^3/2) u - ρ^4/4
+
+Π(u) = -rho**4/4 - rho**3*u/2 + rho*u**3 + u**4
+
+u^8 - 1 mod Π(u) = rho**8/16 - 1
+  → factor: (rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)/16

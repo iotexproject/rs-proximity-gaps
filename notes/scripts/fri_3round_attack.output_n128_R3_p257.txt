@@ -1,0 +1,46 @@
+======================================================================
+FRI 3-round attack: n0=128, k0=64, p=257, R=3, δ=0.3750 (δ_J=0.2929)
+  Per-paper bound (1-δ/2)^q baseline: 1-δ/2 = 0.8125
+  Zero-loss target  (1-δ)^q baseline:  1-δ   = 0.6250
+======================================================================
+  Chain: L_0(128,k=64) → L_1(64,k=32) → L_2(32,k=16) → L_3(16,k=8)
+  Final: L_3 size 16, RS_8
+
+--- trial 0 [random+wt49]
+  d_R range [6, 7] / 16, hist {6: 18, 7: 107}
+  P_avg = 0.5715, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 163.6s
+
+--- trial 1 [random+wt49]
+  d_R range [6, 7] / 16, hist {6: 15, 7: 110}
+  P_avg = 0.5700, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 166.6s
+
+--- trial 2 [random+wt49]
+  d_R range [6, 7] / 16, hist {6: 11, 7: 114}
+  P_avg = 0.5680, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.5625 (d_R ≥ 7)
+  elapsed: 166.1s
+
+--- trial 3 [random+wt49]
+  d_R range [6, 7] / 16, hist {6: 7, 7: 118}
+  P_avg = 0.5660, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.5625 (d_R ≥ 7)
+  elapsed: 168.3s
+
+--- trial 4 [random+wt49]
+  d_R range [6, 7] / 16, hist {6: 19, 7: 106}
+  P_avg = 0.5720, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 164.5s
+
+======================================================================
+SUMMARY (5 inputs, 829.1s, 216 α-tuples each)
+======================================================================
+  Theoretical baselines: (1-δ/2)=0.8125, (1-δ)=0.6250
+  Worst-case P_avg     (over f): 0.5720
+  Worst-case P_max     (over f): 0.6250
+  Worst-case P_typical (over f): 0.6250
+  ⇒ 3-round: zero-loss achievable, bound improvable

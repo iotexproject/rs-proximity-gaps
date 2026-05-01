@@ -1,0 +1,12 @@
+Finding the |E(f)|=8 case...
+  Computing tie_upper for the |E|=8 case (T1=(0, 1, 6), T2=(0, 2, 5))...
+
+  P_B (E[1 - d_2/n_2]):     0.3827
+  tie_upper:                 0.4476
+  K=1 leader tie_upper:      0.4490
+  K=2 (18,8) tie_upper:      0.4477
+
+  d_1 distribution: [(7, 1), (8, 7), (9, 89)]
+  d_2 distribution: [(0, 2), (3, 188), (4, 191), (5, 9028)]
+
+  Below both prior maxes — |E|=8 case has limited tie_upper impact

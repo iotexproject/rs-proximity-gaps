@@ -1,0 +1,21 @@
+=== issue #403 support-focused sparse search ===
+cell: q=97, n=32, k=8, delta_n=17, agreement_target=15
+L=<omega>, omega=28; membership_samples=50000, batch=5000
+one-word miss probability at target agreement: 5.141e-14
+supports=1, coeff_trials_per_support=8
+
+  supports 1/1; attempts=8, accepted=8, top_K_lb=3
+done in 9.7s; attempts=8, accepted=8
+top witnesses:
+  K_lb=  3, best_agree_seen=16, gen_best_agree=(11,12), supp1=(9, 21, 25), coeffs1=(88, 11, 92), supp2=(9, 21, 25), coeffs2=(54, 34, 86)
+  K_lb=  3, best_agree_seen=16, gen_best_agree=(12,12), supp1=(9, 21, 25), coeffs1=(58, 70, 46), supp2=(9, 21, 25), coeffs2=(37, 38, 21)
+  K_lb=  2, best_agree_seen=20, gen_best_agree=(12,12), supp1=(9, 21, 25), coeffs1=(89, 79, 74), supp2=(9, 21, 25), coeffs2=(86, 72, 13)
+  K_lb=  2, best_agree_seen=16, gen_best_agree=(11,12), supp1=(9, 21, 25), coeffs1=(87, 52, 76), supp2=(9, 21, 25), coeffs2=(39, 30, 68)
+  K_lb=  2, best_agree_seen=16, gen_best_agree=(12,12), supp1=(9, 21, 25), coeffs1=(62, 91, 79), supp2=(9, 21, 25), coeffs2=(42, 50, 66)
+  K_lb=  2, best_agree_seen=16, gen_best_agree=(11,12), supp1=(9, 21, 25), coeffs1=(26, 66, 43), supp2=(9, 21, 25), coeffs2=(2, 51, 68)
+  K_lb=  2, best_agree_seen=16, gen_best_agree=(12,12), supp1=(9, 21, 25), coeffs1=(6, 24, 92), supp2=(9, 21, 25), coeffs2=(93, 59, 13)
+  K_lb=  2, best_agree_seen=16, gen_best_agree=(12,12), supp1=(9, 21, 25), coeffs1=(3, 70, 62), supp2=(9, 21, 25), coeffs2=(8, 29, 51)
+
+=== support-search row ===
+| q | n | k | delta_n | membership_samples | one-word miss | supports | coeff_trials | attempts | accepted | top_K_sparse_lb | runtime_s |
+| 97 | 32 | 8 | 17 | 50000 | 5.141e-14 | 1 | 8 | 8 | 8 | 3 | 9.7 |

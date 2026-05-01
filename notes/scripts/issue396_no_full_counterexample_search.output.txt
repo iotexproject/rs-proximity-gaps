@@ -1,0 +1,7 @@
+Issue #396 no-full-block counterexample search
+q=193, L2=(16,4), supports=C(48,3)=17296, workers=12
+Scanning all alpha1; full-code rows are skipped.
+
+
+hist={'counterexample_supports': 1, 'full_rows': 0, 'supports': 347}
+first_counterexample={'support': (16, 25, 56), 'alpha1': 84, 'examples': [((0, 2, 3, 5, 8, 10, 11, 13), (2, 2, 2, 2))], 'full_rows': 0}

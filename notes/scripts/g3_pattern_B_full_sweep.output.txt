@@ -1,0 +1,18 @@
+All-odd 3-pos supports in [8, 31]: 220, n_seeds=5
+
+  count_g distribution across 1100 samples:
+    count_g=0: 465 samples → |V_δ| = q + 0(q-1) = 97
+    count_g=1: 223 samples → |V_δ| = q + 1(q-1) = 193
+    count_g=2: 112 samples → |V_δ| = q + 2(q-1) = 289
+    count_g=3: 9 samples → |V_δ| = q + 3(q-1) = 385
+    count_g=4: 78 samples → |V_δ| = q + 4(q-1) = 481
+    count_g=5: 71 samples → |V_δ| = q + 5(q-1) = 577
+    count_g=6: 35 samples → |V_δ| = q + 6(q-1) = 673
+    count_g=7: 1 samples → |V_δ| = q + 7(q-1) = 769
+    count_g=8: 26 samples → |V_δ| = q + 8(q-1) = 865
+    count_g=9: 55 samples → |V_δ| = q + 9(q-1) = 961
+    count_g=97: 25 samples <-- max → |V_δ| = q + 97(q-1) = 9409
+
+  Max count_g observed: 97
+  Predicted bound n_1 - s_1 + 1 = 9; bound = VIOLATED!
+  Max |V_δ| = q + 97(q-1) = 9409

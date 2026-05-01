@@ -1,0 +1,38 @@
+=== Pattern C star rank-deficit analysis at n=12 c=3 p=1009 ===
+
+Sampled 22905 trials
+  Pattern C: 4212
+  Pattern C star: 394
+  Pattern C star with rank deficit: 15
+
+  Es=[(1, 7, 8), (2, 7, 10), (2, 9, 11), (5, 6, 10)]
+    rank dim X_γ across 30 random γ: Counter({1: 30})
+
+  Es=[(0, 3, 8), (0, 2, 10), (6, 7, 10), (2, 9, 11)]
+    rank dim X_γ across 30 random γ: Counter({1: 30})
+
+  Es=[(3, 4, 7), (1, 7, 9), (3, 6, 10), (4, 8, 11)]
+    rank dim X_γ across 30 random γ: Counter({1: 30})
+
+  Es=[(1, 2, 3), (0, 4, 11), (0, 2, 8), (6, 7, 8)]
+    rank dim X_γ across 30 random γ: Counter({1: 30})
+
+  Es=[(5, 7, 10), (2, 6, 10), (3, 5, 9), (0, 4, 7)]
+    rank dim X_γ across 30 random γ: Counter({1: 30})
+
+=== Looking for relation among 15 rd-star configs ===
+  E_c=(2, 7, 10): sum L = 850, prod L = 849, prod (L_i - L_j) = 118
+  E_c=(0, 2, 10): sum L = 2, prod L = 1, prod (L_i - L_j) = 749
+  E_c=(3, 4, 7): sum L = 683, prod L = 375, prod (L_i - L_j) = 554
+  E_c=(0, 2, 8): sum L = 1, prod L = 635, prod (L_i - L_j) = 752
+  E_c=(5, 7, 10): sum L = 784, prod L = 635, prod (L_i - L_j) = 536
+  E_c=(1, 7, 11): sum L = 700, prod L = 849, prod (L_i - L_j) = 462
+  E_c=(0, 5, 8): sum L = 944, prod L = 160, prod (L_i - L_j) = 891
+  E_c=(8, 9, 11): sum L = 865, prod L = 374, prod (L_i - L_j) = 793
+  E_c=(0, 1, 11): sum L = 861, prod L = 1, prod (L_i - L_j) = 189
+  E_c=(3, 6, 11): sum L = 159, prod L = 634, prod (L_i - L_j) = 718
+  E_c=(4, 8, 9): sum L = 539, prod L = 540, prod (L_i - L_j) = 860
+  E_c=(1, 2, 9): sum L = 66, prod L = 1, prod (L_i - L_j) = 749
+  E_c=(1, 8, 9): sum L = 325, prod L = 1008, prod (L_i - L_j) = 260
+  E_c=(6, 7, 11): sum L = 539, prod L = 1, prod (L_i - L_j) = 749
+  E_c=(1, 5, 10): sum L = 95, prod L = 374, prod (L_i - L_j) = 153

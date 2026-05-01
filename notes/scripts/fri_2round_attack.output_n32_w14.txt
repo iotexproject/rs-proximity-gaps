@@ -1,0 +1,49 @@
+======================================================================
+FRI 2-round attack: n0=32, k0=16, p=97, δ=0.4375 (δ_J=0.2929)
+  Per-paper bound (1-δ/2)^q baseline: 1-δ/2 = 0.7812
+  Zero-loss target  (1-δ)^q baseline:  1-δ   = 0.5625
+======================================================================
+
+--- trial 0 [random+wt15]: dist(f, C_0) check skipped (n=32 too large)
+  P_avg = 0.5619, P_max = 0.7500, P_min = 0.5000
+  d1_min = 6/16, d2_min = 2/8
+  best (α1=59, α2=51): d1=6, d2=2, P=0.7500
+  (d1,d2) joint dist (top 5): [((6, 3), 130), ((6, 4), 129), ((7, 4), 74), ((7, 3), 66), ((6, 2), 1)]
+  P_typical = 0.6250 (worst single-query among non-bad rounds; d1≥6, d2≥3)
+
+--- trial 1 [random+wt15]: dist(f, C_0) check skipped (n=32 too large)
+  P_avg = 0.5619, P_max = 0.7500, P_min = 0.5000
+  d1_min = 6/16, d2_min = 2/8
+  best (α1=34, α2=15): d1=6, d2=2, P=0.7500
+  (d1,d2) joint dist (top 5): [((6, 4), 130), ((6, 3), 129), ((7, 4), 73), ((7, 3), 67), ((6, 2), 1)]
+  P_typical = 0.6250 (worst single-query among non-bad rounds; d1≥6, d2≥3)
+
+--- trial 2 [random+wt15]: dist(f, C_0) check skipped (n=32 too large)
+  P_avg = 0.5559, P_max = 0.7500, P_min = 0.5000
+  d1_min = 6/16, d2_min = 2/8
+  best (α1=73, α2=82): d1=7, d2=2, P=0.7500
+  (d1,d2) joint dist (top 5): [((7, 4), 123), ((6, 4), 100), ((7, 3), 96), ((6, 3), 79), ((7, 2), 1)]
+  P_typical = 0.6250 (worst single-query among non-bad rounds; d1≥6, d2≥3)
+
+--- trial 3 [random+wt15]: dist(f, C_0) check skipped (n=32 too large)
+  P_avg = 0.5628, P_max = 0.7500, P_min = 0.5000
+  d1_min = 6/16, d2_min = 2/8
+  best (α1=12, α2=94): d1=7, d2=2, P=0.7500
+  (d1,d2) joint dist (top 5): [((7, 4), 132), ((7, 3), 127), ((6, 3), 72), ((6, 4), 68), ((7, 2), 1)]
+  P_typical = 0.6250 (worst single-query among non-bad rounds; d1≥6, d2≥3)
+
+--- trial 4 [random+wt15]: dist(f, C_0) check skipped (n=32 too large)
+  P_avg = 0.5603, P_max = 0.7500, P_min = 0.5000
+  d1_min = 6/16, d2_min = 2/8
+  best (α1=40, α2=76): d1=7, d2=2, P=0.7500
+  (d1,d2) joint dist (top 5): [((6, 4), 146), ((6, 3), 134), ((7, 4), 62), ((7, 3), 57), ((7, 2), 1)]
+  P_typical = 0.6250 (worst single-query among non-bad rounds; d1≥6, d2≥3)
+
+======================================================================
+SUMMARY (5 inputs tested, 58.2s)
+======================================================================
+  Theoretical baselines for q=1: (1-δ/2)=0.7812, (1-δ)=0.5625
+  Worst-case P_avg     (over f): 0.5628
+  Worst-case P_max     (over f): 0.7500  (1 bad-round event)
+  Worst-case P_typical (over f): 0.6250  (≥1 round bad excluded)
+  ⇒ Effective c ≈ 1.167 (1=zero-loss, 2=our bound)

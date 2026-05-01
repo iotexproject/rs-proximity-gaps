@@ -1,0 +1,61 @@
+sweep 30 pairs at (n=8, k=2) with 4 workers, timeout=60s
+  [1/30] (a=2,b=3): deg=0 (nonzero=0) [ok=1, elapsed=0s]
+  [2/30] (a=2,b=4): deg=5 (nonzero=4) [ok=2, elapsed=0s]
+  [3/30] (a=2,b=5): deg=9 (nonzero=8) [ok=3, elapsed=0s]
+  [5/30] (a=2,b=7): deg=0 (nonzero=0) [ok=5, elapsed=0s]
+  [10/30] (a=3,b=7): deg=4 (nonzero=4) [ok=10, elapsed=0s]
+  [15/30] (a=4,b=7): deg=8 (nonzero=8) [ok=14, elapsed=0s]
+  [20/30] (a=5,b=7): deg=4 (nonzero=4) [ok=18, elapsed=0s]
+  [25/30] (a=6,b=7): deg=0 (nonzero=0) [ok=23, elapsed=0s]
+  [30/30] (a=7,b=6): deg=0 (nonzero=0) [ok=28, elapsed=0s]
+
+=== Summary (total 0.5s) ===
+  ok: 28 pairs
+  error: 2 pairs
+
+
+=== Errors / timeouts ===
+  (a=4,b=5): deg=-1 <no rho-only>
+  (a=5,b=4): deg=-1 <no rho-only>
+
+=== All rows ===
+  (a= 2,b= 3) r= 1 gcd=1 deg=0 (nz=0)  1
+  (a= 2,b= 4) r= 2 gcd=2 deg=5 (nz=4)  rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 2,b= 5) r= 3 gcd=1 deg=9 (nz=8)  rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 2,b= 6) r= 4 gcd=4 deg=4 (nz=4)  (rho - 1)*(rho + 1)*(rho**2 + 1)
+  (a= 2,b= 7) r= 5 gcd=1 deg=0 (nz=0)  1
+  (a= 3,b= 2) r= 7 gcd=1 deg=0 (nz=0)  1
+  (a= 3,b= 4) r= 1 gcd=1 deg=9 (nz=8)  rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 3,b= 5) r= 2 gcd=2 deg=5 (nz=4)  rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 3,b= 6) r= 3 gcd=1 deg=0 (nz=0)  1
+  (a= 3,b= 7) r= 4 gcd=4 deg=4 (nz=4)  (rho - 1)*(rho + 1)*(rho**2 + 1)
+  (a= 4,b= 2) r= 6 gcd=2 deg=4 (nz=4)  (2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 4,b= 3) r= 7 gcd=1 deg=8 (nz=8)  (2*rho**2 - 1)*(2*rho**2 + 1)*(2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 4,b= 6) r= 2 gcd=2 deg=4 (nz=4)  (2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 4,b= 7) r= 3 gcd=1 deg=8 (nz=8)  (2*rho**2 - 1)*(2*rho**2 + 1)*(2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 5,b= 2) r= 5 gcd=1 deg=8 (nz=8)  (2*rho**2 - 1)*(2*rho**2 + 1)*(2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 5,b= 3) r= 6 gcd=2 deg=4 (nz=4)  (2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 5,b= 6) r= 1 gcd=1 deg=8 (nz=8)  (2*rho**2 - 1)*(2*rho**2 + 1)*(2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 5,b= 7) r= 2 gcd=2 deg=4 (nz=4)  (2*rho**2 - 2*rho + 1)*(2*rho**2 + 2*rho + 1)
+  (a= 6,b= 2) r= 4 gcd=4 deg=4 (nz=4)  (rho - 1)*(rho + 1)*(rho**2 + 1)
+  (a= 6,b= 3) r= 5 gcd=1 deg=0 (nz=0)  1
+  (a= 6,b= 4) r= 6 gcd=2 deg=5 (nz=4)  rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 6,b= 5) r= 7 gcd=1 deg=9 (nz=8)  rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 6,b= 7) r= 1 gcd=1 deg=0 (nz=0)  1
+  (a= 7,b= 2) r= 3 gcd=1 deg=0 (nz=0)  1
+  (a= 7,b= 3) r= 4 gcd=4 deg=4 (nz=4)  (rho - 1)*(rho + 1)*(rho**2 + 1)
+  (a= 7,b= 4) r= 5 gcd=1 deg=9 (nz=8)  rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 7,b= 5) r= 6 gcd=2 deg=5 (nz=4)  rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  (a= 7,b= 6) r= 7 gcd=1 deg=0 (nz=0)  1
+=== Degrees by gcd(b-a, n) ===
+  gcd = 1 (orbit_size = 8, sign_paired=0): 16 pairs, deg_nonzero in [0, 8]
+  gcd = 2 (orbit_size = 4, sign_paired=0): 8 pairs, deg_nonzero in [4]
+  gcd = 4 (orbit_size = 2, sign_paired=4): 4 pairs, deg_nonzero in [4]
+
+=== Sample polynomial per gcd ===
+  gcd=1, (a=2,b=3): deg=0, nonzero=0
+    1
+  gcd=2, (a=2,b=4): deg=5, nonzero=4
+    rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+  gcd=4, (a=2,b=6): deg=4, nonzero=4
+    (rho - 1)*(rho + 1)*(rho**2 + 1)

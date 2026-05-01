@@ -1,0 +1,85 @@
+Issue #396 component polynomial audit
+Condition: rem(u,g_S), rem(v,g_S) have degree < 4.
+
+=== support=(33, 44, 45) alpha1=0 component_count=2 ===
+u_terms=((11, -83),)
+v_terms=()
+label_hist={'quarter-pair(0, 2)': 1, 'quarter-pair(1, 3)': 1}
+family_hist={'quarter-pair(0, 2)': 1, 'quarter-pair(1, 3)': 1}
+  quarter-pair(0, 2): count=1 example=(0, 2, 4, 6, 8, 10, 12, 14)
+    signature=even=8,mod4=(4, 0, 4, 0),gaps=(2, 2, 2, 2, 2, 2, 2, 2)
+    g_terms_x_ascending_count=1: ((0, -1), (8, 1))
+  quarter-pair(1, 3): count=1 example=(1, 3, 5, 7, 9, 11, 13, 15)
+    signature=even=0,mod4=(0, 4, 0, 4),gaps=(2, 2, 2, 2, 2, 2, 2, 2)
+    g_terms_x_ascending_count=1: ((0, 1), (8, 1))
+
+=== support=(33, 44, 45) alpha1=5 component_count=10 ===
+u_terms=((8, -7), (11, -36))
+v_terms=()
+label_hist={'near-even(+15,-0)': 1, 'near-even(+15,-10)': 1, 'near-even(+15,-12)': 1, 'near-even(+15,-14)': 1, 'near-even(+15,-2)': 1, 'near-even(+15,-4)': 1, 'near-even(+15,-6)': 1, 'near-even(+15,-8)': 1, 'quarter-pair(0, 2)': 1, 'quarter-pair(1, 3)': 1}
+family_hist={'near-even(+15)': 8, 'quarter-pair(0, 2)': 1, 'quarter-pair(1, 3)': 1}
+  near-even(+15,-0): count=1 example=(2, 4, 6, 8, 10, 12, 14, 15)
+    signature=even=7,mod4=(3, 0, 4, 1),gaps=(2, 2, 2, 2, 2, 2, 1, 3)
+    g_terms_x_ascending_count=1: ((0, 3), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4), (6, 4), (7, 4), (8, 1))
+  near-even(+15,-10): count=1 example=(0, 2, 4, 6, 8, 12, 14, 15)
+    signature=even=7,mod4=(4, 0, 3, 1),gaps=(2, 2, 2, 2, 4, 2, 1, 1)
+    g_terms_x_ascending_count=1: ((0, -27), (1, 41), (2, 17), (3, 40), (4, 26), (5, -41), (6, -17), (7, -40), (8, 1))
+  near-even(+15,-12): count=1 example=(0, 2, 4, 6, 8, 10, 14, 15)
+    signature=even=7,mod4=(3, 0, 4, 1),gaps=(2, 2, 2, 2, 2, 4, 1, 1)
+    g_terms_x_ascending_count=1: ((0, -50), (1, -84), (2, 49), (3, 84), (4, -49), (5, -84), (6, 49), (7, 84), (8, 1))
+  near-even(+15,-14): count=1 example=(0, 2, 4, 6, 8, 10, 12, 15)
+    signature=even=7,mod4=(4, 0, 3, 1),gaps=(2, 2, 2, 2, 2, 2, 3, 1)
+    g_terms_x_ascending_count=1: ((0, -64), (1, -7), (2, 85), (3, -12), (4, 63), (5, 7), (6, -85), (7, 12), (8, 1))
+  near-even(+15,-2): count=1 example=(0, 4, 6, 8, 10, 12, 14, 15)
+    signature=even=7,mod4=(4, 0, 3, 1),gaps=(4, 2, 2, 2, 2, 2, 1, 1)
+    g_terms_x_ascending_count=1: ((0, 27), (1, 59), (2, -48), (3, -46), (4, -28), (5, -59), (6, 48), (7, 46), (8, 1))
+  near-even(+15,-4): count=1 example=(0, 2, 6, 8, 10, 12, 14, 15)
+    signature=even=7,mod4=(3, 0, 4, 1),gaps=(2, 4, 2, 2, 2, 2, 1, 1)
+    g_terms_x_ascending_count=1: ((0, 50), (1, 78), (2, -51), (3, -78), (4, 51), (5, 78), (6, -51), (7, -78), (8, 1))
+  near-even(+15,-6): count=1 example=(0, 2, 4, 8, 10, 12, 14, 15)
+    signature=even=7,mod4=(4, 0, 3, 1),gaps=(2, 2, 4, 2, 2, 2, 1, 1)
+    g_terms_x_ascending_count=1: ((0, 64), (1, -93), (2, -54), (3, 6), (4, -65), (5, 93), (6, 54), (7, -6), (8, 1))
+  near-even(+15,-8): count=1 example=(0, 2, 4, 6, 10, 12, 14, 15)
+    signature=even=7,mod4=(3, 0, 4, 1),gaps=(2, 2, 2, 4, 2, 2, 1, 1)
+    g_terms_x_ascending_count=1: ((0, -3), (1, 2), (2, -2), (3, 2), (4, -2), (5, 2), (6, -2), (7, 2), (8, 1))
+  quarter-pair(0, 2): count=1 example=(0, 2, 4, 6, 8, 10, 12, 14)
+    signature=even=8,mod4=(4, 0, 4, 0),gaps=(2, 2, 2, 2, 2, 2, 2, 2)
+    g_terms_x_ascending_count=1: ((0, -1), (8, 1))
+  quarter-pair(1, 3): count=1 example=(1, 3, 5, 7, 9, 11, 13, 15)
+    signature=even=0,mod4=(0, 4, 0, 4),gaps=(2, 2, 2, 2, 2, 2, 2, 2)
+    g_terms_x_ascending_count=1: ((0, 1), (8, 1))
+
+=== support=(33, 35, 47) alpha1=0 component_count=12870 ===
+u_terms=()
+v_terms=()
+full saturation: u and v are both zero/RS_4 on L2, so every 8-subset is a component
+
+=== support=(33, 35, 47) alpha1=1 component_count=2 ===
+u_terms=((8, 53),)
+v_terms=((8, 31), (11, -62))
+label_hist={'quarter-pair(0, 2)': 1, 'quarter-pair(1, 3)': 1}
+family_hist={'quarter-pair(0, 2)': 1, 'quarter-pair(1, 3)': 1}
+  quarter-pair(0, 2): count=1 example=(0, 2, 4, 6, 8, 10, 12, 14)
+    signature=even=8,mod4=(4, 0, 4, 0),gaps=(2, 2, 2, 2, 2, 2, 2, 2)
+    g_terms_x_ascending_count=1: ((0, -1), (8, 1))
+  quarter-pair(1, 3): count=1 example=(1, 3, 5, 7, 9, 11, 13, 15)
+    signature=even=0,mod4=(0, 4, 0, 4),gaps=(2, 2, 2, 2, 2, 2, 2, 2)
+    g_terms_x_ascending_count=1: ((0, 1), (8, 1))
+
+=== support=(24, 35, 46, 57) alpha1=25 component_count=1 ===
+u_terms=((6, 49), (14, -49))
+v_terms=((8, -42), (11, 3))
+label_hist={'quarter-pair(0, 2)': 1}
+family_hist={'quarter-pair(0, 2)': 1}
+  quarter-pair(0, 2): count=1 example=(0, 2, 4, 6, 8, 10, 12, 14)
+    signature=even=8,mod4=(4, 0, 4, 0),gaps=(2, 2, 2, 2, 2, 2, 2, 2)
+    g_terms_x_ascending_count=1: ((0, -1), (8, 1))
+
+=== support=(24, 35, 46, 57) alpha1=26 component_count=0 ===
+u_terms=((6, 49), (14, 88))
+v_terms=((8, -90), (11, 3))
+label_hist={}
+family_hist={}
+
+=== all 8-subset generator sparsity distribution ===
+{2: 2, 3: 4, 4: 8, 5: 56, 6: 32, 7: 32, 8: 480, 9: 12256}

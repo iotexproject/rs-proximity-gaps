@@ -1,0 +1,15 @@
+Other gap families sweep at p=97
+  Comparing tie_upper across (i, i+gap) for gap ∈ {4, 12, 16}
+  Reference: gap 8 max = 0.4490 (K=1 leader (15,23) coefs (10,17))
+
+  gap= 4: 0 certified above-J  (866s)
+  gap=12: 0 certified above-J  (394s)
+  gap=16: 0 certified above-J  (216s)
+
+======================================================================
+SUMMARY
+======================================================================
+  gap   max_tie  pair      coefs      dist
+  ref 8: 0.4490  (15,23)   ( 10, 17)   18
+
+  ✓ No other gap family beats gap-8 max 0.4490

@@ -1,0 +1,106 @@
+# probe_direction_a_n32.py — Direction A subclaim test
+# Setup: p=97, n_0=32, k_0=8, R=2, δ=0.45
+# n_R=8, k_R=2, m=6, w_J=16, w_R=3
+# Subclaim (rank-2): # bad lines ≤ R = 2, so |U ∩ B_w| ≤ 193 = 193
+# Subclaim (rank-r, r ≤ R): # bad lines ≤ (R q^(r-1) - 1)/(q-1)
+#   r=2: ≤ 2 (= 2 for q ≥ 3)
+#   r=3: ≤ 196 (≈ 197)
+#   r=4: ≤ 19014
+# max_rank for line enumeration: 2
+# n_workers=10, n_random=500, seed=2026
+
+# 776 candidate f-specs. Dispatching to 10 workers...
+
+#  20/776  rate 9.87/sec
+#  40/776  rate 18.77/sec
+#  60/776  rate 15.52/sec
+#  80/776  rate 20.07/sec
+#  100/776  rate 18.05/sec
+#  120/776  rate 20.15/sec
+#  140/776  rate 19.88/sec
+#  160/776  rate 21.41/sec
+#  180/776  rate 21.85/sec
+#  200/776  rate 22.72/sec
+#  220/776  rate 23.14/sec
+#  240/776  rate 22.58/sec
+#  260/776  rate 22.88/sec
+#  280/776  rate 22.71/sec
+#  300/776  rate 22.82/sec
+#  320/776  rate 22.76/sec
+#  340/776  rate 22.51/sec
+#  360/776  rate 22.58/sec
+#  380/776  rate 22.21/sec
+#  400/776  rate 22.46/sec
+#  420/776  rate 22.10/sec
+#  440/776  rate 22.24/sec
+#  460/776  rate 22.40/sec
+#  480/776  rate 22.15/sec
+#  500/776  rate 22.56/sec
+#  520/776  rate 22.14/sec
+#  540/776  rate 22.60/sec
+#  560/776  rate 22.12/sec
+#  580/776  rate 22.63/sec
+#  600/776  rate 22.06/sec
+#  620/776  rate 22.66/sec
+#  640/776  rate 22.03/sec
+#  660/776  rate 22.51/sec
+#  680/776  rate 22.04/sec
+#  700/776  rate 22.43/sec
+#  720/776  rate 22.05/sec
+#  740/776  rate 22.46/sec
+#  760/776  rate 22.35/sec
+
+# === DONE in 34s (22.63 f/sec) ===
+# Total f's: 776
+#   ABOVE_J_RANK_0: 0
+#   ABOVE_J_RANK_1: 109
+#   ABOVE_J_RANK_2: 443
+#   ABOVE_J_RANK_3: 162
+#   ABOVE_J_RANK_4: 8
+#   BELOW_J: 54
+#   SKIPPED_HIGH_RANK: 170
+
+# === RANK-1 ABOVE-J: 109 processed ===
+#   n_lines per f = (q^1-1)/(q-1) = 1
+#   Target bound on |U ∩ B_w|: R q^(r-1) = 2
+#   Target bound on # bad lines: 0
+#   Max # bad lines observed: 0
+#   Max |U ∩ B_w| observed: 1
+#   # bad lines distribution: {0: 109}
+#   Worst f: positions=(8, 9), bad=0, |U∩B_w|=1
+#   ✓ All within bound 0
+
+# === RANK-2 ABOVE-J: 443 processed ===
+#   n_lines per f = (q^2-1)/(q-1) = 98
+#   Target bound on |U ∩ B_w|: R q^(r-1) = 194
+#   Target bound on # bad lines: 2
+#   Max # bad lines observed: 0
+#   Max |U ∩ B_w| observed: 1
+#   # bad lines distribution: {0: 443}
+#   Worst f: positions=(9, 23), bad=0, |U∩B_w|=1
+#   ✓ All within bound 2
+
+# === Top 10 worst rank-1 cases (by bad_count) ===
+#   pos=(8, 9), dist_lb=23, bad=0, |U∩B_w|=1
+#   pos=(8, 10), dist_lb=22, bad=0, |U∩B_w|=1
+#   pos=(8, 11), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(8, 12), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 28), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 16), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(9, 11), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(9, 13), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(9, 10), dist_lb=22, bad=0, |U∩B_w|=1
+#   pos=(8, 20), dist_lb=20, bad=0, |U∩B_w|=1
+
+# === Top 10 worst rank-2 cases (by bad_count) ===
+#   pos=(9, 23), dist_lb=21, bad=0, |U∩B_w|=1
+#   pos=(9, 24), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(9, 26), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 21), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 22), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 23), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 25), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 26), dist_lb=20, bad=0, |U∩B_w|=1
+#   pos=(8, 27), dist_lb=19, bad=0, |U∩B_w|=1
+#   pos=(8, 13), dist_lb=19, bad=0, |U∩B_w|=1
+

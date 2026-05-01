@@ -1,0 +1,2 @@
+# Quick R=3 probe: cs_lift family, looking for R-hyperplane saturation
+# n_R=4, w_R=1, R/q = 3.092784e-02, Above-J dist > 17

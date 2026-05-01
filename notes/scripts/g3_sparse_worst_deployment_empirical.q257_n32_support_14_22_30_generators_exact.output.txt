@@ -1,0 +1,12 @@
+=== issue #403 support-focused sparse search ===
+cell: q=257, n=32, k=8, delta_n=17, agreement_target=15
+L=<omega>, omega=136; membership_samples=exact, batch=50000
+membership decision: exact enumeration of all information sets
+supports=1, coeff_trials_per_support=5
+
+=== generator-only row ===
+| q | n | k | delta_n | membership_samples | support | coeffs1 | coeffs2 | close1 | best_agree1 | close2 | best_agree2 | runtime_s |
+| 257 | 32 | 8 | 17 | exact | (14, 22, 30) | (52, 84, 20) | (47, 84, 30) | False | 11 | False | 11 | 53.8 |
+witness_info_set1=[0, 1, 2, 12, 14, 17, 18, 24]
+witness_info_set2=[0, 1, 2, 3, 6, 8, 20, 22]
+generator filter: PASS, no close codeword found

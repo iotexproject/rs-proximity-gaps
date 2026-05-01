@@ -1,0 +1,17 @@
+
+=== h=2, char=17, rho=3, eps=16 ===
+  GB size 2, elapsed 0.03s, all p_vars → 0: True [OK]
+
+=== h=4, char=17, rho=3, eps=16 ===
+  GB size 6, elapsed 0.01s, all p_vars → 0: True [OK]
+
+=== h=8, char=17, rho=3, eps=16 ===
+  GB size 14, elapsed 0.01s, all p_vars → 0: True [OK]
+
+=== h=16, char=17, rho=3, eps=16 ===
+  GB size 30, elapsed 0.09s, all p_vars → 0: True [OK]
+
+=== h=32, char=17, rho=3, eps=16 ===
+  GB size 62, elapsed 6.31s, all p_vars → 0: True [OK]
+
+=== h=64, char=17, rho=3, eps=16 ===

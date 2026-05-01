@@ -1,0 +1,476 @@
+
+--- (64,16,16,48) sup=(0, 16) ---
+
+=== (64, 16, 16, 48) support=(0, 16) ===
+Cert eqs (16 polynomials, deg up to 126):
+  deg 16: -p0 + p16**2 + rho
+  deg 17: 0
+  deg 18: 0
+  deg 19: 0
+  deg 20: 0
+  deg 21: 0
+  deg 22: 0
+  deg 23: 0
+  deg 24: 0
+  deg 25: 0
+  deg 26: 0
+  deg 27: 0
+  deg 28: 0
+  deg 29: 0
+  deg 30: 0
+  deg 31: 0
+Div eqs (17):
+  div[0]: 2*p0*p16 - p16**3
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: 0
+  div[5]: 0
+  div[6]: 0
+  div[7]: 0
+  div[8]: 0
+  div[9]: 0
+  div[10]: 0
+  div[11]: 0
+  div[12]: 0
+  div[13]: 0
+  div[14]: 0
+  div[15]: 0
+  div[16]: p0**2 - p0*p16**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p16], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: p0 - rho**3
+    G[1]: p16**2 - rho**3 + rho
+    G[2]: p16*(rho**2 + 1)
+    G[3]: (rho - 1)*(rho + 1)*(rho**2 + 1)
+
+  Rho-only polys in basis:
+    (rho - 1)*(rho + 1)*(rho**2 + 1)
+(elapsed 0.0s)
+
+--- (64,16,16,32) sup=(0, 16) ---
+
+=== (64, 16, 16, 32) support=(0, 16) ===
+Cert eqs (16 polynomials, deg up to 126):
+  deg 16: -p16 + rho
+  deg 17: 0
+  deg 18: 0
+  deg 19: 0
+  deg 20: 0
+  deg 21: 0
+  deg 22: 0
+  deg 23: 0
+  deg 24: 0
+  deg 25: 0
+  deg 26: 0
+  deg 27: 0
+  deg 28: 0
+  deg 29: 0
+  deg 30: 0
+  deg 31: 0
+Div eqs (17):
+  div[0]: 2*p0*p16 - p16**3
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: 0
+  div[5]: 0
+  div[6]: 0
+  div[7]: 0
+  div[8]: 0
+  div[9]: 0
+  div[10]: 0
+  div[11]: 0
+  div[12]: 0
+  div[13]: 0
+  div[14]: 0
+  div[15]: 0
+  div[16]: p0**2 - p0*p16**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p16], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: 2*p0**2 - rho**4 - 2
+    G[1]: rho*(2*p0 - rho**2)
+    G[2]: p16 - rho
+    G[3]: rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+  Rho-only polys in basis:
+    rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+(elapsed 0.0s)
+
+--- (64,16,16,40) sup=(0, 8, 16, 24) ---
+
+=== (64, 16, 16, 40) support=(0, 8, 16, 24) ===
+Cert eqs (16 polynomials, deg up to 126):
+  deg 16: p16*p24 - p8 + rho
+  deg 17: 0
+  deg 18: 0
+  deg 19: 0
+  deg 20: 0
+  deg 21: 0
+  deg 22: 0
+  deg 23: 0
+  deg 24: -p16 + p24**2
+  deg 25: 0
+  deg 26: 0
+  deg 27: 0
+  deg 28: 0
+  deg 29: 0
+  deg 30: 0
+  deg 31: 0
+Div eqs (25):
+  div[0]: 2*p0*p24 - 3*p16**2*p24 + 4*p16*p24**3 + 2*p16*p8 - p24**5 - 3*p24**2*p8
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: 0
+  div[5]: 0
+  div[6]: 0
+  div[7]: 0
+  div[8]: 2*p0*p16 - p0*p24**2 - p16**3 + 3*p16**2*p24**2 - p16*p24**4 - 4*p16*p24*p8 + p24**3*p8 + p8**2
+  div[9]: 0
+  div[10]: 0
+  div[11]: 0
+  div[12]: 0
+  div[13]: 0
+  div[14]: 0
+  div[15]: 0
+  div[16]: -2*p0*p16*p24 + p0*p24**3 + 2*p0*p8 - p16**2*p8 + 3*p16*p24**2*p8 - p24**4*p8 - 2*p24*p8**2
+  div[17]: 0
+  div[18]: 0
+  div[19]: 0
+  div[20]: 0
+  div[21]: 0
+  div[22]: 0
+  div[23]: 0
+  div[24]: p0**2 - p0*p16**2 + 3*p0*p16*p24**2 - p0*p24**4 - 2*p0*p24*p8 - 1
+
+Groebner basis (lex order, eliminating [p0, p8, p16, p24], then rho):
+  done in 0.0s, basis size 6
+  Polynomials in basis:
+    G[0]: (p0 - 1)*(p0 + 1)
+    G[1]: rho*(4*p0 - rho**4)
+    G[2]: p8 + rho
+    G[3]: 4*p16 - rho**6
+    G[4]: 2*p24 + rho**3
+    G[5]: rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+  Rho-only polys in basis:
+    rho*(rho**2 - 2)*(rho**2 + 2)*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+(elapsed 0.0s)
+
+--- (128,32,32,96) sup=(0, 32) ---
+
+=== (128, 32, 32, 96) support=(0, 32) ===
+Cert eqs (32 polynomials, deg up to 254):
+  deg 32: -p0 + p32**2 + rho
+  deg 33: 0
+  deg 34: 0
+  deg 35: 0
+  deg 36: 0
+  deg 37: 0
+  deg 38: 0
+  deg 39: 0
+  deg 40: 0
+  deg 41: 0
+  deg 42: 0
+  deg 43: 0
+  deg 44: 0
+  deg 45: 0
+  deg 46: 0
+  deg 47: 0
+  deg 48: 0
+  deg 49: 0
+  deg 50: 0
+  deg 51: 0
+  deg 52: 0
+  deg 53: 0
+  deg 54: 0
+  deg 55: 0
+  deg 56: 0
+  deg 57: 0
+  deg 58: 0
+  deg 59: 0
+  deg 60: 0
+  deg 61: 0
+  deg 62: 0
+  deg 63: 0
+Div eqs (33):
+  div[0]: 2*p0*p32 - p32**3
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: 0
+  div[5]: 0
+  div[6]: 0
+  div[7]: 0
+  div[8]: 0
+  div[9]: 0
+  div[10]: 0
+  div[11]: 0
+  div[12]: 0
+  div[13]: 0
+  div[14]: 0
+  div[15]: 0
+  div[16]: 0
+  div[17]: 0
+  div[18]: 0
+  div[19]: 0
+  div[20]: 0
+  div[21]: 0
+  div[22]: 0
+  div[23]: 0
+  div[24]: 0
+  div[25]: 0
+  div[26]: 0
+  div[27]: 0
+  div[28]: 0
+  div[29]: 0
+  div[30]: 0
+  div[31]: 0
+  div[32]: p0**2 - p0*p32**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p32], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: p0 - rho**3
+    G[1]: p32**2 - rho**3 + rho
+    G[2]: p32*(rho**2 + 1)
+    G[3]: (rho - 1)*(rho + 1)*(rho**2 + 1)
+
+  Rho-only polys in basis:
+    (rho - 1)*(rho + 1)*(rho**2 + 1)
+(elapsed 0.0s)
+
+--- (128,32,32,64) sup=(0, 32) ---
+
+=== (128, 32, 32, 64) support=(0, 32) ===
+Cert eqs (32 polynomials, deg up to 254):
+  deg 32: -p32 + rho
+  deg 33: 0
+  deg 34: 0
+  deg 35: 0
+  deg 36: 0
+  deg 37: 0
+  deg 38: 0
+  deg 39: 0
+  deg 40: 0
+  deg 41: 0
+  deg 42: 0
+  deg 43: 0
+  deg 44: 0
+  deg 45: 0
+  deg 46: 0
+  deg 47: 0
+  deg 48: 0
+  deg 49: 0
+  deg 50: 0
+  deg 51: 0
+  deg 52: 0
+  deg 53: 0
+  deg 54: 0
+  deg 55: 0
+  deg 56: 0
+  deg 57: 0
+  deg 58: 0
+  deg 59: 0
+  deg 60: 0
+  deg 61: 0
+  deg 62: 0
+  deg 63: 0
+Div eqs (33):
+  div[0]: 2*p0*p32 - p32**3
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: 0
+  div[5]: 0
+  div[6]: 0
+  div[7]: 0
+  div[8]: 0
+  div[9]: 0
+  div[10]: 0
+  div[11]: 0
+  div[12]: 0
+  div[13]: 0
+  div[14]: 0
+  div[15]: 0
+  div[16]: 0
+  div[17]: 0
+  div[18]: 0
+  div[19]: 0
+  div[20]: 0
+  div[21]: 0
+  div[22]: 0
+  div[23]: 0
+  div[24]: 0
+  div[25]: 0
+  div[26]: 0
+  div[27]: 0
+  div[28]: 0
+  div[29]: 0
+  div[30]: 0
+  div[31]: 0
+  div[32]: p0**2 - p0*p32**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p32], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: 2*p0**2 - rho**4 - 2
+    G[1]: rho*(2*p0 - rho**2)
+    G[2]: p32 - rho
+    G[3]: rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+
+  Rho-only polys in basis:
+    rho*(rho**2 - 2*rho + 2)*(rho**2 + 2*rho + 2)
+(elapsed 0.0s)
+
+--- (256,64,64,192) sup=(0, 64) ---
+
+=== (256, 64, 64, 192) support=(0, 64) ===
+Cert eqs (64 polynomials, deg up to 510):
+  deg 64: -p0 + p64**2 + rho
+  deg 65: 0
+  deg 66: 0
+  deg 67: 0
+  deg 68: 0
+  deg 69: 0
+  deg 70: 0
+  deg 71: 0
+  deg 72: 0
+  deg 73: 0
+  deg 74: 0
+  deg 75: 0
+  deg 76: 0
+  deg 77: 0
+  deg 78: 0
+  deg 79: 0
+  deg 80: 0
+  deg 81: 0
+  deg 82: 0
+  deg 83: 0
+  deg 84: 0
+  deg 85: 0
+  deg 86: 0
+  deg 87: 0
+  deg 88: 0
+  deg 89: 0
+  deg 90: 0
+  deg 91: 0
+  deg 92: 0
+  deg 93: 0
+  deg 94: 0
+  deg 95: 0
+  deg 96: 0
+  deg 97: 0
+  deg 98: 0
+  deg 99: 0
+  deg 100: 0
+  deg 101: 0
+  deg 102: 0
+  deg 103: 0
+  deg 104: 0
+  deg 105: 0
+  deg 106: 0
+  deg 107: 0
+  deg 108: 0
+  deg 109: 0
+  deg 110: 0
+  deg 111: 0
+  deg 112: 0
+  deg 113: 0
+  deg 114: 0
+  deg 115: 0
+  deg 116: 0
+  deg 117: 0
+  deg 118: 0
+  deg 119: 0
+  deg 120: 0
+  deg 121: 0
+  deg 122: 0
+  deg 123: 0
+  deg 124: 0
+  deg 125: 0
+  deg 126: 0
+  deg 127: 0
+Div eqs (65):
+  div[0]: 2*p0*p64 - p64**3
+  div[1]: 0
+  div[2]: 0
+  div[3]: 0
+  div[4]: 0
+  div[5]: 0
+  div[6]: 0
+  div[7]: 0
+  div[8]: 0
+  div[9]: 0
+  div[10]: 0
+  div[11]: 0
+  div[12]: 0
+  div[13]: 0
+  div[14]: 0
+  div[15]: 0
+  div[16]: 0
+  div[17]: 0
+  div[18]: 0
+  div[19]: 0
+  div[20]: 0
+  div[21]: 0
+  div[22]: 0
+  div[23]: 0
+  div[24]: 0
+  div[25]: 0
+  div[26]: 0
+  div[27]: 0
+  div[28]: 0
+  div[29]: 0
+  div[30]: 0
+  div[31]: 0
+  div[32]: 0
+  div[33]: 0
+  div[34]: 0
+  div[35]: 0
+  div[36]: 0
+  div[37]: 0
+  div[38]: 0
+  div[39]: 0
+  div[40]: 0
+  div[41]: 0
+  div[42]: 0
+  div[43]: 0
+  div[44]: 0
+  div[45]: 0
+  div[46]: 0
+  div[47]: 0
+  div[48]: 0
+  div[49]: 0
+  div[50]: 0
+  div[51]: 0
+  div[52]: 0
+  div[53]: 0
+  div[54]: 0
+  div[55]: 0
+  div[56]: 0
+  div[57]: 0
+  div[58]: 0
+  div[59]: 0
+  div[60]: 0
+  div[61]: 0
+  div[62]: 0
+  div[63]: 0
+  div[64]: p0**2 - p0*p64**2 - 1
+
+Groebner basis (lex order, eliminating [p0, p64], then rho):
+  done in 0.0s, basis size 4
+  Polynomials in basis:
+    G[0]: p0 - rho**3
+    G[1]: p64**2 - rho**3 + rho
+    G[2]: p64*(rho**2 + 1)
+    G[3]: (rho - 1)*(rho + 1)*(rho**2 + 1)
+
+  Rho-only polys in basis:
+    (rho - 1)*(rho + 1)*(rho**2 + 1)
+(elapsed 0.0s)

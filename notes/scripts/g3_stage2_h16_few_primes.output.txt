@@ -1,0 +1,43 @@
+
+=== h=16, char=41, rho=8, eps=40 ===
+  System built in 0.38s, 60 eqs.
+  vars=30, eqs=60
+  Computing GB (grevlex)...
+  GB (30 polys, grevlex) in 1602.99s.
+  Reduction of p_vars mod GB:
+    pL1: 0
+    pL2: 0
+    pL3: 0
+    pL4: 0
+    pL5: 0
+    pL6: 0
+    pL7: 0
+    pL8: 0
+    pL9: 0
+    pL10: 0
+    pL11: 0
+    pL12: 0
+    pL13: 0
+    pL14: 0
+    pL15: 0
+    pH1: 0
+    pH2: 0
+    pH3: 0
+    pH4: 0
+    pH5: 0
+    pH6: 0
+    pH7: 0
+    pH8: 0
+    pH9: 0
+    pH10: 0
+    pH11: 0
+    pH12: 0
+    pH13: 0
+    pH14: 0
+    pH15: 0
+  All p_vars → 0: True
+
+=== h=16, char=73, rho=12, eps=1 ===
+  System built in 0.12s, 60 eqs.
+  vars=30, eqs=60
+  Computing GB (grevlex)...

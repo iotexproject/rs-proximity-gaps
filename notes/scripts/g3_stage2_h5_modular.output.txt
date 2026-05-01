@@ -1,0 +1,32 @@
+
+=== h=5, char=17, rho=3, eps=16 ===
+  System built in 0.05s, 16 eqs.
+  After subs: 16 eqs.
+  GB (8 polys) computed in 0.07s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+  All p_vars → 0: True
+
+=== h=6, char=17, rho=3, eps=16 ===
+  System built in 0.04s, 20 eqs.
+  After subs: 20 eqs.
+  GB (10 polys) computed in 6.11s.
+  Reduction of p_vars mod GB:
+    pL1 → 0
+    pL2 → 0
+    pL3 → 0
+    pL4 → 0
+    pL5 → 0
+    pH1 → 0
+    pH2 → 0
+    pH3 → 0
+    pH4 → 0
+    pH5 → 0
+  All p_vars → 0: True

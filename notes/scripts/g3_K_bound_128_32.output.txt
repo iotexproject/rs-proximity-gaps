@@ -1,0 +1,53 @@
+=== K bound at (128, 32), q=257 ===
+  L_0 order 128, L_1 order 64, L_2 order 32
+  w_J(L_0)=64, w_J(L_1)=32, w_J(L_2)=16
+  M_max(L_1)=49=49, M_max(L_2)=17=17
+  Test: K ≤ 10 (universal) vs K ≤ 18 (1+M_max(L_2)) vs K ≤ 50 (1+M_max(L_1))
+
+  Sampled info_sets at L_2: 5000 (out of 2,598,960)
+
+Precomputing Lagrange pairs at L_2...
+  Done in 1s
+
+
+--- sup=(35, 38, 39), mod-4=(3, 2, 3) ---
+  coefs=[20, 126, 184], d_f at L_0 = 91 (need > 64)
+  max d(fold¹(α_1)) at L_1 = 45 (need > 32)
+  Running bilinear sweep (257² = 66,049 iterations)...
+    [α_1=50/257, elapsed=5s, est_total=28s]
+    [α_1=100/257, elapsed=11s, est_total=28s]
+    [α_1=150/257, elapsed=16s, est_total=28s]
+    [α_1=200/257, elapsed=21s, est_total=28s]
+    [α_1=250/257, elapsed=27s, est_total=28s]
+  K = 1 (B1=0, K_col=1), |V_δ| = 257
+  K ≤ 10? YES
+  K ≤ 18? YES
+  Sweep time: 28s
+
+--- sup=(87, 102, 103), mod-4=(3, 2, 3) ---
+  coefs=[30, 13, 5], d_f at L_0 = 92 (need > 64)
+  max d(fold¹(α_1)) at L_1 = 45 (need > 32)
+  Running bilinear sweep (257² = 66,049 iterations)...
+    [α_1=50/257, elapsed=5s, est_total=28s]
+    [α_1=100/257, elapsed=11s, est_total=28s]
+    [α_1=150/257, elapsed=16s, est_total=28s]
+    [α_1=200/257, elapsed=22s, est_total=28s]
+    [α_1=250/257, elapsed=27s, est_total=28s]
+  K = 10 (B1=9, K_col=1), |V_δ| = 2561
+  K ≤ 10? YES
+  K ≤ 18? YES
+  Sweep time: 28s
+
+--- sup=(43, 50, 51), mod-4=(3, 2, 3) ---
+  coefs=[77, 205, 136], d_f at L_0 = 91 (need > 64)
+  max d(fold¹(α_1)) at L_1 = 45 (need > 32)
+  Running bilinear sweep (257² = 66,049 iterations)...
+    [α_1=50/257, elapsed=5s, est_total=28s]
+    [α_1=100/257, elapsed=11s, est_total=28s]
+    [α_1=150/257, elapsed=16s, est_total=28s]
+    [α_1=200/257, elapsed=22s, est_total=28s]
+    [α_1=250/257, elapsed=27s, est_total=28s]
+  K = 1 (B1=0, K_col=1), |V_δ| = 257
+  K ≤ 10? YES
+  K ≤ 18? YES
+  Sweep time: 28s

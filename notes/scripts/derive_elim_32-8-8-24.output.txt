@@ -1,0 +1,1 @@
+ratio elimination n=32 k=8 (a,b)=(8,24)

@@ -1,0 +1,14 @@
+=== Case-C K bound: 3-pos sparse, all-different mod-4 ===
+
+Total Case-C supports (j's ≥ k_0=8): 224
+
+Case-C above-J count: 48 / 50
+Case-C max K: 2
+Max K config: sup=(16, 21, 27), coefs=[77, 63, 51], K=2, B1=1, K_col=1
+
+All Case-C results (K ≥ 5):
+
+Distribution of K values across 48 above-J configs:
+  K=0: 33 configs
+  K=1: 6 configs
+  K=2: 9 configs

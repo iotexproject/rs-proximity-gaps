@@ -1,0 +1,46 @@
+======================================================================
+FRI 2-round attack: n0=64, k0=32, p=193, R=2, δ=0.3750 (δ_J=0.2929)
+  Per-paper bound (1-δ/2)^q baseline: 1-δ/2 = 0.8125
+  Zero-loss target  (1-δ)^q baseline:  1-δ   = 0.6250
+======================================================================
+  Chain: L_0(64,k=32) → L_1(32,k=16) → L_2(16,k=8)
+  Final: L_2 size 16, RS_8
+
+--- trial 0 [random+wt25]
+  d_R range [6, 7] / 16, hist {6: 8, 7: 28}
+  P_avg = 0.5764, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 23.1s
+
+--- trial 1 [random+wt25]
+  d_R range [6, 7] / 16, hist {6: 6, 7: 30}
+  P_avg = 0.5729, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 23.6s
+
+--- trial 2 [random+wt25]
+  d_R range [6, 7] / 16, hist {6: 9, 7: 27}
+  P_avg = 0.5781, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 23.4s
+
+--- trial 3 [random+wt25]
+  d_R range [6, 7] / 16, hist {6: 11, 7: 25}
+  P_avg = 0.5816, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 22.5s
+
+--- trial 4 [random+wt25]
+  d_R range [6, 7] / 16, hist {6: 4, 7: 32}
+  P_avg = 0.5694, P_max = 0.6250, P_min = 0.5625
+  P_typical = 0.6250 (d_R ≥ 6)
+  elapsed: 24.2s
+
+======================================================================
+SUMMARY (5 inputs, 116.9s, 36 α-tuples each)
+======================================================================
+  Theoretical baselines: (1-δ/2)=0.8125, (1-δ)=0.6250
+  Worst-case P_avg     (over f): 0.5816
+  Worst-case P_max     (over f): 0.6250
+  Worst-case P_typical (over f): 0.6250
+  ⇒ 2-round: zero-loss achievable, bound improvable

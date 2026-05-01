@@ -1,0 +1,15 @@
+<repo>/notes/scripts/probe_VS_codim_falsify.py:8: SyntaxWarning: "\V" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\V"? A raw string is also an option.
+  - "Anti-aligned": construct fhat to maximize syn_rank and V_T\V_exact
+# Setup: p=193, n_0=16, k_0=4, R=2, δ=0.45
+# n_R=4, k_R=1, w_R=1, q^R=37249, R q^{R-1}=386
+# Falsifying conjecture |V_δ| ≤ R q^{R-1}
+
+# Strategy 1: all pairs (a,b) with k_0 ≤ a < b < n_0
+# Strategy 1 done (66 pairs). Strategy 2: random triples + small subsets
+# Strategy 3: targeted — fhat coefficients designed to put image(φ) inside image(H_T)
+
+# === SUMMARY ===
+# Tested 246 f's. Time: 164.6s
+# Max ratio |V_δ|/(R q^{R-1}): 0.9974 (X^5+X^7)
+# Falsifiers: 0
+# *** Conjecture |V_δ| ≤ R q^{R-1} HOLDS across 246 f's. ***

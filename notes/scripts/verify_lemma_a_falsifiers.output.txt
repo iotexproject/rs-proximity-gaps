@@ -1,0 +1,51 @@
+# verify_lemma_a_falsifiers — checking 6 candidates
+# Setup: p=97, n_0=32, k_0=8, R=2, w_R=3, w_J=16, target |V_δ| ≤ 194
+
+
+=== positions=(12, 18, 22), coefs=(59, 73, 36) ===
+  above-J (3 seeds): [True, True, True]  (consistent=True, dist_lb≥20)
+  w_J = 16, dist_lb = 20, above-J: True
+  image rank = 2
+  dim(W) = 4, d_min(W) = 3
+  weight-3 codeword: support=(1, 3, 7), w=[0, 60, 0, 11, 0, 0, 0, 49]
+  |V_δ| = 0, ratio = 0.000
+
+=== positions=(14, 18, 31), coefs=(90, 90, 88) ===
+  above-J (3 seeds): [True, True, True]  (consistent=True, dist_lb≥20)
+  w_J = 16, dist_lb = 20, above-J: True
+  image rank = 2
+  dim(W) = 4, d_min(W) = 3
+  weight-3 codeword: support=(0, 2, 6), w=[68, 0, 62, 0, 0, 0, 6, 0]
+  |V_δ| = 193, ratio = 0.995
+
+=== positions=(9, 19, 27), coefs=(16, 86, 49) ===
+  above-J (3 seeds): [True, True, True]  (consistent=True, dist_lb≥20)
+  w_J = 16, dist_lb = 20, above-J: True
+  image rank = 2
+  dim(W) = 4, d_min(W) = 2
+  weight-2 codeword: support=(3, 7), w=[0, 0, 0, 1, 0, 0, 0, 1]
+  |V_δ| = 193, ratio = 0.995
+
+=== positions=(13, 22, 30), coefs=(23, 17, 17) ===
+  above-J (3 seeds): [True, True, True]  (consistent=True, dist_lb≥21)
+  w_J = 16, dist_lb = 21, above-J: True
+  image rank = 2
+  dim(W) = 4, d_min(W) = 2
+  weight-2 codeword: support=(0, 4), w=[93, 0, 0, 0, 4, 0, 0, 0]
+  |V_δ| = 97, ratio = 0.500
+
+=== positions=(9, 10, 22, 25, 26), coefs=(30, 38, 58, 50, 69) ===
+  above-J (3 seeds): [True, True, True]  (consistent=True, dist_lb≥20)
+  w_J = 16, dist_lb = 20, above-J: True
+  image rank = 2
+  dim(W) = 4, d_min(W) = 3
+  weight-3 codeword: support=(3, 5, 7), w=[0, 0, 0, 1, 0, 21, 0, 75]
+  |V_δ| = 97, ratio = 0.500
+
+=== positions=(14, 18, 28, 30), coefs=(91, 88, 70, 22) ===
+  above-J (3 seeds): [True, True, True]  (consistent=True, dist_lb≥20)
+  w_J = 16, dist_lb = 20, above-J: True
+  image rank = 2
+  dim(W) = 4, d_min(W) = 3
+  weight-3 codeword: support=(3, 5, 7), w=[0, 0, 0, 1, 0, 76, 0, 75]
+  |V_δ| = 97, ratio = 0.500
