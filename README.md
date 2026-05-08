@@ -121,14 +121,3 @@ of Python scripts on every push.
 ## License
 
 [Apache License 2.0](LICENSE).
-
----
-
-## Use of AI assistants
-
-Both manuscripts and this companion repository were prepared with
-Claude (Anthropic, Opus 4.7, 1M-context) as a research assistant —
-proof drafting, code generation for empirical verification, and prose
-review. All theorem statements, proofs, and structural framing are
-the authors'; AI-generated content was independently checked by hand
-or by reproducible computation before being kept.
