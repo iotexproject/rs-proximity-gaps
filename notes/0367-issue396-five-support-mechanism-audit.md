@@ -1,0 +1,210 @@
+# Note 0367 -- Issue #396: five-support mechanism audit and projection charges
+
+> **Note number history**: filed as Note 0341 on the `issue-396`
+> branch; renumbered to 0367 on `main` to avoid collision with already-
+> absorbed content at slot 0341. Cross-references inside the body
+> use branch numbering. Branch-to-main mapping for the issue-396 trail
+> after Notes 0327--0334 (already absorbed earlier as 0327--0334 / 0337
+> on main):
+>   branch 0338, 0339           = absorbed earlier (codex synthesis 0335 / l1 wording 0339 on main differ),
+>   branch 0340--0343           = main 0366--0369,
+>   branch 0344--0347           = main 0356--0359 (one-residue base / lift / quotient lemma),
+>   branch 0348--0352           = main 0370--0374 (this trail).
+
+**Date:** 2026-05-01
+**Branch:** `issue-396`
+**Status:** mechanism-level refinement of the Note 0339 five-support panel.
+
+Artifacts:
+
+- `notes/scripts/issue396_no_full_4support_cert.py`
+- `notes/scripts/issue396_5support_mechanism.q193.output.txt`
+
+---
+
+## Purpose
+
+Note 0339 showed that the base `L2=(16,4)` five-support panel has no
+primitive rank-2 no-full survivor at `q=193`.  That note only reported the
+coarse charged buckets:
+
+```text
+rank<2     = 259
+stabilizer = 80
+```
+
+This note opens those buckets.  The question is whether the next bilateral
+layer introduces a new no-full mechanism after the four-support charges in
+Note 0340, or whether it is still explained by the same quotient-`C4`
+projection charges.
+
+---
+
+## q=193 five-support mechanism panel
+
+Parameters:
+
+```text
+q=193
+L2=(16,4)
+support_window=[16,64)
+support size = 5
+side_min = 2
+workers = 24
+```
+
+The full panel has
+
+```text
+C(48,5) = 1712304
+```
+
+supports, with true bilateral side counts
+
+```text
+side:(2,3) = 558624
+side:(3,2) = 558624
+```
+
+The rerun reproduces Note 0339:
+
+```text
+candidate_subsets = 316422821
+alpha_zero        = 316422482
+rank<2            = 259
+stabilizer        = 80
+all_alpha_subsets = 0
+first_counterexample = None
+```
+
+The refined nonzero mechanism histogram is:
+
+```text
+rank<2:
+  rank1:u-zero:same-residue:(0, 1)         113
+  rank1:v-zero:same-residue:(2, 3)          98
+  rank1:nonzero-proportional                48
+
+stabilizer:
+  order2:parity-split:u(0,):v(1,)           48
+  order2:parity-split:u(1,):v(0,)           32
+```
+
+Thus every nonzero charged leftover in the five-support panel is still
+explained by the same three charges as Note 0340:
+
+```text
+same-residue side cancellation,
+order-2 dyadic parity stabilizer,
+or direct residual rank alias.
+```
+
+No new five-support no-full mechanism appears.
+
+---
+
+## Projection-charge lemmas
+
+These two elementary charges are the proof-level content extracted from the
+four- and five-support audits.
+
+### Lemma 0341.A -- two-term zero side forces a same-residue cancellation
+
+Work in the quotient-`C4` local-map normal form of Note 0323.  Let one
+residual side have exactly two support terms, one in each `alpha1` quadrant
+of that side:
+
+```text
+c_0 x^{r_0} + alpha1 c_1 x^{r_1}.
+```
+
+After projection to degree `<k`, the monomials with distinct residues modulo
+`k` are independent.  Therefore a nonzero `alpha1` can make the whole side
+vanish only if
+
+```text
+r_0 == r_1 mod k,
+```
+
+in which case there is at most one cancellation value
+
+```text
+alpha1 = -c_0 / c_1.
+```
+
+At that value the residual row span has only the opposite side, hence rank at
+most one in the residual quotient.  It is not a primitive rank-2 no-full
+component.
+
+This is exactly the mechanism recorded as
+
+```text
+rank1:u-zero:same-residue:(0, 1)
+rank1:v-zero:same-residue:(2, 3)
+```
+
+In the five-support `(2,3)/(3,2)` layer, every zero-side rank collapse at
+`q=193` is of this form: the zero side is the two-term side, and its two
+terms share the same residue modulo `k`.
+
+### Lemma 0341.B -- parity-separated projections descend dyadically
+
+Let the nonzero projected residues of the two residual directions satisfy
+
+```text
+supp(u) mod 2 = {epsilon_u},
+supp(v) mod 2 = {epsilon_v}.
+```
+
+Multiplication by the order-2 element `omega2^8` acts diagonally on the
+`L2=(16,4)` quotient by
+
+```text
+x^r -> (-1)^r x^r.
+```
+
+Therefore
+
+```text
+D_{omega2^8} u = (-1)^epsilon_u u,
+D_{omega2^8} v = (-1)^epsilon_v v.
+```
+
+The projective residual row span is invariant under a nontrivial cyclic
+action.  Such a component is charged to the dyadic descendant/stabilizer
+branch, not to the primitive branch.
+
+This is exactly the mechanism recorded as
+
+```text
+order2:parity-split:u(0,):v(1,)
+order2:parity-split:u(1,):v(0,)
+```
+
+---
+
+## Consequence for #396
+
+Notes 0340 and 0341 now show the same mechanism decomposition in two
+consecutive bilateral layers:
+
+```text
+4-support (2,2): seven-prime panel, all nonzero leftovers charged.
+5-support (2,3)/(3,2): q=193 panel, all nonzero leftovers charged.
+```
+
+The useful strengthening is that the charged buckets are no longer opaque.
+They are generated by explicit projection facts:
+
+1. A two-term side can vanish only through same-residue cancellation, which
+   drops residual rank.
+2. A parity-separated projected support is invariant under the order-2
+   dyadic action, hence descends.
+3. The remaining small-prime aliases are direct rank collapses.
+
+This still does not close the full higher-support/higher-scale theorem from
+Note 0336.  It narrows the hard subclaim: after removing same-residue
+two-term zero sides and parity-separated stabilizer projections, a primitive
+rank-2 no-full defect allocation must have genuinely mixed residues on both
+directions and no dyadic order-2 stabilizer.  The first two bilateral layers
+have no such survivor.

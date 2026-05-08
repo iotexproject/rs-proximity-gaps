@@ -1,5 +1,18 @@
 """
-Rigorous test of Delta_joint >= Delta(f, RS_k).
+Empirical sanity check of the FRI coupling inequality
+    Delta((f_even, f_odd), RS_{k/2}^{=2}) >= Delta(f, RS_k)
+(Lemma fri-coupling in paper1).
+
+NOTE ON METHODOLOGY (read before citing the numbers).  The script does not
+compute the literal Delta(f, RS_k); it constructs f as g + e for a planted
+codeword g in RS_k and a sparse error e, and uses delta_f := err_weight/n
+= Delta(f, g), an UPPER BOUND on the true nearest-codeword distance
+Delta(f, RS_k) <= delta_f.  Verifying delta_joint >= delta_f therefore
+implies the lemma's claim delta_joint >= Delta(f, RS_k), but the script
+will not detect cases where delta_f > Delta(f, RS_k) makes the lemma
+tighter.  At the small parameters tested the planted codeword is the
+unique closest codeword with overwhelming probability, so the proxy is
+sound for the audit's intended use.
 
 Also test ADVERSARIAL case: paired errors designed to minimize Delta_joint.
 """

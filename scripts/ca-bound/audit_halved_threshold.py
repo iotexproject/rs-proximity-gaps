@@ -1,9 +1,19 @@
 """
-Verify the halved-threshold proximity gap:
+Empirical sanity check for the halved-threshold proximity gap:
 
 1. Delta_joint >= Delta(f, RS_k)  (critical inequality)
 2. Count alpha where f' = f_even + alpha*f_odd is (delta/2)-close to RS_{k/2}
 3. Verify this count is <= ceil(1/(1-delta/2)) = O(1)
+
+METHODOLOGY (read before citing the numbers).  Distances are measured
+relative to a planted codeword (delta_f := err_weight/n = Delta(f, g))
+and a planted folded codeword for f' (the ``alpha-count'' is alphas with
+small Hamming weight against the folded planted codeword), not the
+literal nearest-codeword distance Delta(., RS_.).  Both planted-codeword
+distances are upper bounds on their nearest-codeword counterparts, so
+the empirical pass/fail of (1) and (3) is consistent with the literal
+claim, but the script does not exhibit the literal nearest-codeword
+witnesses.  Used as a coarse sanity check at small parameters.
 """
 import random
 

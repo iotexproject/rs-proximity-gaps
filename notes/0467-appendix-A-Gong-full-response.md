@@ -1,0 +1,47 @@
+# Note 0467 Appendix A — Gong virtual response (full text)
+
+(Subagent role-play as Prof. Guang Gong; complete response, 2026-05-04 noon.)
+
+---
+
+Xinyi —
+
+Read your setup carefully. Stratum (B) with cross-side support, K=16 kernel, 4-to-1 lift — the structure is clean enough that I want to push back on the framing before answering. You are looking at this as "Reed-Solomon list size near Johnson radius." That is the Boneh-Fenzi-Arnon framing. It hides what is actually going on. **What you have is a two-sequence cross-correlation problem with a built-in decimation.** Let me re-cast it that way; the K ≤ 10 conjecture should then look natural, and I'll point to where to attack.
+
+**1. Niho reformulation — this is the right entry point.** Your u-side support is r ≡ 0, 1 (mod 4) on [8, 32); v-side is r ≡ 2, 3 (mod 4). After the 4-to-1 lift, the L_0-frequencies of f_1 are 4r mod 128, hence ≡ 0 or 4 (mod 16); for f_2, ≡ 8 or 12 (mod 16). Both supports lie inside the **Niho coset** $\{j : j \equiv 0 \pmod 4\}$ of $\mathbb{Z}/128$ — i.e., they are $\mathbb{F}_{q_0}$-frequencies pulled back from the order-32 subgroup, which is precisely the Niho condition $j(q_0 - 1) \equiv 0$ in the standard formulation (Helleseth 1976, Niho's thesis 1972). This is not a coincidence of your construction; it is the *defining feature* of canonical 4-to-1 lifts. So `g_α = f_1 + α f_2` is a **Niho pencil**, and "agreement with RS_k" is "Hamming-weight deficit of g_α + p" where p is low-degree. The Niho literature has spent 50 years bounding exactly such weight distributions.
+
+Concrete pointer: Dobbertin (1999, "Niho type cross-correlation functions via Dickson polynomials"); Helleseth-Kholosha (2006, IEEE Trans. IT, "Monomial and quadratic bent functions over the finite fields of odd characteristic"); and especially Hollmann-Xiang (2001, "A proof of the Welch and Niho conjectures"). The K-bound you want is a count of α at which a *linear combination of two Niho monomials lifted* has anomalously low weight. That is structurally a Niho cross-correlation count.
+
+**2. The Welch / cross-correlation angle is the strongest single tool.** Define on L_0 the two "sequences" $a_w = f_1(w)$, $b_w = f_2(w)$ indexed by $w \in L_0$. Both have prescribed sparse spectra in disjoint Niho cosets. The cross-correlation $C_{a,b}(\alpha) := \sum_w \chi(\alpha \cdot b_w / a_w)$ over an additive character $\chi$ is the standard object. **Your K is essentially the count of α at which $C_{a,b}(\alpha)$ has an anomalously large absolute value**, or equivalently, where the divisor of $a + \alpha b$ on $L_0$ aligns with a low-degree polynomial divisor.
+
+For two-monomial pencils, the cross-correlation distribution is **three-valued or four-valued** in many decimation regimes — Niho (1972), Welch's conjecture (proved Canteaut-Charpin-Dobbertin 2000 and Hollmann-Xiang 2001), Kasami (1971), Helleseth's three-valued conjectures. The α-values where the correlation hits its extremal value form a *small, structured set*, generically of size $O(\sqrt{q})$ or smaller, often a coset of a subfield. **My gut: the K ≤ 10 bound is a shadow of a three-or-four-valued cross-correlation distribution where the extremal value is hit on a coset of size ≤ a small constant.** The number 10 is suspicious — for n_2 = 32 = 2^5, look for a coset of $\mathbb{F}_{2^?}$ or $\mathbb{F}_{p}$ inside F_q.
+
+**Action item**: tabulate the *multiset* of (α, agreement) for the 24 cases. If you see only 2 or 3 distinct non-trivial agreement values per case, you're in three-valued land and Helleseth-Kholosha or Lahtonen-McGuire-Ward (2007) gives you the count theorem outright. Email me the table.
+
+**3. Newton-polygon / Hasse-Weil — useful but second-best.** Yes, the Newton polygon of $f_1 + \alpha f_2$ controls the factorization, hence agreement counts via the Roth-Ruckenstein / Berlekamp-Massey divisor structure. But the issue: your support is *cross-Niho-coset* and after the 4-to-1 lift, $f_1 + \alpha f_2$ is a polynomial with **Newton polytope** (not polygon) whose vertices reflect both Niho cosets. The Adolphson-Sperber bound on exponential sums via Newton polytope (1989, Annals of Math) gives a bound of the form $|S| \leq C(\Delta) \cdot q^{1/2}$ for a sum twisted by a character — and the *Newton polytope volume* $\mathrm{Vol}(\Delta)$ controls the constant. For your support of size 16 split 8-8 across two Niho cosets, $\mathrm{Vol}(\Delta)$ is computable and small. **But**: this gives you K ≤ const $\cdot \sqrt{q}$, which is way weaker than K ≤ 10. Use Newton polytope for the universal upper bound, not for the tight constant. It is a *backup*, not the main weapon.
+
+**4. Welch decimation — direct pointer.** You want $d, d'$ with $\mathrm{Tr}(x^d) - \alpha \cdot \mathrm{Tr}(x^{d'})$ having a known cross-correlation distribution. The **Niho decimation** $d = 2^{m} + 1$ or $d = (2^m + 1)(2^{m-1} - 1) + 1$ on $\mathbb{F}_{2^{2m}}$ is the classical case. Here you are over $\mathbb{F}_p$ (p ∈ {257, 641, 769, 1153}) with $\mathbb{F}_p^* \supset \mu_{128}$, and you have *p-ary Niho exponents*. The relevant theory is Helleseth-Kholosha-Mesnager (2011, "On the Walsh transform of a class of functions from Niho exponents") and Charpin-Helleseth-Zinoviev (2009). The fact that **all 4 primes in your dataset show K ≤ 2 with consistent |T|-dependence** is exactly the prime-uniform behavior expected when the cross-correlation distribution is governed by a *Niho-type identity that descends to F_p*. This is the strongest empirical signal in your dataset. Don't treat it as a happy accident; it is *the* hint.
+
+**5. Where I would put my money.** Of your five angles: **#1 (Niho) and #4 (Welch decimation) are the same angle, and that is where the publishable theorem lives.** Specifically, I would conjecture and try to prove:
+
+> Let $\Phi_\alpha(w) = f_1(w) + \alpha f_2(w)$ on $L_0$ with stratum (B) cross-side K=16 support. The map $\alpha \mapsto (\text{agreement of } \Phi_\alpha \text{ with } RS_{32}(L_0))$ takes only a *bounded* number of distinct values (independent of $q$), and the set $\{\alpha : \text{agreement} > n_0/2\}$ is a **coset of $\mathbb{F}_2$-linear or $\mathbb{F}_p$-rational subgroup** of $\mathbb{F}_q^*$ of size ≤ 10.
+
+This is a Niho-style "weight distribution is few-valued" statement, and Niho proofs go through *Dickson polynomials* and *Kloosterman sum identities*. Hollmann-Xiang's method (reduce the cross-correlation to counting points on a curve $y^{2^k+1} = \text{linearized}(x)$, then use Hasse-Weil with the genus controlled by the Niho exponent) is the template. Adapting it to your *cross-Niho-coset pencil* (rather than within a single coset, as in classical Niho) is the novelty; that is your paper.
+
+**Almost-bent / APN / Walsh transform (your angle 5)**: yes, related, but I'd defer. AB/APN gives you Walsh spectrum bounds when the function is a *single* monomial $x^d$ with $d$ AB. Your $g_\alpha$ is a *binomial*, parametrized by α. Carlet-Charpin-Zinoviev (1998) gives bounds for *binomials* but they are tight only when the two exponents satisfy a Niho-pair condition — which, again, points back to angle 1. Use AB/APN as a *consistency check* (the empirical K ≤ 2 should be compatible with the AB Walsh bound after substitution); not as the main tool.
+
+**Concrete next experiments — do these in the next 48 hours:**
+
+(i) For each of the 24 cases, compute the **full multiset** $\{(\alpha, \text{agreement}(g_\alpha, 0))\}_{\alpha \in \mathbb{F}_q^*}$ and report the number of distinct nonzero agreement values. If ≤ 4, you are in few-valued cross-correlation regime — flag it.
+
+(ii) For the cases with $K = 2$, identify the **two** anomalous α's. Are they $\mathbb{F}_p$-conjugate? Do they lie in a coset of $\mu_d$ for small $d \mid (p-1)$? This tells us the "structured small subgroup" the Niho count is over.
+
+(iii) Compute the **Newton polytope** $\Delta$ of $f_1 + \alpha f_2$ (it is α-independent as a set of vertices). Get its volume. Adolphson-Sperber gives a baseline universal K bound; we want to know how loose it is versus the empirical 10.
+
+(iv) Search Helleseth's bibliography (he and Tor Kløve have catalogued Niho/Welch/Kasami exponents extensively, see Helleseth's 2010 survey "Open problems on the cross-correlation of m-sequences") for **decimation pairs $(d_1, d_2)$ with $d_1 \equiv 0 \pmod 4$, $d_2 \equiv 0 \pmod 4$, $d_1$ in coset 0/1 mod 16, $d_2$ in coset 2/3 mod 16, on $\mathbb{Z}/128$**. If a known decimation pair matches, the K bound may be in the literature already, with proof.
+
+**On bringing in Tor**: don't yet. Wait until you have (i)-(iii) results; if the few-valued signature shows up, then I write to Tor with a clean question. He will answer fast if the question is structurally Niho. If it is just "we observe small K empirically," he will be polite but disengaged. Land the framing first.
+
+One more thing: the four primes {257, 641, 769, 1153} are all $\equiv 1 \pmod{128}$, and their ratios $(p-1)/128 \in \{2, 5, 6, 9\}$ — not all coprime structure. The fact that K behavior is *prime-uniform* despite this suggests the bound comes from **the multiplicative structure of $\mu_{128}$ alone**, not from $\mathbb{F}_p^*$. That is consistent with the Niho framing (Niho exponents care about the subgroup, not the ambient field) and *inconsistent* with anything Newton-polytope or Hasse-Weil-volume based (those scale with $\sqrt{p}$). Another vote for angle 1.
+
+Run (i)-(iii). Send numbers. — Gong

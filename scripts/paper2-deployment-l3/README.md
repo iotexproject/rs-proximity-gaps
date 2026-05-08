@@ -15,7 +15,7 @@ utilities).
 
 | Theorem (paper2.tex label) | Script | Verifies |
 |---|---|---|
-| `thm:boundary-lift-closure` | `issue419_boundary_lift_universal.py` | $\lvert \mathrm{Zeros}_{L_0}(f^{(0)}) \rvert \ge n_0/2 = \sqrt{n_0 k_0}$ for ANY no-full $\lvert S \rvert = n_2/2$ kernel $f$ at $L_2 = (n_2, n_2/4)$ ($K \in \{12, 14, 16\}$, 38 cases, 0 violations). |
+| `thm:boundary-lift-closure` | `issue419_boundary_lift_universal.py` | Empirical spot check (not a universal proof): hard-coded at $(p, n_2, k_2) = (257, 32, 8)$, samples 500 random no-full configurations and the first 50 of them per $K$ parity. Verifies $\lvert \mathrm{Zeros}_{L_0}(f^{(0)}) \rvert \ge n_0/2 = \sqrt{n_0 k_0}$ for $K \in \{12, 14, 16\}$ (38 cases checked, 0 violations). The "ANY no-full" universality is established in the paper proof; this script is the sanity check. |
 | `thm:boundary-lift-closure` (scale-uniform check) | `issue419_boundary_lift_L64.py` | Same theorem at $L_2 = (64, 16)$ (i.e., $L_0 = (256, 64)$). |
 | `thm:common-zero-stratification` (residual stratum B) | `issue419_K16_canonical_lift.py` | Direct canonical lift verification $f^{(0)}(w) := f(w^4)$ at $K = 16$ deployment cases. |
 | `thm:common-zero-stratification` (residual stratum B) | `issue419_K16_K_count.py` | Direct $K$-count via 0-codeword agreement at deployment. |

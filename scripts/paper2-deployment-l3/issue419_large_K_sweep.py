@@ -1,6 +1,12 @@
-"""Large multi-prime sweep for K=12, 14, 16 cross-side cases at L_2=(32,8).
+"""Large multi-prime sweep for cross-side cases at L_2=(32,8).
 
 Strengthens empirical evidence for K(f_1, f_2; delta) <= 10 for stratum (B).
+
+CURRENT CONFIG: as actually executed below, this sweep focuses on K=16
+only (see ``test_K_parities`` near the bottom).  The wider K=12, 14, 16
+coverage referenced in the original docstring is split across companion
+scripts ``issue419_case3_BW_total_K.py`` and
+``issue419_stratum_B_empirical_K.py`` (see paper2-deployment-l3/README.md).
 
 For each (K, prime) pair, sample many configs, find rank-def cases, classify
 into strata, and verify K_BW <= 10 always.

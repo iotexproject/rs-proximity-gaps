@@ -223,8 +223,11 @@ for n in [6, 8, 10, 12, 14, 16, 18, 20]:
     w_J = johnson_radius(n, k)
     delta_J = w_J / n
 
-    # Our empirical M bounds
-    M_data = {6: 3, 8: 7, 10: 3, 12: 6, 14: 8, 16: 4, 18: 7, 20: 0}
+    # Our empirical M bounds (from heuristic-sample list_decoding_profile()
+    # above; not a full brute-force search, so these are sample lower
+    # bounds on M_max(w_J).  '?' marks values where the heuristic search
+    # returned 0 and we did not separately certify M_max.)
+    M_data = {6: 3, 8: 7, 10: 3, 12: 6, 14: 8, 16: 4, 18: 7, 20: '?'}
     M = M_data.get(n, '?')
 
     conds = n - k - w_J

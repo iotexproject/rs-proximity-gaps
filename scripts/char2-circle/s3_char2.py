@@ -202,7 +202,10 @@ def test_char2(t_field, n, threshold=6):
         total_wits = 0
         total_not = 0
 
-        # sample lambda values
+        # sample lambda values (NOTE: capped at 100 -- for F_q with q > 100
+        # this samples only the first 100 lambdas, so reported max_M /
+        # max_NOT are sample maxima, NOT exhaustive maxima over the field;
+        # treat as a spot check, not a full search).
         lam_range = range(min(F.q, 100))
         for lam_idx in lam_range:
             lam = lam_idx  # elements of F as integers 0..q-1

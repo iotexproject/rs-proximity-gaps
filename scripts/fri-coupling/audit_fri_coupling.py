@@ -4,7 +4,8 @@ affect proximity of f_even and f_odd to RS_{k/2}?
 
 Setup:
   - L = <omega> subset F_p^*, |L| = n = 2^K
-  - f on L with Delta(f, RS_k) = delta  (nearest codeword g, error e = f - g)
+  - f = g + e for a planted codeword g in RS_k and a sparse error e
+    (delta := wt(e)/n is the distance to g, an UPPER BOUND on Delta(f, RS_k))
   - f_even(y) = (f(sqrt_y) + f(-sqrt_y))/2    on L' = L^2, |L'| = n/2
   - f_odd(y)  = (f(sqrt_y) - f(-sqrt_y))/(2*sqrt_y) on L' = L^2
 
@@ -13,8 +14,16 @@ Two constructions:
   2. PAIRED errors (symmetric): error set is {x,-x} pairs, e(x)=e(-x)
   3. PAIRED errors (antisymmetric): error set is {x,-x} pairs, e(x)=-e(-x)
 
-For each: measure Delta(f_even, RS_{k/2}), Delta(f_odd, RS_{k/2}),
-count alpha where f_even + alpha*f_odd is delta-close / (delta/2)-close to RS_{k/2}.
+NOTE ON METHODOLOGY (read before citing the numbers).  The script reports
+``Delta(f_even, RS_{k/2})'' via the DFT-truncation distance --- i.e.,
+the Hamming distance between f_even and the specific RS_{k/2} codeword
+g_even obtained by zeroing the high-frequency Fourier coefficients of
+f_even.  This equals the distance to a particular codeword (g_even),
+which is an UPPER BOUND on the literal nearest-codeword distance
+Delta(f_even, RS_{k/2}); the two coincide for sufficiently sparse
+errors but not in general.  Treat the reported numbers as
+distance-to-planted-codeword empirics, not as a brute-force search for
+the nearest RS_{k/2} codeword.
 
 Key: g = sum_{j=0}^{k-1} a_j X^j.
   g_even(y) = sum_{j even, j<k} a_j y^{j/2}  => degree < k/2  => in RS_{k/2} on L'
