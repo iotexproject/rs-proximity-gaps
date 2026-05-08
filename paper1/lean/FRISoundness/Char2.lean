@@ -23,6 +23,7 @@ Recovery:
 No NeZero(2 : F) hypothesis anywhere — works in ALL characteristics.
 -/
 import FRISoundness.Defs
+import FRISoundness.CA
 
 open Finset Fintype
 
@@ -178,5 +179,45 @@ theorem gen_coupling_counting
     Finset.card_le_card hsub
   rw [hunion, hcardF, hcardS] at hle
   linarith
+
+/-! ## Char-2 (additive) round-1 proximity gap
+
+Packaging of `ca_halved` for the additive / circle / char-2 setting:
+the same "at most one bad α" conclusion holds for any `GenFRIPairing`,
+since the proof of `ca_halved` uses only the linearity of the folded
+code and never invokes characteristic. This corresponds to paper
+Theorem `thm:proximity-gap-char2` (and equally to `thm:circle-pg` —
+both are instances of the same generalized pairing). -/
+
+/-- **Half-Threshold Proximity Gap, generalized pairing** — paper
+    Theorem `thm:proximity-gap-char2` (additive char-$2$) and
+    `thm:circle-pg` (circle FRI), both as instances of the same
+    `GenFRIPairing` abstraction.
+
+    Given a function `f : L → F`, its generalized even/odd
+    decomposition `(genFEven P f, genFOdd P f)` on the folded
+    domain `L'`, and a folded linear code `C' ⊆ (L' → F)`: if the
+    joint distance of this decomposition from `C' × C'` exceeds
+    `2d`, then at most one `α ∈ F` makes
+    `genFEven + α · genFOdd` `d`-close to `C'`.
+
+    Direct application of `ca_halved`; no extra hypothesis needed
+    beyond what the multiplicative case requires. -/
+theorem proximity_gap_char2
+    {L L' : Type*} [Fintype L'] [DecidableEq L']
+    {F : Type*} [Field F] [DecidableEq F]
+    (P : GenFRIPairing L L' F)
+    (C' : Submodule F (L' → F))
+    (f : L → F) (d : ℕ)
+    (hprem : ∀ g₁ ∈ C', ∀ g₂ ∈ C',
+      (jointAgreeSet (genFEven P f) (genFOdd P f) g₁ g₂).card + 2 * d < card L')
+    {α₁ α₂ : F} (hne : α₁ ≠ α₂)
+    {c₁ c₂ : L' → F} (hc₁ : c₁ ∈ C') (hc₂ : c₂ ∈ C')
+    (hA₁ : card L' ≤
+      (agreeSet (linComb (genFEven P f) (genFOdd P f) α₁) c₁).card + d)
+    (hA₂ : card L' ≤
+      (agreeSet (linComb (genFEven P f) (genFOdd P f) α₂) c₂).card + d) :
+    False :=
+  ca_halved C' (genFEven P f) (genFOdd P f) d hprem hne hc₁ hc₂ hA₁ hA₂
 
 end FRISoundness

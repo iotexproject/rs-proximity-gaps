@@ -82,9 +82,12 @@ These are second-moment results on the random list size `M_γ`. They are not on 
 |-------------|-----------|-----------------|------|--------|
 | `lem:additive-iso` | Additive even/odd iso | `FRISoundness.gen_recover_fst`, `gen_recover_snd` | `Char2.lean` | ✅ |
 | `lem:additive-coupling` | Additive FRI coupling | `FRISoundness.gen_coupling_pointwise`, `gen_coupling_counting` | `Char2.lean` | ✅ |
-| `thm:proximity-gap-char2` | Char-2 round-1 proximity gap | (gen_coupling_* + ca_halved chain assembled in paper; not packaged as one Lean theorem yet) | — | 🟧 |
-| `thm:fri-char2` | Full Char-2 FRI soundness | — | — | ⬜ |
-| `lem:circle-iso`, `lem:circle-coupling`, `thm:circle-pg`, `thm:fri-circle` | Circle FRI chain | — | — | ⬜ |
+| `thm:proximity-gap-char2` | Char-2 round-1 proximity gap | `FRISoundness.proximity_gap_char2` | `Char2.lean` | ✅ |
+| `thm:fri-char2` | Full Char-2 FRI soundness | (chain to `Probability.fri_soundness_above_johnson_*` via `proximity_gap_char2`) | — | 🟧 |
+| `lem:circle-iso` | Circle even/odd iso | covered by `GenFRIPairing` abstraction (`genFEven`/`genFOdd`); explicit circle instance not yet constructed | `Char2.lean` | 🟧 |
+| `lem:circle-coupling` | Circle FRI coupling | covered by `gen_coupling_pointwise/counting` once the circle `GenFRIPairing` instance exists | `Char2.lean` | 🟧 |
+| `thm:circle-pg` | Circle round-1 proximity gap | covered by `proximity_gap_char2` once the circle `GenFRIPairing` instance exists | `Char2.lean` | 🟧 |
+| `thm:fri-circle` | Full circle FRI soundness | — | — | ⬜ |
 
 ### Section 9 — Round-by-round / Non-interactive variants
 
