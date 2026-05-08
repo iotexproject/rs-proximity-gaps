@@ -180,30 +180,34 @@ theorem gen_coupling_counting
   rw [hunion, hcardF, hcardS] at hle
   linarith
 
-/-! ## Char-2 (additive) round-1 proximity gap
+/-! ## Generic-pairing proximity-gap helper
 
-Packaging of `ca_halved` for the additive / circle / char-2 setting:
-the same "at most one bad α" conclusion holds for any `GenFRIPairing`,
-since the proof of `ca_halved` uses only the linearity of the folded
-code and never invokes characteristic. This corresponds to paper
-Theorem `thm:proximity-gap-char2` (and equally to `thm:circle-pg` —
-both are instances of the same generalized pairing). -/
+Restatement of `ca_halved` in the variables `(genFEven P f, genFOdd P f)`
+on a folded linear code `C' ⊆ (L' → F)`. The proof of `ca_halved` uses
+only the linearity of the folded code and is therefore characteristic-
+agnostic; it applies verbatim to any `GenFRIPairing` (additive char-2,
+circle, or multiplicative).
 
-/-- **Half-Threshold Proximity Gap, generalized pairing** — paper
-    Theorem `thm:proximity-gap-char2` (additive char-$2$) and
-    `thm:circle-pg` (circle FRI), both as instances of the same
-    `GenFRIPairing` abstraction.
+This is a pure helper. Wiring it into the paper's labelled
+`thm:proximity-gap-char2` (additive char-$2$) or `thm:circle-pg`
+(circle FRI) requires:
+1. constructing the concrete `GenFRIPairing` instance for the deployment
+   domain (additive subspace under `s(x) = x² + βx`, or the unit circle
+   `{x² + y² = 1}` under `(x,y) ↦ (x,-y)`); and
+2. supplying the code-distance hypothesis Δ(f, RS_k) > δ together with
+   the additive/circle code-level coupling lemma.
+Both are listed under STATUS.md roadmap items 3 / 7. -/
 
-    Given a function `f : L → F`, its generalized even/odd
-    decomposition `(genFEven P f, genFOdd P f)` on the folded
-    domain `L'`, and a folded linear code `C' ⊆ (L' → F)`: if the
-    joint distance of this decomposition from `C' × C'` exceeds
-    `2d`, then at most one `α ∈ F` makes
-    `genFEven + α · genFOdd` `d`-close to `C'`.
+/-- **Half-threshold proximity-gap helper, generalized pairing.**
 
-    Direct application of `ca_halved`; no extra hypothesis needed
-    beyond what the multiplicative case requires. -/
-theorem proximity_gap_char2
+Given a function `f : L → F`, its generalized even/odd decomposition
+`(genFEven P f, genFOdd P f)` on the folded domain `L'`, and a folded
+linear code `C' ⊆ (L' → F)`: if the joint distance of this decomposition
+from `C' × C'` exceeds `2d`, then at most one `α ∈ F` makes
+`genFEven + α · genFOdd` `d`-close to `C'`.
+
+Direct application of `ca_halved`. -/
+theorem proximity_gap_gen_pairing
     {L L' : Type*} [Fintype L'] [DecidableEq L']
     {F : Type*} [Field F] [DecidableEq F]
     (P : GenFRIPairing L L' F)

@@ -13,14 +13,25 @@ namespace FRISoundness
 
 variable {F : Type*} [Field F] [DecidableEq F]
 
-/-! ## Reed-Solomon code
+/-! ## Evaluation code (RS interpretation)
 
-RS[α, k] = {f : L → F | ∃ p : F[X], p.degree < k ∧ ∀ x, f x = p.eval (α x)}
+`RSCode α k = {f : L → F | ∃ p : F[X], p.degree < k ∧ ∀ x, f x = p.eval (α x)}`.
 
-We use `degree` (valued in `WithBot ℕ`) to handle the zero polynomial cleanly:
-degree 0 = ⊥ < ↑k for all k, so the zero function is always in the code. -/
+This is the abstract evaluation code on an arbitrary map `α : L → F`. The
+proper Reed–Solomon interpretation requires `α` injective with image of
+size ≥ k (so that distinct codewords have distinct evaluations); when `α`
+is not injective the same definition still gives a linear submodule, but
+its dimension may be lower than k. The lemmas in this file (linearity,
+even/odd recovery, coupling) use only the linear-algebraic structure, so
+they hold without injectivity; downstream paper-faithful theorems should
+pair this definition with an injectivity hypothesis on `α`.
 
-/-- The RS code: evaluations of degree < k polynomials on evaluation points α. -/
+We use `degree` (valued in `WithBot ℕ`) so the zero polynomial is
+cleanly in every `RSCode`. -/
+
+/-- The evaluation code: image of polynomials of degree < k under
+    pointwise evaluation at `α`. RS code in the strict sense when `α`
+    is injective. -/
 def RSCode {L : Type*} [Fintype L] (α : L → F) (k : ℕ) : Submodule F (L → F) where
   carrier := {f | ∃ p : F[X], p.degree < (k : WithBot ℕ) ∧ ∀ x : L, f x = p.eval (α x)}
   add_mem' := by

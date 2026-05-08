@@ -2,15 +2,17 @@
 Copyright (c) 2026 Raullen Chai, Xinxin Fan. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 
-**Theorem ca-halved** (RVW13, STOC 2013).
+**Theorem `thm:ca-halved`** (RVW13, STOC 2013).
 Half-Threshold Correlated Agreement Bound.
 
 For any linear code C over a field F with domain L (|L| = n):
   If (f₁, f₂) has joint error weight > 2d from C × C,
   then at most one γ ∈ F satisfies Δ(f₁ + γf₂, C) ≤ d.
 
-This is Theorem 3.1 in the paper. Setting d = ⌊δn/2⌋ gives ε_ca(C, δ/2, δ) ≤ 1/|F|.
-The proof uses only linearity of C — no polynomial structure, no restriction on k or δ.
+Setting d = ⌊δn/2⌋ gives ε_ca(C, δ/2, δ) ≤ 1/|F|. The paper states the
+looser ≤ 2/|F| form; the proof here yields the tighter "at most one" bound.
+The proof uses only linearity of C — no polynomial structure, no restriction
+on k or δ.
 -/
 import FRISoundness.Defs
 
@@ -24,7 +26,7 @@ variable {F : Type*} [Field F] [DecidableEq F]
 /-! ## The main theorem -/
 
 /--
-**Theorem ca-halved** (RVW13).
+**Theorem `thm:ca-halved`** (RVW13).
 
 Given:
 - C : a linear code (submodule of L → F)

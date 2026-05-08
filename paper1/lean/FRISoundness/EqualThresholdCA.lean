@@ -2,7 +2,7 @@
 Copyright (c) 2026 Raullen Chai, Xinxin Fan. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 
-**Theorem 7** (paper §4): Equal-threshold correlated agreement upper bound.
+**Theorem `thm:eq-threshold-upper`** (paper §4): Equal-threshold correlated agreement upper bound.
 
 For any linear code `C` over a field `F` with domain `L` (`|L| = n`):
 if `(f₁, f₂)` has joint distance `> w` from `C × C`, then the number of
@@ -116,7 +116,7 @@ private def IsBadWitness
 
 private lemma exists_witness
     (C : Submodule F (L → F))
-    (f₁ f₂ : L → F) (w : ℕ) (hw : w ≤ card L) (γ : F)
+    (f₁ f₂ : L → F) (w : ℕ) (γ : F)
     (hbad : ∃ h ∈ C, card L ≤ (agreeSet (linComb f₁ f₂ γ) h).card + w) :
     ∃ (h : L → F) (A : Finset L), IsBadWitness C f₁ f₂ w γ h A := by
   obtain ⟨h, hC, hcard⟩ := hbad
@@ -126,14 +126,14 @@ private lemma exists_witness
   exact ⟨h, A, hC, hAcard, hAsub⟩
 
 /--
-**Equal-threshold CA upper bound** (paper Theorem 7).
+**Equal-threshold CA upper bound** (paper `thm:eq-threshold-upper`).
 
 If `(f₁, f₂)` has joint distance `> w` from `C × C` and `w ≤ |L|`, then the
 set of "bad" γ's — those for which `f₁ + γ · f₂` is within distance `w` of
 `C` — has cardinality at most `Nat.choose |L| w`.
 
 For RS[F, L, k] with `w = n − k − 1`, this gives the `C(n, w)/|F|` bound of
-the paper's Theorem 7.
+the paper's `thm:eq-threshold-upper`.
 -/
 theorem ca_equal_threshold
     (C : Submodule F (L → F))
@@ -147,14 +147,14 @@ theorem ca_equal_threshold
   classical
   -- For every γ ∈ Γ, package its codeword + (n−w)-witness subset.
   let pickH : ∀ γ ∈ Γ, L → F := fun γ hγ =>
-    Classical.choose (exists_witness C f₁ f₂ w hw γ (hbad γ hγ))
+    Classical.choose (exists_witness C f₁ f₂ w γ (hbad γ hγ))
   let pickA : ∀ γ ∈ Γ, Finset L := fun γ hγ =>
     Classical.choose
-      (Classical.choose_spec (exists_witness C f₁ f₂ w hw γ (hbad γ hγ)))
+      (Classical.choose_spec (exists_witness C f₁ f₂ w γ (hbad γ hγ)))
   have pickSpec : ∀ γ (hγ : γ ∈ Γ),
       IsBadWitness C f₁ f₂ w γ (pickH γ hγ) (pickA γ hγ) := fun γ hγ =>
     Classical.choose_spec
-      (Classical.choose_spec (exists_witness C f₁ f₂ w hw γ (hbad γ hγ)))
+      (Classical.choose_spec (exists_witness C f₁ f₂ w γ (hbad γ hγ)))
   -- Each pickA γ is in the powersetCard (card L - w) of L.
   have hmem : ∀ γ (hγ : γ ∈ Γ),
       pickA γ hγ ∈ (Finset.univ : Finset L).powersetCard (card L - w) := by

@@ -2,18 +2,27 @@
 Copyright (c) 2026 Raullen Chai, Xinxin Fan. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 
-**Theorem batch-ca** (Appendix A.1).
-Batch Correlated Agreement: conditioning + union bound.
+Per-coordinate building blocks for the paper's `thm:batch-ca` (Appendix A.1).
 
-For STIR/WHIR batched proximity testing: given m received words f₁, ..., fₘ,
-the random linear combination ∑ αᵢfᵢ is δ-close to C for at most m bad
-coefficient tuples out of |F|^m (probability ≤ m/|F|).
+For batched proximity testing: given m received words f₁, …, fₘ each at
+joint distance > 2d from C, this file proves a **per-coordinate** union
+bound on the bad-α set with one coordinate varied at a time:
+
+  Bᵢ(restᵢ) := { α ∈ F : ∃ c ∈ C, |agreeSet(restᵢ + α·fᵢ, c)| ≥ n − d }
+
+is a singleton (or empty) by `batch_ca_at_most_one`, and the union
+∪ᵢ Bᵢ has size ≤ m by an elementary union-bound. The paper's tuple-form
+statement (probability bound over `(α₁, …, αₘ) ∈ F^m`) is a corollary of
+this union bound combined with a conditioning / averaging argument that
+fixes `restᵢ := ∑_{j<i} αⱼ fⱼ` and is not yet packaged as one Lean
+theorem; STATUS.md tracks this as a roadmap item.
 
 The proof decomposes into:
 1. **Conditioning**: if fᵢ is 2d-far from C, then for any "rest" function,
-   the pair (rest, fᵢ) satisfies the ca_halved premise.
-2. **Per-coordinate CA**: apply ca_halved to get at most 1 bad αᵢ per coordinate.
-3. **Union bound**: m coordinates × 1 bad each ≤ m total bad tuples.
+   the pair (rest, fᵢ) satisfies the `ca_halved` premise.
+2. **Per-coordinate CA**: apply `ca_halved` to get at most 1 bad αᵢ
+   per coordinate.
+3. **Union over coordinates**: m coordinates × 1 bad each ≤ m bad scalars.
 -/
 import FRISoundness.CA
 import Mathlib.Order.Defs.PartialOrder

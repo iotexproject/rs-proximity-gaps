@@ -2,7 +2,7 @@
 Copyright (c) 2026 Raullen Chai, Xinxin Fan. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 
-FRI Coupling Lemma, Proximity Gap, and Soundness Composition.
+Helper lemmas combining `ca_halved` with the FRI coupling building blocks.
 -/
 import FRISoundness.CA
 import FRISoundness.RSCode
@@ -12,27 +12,34 @@ open Finset Fintype
 
 namespace FRISoundness
 
-/-! ## Proximity Gap (Theorem 4.2)
+/-! ## Half-threshold proximity-gap helper
 
-The proximity gap theorem combines:
-1. FRI coupling: Δ(f, RS_k) > δ ⟹ Δ_joint((fE, fO), RS_{k/2}²) > δ
-2. ca_halved: joint distance > 2d ⟹ at most 1 bad α
+A direct restatement of `ca_halved` over an arbitrary linear submodule
+`C' ⊆ (L' → F)`. The paper's `thm:proximity-gap` adds two ingredients on
+top of this helper:
 
-Step 1 requires the RS isomorphism witness from RSCode.lean.
-Step 2 is fully proved in CA.lean.
+1. The FRI coupling step (Δ(f, RS_k) > δ ⟹ joint Δ((fE, fO), RS_{k/2}²) > δ),
+   formalized at the abstract level as `RSCode.coupling_pointwise` and
+   `RSCode.coupling_counting`. Wiring those into a paper-faithful theorem
+   requires an instantiated `RSIsomorphismWitness` for the concrete
+   multiplicative-coset FRI domain (not yet in the library).
+2. The above-Johnson distance hypothesis under which BCIKS supplies the
+   round-≥-2 bound. The library does not yet include a faithful
+   transcription of BCIKS '20 Theorem 1.2; see STATUS.md for the
+   roadmap entry that fills this in.
 
-We prove the proximity gap modulo the coupling premise.
--/
+Until those two pieces are in place we expose the helper below under the
+name `proximity_gap_core` so a reader does not mistake it for the full
+paper-labelled theorem. -/
 
 /--
-**Theorem (Half-Threshold Proximity Gap)** — Theorem 4.2.
+**Half-threshold proximity-gap helper** (alias for `ca_halved` on a
+folded linear code).
 
-If the joint distance of (fE, fO) from C' × C' exceeds 2d,
-then at most 1 value of α makes fE + α · fO within distance d of C'.
-
-This is a direct application of ca_halved.
--/
-theorem proximity_gap
+If the joint distance of `(fE, fO)` from `C' × C'` exceeds `2d`, then at
+most one `α ∈ F` makes `fE + α · fO` agree with a codeword of `C'` on
+`≥ |L'| - d` positions. -/
+theorem proximity_gap_core
     {L' : Type*} [Fintype L'] [DecidableEq L']
     {F : Type*} [Field F] [DecidableEq F]
     (C' : Submodule F (L' → F))
@@ -46,68 +53,28 @@ theorem proximity_gap
     False :=
   ca_halved C' fE fO d hprem hne hc₁ hc₂ hA₁ hA₂
 
-/-! ## FRI Soundness Composition
+/-! ## Schwartz–Zippel root count
 
-The full FRI soundness theorem:
-  Pr[FRI accepts] ≤ nR/|F| + (1 - δ/2)^q
+Used by the paper's Strategy A (honest fold) commit-phase analysis.
+The multivariate / multilinear reduction needed for the full Strategy A is
+not in scope for this lemma; this theorem provides the univariate
+root-count step. -/
 
-Proof structure:
-- Strategy A (honest fold): Schwartz-Zippel ⟹ Pr ≤ R/|F|
-- Strategy B (deviation at round i):
-  · Round 1: ≤ 1 bad α (proximity_gap / ca_halved)
-  · Rounds 2..R: ≤ n bad α's per round (BCIKS)
-  · Per-round union bound: Σᵢ Pr[round-i scalar is bad] ≤ (1 + (R-1)·n)/|F| ≤ nR/|F|
-  · Consistency check catches with probability ≥ 1 - (1-δ/2)^q
--/
-
-/-- **Schwartz–Zippel** (building block, fully proved).
-
-A nonzero univariate polynomial over an integral domain has at most
-`natDegree` distinct roots.  The multivariate/multilinear syndrome reduction
-needed for FRI Strategy A is still outside this lemma; this theorem
-discharges only the univariate root-count axiom.
-
-This was previously declared as an axiom; it is now proved from the Mathlib
-lemma `Polynomial.card_roots` (root multiset cardinality is bounded by the
-polynomial's degree, valued in `WithBot ℕ`), composed with
-`Multiset.toFinset_card_le` (distinct-root count is bounded by total root
-count) and the natDegree / degree relation for nonzero polynomials.
-
-For FRI Strategy A: the syndrome polynomial is multilinear of degree ≤ R,
-so `Pr[all syndromes vanish] ≤ R/|F|` by union over R variables. -/
+/-- A nonzero univariate polynomial over an integral domain has at most
+`natDegree` distinct roots. Proved from Mathlib's `Polynomial.card_roots`
+(root multiset cardinality bounded by the polynomial's degree) composed
+with `Multiset.toFinset_card_le`. -/
 theorem schwartz_zippel_fri
     {F : Type*} [CommRing F] [IsDomain F] [DecidableEq F]
     (p : Polynomial F) (hp : p ≠ 0) :
     p.roots.toFinset.card ≤ p.natDegree := by
   refine le_trans (Multiset.toFinset_card_le _) ?_
-  -- Goal: p.roots.card ≤ p.natDegree
   have h := Polynomial.card_roots hp
-  -- h : (p.roots.card : WithBot ℕ) ≤ p.degree
   rw [Polynomial.degree_eq_natDegree hp] at h
   exact_mod_cast h
 
-/-- **BCIKS Proximity Gap stand-in** (modelled on BCIKS Theorem 1.2, FOCS 2020).
-
-The published BCIKS '20 result states that at unique-decoding distance,
-for all but ≤ |L| values of the FRI fold scalar α the folded function stays
-close to the folded RS code. The signature here uses `linComb f f α` as a
-placeholder for the actual FRI fold operation (which requires the
-`RSIsomorphismWitness` data) and is intended only as a proof-of-composition
-stand-in for the external theorem; it is not a faithful transcription of the
-BCIKS statement. The substitution into `proximity_gap` and downstream lemmas
-is sound because every consumer treats this axiom as a black box that supplies
-"≤ n bad scalars per round". A faithful transcription with the FRI pairing
-structure is on the roadmap (STATUS.md). -/
-axiom bciks_proximity_gap
-    {L : Type*} [Fintype L] [DecidableEq L]
-    {F : Type*} [Field F] [Fintype F] [DecidableEq F]
-    (C : Submodule F (L → F))
-    (f : L → F) (d : ℕ)
-    (hud : 2 * d < card L)
-    : ∃ (bad : Finset F), bad.card ≤ card L ∧
-        ∀ α, α ∉ bad → ∃ g ∈ C, card L ≤ (agreeSet (linComb f f α) g).card + d
-
-/-- Bad-α count across all R rounds: ≤ nR total. -/
+/-- Per-round union-bound numerator: the sum of round-1 (≤ 1) and rounds
+2..R (≤ n each) is bounded by `nR`. -/
 theorem bad_alpha_count (n R : ℕ) (hn : 0 < n) (hR : 0 < R) :
     1 + (R - 1) * n ≤ n * R := by
   obtain ⟨R', rfl⟩ : ∃ R', R = R' + 1 := ⟨R - 1, by omega⟩
@@ -115,33 +82,26 @@ theorem bad_alpha_count (n R : ℕ) (hn : 0 < n) (hR : 0 < R) :
   rw [Nat.mul_comm R' n]
   omega
 
-/-
-**Theorem fri-full** — FRI Soundness Above the Johnson Bound (Theorem 5.1).
+/-! ## Roadmap note: full paper-labelled FRI soundness theorem
 
-The full theorem states:
-  Pr[FRI accepts] ≤ nR/|F| + (1 - δ/2)^q
+The paper's full FRI-soundness theorem (`thm:fri-full`) bounds
+`Pr[FRI accepts] ≤ nR/|F| + (1 - δ/2)^q`. The two combinatorial
+components are:
+- Round 1 contributes ≤ 1 bad scalar via `ca_halved`.
+- Rounds 2..R contribute ≤ |L| bad scalars each, supplied externally by
+  BCIKS '20 Theorem 1.2 (zero-loss proximity gap below the Johnson
+  bound). A faithful transcription of that theorem against the FRI
+  pairing data is not yet in this library.
 
-We decompose this into its combinatorial and probabilistic components:
+The probabilistic step is a per-round union bound:
+`Σᵢ |bad_i| / |F| ≤ (1 + (R-1)·n) / |F| ≤ nR / |F|`
+(NOT a tuple count over `F^R`; see `bad_alpha_count`).
 
-**Combinatorial** (fully proved):
-- ca_halved: at most 1 bad α at round 1
-- BCIKS (axiom): at most n bad α's at rounds ≥ 2
-- Per-round union bound: total bad-scalar count across rounds ≤ 1 + (R-1)·n ≤ nR
+The rational form of the bound is proved in `Probability.lean`
+(`fri_soundness_above_johnson_counting`,
+`fri_soundness_above_johnson_probability`); converting the rational
+inequality to the paper-form probability statement requires a concrete
+FRI transcript instantiation. STATUS.md lists this as the priority-1
+roadmap item. -/
 
-**Probabilistic** (elementary):
-- Commit phase: per-round union bound Σᵢ |bad_i|/|F| ≤ nR/|F|
-  (the i-th round contributes ≤ n bad scalars out of |F|, except round 1 which contributes ≤ 1)
-- Query phase: each query catches δ/2-far deviation with probability ≥ δ/2,
-  so all q queries miss with probability ≤ (1-δ/2)^q
-
-## Formalization status (see STATUS.md for the per-paper-label board)
-
-The chain ca_halved → proximity_gap → bad_alpha_count is closed inside this
-file with zero `sorry`. The bridge from "f δ-far from RS_k" to "joint distance
-> 2d for (fE, fO)" uses `coupling_counting` (RSCode.lean) plus the abstract
-`RSIsomorphismWitness` interface. The single project axiom is
-`bciks_proximity_gap`; its signature here uses the placeholder `linComb f f α`
-in place of the actual FRI fold and is intended only as a proof-of-composition
-stand-in for BCIKS Theorem 1.2 — see STATUS.md for the precise scope.
--/
 end FRISoundness

@@ -13,23 +13,24 @@ and Mathlib pinned in `lake-manifest.json`.
 | Metric | Value |
 |--------|------:|
 | `sorry` count (excluding docstring word-mentions) | **0** |
-| `axiom` count | **1** (`bciks_proximity_gap`, stand-in for BCIKS Thm 1.2) |
+| `axiom` count (project-level, beyond Mathlib's standard axioms) | **0** |
 | Top-level public theorems / lemmas across the 8 files | ~30 |
-| Paper labels with a Lean counterpart at the **statement-faithful** level | **3 / ~22 soundness-relevant** |
+| Paper labels with a Lean counterpart at the **statement-faithful** level | **2 / ~22 soundness-relevant** |
 | Paper labels with at least a **building block** in Lean | **~12 / ~22** |
 
-The single project axiom is `Coupling.bciks_proximity_gap`, modelled on the
-external BCIKS '20 result (Theorem 1.2). Its current signature uses a
-placeholder fold (`linComb f f α`) and is not yet a faithful transcription;
-it is treated as a black box by every consumer. A faithful transcription
-is on the roadmap.
+There are **no project-level axioms** in the current library. An earlier
+draft included a `bciks_proximity_gap` placeholder axiom modelled on
+BCIKS '20 Theorem 1.2; that placeholder was removed because its signature
+did not faithfully transcribe the external statement and it was not used
+in any actual proof. A faithful Lean transcription of BCIKS '20 Theorem 1.2
+against the FRI-pairing data is listed as a roadmap item below — once
+present, it will be the project's only external dependency.
 
 ## Status legend
 
 | Symbol | Meaning |
 |--------|---------|
 | ✅ STATEMENT-FAITHFUL | Lean theorem statement matches the paper label, no `sorry`, no new axioms beyond Mathlib |
-| 🟦 AXIOMATIZED | Stated; depends on `bciks_proximity_gap` (the only project axiom) |
 | 🟨 COUNTING-FORM | Combinatorial / rational ratio bound proved, but not yet bridged to the paper's probability statement |
 | 🟧 HELPER-ONLY | Building block(s) present in Lean but the paper-labelled statement is not yet packaged at the code-level distance / FRI-domain instance |
 | ⬜ NOT STARTED | No Lean statement |
@@ -56,7 +57,7 @@ is on the roadmap.
 | Paper label | Statement | Lean identifier | File | Status |
 |-------------|-----------|-----------------|------|--------|
 | `lem:fri-coupling` | even/odd RS isomorphism with γ-twist on the multiplicative FRI domain | building blocks: `coupling_pointwise`, `coupling_counting` (RSCode.lean); the RS isomorphism is parametrized by `RSIsomorphismWitness` and is not yet instantiated for a concrete FRI domain | `RSCode.lean` | 🟧 |
-| `thm:proximity-gap` | round-1 ≤ 1 bad α (above Johnson) | `FRISoundness.proximity_gap` is a renaming of `ca_halved` over an arbitrary linear submodule; the bridge from "f δ-far from RS_k" to "joint distance > 2d for (fE, fO)" uses `coupling_counting` + an instantiated `RSIsomorphismWitness`, which is not yet packaged as one theorem matching the paper label | `Coupling.lean` | 🟧 |
+| `thm:proximity-gap` | round-1 ≤ 1 bad α (above Johnson) | helper: `FRISoundness.proximity_gap_core` (alias of `ca_halved` over an arbitrary linear submodule). Packaging the paper-faithful theorem requires (i) an instantiated `RSIsomorphismWitness` for the concrete multiplicative-coset FRI domain wired to `coupling_counting`, and (ii) a faithful BCIKS '20 Theorem 1.2 transcription for rounds ≥ 2 | `Coupling.lean` | 🟧 |
 | `lem:catch-prob` | catch probability under i.i.d. base sampling | — | — | ⬜ |
 | `thm:fri-full` | `Pr[FRI accepts] ≤ nR/\|F\| + (1−δ/2)^q` | `FRISoundness.fri_soundness_above_johnson_counting`, `fri_soundness_above_johnson_probability` | `Probability.lean` | 🟨 |
 
@@ -88,11 +89,11 @@ These are second-moment results on the random list size `M_γ`. They are not on 
 |-------------|-----------|-----------------|------|--------|
 | `lem:additive-iso` | Additive even/odd RS-code isomorphism | building blocks: `gen_recover_fst`, `gen_recover_snd` (recovery identities only; the additive RS-code-level isomorphism is not yet stated against an instantiated additive `GenFRIPairing`) | `Char2.lean` | 🟧 |
 | `lem:additive-coupling` | Additive FRI code-distance coupling | building blocks: `gen_coupling_pointwise`, `gen_coupling_counting` (generic counting lemmas; the code-distance bridge for the additive RS-code is not yet packaged) | `Char2.lean` | 🟧 |
-| `thm:proximity-gap-char2` | Char-2 round-1 proximity gap | `FRISoundness.proximity_gap_char2` is a renaming of `ca_halved` over an arbitrary `GenFRIPairing`; no concrete additive instance and no code-distance hypothesis are present yet | `Char2.lean` | 🟧 |
+| `thm:proximity-gap-char2` | Char-2 round-1 proximity gap | helper: `FRISoundness.proximity_gap_gen_pairing` (alias of `ca_halved` over an arbitrary `GenFRIPairing`); no concrete additive instance and no code-distance hypothesis are present yet | `Char2.lean` | 🟧 |
 | `thm:fri-char2` | Full Char-2 FRI soundness | — | — | ⬜ |
 | `lem:circle-iso` | Circle even/odd iso | building block: `GenFRIPairing` abstraction; explicit circle pairing not yet constructed | `Char2.lean` | 🟧 |
 | `lem:circle-coupling` | Circle FRI coupling | building blocks: `gen_coupling_*`; circle instance not yet constructed | `Char2.lean` | 🟧 |
-| `thm:circle-pg` | Circle round-1 proximity gap | building block: `proximity_gap_char2`; circle instance not yet constructed | `Char2.lean` | 🟧 |
+| `thm:circle-pg` | Circle round-1 proximity gap | building block: `proximity_gap_gen_pairing`; circle instance not yet constructed | `Char2.lean` | 🟧 |
 | `thm:fri-circle` | Full circle FRI soundness | — | — | ⬜ |
 
 ### Section 9 — Round-by-round / Non-interactive variants
@@ -110,8 +111,8 @@ For each ✅ entry: the Lean theorem's statement matches the paper label
 (modulo a tighter constant where noted, e.g.\ `thm:ca-halved`), every proof
 in the corresponding file closes via standard Mathlib lemmas, with **no
 `sorry` tactic and no `admit`**. Outside Mathlib's standard axioms
-(classical logic, choice, propext), the only project-level axiom referenced
-anywhere in the library is `bciks_proximity_gap`.
+(classical logic, choice, propext), the library declares **no project-level
+axioms**.
 
 ## What "🟧 HELPER-ONLY" means precisely
 
@@ -139,8 +140,9 @@ over uniformly sampled finite transcript spaces. The paper's
 interactive (or Fiat-Shamir-transformed) FRI run.
 
 The commit-phase `nR` term is a per-round union bound (round 1 contributes
-≤ 1 bad scalar via `ca_halved`; rounds 2..R contribute ≤ n each via
-`bciks_proximity_gap`), not a tuple count over `F^R` — `Σ_i bad_i/|F| ≤ nR/|F|`.
+≤ 1 bad scalar via `ca_halved`; rounds 2..R contribute ≤ n each, via
+BCIKS '20 Theorem 1.2 once a faithful Lean transcription is in place — see
+roadmap), not a tuple count over `F^R` — `Σ_i bad_i/|F| ≤ nR/|F|`.
 The query-phase `(1-δ/2)^q` term is the standard q-fold miss probability.
 
 ## Roadmap
@@ -153,8 +155,10 @@ In priority order for further Lean work:
 2. **`thm:proximity-gap` packaging**: instantiate `RSIsomorphismWitness`
    for a concrete multiplicative-coset FRI domain and combine
    `coupling_counting` + `ca_halved` into a single theorem against the
-   code-distance hypothesis. Converts 🟧 → ✅ (or 🟦 once it composes
-   with `bciks_proximity_gap` for rounds ≥ 2).
+   code-distance hypothesis. Converts 🟧 → ✅.
+   *(Sub-task: write a faithful Lean transcription of BCIKS '20 Theorem
+   1.2 against the FRI-pairing data, replacing the deleted placeholder
+   axiom; this is what supplies the rounds-≥-2 contribution.)*
 3. **`thm:proximity-gap-char2` packaging**: construct an explicit additive
    `GenFRIPairing` instance for `s(x) = x² + βx` over an `F₂`-linear
    subspace and package the code-level char-2 proximity gap. Converts
@@ -174,11 +178,11 @@ In priority order for further Lean work:
 
 ## Notes for reviewers
 
-- The single non-Mathlib axiom in the library is `bciks_proximity_gap`,
-  located at `Coupling.lean`. It is a stand-in for BCIKS '20 Theorem 1.2
-  (zero-loss proximity gap below the Johnson bound); its current signature
-  uses a placeholder fold and is not a faithful transcription of the
-  external statement. A faithful transcription is on the roadmap.
+- The library currently declares **no project-level axioms**. An earlier
+  draft included a `bciks_proximity_gap` placeholder; it was removed
+  because the signature did not faithfully transcribe BCIKS '20 Theorem
+  1.2 and was not used by any actual proof. A faithful transcription
+  against the FRI-pairing data is the priority-2 roadmap item.
 - The paper's Theorem 1 (`thm:ca-halved`) is RVW13's classical 1:2
   inequality; we acknowledge this in §3. The Lean formalization gives a
   self-contained, machine-checkable proof within Mathlib (no external
