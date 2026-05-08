@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+r"""
 Pairwise Rank Lemma — computational exploration.
 
 For RS[n,k] on multiplicative subgroup L = <omega> of order n:

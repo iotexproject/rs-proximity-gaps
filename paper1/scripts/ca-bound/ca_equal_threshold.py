@@ -1,4 +1,4 @@
-"""
+r"""
 Equal-threshold CA test v3: correct parameters + efficient joint distance.
 
 KEY FIX: w must be < n-k (covering radius). With w = n-k, joint ≤ w always
@@ -48,7 +48,7 @@ def lagrange_eval(x_pts, y_pts, x_eval, p):
     return val
 
 def is_consistent(f, S_set, L, k, p):
-    """Check if f restricted to L\S is a degree-<k polynomial.
+    r"""Check if f restricted to L\S is a degree-<k polynomial.
     S_set: set of indices to exclude."""
     remaining = [(L[i], f[i]) for i in range(len(L)) if i not in S_set]
     m = len(remaining)
