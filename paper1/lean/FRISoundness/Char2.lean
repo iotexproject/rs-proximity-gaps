@@ -37,25 +37,31 @@ The key abstraction: each pair in L is equipped with distinct evaluation points.
 Recovery uses Lagrange interpolation on the 2-element fiber, avoiding division by 2. -/
 
 /-- Generalized FRI domain pairing that works in any characteristic.
-    Each pair (fst y, snd y) has distinct evaluation points eval(fst y) ≠ eval(snd y).
-    This subsumes multiplicative FRI (char ≠ 2) and additive FRI (char 2). -/
+    Each pair `(fst y, snd y)` has distinct evaluation points
+    `eval(fst y) ≠ eval(snd y)`. Subsumes multiplicative FRI (char ≠ 2)
+    and additive FRI (char 2). -/
 structure GenFRIPairing (L L' : Type*) (F : Type*) [Field F] where
   /-- First element of each pair -/
   fst : L' → L
   /-- Second element of each pair -/
   snd : L' → L
-  /-- Elements in a pair are distinct -/
-  fst_ne_snd : ∀ y, fst y ≠ snd y
   /-- fst is injective -/
   fst_injective : Function.Injective fst
   /-- snd is injective -/
   snd_injective : Function.Injective snd
-  /-- Images are disjoint: no fst-image element equals a snd-image element -/
+  /-- Images are disjoint: no fst-image element equals a snd-image element.
+      (Specializing `y₁ = y₂` recovers `fst y ≠ snd y`.) -/
   disjoint_images : ∀ y₁ y₂, fst y₁ ≠ snd y₂
-  /-- Evaluation map embedding L into F -/
+  /-- Evaluation map `L → F` (not necessarily injective on `L`; only
+      `eval (fst y) ≠ eval (snd y)` is required, on each pair). -/
   eval : L → F
   /-- Evaluation points are distinct on each pair -/
   eval_ne : ∀ y, eval (fst y) ≠ eval (snd y)
+
+/-- Same-pair distinctness for `GenFRIPairing`, derived from `disjoint_images`. -/
+theorem GenFRIPairing.fst_ne_snd {L L' F : Type*} [Field F]
+    (P : GenFRIPairing L L' F) : ∀ y, P.fst y ≠ P.snd y :=
+  fun y => P.disjoint_images y y
 
 variable {L L' : Type*}
 

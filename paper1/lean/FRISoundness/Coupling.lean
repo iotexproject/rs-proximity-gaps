@@ -99,7 +99,7 @@ The probabilistic step is a per-round union bound:
 
 The rational form of the bound is proved in `Probability.lean`
 (`fri_soundness_above_johnson_counting`,
-`fri_soundness_above_johnson_probability`); converting the rational
+`fri_soundness_above_johnson_rational_bound`); converting the rational
 inequality to the paper-form probability statement requires a concrete
 FRI transcript instantiation. STATUS.md lists this as the priority-1
 roadmap item. -/

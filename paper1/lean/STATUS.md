@@ -30,7 +30,7 @@ present, it will be the project's only external dependency.
 
 | Symbol | Meaning |
 |--------|---------|
-| ✅ STATEMENT-FAITHFUL | Lean theorem statement matches the paper label, no `sorry`, no new axioms beyond Mathlib |
+| ✅ PROVED VIA STRONGER GENERALIZATION | Lean proves a stronger / more abstract statement than the paper label (e.g.\ on an arbitrary linear `Submodule` with absolute thresholds, rather than `RSCode` with relative δ); the paper's labelled instance follows by specialization |
 | 🟨 COUNTING-FORM | Combinatorial / rational ratio bound proved, but not yet bridged to the paper's probability statement |
 | 🟧 HELPER-ONLY | Building block(s) present in Lean but the paper-labelled statement is not yet packaged at the code-level distance / FRI-domain instance |
 | ⬜ NOT STARTED | No Lean statement |
@@ -58,8 +58,8 @@ present, it will be the project's only external dependency.
 |-------------|-----------|-----------------|------|--------|
 | `lem:fri-coupling` | even/odd RS isomorphism with γ-twist on the multiplicative FRI domain | building blocks: `coupling_pointwise`, `coupling_counting` (RSCode.lean); the RS isomorphism is parametrized by `RSIsomorphismWitness` and is not yet instantiated for a concrete FRI domain | `RSCode.lean` | 🟧 |
 | `thm:proximity-gap` | round-1 ≤ 1 bad α (above Johnson) | helper: `FRISoundness.proximity_gap_core` (alias of `ca_halved` over an arbitrary linear submodule). Packaging the paper-faithful theorem requires (i) an instantiated `RSIsomorphismWitness` for the concrete multiplicative-coset FRI domain wired to `coupling_counting`, and (ii) a faithful BCIKS '20 Theorem 1.2 transcription for rounds ≥ 2 | `Coupling.lean` | 🟧 |
-| `lem:catch-prob` | catch probability under i.i.d. base sampling | — | — | ⬜ |
-| `thm:fri-full` | `Pr[FRI accepts] ≤ nR/\|F\| + (1−δ/2)^q` | `FRISoundness.fri_soundness_above_johnson_counting`, `fri_soundness_above_johnson_probability` | `Probability.lean` | 🟨 |
+| `lem:catch-prob` | catch probability under i.i.d. base sampling | counting form: `query_phase_miss_count_bound` (Probability.lean), giving `(missing^q) ≤ (n-d)^q`. The probability ratio `(n-d)^q / n^q ≤ (1-δ/2)^q` is the paper's `lem:catch-prob`; the rational form is in `fri_soundness_above_johnson_rational_bound`, the protocol-event wrapper is on the roadmap | `Probability.lean` | 🟨 |
+| `thm:fri-full` | `Pr[FRI accepts] ≤ nR/\|F\| + (1−δ/2)^q` | `FRISoundness.fri_soundness_above_johnson_counting`, `fri_soundness_above_johnson_rational_bound` | `Probability.lean` | 🟨 |
 
 ### Section 6 — List-size moment results
 
@@ -105,14 +105,23 @@ These are second-moment results on the random list size `M_γ`. They are not on 
 | `thm:deep-fri` | DEEP-FRI Knowledge Soundness | ⬜ |
 | `cor:pcs-ni` | Non-Interactive PCS Soundness | ⬜ |
 
-## What "✅ STATEMENT-FAITHFUL" means precisely
+## What "✅ PROVED VIA STRONGER GENERALIZATION" means precisely
 
-For each ✅ entry: the Lean theorem's statement matches the paper label
-(modulo a tighter constant where noted, e.g.\ `thm:ca-halved`), every proof
-in the corresponding file closes via standard Mathlib lemmas, with **no
-`sorry` tactic and no `admit`**. Outside Mathlib's standard axioms
-(classical logic, choice, propext), the library declares **no project-level
-axioms**.
+For each ✅ entry: the Lean theorem proves a *stronger* / more abstract
+statement than the paper label, every proof closes via standard Mathlib
+lemmas, with **no `sorry` tactic and no `admit`**. Specifically:
+- `thm:ca-halved`: the paper claims `≤ 2/|F|` (RVW13 form). The Lean
+  `ca_halved` proves *at most one* bad γ — a strictly stronger bound
+  `≤ 1/|F|` — over an arbitrary linear submodule (not specialized to
+  `RSCode`). The paper's labelled statement follows by specializing
+  the submodule to `RSCode α k` and applying probabilistic monotonicity.
+- `thm:eq-threshold-upper`: the paper specializes to `RS[F, L, k]` with
+  `w = n − k − 1`. The Lean `ca_equal_threshold` proves the same
+  `\binom{n}{w}/|F|` bound for any linear submodule and absolute
+  threshold `w`. Specialization is immediate.
+
+Outside Mathlib's standard axioms (classical logic, choice, propext),
+the library declares **no project-level axioms**.
 
 ## What "🟧 HELPER-ONLY" means precisely
 

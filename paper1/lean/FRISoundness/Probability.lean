@@ -156,7 +156,7 @@ The remaining formalization step is to instantiate the abstract transcript event
 with the concrete interactive/non-interactive FRI transcript acceptance
 predicate.
 -/
-theorem fri_soundness_above_johnson_probability
+theorem fri_soundness_above_johnson_rational_bound
     (fieldCard n R q d badChallenges missing catching : ℕ)
     (hbad : badChallenges ≤ 1 + (R - 1) * n)
     (hfield : 0 < fieldCard) (hn : 0 < n) (hR : 0 < R)

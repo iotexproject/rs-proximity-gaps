@@ -51,29 +51,34 @@ def RSCode {L : Type*} [Fintype L] (α : L → F) (k : ℕ) : Submodule F (L →
 
 /-! ## FRI fold structure
 
-Model: L has a pairing into L' (each pair indexed by y ∈ L').
-The even/odd decomposition is defined via the pair structure.
+Model: `L'` indexes disjoint two-element subsets of `L` via two
+injections `fst, snd : L' → L`. The even/odd decomposition is defined
+on the indexed pairs, so coverage of all of `L` is not required.
 
-Key property: if f_even(y) = g_even(y) and f_odd(y) = g_odd(y),
-then f = g at both elements of the pair. -/
+Key property: if `f_even(y) = g_even(y)` and `f_odd(y) = g_odd(y)`,
+then `f = g` at both elements of the pair `y`. -/
 
-/-- Abstract FRI domain pairing: L is partitioned into pairs indexed by L'. -/
+/-- Abstract FRI domain pairing: disjoint indexed pairs in `L`, indexed by `L'`. -/
 structure FRIPairing (L L' : Type*) (F : Type*) [Field F] where
   /-- First element of each pair -/
   fst : L' → L
   /-- Second element of each pair -/
   snd : L' → L
-  /-- Elements in a pair are distinct -/
-  fst_ne_snd : ∀ y, fst y ≠ snd y
   /-- fst is injective -/
   fst_injective : Function.Injective fst
   /-- snd is injective -/
   snd_injective : Function.Injective snd
-  /-- Images are disjoint: no fst-image element equals a snd-image element -/
+  /-- Images are disjoint: no fst-image element equals a snd-image element.
+      (Specializing `y₁ = y₂` recovers `fst y ≠ snd y`.) -/
   disjoint_images : ∀ y₁ y₂, fst y₁ ≠ snd y₂
   /-- The separation factor (= 2√y in multiplicative FRI) -/
   sep : L' → F
   sep_ne_zero : ∀ y, sep y ≠ 0
+
+/-- Same-pair distinctness, derived from `disjoint_images`. -/
+theorem FRIPairing.fst_ne_snd {L L' F : Type*} [Field F]
+    (P : FRIPairing L L' F) : ∀ y, P.fst y ≠ P.snd y :=
+  fun y => P.disjoint_images y y
 
 /-- Even part: (f(fst y) + f(snd y)) / 2 -/
 noncomputable def fEven {L L' : Type*} [Field F]
