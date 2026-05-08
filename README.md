@@ -4,11 +4,13 @@ Lean 4 formalization, Python verification scripts, and research notes
 accompanying three papers by Raullen Chai and Xinxin Fan (IoTeX Network):
 
 > **Paper 1 — FRI Soundness Above the Johnson Bound via Threshold Halving.**
-> Cryptology ePrint Archive, 2026 (link to be added).
+> Cryptology ePrint Archive, Paper [2026/861](https://eprint.iacr.org/2026/861.pdf), 2026.
+> Manuscript in [`paper1/`](paper1/).
 >
 > **Paper 2 — Action-Orbit FRI Soundness above Johnson:
 > Universal $K$-Bounds at Ethereum-Deployed Reed--Solomon Parameters.**
-> Cryptology ePrint Archive, 2026 (link to be added).
+> Cryptology ePrint Archive, Paper [2026/858](https://eprint.iacr.org/2026/858.pdf), 2026.
+> Manuscript in [`paper2/`](paper2/).
 >
 > **Paper 3 — Codim-$2(c{-}1)$ Reed--Solomon Proximity Bounds via the
 > Berlekamp Realizer.**
@@ -285,7 +287,8 @@ output in `outputs/<topic>/` corresponds to the same-named script in
   author = {Chai, Raullen and Fan, Xinxin},
   title  = {{FRI} Soundness Above the {J}ohnson Bound via Threshold Halving},
   year   = {2026},
-  howpublished = {Cryptology ePrint Archive, Paper 2026/XXXX},
+  howpublished = {Cryptology ePrint Archive, Paper 2026/861},
+  url    = {https://eprint.iacr.org/2026/861},
   note   = {Companion repository: \url{https://github.com/iotexproject/rs-proximity-gaps}}
 }
 
@@ -294,7 +297,8 @@ output in `outputs/<topic>/` corresponds to the same-named script in
   title  = {Action-Orbit {FRI} Soundness above {J}ohnson:
             Universal $K$-Bounds at Ethereum-Deployed {R}eed--{S}olomon Parameters},
   year   = {2026},
-  howpublished = {Cryptology ePrint Archive, Paper 2026/XXXX},
+  howpublished = {Cryptology ePrint Archive, Paper 2026/858},
+  url    = {https://eprint.iacr.org/2026/858},
   note   = {Companion repository: \url{https://github.com/iotexproject/rs-proximity-gaps}}
 }
 
@@ -307,7 +311,7 @@ output in `outputs/<topic>/` corresponds to the same-named script in
 }
 ```
 
-(Replace `XXXX` with each paper's ePrint number once assigned.)
+(Paper 3 ePrint number to be assigned.)
 
 ---
 
