@@ -39,7 +39,7 @@ external axiom.
 
 | Paper label | Statement | Lean identifier | File | Status |
 |-------------|-----------|-----------------|------|--------|
-| `thm:ca-halved` | At most one bad γ ⟹ `Pr_γ[Δ(f₁ + γ f₂, C) ≤ d] ≤ 1/|F|` (the paper states the looser `≤ 2/|F|` form; Lean proves the tighter contrapositive) | `FRISoundness.ca_halved` | `CA.lean` | ✅ |
+| `thm:ca-halved` | `ε_ca(C, δ/2, δ) ≤ 1/|F|` (paper Theorem 6, RVW13 / BCHKS Table 1). Lean proves the contrapositive "at most one bad γ", which gives the same `1/|F|` bound after specializing to `Γ ⊆ (Finset F)` and dividing by `|F|` | `FRISoundness.ca_halved` | `CA.lean` | ✅ |
 
 ### Section 4 — Equal-Threshold CA
 
@@ -107,11 +107,12 @@ These are second-moment results on the random list size `M_γ`. They are not on 
 For each ✅ entry: the Lean theorem proves a *stronger* / more abstract
 statement than the paper label, every proof closes via standard Mathlib
 lemmas, with **no `sorry` tactic and no `admit`**. Specifically:
-- `thm:ca-halved`: the paper claims `≤ 2/|F|` (RVW13 form). The Lean
-  `ca_halved` proves *at most one* bad γ — a strictly stronger bound
-  `≤ 1/|F|` — over an arbitrary linear submodule (not specialized to
-  `RSCode`). The paper's labelled statement follows by specializing
-  the submodule to `RSCode α k` and applying probabilistic monotonicity.
+- `thm:ca-halved`: the paper states `ε_ca(C, δ/2, δ) ≤ 1/|F|`
+  (Theorem 6, the contrapositive form of RVW13). The Lean `ca_halved`
+  proves the same "at most one bad γ" content over an arbitrary
+  linear submodule, so taking `Γ` as the full bad-γ scalar set under
+  `[Fintype F]` recovers the paper's `1/|F|` probability bound by a
+  one-line specialization.
 - `thm:eq-threshold-upper`: the paper specializes to `RS[F, L, k]` with
   `w = n − k − 1` and quotes a probability `\binom{n}{w}/|F|`. The Lean
   `ca_equal_threshold` proves the underlying **counting** bound
@@ -174,7 +175,7 @@ In priority order for further Lean work:
 
 1. **`thm:fri-full` — close the protocol-event gap**: instantiate
    `UniformTranscriptModel.event` with the FRI verifier acceptance
-   predicate and propagate the rational bound. Converts 🟨 → ✅.
+   predicate and propagate the rational bound. Converts 🟧 → ✅.
 2. **`thm:proximity-gap` packaging**: instantiate `RSIsomorphismWitness`
    for a concrete multiplicative-coset FRI domain and combine
    `coupling_counting` + `ca_halved` into a single theorem against the

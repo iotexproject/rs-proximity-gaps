@@ -32,7 +32,7 @@ rs-proximity-gaps/
     PROOF_CHAIN.md             Step-by-step trace of Paper 1's main theorem
     lean/                      Lean 4 + Mathlib formalization
       STATUS.md                Per-theorem status board (paper label ↔ Lean identifier)
-      FRISoundness/            Named theorems (zero `sorry`, 1 external axiom)
+      FRISoundness/            Named theorems (zero `sorry`, zero project-level axioms)
       lakefile.toml, lean-toolchain
     scripts/                   Python verification scripts (stdlib only)
       CAVEATS.md               Methodology caveats from a public-facing audit

@@ -9,10 +9,12 @@ For any linear code C over a field F with domain L (|L| = n):
   If (f₁, f₂) has joint error weight > 2d from C × C,
   then at most one γ ∈ F satisfies Δ(f₁ + γf₂, C) ≤ d.
 
-Setting d = ⌊δn/2⌋ gives ε_ca(C, δ/2, δ) ≤ 1/|F|. The paper states the
-looser ≤ 2/|F| form; the proof here yields the tighter "at most one" bound.
-The proof uses only linearity of C — no polynomial structure, no restriction
-on k or δ.
+Setting d = ⌊δn/2⌋ gives ε_ca(C, δ/2, δ) ≤ 1/|F|, matching the paper's
+Theorem (`thm:ca-halved`). The Lean proof here is the contrapositive
+"at most one bad γ" form, which immediately yields the same `1/|F|`
+probability bound after `[Fintype F]` is added and `Γ` is taken as the
+full bad-γ scalar set. The proof uses only linearity of C — no
+polynomial structure, no restriction on k or δ.
 -/
 import FRISoundness.Defs
 

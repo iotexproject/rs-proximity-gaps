@@ -116,19 +116,6 @@ theorem uniform_probability_bound (hits bound total : ℕ)
     (le_of_lt (Nat.cast_pos.mpr htotal))
 
 /--
-PMF transcript event bound in rational finite-counting form.  If a uniformly
-sampled transcript model has at most `bound` event transcripts, its rational
-event probability is at most `bound / |Ω|`.
--/
-theorem uniform_transcript_event_probability_bound
-    {Ω : Type*} [Fintype Ω] [Nonempty Ω]
-    (T : UniformTranscriptModel Ω) (bound : ℕ)
-    (hbound : T.eventCount ≤ bound) :
-    T.eventProb ≤ (bound : ℚ) / (UniformTranscriptModel.spaceSize Ω : ℚ) := by
-  exact uniform_probability_bound T.eventCount bound (UniformTranscriptModel.spaceSize Ω)
-    hbound Fintype.card_pos
-
-/--
 Rational-probability form of the FRI soundness skeleton.  This divides the
 commit and query numerators by their uniform sample-space sizes and combines
 the two bounds by a union-bound-style addition.

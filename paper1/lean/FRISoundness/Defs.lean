@@ -36,22 +36,6 @@ def linComb (f₁ f₂ : L → F) (γ : F) : L → F :=
 
 /-! ## Cardinality lemmas -/
 
-theorem agreeSet_card_add_errorSet_card (f g : L → F) :
-    (agreeSet f g).card + (errorSet f g).card = card L := by
-  have hunion : agreeSet f g ∪ errorSet f g = Finset.univ := by
-    ext x; simp [agreeSet, errorSet, Finset.mem_union, Finset.mem_filter, eq_or_ne]
-  have hdisj : Disjoint (agreeSet f g) (errorSet f g) := by
-    rw [Finset.disjoint_left]
-    intro x hx1 hx2
-    simp only [agreeSet, errorSet, Finset.mem_filter, mem_univ, true_and] at hx1 hx2
-    exact hx2 hx1
-  rw [← card_union_of_disjoint hdisj, hunion, card_univ]
-
-/-- The joint agreement set equals the intersection of individual agreement sets -/
-theorem jointAgreeSet_eq_inter (f₁ f₂ g₁ g₂ : L → F) :
-    jointAgreeSet f₁ f₂ g₁ g₂ = agreeSet f₁ g₁ ∩ agreeSet f₂ g₂ := by
-  ext x; simp [jointAgreeSet, agreeSet, Finset.mem_inter, Finset.mem_filter]
-
 /-- Inclusion-exclusion: |A ∩ B| + n ≥ |A| + |B| for subsets of a finite type -/
 theorem card_inter_add_card_univ_ge {α : Type*} [Fintype α] [DecidableEq α]
     (A B : Finset α) :
