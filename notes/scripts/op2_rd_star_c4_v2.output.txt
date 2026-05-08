@@ -1,6 +1,0 @@
-=== rd-Pattern-C-star at c=4 n=16 p=97, target 2000 stars ===
-  Stars sampled: 2000
-    all_3x3_minors_zero=False, rd=False: 2000
-    all_3x3_minors_zero=False, rd=True: 0
-    all_3x3_minors_zero=True, rd=False: 0
-    all_3x3_minors_zero=True, rd=True: 0

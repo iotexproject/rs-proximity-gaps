@@ -1,7 +1,0 @@
-=== d_0 above-J check on count=q witnesses in {16..23} ===
-
-  sup=(16, 17, 19) coeffs=(244, 655, 1030): max_extras=8, NOT above-J (d_0 <= 16)  [3s]
-  sup=(16, 17, 23) coeffs=(1049, 211, 458): max_extras=8, NOT above-J (d_0 <= 16)  [3s]
-  sup=(17, 18, 19) coeffs=(1140, 862, 1122): max_extras=8, NOT above-J (d_0 <= 16)  [3s]
-  sup=(19, 20, 23) coeffs=(1006, 904, 492): max_extras=8, NOT above-J (d_0 <= 16)  [3s]
-  sup=(21, 22, 23) coeffs=(6, 166, 227): max_extras=8, NOT above-J (d_0 <= 16)  [3s]

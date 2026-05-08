@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "<repo>/notes/scripts/probe_image_intersect_Bw.py", line 118, in <module>
-    main()
-    ~~~~^^
-  File "<repo>/notes/scripts/probe_image_intersect_Bw.py", line 49, in main
-    chain = setup_chain(p, n0, k0, R=R)
-  File "<repo>/notes/scripts/fri_2round_attack.py", line 215, in setup_chain
-    raise ValueError(f"no primitive {n0}-th root mod {p}")
-ValueError: no primitive 32-th root mod 17

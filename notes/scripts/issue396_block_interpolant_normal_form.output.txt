@@ -1,4 +1,0 @@
-Issue #396 block-interpolant normal form
-verified n=16, k=4, q=193: local formula, two-block equality, defect roots
-verified n=32, k=8, q=193: local formula, two-block equality, defect roots
-verified n=64, k=16, q=257: local formula, two-block equality, defect roots

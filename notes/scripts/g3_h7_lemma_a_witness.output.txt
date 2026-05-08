@@ -1,6 +1,0 @@
-Sweeping G_7 mod p irreducibility witness...
-  p = 17: deg G_7 = 27, factor pattern: [1, 1, 6, 19]
-  p = 19: deg G_7 = 27, factor pattern: [1, 2, 3, 9, 12]
-  p = 23: deg G_7 = 27, factor pattern: IRREDUCIBLE
-
-  ✓✓✓ Lemma A confirmed at h = 7 via p = 23

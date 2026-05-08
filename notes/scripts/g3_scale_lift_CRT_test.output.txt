@@ -1,6 +1,0 @@
-
-=== Testing at (n, k) = (32, 8) over F_97, 50 trials ===
-  ✓ All 50 trials × 3*8 (a,r) combinations PASS at (n=32, k=8)
-
-=== Testing at (n, k) = (64, 16) over F_193, 20 trials ===
-  ✓ All 20 trials × 3*16 (a,r) combinations PASS at (n=64, k=16)

@@ -1,6 +1,0 @@
-=== (32, 8, 8, 24) sign-paired ===
-  total eqs: 24 in 17 vars
-  attempting grevlex...
-  grevlex TIMEOUT after 1800s — abandoning this case
-
-  Φ NOT obtained in time limit

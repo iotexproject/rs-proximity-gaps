@@ -1,9 +1,0 @@
-h=17: vars=16, eqs=48, max deg_s=2
-  GB time=382.828s  basis_len=16  failures=0
-  PASS — ideal = <x_1, ..., x_16>
-h=18: vars=17, eqs=51, max deg_s=2
-  GB time=606.773s  basis_len=17  failures=0
-  PASS — ideal = <x_1, ..., x_17>
-h=20: vars=19, eqs=57, max deg_s=2
-  GB time=1799.527s  basis_len=19  failures=0
-  PASS — ideal = <x_1, ..., x_19>

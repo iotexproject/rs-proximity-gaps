@@ -1,4 +1,0 @@
-n=64, k=32, R=2, p=193, δ=24/64
-  trial 0: d_R hist (sample 400 tuples) = {6: 69, 7: 331}, min=6, max=7
-  trial 1: d_R hist (sample 400 tuples) = {6: 75, 7: 325}, min=6, max=7
-  trial 2: d_R hist (sample 400 tuples) = {6: 64, 7: 336}, min=6, max=7

@@ -1,8 +1,0 @@
-# Setup: p=97, n_0=16, k_0=4, R=2, δ=0.45
-# n_R=4, k_R=1, w_R=1, w_J=8, q^R=9409
-# Searching for f with image(φ) = F_q · H_{j*} for some j*
-
-# Random fhat sweep (200 samples)...
-  trial 0: above-J found (1 so far)
-  trial 20: above-J found (21 so far)
-  trial 40: above-J found (41 so far)

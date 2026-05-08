@@ -1,6 +1,0 @@
-# R/q probe: p=97, n_0=32, k_0=8, R=3
-# n_R=4, k_R=1, ρ=0.2500, δ=0.4000, w_R=1
-# Above-Johnson threshold: dist > 17 (δ_J0=0.500)
-# Prize bound R/q = 3/97 = 3.092784e-02
-# Total α to enumerate: q^R = 912673
-

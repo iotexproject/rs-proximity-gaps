@@ -1,5 +1,0 @@
-=== Memory-frugal (64,16) sweep at q=257, 80 cands, 4 workers ===
-  Sampling: 5000 info sets at L_0, 5000 at L_1
-  w_J(L_0) = 32
-  threshold d1 ≤ 16
-  PR #373 single-line bound: count ≤ n_1 - s + 1 = 17

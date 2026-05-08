@@ -1,8 +1,0 @@
-Above-J Reverse positions: 96 (out of 256)
-Sample at L_2: 5000 of C(64, 16)
-Testing 200 above-J Reverse triples
-
-  [1/200] non-deg max K = 0; ETA 2088s
-  [51/200] non-deg max K = 0; ETA 1586s
-  [101/200] non-deg max K = 1; ETA 1067s
-  [151/200] non-deg max K = 1; ETA 539s
