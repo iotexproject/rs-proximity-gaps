@@ -54,7 +54,7 @@ theorem jointAgreeSet_subset_agreeSet_snd (f₁ f₂ g₁ g₂ : L → F) :
     The conclusion shape `∀ g₁ ∈ C, ∀ g₂ ∈ C, …` matches `ca_halved`'s
     `hprem` so this lemma can be plugged in directly; the `g₁ ∈ C`
     binder is not used inside the proof (only `g₂ ∈ C` is). -/
-theorem far_implies_joint_far
+private theorem far_implies_joint_far
     (C : Submodule F (L → F))
     (rest fᵢ : L → F) (d : ℕ)
     (hfar : ∀ g ∈ C, (agreeSet fᵢ g).card + 2 * d < card L) :
@@ -144,13 +144,14 @@ theorem batch_ca_per_coord_bad_card
   rw [Finset.mem_filter] at hα₁ hα₂
   exact batch_ca_at_most_one C rest fᵢ d hfar hα₁.2 hα₂.2
 
-/-! ## Aggregate batch-CA bound
+/-! ## Fixed-`rest` aggregate bound
 
-The full quantitative statement: across `m` "varying coordinates" (one per
-`i ∈ ι`), the union of the per-coordinate bad sets has cardinality at most
-`m`. In probability terms (over uniform `(α₁, …, αₘ) ∈ F^m`), the soundness
-error is `m/|F|` — recovering the standard batch-CA bound used by
-STIR/WHIR proofs. -/
+Across `m` "varying coordinates" (one per `i ∈ ι`), with each `restᵢ`
+fixed in advance, the union of the per-coordinate bad-scalar sets `Bᵢ`
+has cardinality `≤ m`. The paper's `m/|F|` probability bound over
+uniform `(α₁, …, αₘ) ∈ F^m` is a corollary obtained by setting
+`restᵢ := ∑_{j<i} αⱼ fⱼ` and averaging over the conditioning; that
+corollary is not yet packaged in this file. -/
 
 open Classical in
 /-- **Fixed-`rest` aggregate union bound** (helper for paper `thm:batch-ca`).

@@ -29,7 +29,6 @@ external axiom.
 | Symbol | Meaning |
 |--------|---------|
 | ✅ PROVED VIA STRONGER GENERALIZATION | Lean proves a stronger / more abstract statement than the paper label (e.g.\ on an arbitrary linear `Submodule` with absolute thresholds, rather than `RSCode` with relative δ); the paper's labelled instance follows by specialization |
-| 🟨 COUNTING-FORM | Combinatorial / rational ratio bound proved, but not yet bridged to the paper's probability statement |
 | 🟧 HELPER-ONLY | Building block(s) present in Lean but the paper-labelled statement is not yet packaged at the code-level distance / FRI-domain instance |
 | ⬜ NOT STARTED | No Lean statement |
 | 📜 PAPER-CONJECTURE | Paper labels this a conjecture; Lean formalization is N/A by design |
@@ -54,7 +53,7 @@ external axiom.
 
 | Paper label | Statement | Lean identifier | File | Status |
 |-------------|-----------|-----------------|------|--------|
-| `lem:fri-coupling` | even/odd RS isomorphism with γ-twist on the multiplicative FRI domain | building blocks: `coupling_pointwise`, `coupling_counting` (RSCode.lean); the RS isomorphism is parametrized by `RSIsomorphismWitness` and is not yet instantiated for a concrete FRI domain | `RSCode.lean` | 🟧 |
+| `lem:fri-coupling` | even/odd RS isomorphism with γ-twist on the multiplicative FRI domain | building blocks (RSCode.lean): `coupling_pointwise`, `coupling_counting` (the abstract distance-vs-joint-distance step), and `rs_iso_forward` / `rs_iso_surj` (the abstract RS even/odd isomorphism, parametrized by `RSIsomorphismWitness`). The missing piece is the *concrete* `RSIsomorphismWitness` instance for a multiplicative-coset FRI domain — not the abstract isomorphism theorem | `RSCode.lean` | 🟧 |
 | `thm:proximity-gap` | round-1 ≤ 1 bad α (above Johnson) | helper: `FRISoundness.proximity_gap_core` (alias of `ca_halved` over an arbitrary linear submodule). Packaging the paper-faithful theorem requires (i) an instantiated `RSIsomorphismWitness` for the concrete multiplicative-coset FRI domain wired to `coupling_counting`, and (ii) a faithful BCIKS '20 Theorem 1.2 transcription for rounds ≥ 2 | `Coupling.lean` | 🟧 |
 | `lem:catch-prob` | catch probability under i.i.d. base sampling | building block: `query_phase_miss_count_bound` (Probability.lean) gives the integer step `missing^q ≤ (n-d)^q`. The paper's bound `(1-δ/2)^q` requires an additional `(n-d)/n ≤ 1-δ/2` rational ratio step, not yet packaged as a standalone theorem under this name | `Probability.lean` | 🟧 |
 | `thm:fri-full` | `Pr[FRI accepts] ≤ nR/\|F\| + (1−δ/2)^q` | counting skeleton: `fri_soundness_above_johnson_counting`, `fri_soundness_above_johnson_rational_bound` (Probability.lean). These give a transcript-agnostic rational inequality on counting numerators; they neither define the FRI acceptance event nor perform the `δ`-to-`d` substitution that is needed to recover the paper's labelled bound | `Probability.lean` | 🟧 |
@@ -114,9 +113,13 @@ lemmas, with **no `sorry` tactic and no `admit`**. Specifically:
   `RSCode`). The paper's labelled statement follows by specializing
   the submodule to `RSCode α k` and applying probabilistic monotonicity.
 - `thm:eq-threshold-upper`: the paper specializes to `RS[F, L, k]` with
-  `w = n − k − 1`. The Lean `ca_equal_threshold` proves the same
-  `\binom{n}{w}/|F|` bound for any linear submodule and absolute
-  threshold `w`. Specialization is immediate.
+  `w = n − k − 1` and quotes a probability `\binom{n}{w}/|F|`. The Lean
+  `ca_equal_threshold` proves the underlying **counting** bound
+  `Γ.card ≤ Nat.choose (card L) w` for any linear submodule and absolute
+  threshold `w`. The paper's `/|F|` probability form follows by
+  specializing to `Γ = (univ : Finset F)` of bad-γ scalars under
+  `[Fintype F]` and dividing by `|F|`; that wrapper is a one-line
+  corollary not yet committed under a paper-faithful name.
 
 Outside Mathlib's standard axioms (classical logic, choice, propext),
 the library declares **no project-level axioms**.
@@ -138,27 +141,32 @@ not yet packaged. Concretely, each 🟧 entry is missing one or more of:
 
 Each gap is enumerated explicitly in the Roadmap below.
 
-## What "🟨 COUNTING-FORM" means for `thm:fri-full`
+## What is in Lean for `thm:fri-full`
 
-`fri_soundness_above_johnson_rational_bound` proves the rational inequality
+The library provides a **counting-form skeleton** of the paper's
+soundness chain:
 
 ```
 badChallenges/|F|  +  (missing^q)/(n^q)
   ≤ (n·R)/|F|     +  ((n−d)^q)/(n^q)
 ```
 
-over uniformly sampled finite transcript spaces. The paper's
-`(1 − δ/2)^q` form is recovered by setting `d = ⌈δn/2⌉` so that
-`(n−d)/n ≤ 1 − δ/2`. The remaining gap to a paper-form theorem is the
-**event instantiation**: tying the abstract `event : Ω → Prop` of
-`UniformTranscriptModel` to the concrete acceptance predicate of an
-interactive (or Fiat-Shamir-transformed) FRI run.
+is proved as `fri_soundness_above_johnson_rational_bound` (rational
+form on `ℚ`, transcript-agnostic). The paper's labelled bound
+`Pr[FRI accepts] ≤ nR/|F| + (1 − δ/2)^q` requires three further steps,
+none of which are in Lean yet:
 
-The commit-phase `nR` term is a per-round union bound (round 1 contributes
-≤ 1 bad scalar via `ca_halved`; rounds 2..R contribute ≤ n each, via
-BCIKS '20 Theorem 1.2 once a faithful Lean transcription is in place — see
-roadmap), not a tuple count over `F^R` — `Σ_i bad_i/|F| ≤ nR/|F|`.
-The query-phase `(1-δ/2)^q` term is the standard q-fold miss probability.
+1. an FRI verifier acceptance event `event : Ω → Prop` on a concrete
+   transcript space `Ω`, replacing `UniformTranscriptModel`'s abstract
+   predicate;
+2. the substitution `d := ⌈δn/2⌉` and the rational chain
+   `(n − d)/n ≤ 1 − δ/2`;
+3. the rounds-≥-2 union-bound contribution, which needs a faithful
+   Lean transcription of BCIKS '20 Theorem 1.2 against the
+   FRI-pairing data.
+
+Until all three are present, the `thm:fri-full` row stays 🟧 with the
+counting skeleton acting as the formalized lower-level component.
 
 ## Roadmap
 
