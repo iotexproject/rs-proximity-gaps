@@ -18,13 +18,11 @@ and Mathlib pinned in `lake-manifest.json`.
 | Paper labels with a Lean counterpart at the **statement-faithful** level | **2 / ~22 soundness-relevant** |
 | Paper labels with at least a **building block** in Lean | **~12 / ~22** |
 
-There are **no project-level axioms** in the current library. An earlier
-draft included a `bciks_proximity_gap` placeholder axiom modelled on
-BCIKS '20 Theorem 1.2; that placeholder was removed because its signature
-did not faithfully transcribe the external statement and it was not used
-in any actual proof. A faithful Lean transcription of BCIKS '20 Theorem 1.2
-against the FRI-pairing data is listed as a roadmap item below — once
-present, it will be the project's only external dependency.
+The library currently declares **no project-level axioms**. The full
+end-to-end FRI-soundness chain at the deployment level requires importing
+BCIKS '20 Theorem 1.2 as an external dependency; that import is listed
+as a roadmap item below and, once added, will be the project's only
+external axiom.
 
 ## Status legend
 
@@ -134,7 +132,7 @@ reviewer can match the Lean library against the paper without surprise.
 
 ## What "🟨 COUNTING-FORM" means for `thm:fri-full`
 
-`fri_soundness_above_johnson_probability` proves the rational inequality
+`fri_soundness_above_johnson_rational_bound` proves the rational inequality
 
 ```
 badChallenges/|F|  +  (missing^q)/(n^q)
@@ -187,11 +185,12 @@ In priority order for further Lean work:
 
 ## Notes for reviewers
 
-- The library currently declares **no project-level axioms**. An earlier
-  draft included a `bciks_proximity_gap` placeholder; it was removed
-  because the signature did not faithfully transcribe BCIKS '20 Theorem
-  1.2 and was not used by any actual proof. A faithful transcription
-  against the FRI-pairing data is the priority-2 roadmap item.
+- The library currently declares **no project-level axioms**. The
+  end-to-end deployment-level chain still depends on BCIKS '20 Theorem
+  1.2 (zero-loss proximity gap below the Johnson bound); its faithful
+  Lean transcription against the FRI-pairing data is the priority-2
+  roadmap item, after which it will be the project's only external
+  axiom.
 - The paper's Theorem 1 (`thm:ca-halved`) is RVW13's classical 1:2
   inequality; we acknowledge this in §3. The Lean formalization gives a
   self-contained, machine-checkable proof within Mathlib (no external

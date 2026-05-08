@@ -6,7 +6,6 @@ Helper lemmas combining `ca_halved` with the FRI coupling building blocks.
 -/
 import FRISoundness.CA
 import FRISoundness.RSCode
-import Mathlib.RingTheory.Polynomial.Basic
 
 open Finset Fintype
 
@@ -52,26 +51,6 @@ theorem proximity_gap_core
     (hA₂ : card L' ≤ (agreeSet (linComb fE fO α₂) c₂).card + d) :
     False :=
   ca_halved C' fE fO d hprem hne hc₁ hc₂ hA₁ hA₂
-
-/-! ## Schwartz–Zippel root count
-
-Used by the paper's Strategy A (honest fold) commit-phase analysis.
-The multivariate / multilinear reduction needed for the full Strategy A is
-not in scope for this lemma; this theorem provides the univariate
-root-count step. -/
-
-/-- A nonzero univariate polynomial over an integral domain has at most
-`natDegree` distinct roots. Proved from Mathlib's `Polynomial.card_roots`
-(root multiset cardinality bounded by the polynomial's degree) composed
-with `Multiset.toFinset_card_le`. -/
-theorem schwartz_zippel_fri
-    {F : Type*} [CommRing F] [IsDomain F] [DecidableEq F]
-    (p : Polynomial F) (hp : p ≠ 0) :
-    p.roots.toFinset.card ≤ p.natDegree := by
-  refine le_trans (Multiset.toFinset_card_le _) ?_
-  have h := Polynomial.card_roots hp
-  rw [Polynomial.degree_eq_natDegree hp] at h
-  exact_mod_cast h
 
 /-- Per-round union-bound numerator: the sum of round-1 (≤ 1) and rounds
 2..R (≤ n each) is bounded by `nR`. -/

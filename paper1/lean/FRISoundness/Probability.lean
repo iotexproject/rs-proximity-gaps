@@ -5,7 +5,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Finite counting wrappers for the probability-level FRI soundness statement.
 -/
 import FRISoundness.Coupling
-import Mathlib.Probability.Distributions.Uniform
+import Mathlib.Data.Rat.Cast.Defs
 
 namespace FRISoundness
 
@@ -22,11 +22,10 @@ sample spaces gives the probability form used in the paper:
 * query phase: if at least `d` of `n` positions catch the deviation, then at
   most `(n - d)^q` length-`q` query strings miss all catching positions.
 
-The remaining gap to the final theorem is packaging these counting lemmas in
-Mathlib's probability monad and connecting the abstract FRI transcript event to
-the combinatorial predicates in `Coupling.lean`.  We also include rational
-uniform-probability wrappers below, so the remaining probability work is the PMF
-event model rather than the elementary division step.
+The remaining gap to the final paper-form theorem is connecting the abstract
+event predicate of `UniformTranscriptModel` to the concrete FRI verifier
+acceptance predicate; we expose rational uniform-probability wrappers below
+so that step is purely a transcript-encoding exercise.
 -/
 
 /-- Commit-phase numerator: the bad challenge count is bounded by `n * R`. -/
@@ -69,27 +68,23 @@ theorem fri_soundness_above_johnson_counting
     (commit_phase_count_bound n R badChallenges hbad hn hR)
     (query_phase_miss_count_bound n d q missing catching hpartition hcatch)
 
-/-! ## PMF transcript model and rational uniform-probability wrappers -/
+/-! ## Uniform-transcript event model and rational probability wrappers -/
 
 /--
-A finite transcript space sampled uniformly by the verifier.
+A finite transcript space carrying a decidable event predicate.
 
-The associated `pmf` definition is fixed to `PMF.uniformOfFintype Ω`; this
-records the concrete PMF object used by the model while keeping the event bounds
-in the rational finite-counting form used elsewhere in this file.
--/
+The verifier is modelled as sampling a transcript uniformly from `Ω`; the
+event-probability bound is given as a rational `eventCount / |Ω|` in
+`eventProb` below. We deliberately stay at the rational-counting level
+rather than wiring this into `Mathlib.Probability.PMF`, because the
+remaining gap to a paper-form theorem is the protocol-event encoding,
+not the probability monad. -/
 structure UniformTranscriptModel (Ω : Type*) [Fintype Ω] [Nonempty Ω] where
   /-- The transcript event whose probability is being bounded. -/
   event : Ω → Prop
   decEvent : DecidablePred event
 
 attribute [instance] UniformTranscriptModel.decEvent
-
-/-- The verifier samples transcripts uniformly. -/
-noncomputable def UniformTranscriptModel.pmf
-    {Ω : Type*} [Fintype Ω] [Nonempty Ω]
-    (_T : UniformTranscriptModel Ω) : PMF Ω :=
-  PMF.uniformOfFintype Ω
 
 /-- Number of accepting/bad transcripts in a finite uniform transcript model. -/
 def UniformTranscriptModel.eventCount
@@ -107,18 +102,6 @@ def UniformTranscriptModel.eventProb
     {Ω : Type*} [Fintype Ω] [Nonempty Ω]
     (T : UniformTranscriptModel Ω) : ℚ :=
   (T.eventCount : ℚ) / (UniformTranscriptModel.spaceSize Ω : ℚ)
-
-/--
-The transcript model really uses Mathlib's uniform PMF.  This theorem gives the
-point mass of any transcript under the model's `pmf`; event probabilities are
-then represented by `eventProb`, the finite rational sum over event transcripts.
--/
-theorem uniform_transcript_pmf_apply
-    {Ω : Type*} [Fintype Ω] [Nonempty Ω]
-    (T : UniformTranscriptModel Ω) (ω : Ω) :
-    T.pmf ω = (Fintype.card Ω : ENNReal)⁻¹ := by
-  rw [UniformTranscriptModel.pmf]
-  exact PMF.uniformOfFintype_apply ω
 
 /--
 Uniform-probability monotonicity: if at most `bound` outcomes are bad among

@@ -97,16 +97,18 @@ theorem batch_ca_at_most_one
   obtain ⟨c₂, hc₂, hA₂⟩ := hα₂
   exact batch_ca_per_coord C rest fᵢ d hfar hne hc₁ hc₂ hA₁ hA₂
 
-/-! ## Union bound
+/-! ## Union of per-coordinate bad-scalar sets
 
-With m functions, each contributing at most 1 bad coefficient,
-the total number of bad coefficient tuples is at most m.
-In probability terms: Pr[batch fails] ≤ m/|F|. -/
+A finite union of `m` singletons in `F` has cardinality `≤ m`. Each
+coordinate contributes at most one bad scalar value to its own bad set
+`Bᵢ ⊆ F` (by `batch_ca_at_most_one`); this lemma is the elementary
+union-bound on those singletons. The paper's tuple-form `m/|F|`
+probability statement is a corollary obtained by additionally fixing
+`restᵢ = ∑_{j<i} αⱼ fⱼ` and averaging over the conditioning, which
+is not packaged here. -/
 
-/-- **Batch CA union bound** (generic): a union of `m` singletons has cardinality
-    ≤ `m`. The mathematical content is that each coordinate contributes at most
-    1 bad coefficient value (by `batch_ca_at_most_one`), so the total number of
-    bad coefficient tuples is at most `m`, giving probability `m/|F|`. -/
+/-- **Generic union bound**: a union of `m` finite sets each of size `≤ 1`
+    has cardinality `≤ m`. -/
 theorem batch_ca_bad_count {ι : Type*} [DecidableEq ι] [Fintype ι]
     {F : Type*} [DecidableEq F]
     (bad : ι → Finset F) (hbad : ∀ i, (bad i).card ≤ 1) :
@@ -148,17 +150,22 @@ error is `m/|F|` — recovering the standard batch-CA bound used by
 STIR/WHIR proofs. -/
 
 open Classical in
-/-- **Aggregate batch-CA bound** (paper Appendix A, Theorem batch-ca).
+/-- **Fixed-`rest` aggregate union bound** (helper for paper `thm:batch-ca`).
 
 For each `i ∈ ι`, suppose `fᵢ` is `2d`-far from the codeword space `C` and
-that for each `i` we are given a fixed "rest" function `restᵢ : L → F`. Then
-the union of the per-coordinate bad sets
+that for each `i` we are given a *fixed* "rest" function `restᵢ : L → F`.
+Then the union of the per-coordinate bad scalar sets
 
   `Bᵢ := {α ∈ F : ∃ c ∈ C, |agreeSet (restᵢ + α · fᵢ) c| ≥ n − d}`
 
 has cardinality at most `|ι|`. Each `Bᵢ` is a singleton (or empty) by
 `batch_ca_per_coord_bad_card`; `batch_ca_bad_count` then applies the
-elementary union-bound on `|ι|` singletons. -/
+elementary union-bound on `|ι|` singletons.
+
+The paper's labelled `thm:batch-ca` gives the tuple-form probability bound
+`Pr[(α₁,…,αₘ) ∈ F^m makes the batch fail] ≤ m/|F|`. That statement is a
+corollary obtained by setting `restᵢ := ∑_{j<i} αⱼ fⱼ` and averaging
+over the conditioning; it is not yet packaged in the Lean library. -/
 theorem batch_ca_aggregate
     [Fintype F]
     (C : Submodule F (L → F))
