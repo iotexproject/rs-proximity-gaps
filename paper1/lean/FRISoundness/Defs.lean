@@ -22,10 +22,6 @@ variable {F : Type*} [Field F] [DecidableEq F]
 def agreeSet (f g : L → F) : Finset L :=
   Finset.univ.filter (fun x => f x = g x)
 
-/-- The error set: {x ∈ L : f(x) ≠ g(x)} -/
-def errorSet (f g : L → F) : Finset L :=
-  Finset.univ.filter (fun x => f x ≠ g x)
-
 /-- Joint agreement set: positions where both pairs agree -/
 def jointAgreeSet (f₁ f₂ g₁ g₂ : L → F) : Finset L :=
   Finset.univ.filter (fun x => f₁ x = g₁ x ∧ f₂ x = g₂ x)

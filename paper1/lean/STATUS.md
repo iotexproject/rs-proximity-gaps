@@ -54,7 +54,7 @@ external axiom.
 | Paper label | Statement | Lean identifier | File | Status |
 |-------------|-----------|-----------------|------|--------|
 | `lem:fri-coupling` | even/odd RS isomorphism with γ-twist on the multiplicative FRI domain | building blocks (RSCode.lean): `coupling_pointwise`, `coupling_counting` (the abstract distance-vs-joint-distance step), and `rs_iso_forward` / `rs_iso_surj` (the abstract RS even/odd isomorphism, parametrized by `RSIsomorphismWitness`). The missing piece is the *concrete* `RSIsomorphismWitness` instance for a multiplicative-coset FRI domain — not the abstract isomorphism theorem | `RSCode.lean` | 🟧 |
-| `thm:proximity-gap` | round-1 ≤ 1 bad α (above Johnson) | helper: `FRISoundness.proximity_gap_core` (alias of `ca_halved` over an arbitrary linear submodule). Packaging the paper-faithful theorem requires (i) an instantiated `RSIsomorphismWitness` for the concrete multiplicative-coset FRI domain wired to `coupling_counting`, and (ii) a faithful BCIKS '20 Theorem 1.2 transcription for rounds ≥ 2 | `Coupling.lean` | 🟧 |
+| `thm:proximity-gap` | round-1 ≤ 1 bad α (above Johnson) | helper: `FRISoundness.proximity_gap_core` (alias of `ca_halved` over an arbitrary linear submodule). Packaging the paper-faithful theorem requires an instantiated `RSIsomorphismWitness` for the concrete multiplicative-coset FRI domain wired to `coupling_counting`. The BCIKS contribution is for `thm:fri-full` (rounds ≥ 2), not this round-1 statement | `Coupling.lean` | 🟧 |
 | `lem:catch-prob` | catch probability under i.i.d. base sampling | building block: `query_phase_miss_count_bound` (Probability.lean) gives the integer step `missing^q ≤ (n-d)^q`. The paper's bound `(1-δ/2)^q` requires an additional `(n-d)/n ≤ 1-δ/2` rational ratio step, not yet packaged as a standalone theorem under this name | `Probability.lean` | 🟧 |
 | `thm:fri-full` | `Pr[FRI accepts] ≤ nR/\|F\| + (1−δ/2)^q` | counting skeleton: `fri_soundness_above_johnson_counting`, `fri_soundness_above_johnson_rational_bound` (Probability.lean). These give a transcript-agnostic rational inequality on counting numerators; they neither define the FRI acceptance event nor perform the `δ`-to-`d` substitution that is needed to recover the paper's labelled bound | `Probability.lean` | 🟧 |
 
@@ -208,11 +208,11 @@ In priority order for further Lean work:
   Lean transcription against the FRI-pairing data is the priority-2
   roadmap item, after which it will be the project's only external
   axiom.
-- The paper's Theorem 1 (`thm:ca-halved`) is RVW13's classical 1:2
-  inequality; we acknowledge this in §3. The Lean formalization gives a
-  self-contained, machine-checkable proof within Mathlib (no external
-  axiom). Lean proves the tighter "at most one bad γ" form, which implies
-  the paper's `≤ 2/|F|` bound.
+- The paper's `thm:ca-halved` is RVW13's classical 1:2 inequality
+  acknowledged in §3. The Lean formalization gives a Mathlib-only proof
+  (no external axiom) of the contrapositive "at most one bad γ" form;
+  this is content-equivalent to the paper's `ε_ca(C, δ/2, δ) ≤ 1/|F|`
+  statement.
 - Theorem `thm:eq-threshold-upper` (the `\binom{n}{w}/|F|` upper bound)
   is, to our knowledge, **new in this paper**. Its Lean formalization
   closes via an injection into `Finset.powersetCard`.

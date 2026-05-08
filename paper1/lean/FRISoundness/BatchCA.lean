@@ -4,8 +4,9 @@ Released under Apache 2.0 license as described in the file LICENSE.
 
 Per-coordinate building blocks for the paper's `thm:batch-ca` (Appendix A.1).
 
-For batched proximity testing: given m received words f₁, …, fₘ each at
-joint distance > 2d from C, this file proves a **per-coordinate** union
+For batched proximity testing: given m received words f₁, …, fₘ each
+`2d`-far from `C` (individual distance), this file proves a
+**per-coordinate** union
 bound on the bad-α set with one coordinate varied at a time:
 
   Bᵢ(restᵢ) := { α ∈ F : ∃ c ∈ C, |agreeSet(restᵢ + α·fᵢ, c)| ≥ n − d }

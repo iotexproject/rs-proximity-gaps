@@ -14,22 +14,21 @@ namespace FRISoundness
 /-! ## Half-threshold proximity-gap helper
 
 A direct restatement of `ca_halved` over an arbitrary linear submodule
-`C' ⊆ (L' → F)`. The paper's `thm:proximity-gap` adds two ingredients on
-top of this helper:
+`C' ⊆ (L' → F)`. The paper's `thm:proximity-gap` (the round-1 ≤ 1 bad α
+statement) adds one ingredient on top of this helper: the FRI coupling
+step `Δ(f, RS_k) > δ ⟹ joint Δ((fE, fO), RS_{k/2}²) > δ`, formalized at
+the abstract level as `RSCode.coupling_pointwise` and
+`RSCode.coupling_counting`. Wiring those into a paper-faithful theorem
+requires an instantiated `RSIsomorphismWitness` for the concrete
+multiplicative-coset FRI domain, which is not yet in the library.
 
-1. The FRI coupling step (Δ(f, RS_k) > δ ⟹ joint Δ((fE, fO), RS_{k/2}²) > δ),
-   formalized at the abstract level as `RSCode.coupling_pointwise` and
-   `RSCode.coupling_counting`. Wiring those into a paper-faithful theorem
-   requires an instantiated `RSIsomorphismWitness` for the concrete
-   multiplicative-coset FRI domain (not yet in the library).
-2. The above-Johnson distance hypothesis under which BCIKS supplies the
-   round-≥-2 bound. The library does not yet include a faithful
-   transcription of BCIKS '20 Theorem 1.2; see STATUS.md for the
-   roadmap entry that fills this in.
+The BCIKS '20 Theorem 1.2 transcription (rounds ≥ 2) is *not* part of
+this lemma; it enters only at the level of the full FRI soundness
+theorem (`thm:fri-full`).
 
-Until those two pieces are in place we expose the helper below under the
-name `proximity_gap_core` so a reader does not mistake it for the full
-paper-labelled theorem. -/
+Until the concrete pairing instance is in place we expose the helper
+below under the name `proximity_gap_core` so a reader does not mistake
+it for the full paper-labelled theorem. -/
 
 /--
 **Half-threshold proximity-gap helper** (alias for `ca_halved` on a
