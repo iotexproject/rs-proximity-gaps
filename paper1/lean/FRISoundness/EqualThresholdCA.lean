@@ -51,7 +51,7 @@ then we derive `False`. The contradicting codeword pair is
 `g₂ := (h₁ − h₂)/(γ₁ − γ₂) ∈ C` and `g₁ := h₁ − γ₁ · g₂ ∈ C`,
 which agree with `(f₁, f₂)` on all of `A`.
 -/
-theorem ca_equal_threshold_pair
+private theorem ca_equal_threshold_pair
     (C : Submodule F (L → F))
     (f₁ f₂ : L → F) (w : ℕ)
     (hprem : ∀ g₁ ∈ C, ∀ g₂ ∈ C,

@@ -15,7 +15,7 @@ and Mathlib pinned in `lake-manifest.json`.
 | `sorry` count (excluding docstring word-mentions) | **0** |
 | `axiom` count (project-level, beyond Mathlib's standard axioms) | **0** |
 | Top-level public theorems / lemmas across the 8 files | ~30 |
-| Paper labels with a Lean counterpart at the **statement-faithful** level | **2 / ~22 soundness-relevant** |
+| Paper labels covered via a stronger abstract generalization | **2 / ~22 soundness-relevant** |
 | Paper labels with at least a **building block** in Lean | **~12 / ~22** |
 
 The library currently declares **no project-level axioms**. The full
@@ -39,7 +39,7 @@ external axiom.
 
 | Paper label | Statement | Lean identifier | File | Status |
 |-------------|-----------|-----------------|------|--------|
-| `thm:ca-halved` | `ε_ca(C, δ/2, δ) ≤ 1/|F|` (paper Theorem 6, RVW13 / BCHKS Table 1). Lean proves the contrapositive "at most one bad γ", which gives the same `1/|F|` bound after specializing to `Γ ⊆ (Finset F)` and dividing by `|F|` | `FRISoundness.ca_halved` | `CA.lean` | ✅ |
+| `thm:ca-halved` | `ε_ca(C, δ/2, δ) ≤ 1/|F|` (paper Theorem 6, RVW13 / BCHKS Table 1) | `FRISoundness.ca_halved` (contrapositive form) and `FRISoundness.ca_halved_count_le_one` (paper-form `[Fintype F]` corollary: bad-γ count ≤ 1) | `CA.lean` | ✅ |
 
 ### Section 4 — Equal-Threshold CA
 

@@ -42,7 +42,7 @@ in the individual agreement set of fᵢ with g₂. Therefore, if fᵢ is far fro
 the joint distance is also large — regardless of what "rest" is. -/
 
 /-- The joint agreement set is a subset of the second component's agreement set. -/
-theorem jointAgreeSet_subset_agreeSet_snd (f₁ f₂ g₁ g₂ : L → F) :
+private theorem jointAgreeSet_subset_agreeSet_snd (f₁ f₂ g₁ g₂ : L → F) :
     jointAgreeSet f₁ f₂ g₁ g₂ ⊆ agreeSet f₂ g₂ := by
   intro x hx
   simp only [jointAgreeSet, agreeSet, Finset.mem_filter, mem_univ, true_and] at hx ⊢
@@ -113,7 +113,7 @@ is not packaged here. -/
 
 /-- **Generic union bound**: a union of `m` finite sets each of size `≤ 1`
     has cardinality `≤ m`. -/
-theorem batch_ca_bad_count {ι : Type*} [DecidableEq ι] [Fintype ι]
+private theorem batch_ca_bad_count {ι : Type*} [DecidableEq ι] [Fintype ι]
     {F : Type*} [DecidableEq F]
     (bad : ι → Finset F) (hbad : ∀ i, (bad i).card ≤ 1) :
     (Finset.univ.biUnion bad).card ≤ Fintype.card ι := by

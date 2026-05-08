@@ -111,4 +111,28 @@ theorem ca_halved
   -- From Step 4: (jointAgreeSet ...).card + 2d < n, i.e., (jointAgreeSet ...).card < n - 2d
   omega
 
+open Classical in
+/-- **Probability form, paper `thm:ca-halved`** (`ε_ca(C, δ/2, δ) ≤ 1/|F|`).
+
+Direct corollary of `ca_halved`: under the same joint-distance premise,
+the count of bad scalars `γ ∈ F` (those for which some codeword agrees
+with `linComb f₁ f₂ γ` on `≥ |L| − d` positions) is at most one. Over
+a finite scalar field `F` this gives the paper's stated `1/|F|`
+probability bound. -/
+theorem ca_halved_count_le_one [Fintype F]
+    (C : Submodule F (L → F))
+    (f₁ f₂ : L → F) (d : ℕ)
+    (hprem : ∀ g₁ ∈ C, ∀ g₂ ∈ C,
+      (jointAgreeSet f₁ f₂ g₁ g₂).card + 2 * d < card L) :
+    ((Finset.univ : Finset F).filter
+      (fun γ => ∃ h ∈ C, card L ≤ (agreeSet (linComb f₁ f₂ γ) h).card + d)).card
+    ≤ 1 := by
+  rw [Finset.card_le_one]
+  intro γ₁ hγ₁ γ₂ hγ₂
+  rw [Finset.mem_filter] at hγ₁ hγ₂
+  obtain ⟨_, h₁, hh₁, hA₁⟩ := hγ₁
+  obtain ⟨_, h₂, hh₂, hA₂⟩ := hγ₂
+  by_contra hne
+  exact ca_halved C f₁ f₂ d hprem hne hh₁ hh₂ hA₁ hA₂
+
 end FRISoundness
