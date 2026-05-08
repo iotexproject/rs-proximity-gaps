@@ -53,7 +53,6 @@ rs-proximity-gaps/
       CAVEATS.md               Caveats for the deployment-scale spot checks
       deployment-l3/           Paper 2 L3 / boundary-lift / GS m=2 list-decode
 
-  REPRODUCING.md
   LICENSE                      Apache 2.0
 ```
 
@@ -76,9 +75,18 @@ python3 paper1/scripts/op1-barrier/op1_scaling.py
 python3 paper2/scripts/deployment-l3/issue419_action_orbit_check.py
 ```
 
+**Regenerate Paper 1's deployment-parameter table or proximity-gap figure**:
+
+```bash
+python3 paper1/scripts/deployment_params.py [--latex] [--per-round-max]
+python3 paper1/scripts/proximity_gap_diagram.py
+```
+
 Per-script docstrings document what each script computes; methodology
 caveats live in each paper's `scripts/CAVEATS.md`. Saved outputs (where
-pre-computed) mirror the scripts layout under `paper1/outputs/`.
+pre-computed) mirror the scripts layout under `paper1/outputs/`; redirect
+stdout to refresh, e.g.
+`python3 .../op1_scaling.py > paper1/outputs/op1-barrier/op1_scaling.output.txt`.
 
 The CI workflow (`.github/workflows/ci.yml`) runs `lake build` and a sample
 of Python scripts on every push.
