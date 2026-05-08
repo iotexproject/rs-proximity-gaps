@@ -47,10 +47,13 @@ theorem jointAgreeSet_subset_agreeSet_snd (f₁ f₂ g₁ g₂ : L → F) :
   simp only [jointAgreeSet, agreeSet, Finset.mem_filter, mem_univ, true_and] at hx ⊢
   exact hx.2
 
-/-- **Conditioning step**: if fᵢ is 2d-far from every codeword in C,
-    then for any rest function, the pair (rest, fᵢ) satisfies the ca_halved premise.
+/-- **Conditioning step**: if `fᵢ` is `2d`-far from every codeword in `C`,
+    then for any rest function, the pair `(rest, fᵢ)` satisfies the
+    `ca_halved` premise.
 
-    This is the key step that connects individual distance to joint distance. -/
+    The conclusion shape `∀ g₁ ∈ C, ∀ g₂ ∈ C, …` matches `ca_halved`'s
+    `hprem` so this lemma can be plugged in directly; the `g₁ ∈ C`
+    binder is not used inside the proof (only `g₂ ∈ C` is). -/
 theorem far_implies_joint_far
     (C : Submodule F (L → F))
     (rest fᵢ : L → F) (d : ℕ)

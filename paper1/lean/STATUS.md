@@ -56,8 +56,8 @@ external axiom.
 |-------------|-----------|-----------------|------|--------|
 | `lem:fri-coupling` | even/odd RS isomorphism with γ-twist on the multiplicative FRI domain | building blocks: `coupling_pointwise`, `coupling_counting` (RSCode.lean); the RS isomorphism is parametrized by `RSIsomorphismWitness` and is not yet instantiated for a concrete FRI domain | `RSCode.lean` | 🟧 |
 | `thm:proximity-gap` | round-1 ≤ 1 bad α (above Johnson) | helper: `FRISoundness.proximity_gap_core` (alias of `ca_halved` over an arbitrary linear submodule). Packaging the paper-faithful theorem requires (i) an instantiated `RSIsomorphismWitness` for the concrete multiplicative-coset FRI domain wired to `coupling_counting`, and (ii) a faithful BCIKS '20 Theorem 1.2 transcription for rounds ≥ 2 | `Coupling.lean` | 🟧 |
-| `lem:catch-prob` | catch probability under i.i.d. base sampling | counting form: `query_phase_miss_count_bound` (Probability.lean), giving `(missing^q) ≤ (n-d)^q`. The probability ratio `(n-d)^q / n^q ≤ (1-δ/2)^q` is the paper's `lem:catch-prob`; the rational form is in `fri_soundness_above_johnson_rational_bound`, the protocol-event wrapper is on the roadmap | `Probability.lean` | 🟨 |
-| `thm:fri-full` | `Pr[FRI accepts] ≤ nR/\|F\| + (1−δ/2)^q` | `FRISoundness.fri_soundness_above_johnson_counting`, `fri_soundness_above_johnson_rational_bound` | `Probability.lean` | 🟨 |
+| `lem:catch-prob` | catch probability under i.i.d. base sampling | building block: `query_phase_miss_count_bound` (Probability.lean) gives the integer step `missing^q ≤ (n-d)^q`. The paper's bound `(1-δ/2)^q` requires an additional `(n-d)/n ≤ 1-δ/2` rational ratio step, not yet packaged as a standalone theorem under this name | `Probability.lean` | 🟧 |
+| `thm:fri-full` | `Pr[FRI accepts] ≤ nR/\|F\| + (1−δ/2)^q` | counting skeleton: `fri_soundness_above_johnson_counting`, `fri_soundness_above_johnson_rational_bound` (Probability.lean). These give a transcript-agnostic rational inequality on counting numerators; they neither define the FRI acceptance event nor perform the `δ`-to-`d` substitution that is needed to recover the paper's labelled bound | `Probability.lean` | 🟧 |
 
 ### Section 6 — List-size moment results
 
@@ -123,12 +123,20 @@ the library declares **no project-level axioms**.
 
 ## What "🟧 HELPER-ONLY" means precisely
 
-The Lean file contains the necessary lower-level building blocks (counting
-lemmas, recovery identities, abstract pairings) but the paper-labelled
-theorem at the level of the concrete FRI domain and code-distance hypothesis
-is not yet packaged. The chain of building blocks is sound and the
-remaining packaging is a routine exercise; we mark these honestly so a
-reviewer can match the Lean library against the paper without surprise.
+The Lean file contains lower-level building blocks (counting lemmas,
+recovery identities, abstract pairings) but the paper-labelled theorem
+at the level of the concrete FRI domain and code-distance hypothesis is
+not yet packaged. Concretely, each 🟧 entry is missing one or more of:
+
+- a concrete `FRIPairing` / `GenFRIPairing` instance for the deployment
+  domain (multiplicative coset, additive subspace, or unit circle);
+- an instantiated `RSIsomorphismWitness` matching the paper's RS code;
+- the `δ`-to-`d` substitution `d = ⌈δn/2⌉` and the `(n-d)/n ≤ 1-δ/2`
+  rational step;
+- the protocol-event encoding (FRI verifier acceptance predicate);
+- a faithful BCIKS '20 Theorem 1.2 import for the rounds-≥-2 contribution.
+
+Each gap is enumerated explicitly in the Roadmap below.
 
 ## What "🟨 COUNTING-FORM" means for `thm:fri-full`
 
