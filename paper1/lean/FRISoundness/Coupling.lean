@@ -76,7 +76,7 @@ count) and the natDegree / degree relation for nonzero polynomials.
 For FRI Strategy A: the syndrome polynomial is multilinear of degree ≤ R,
 so `Pr[all syndromes vanish] ≤ R/|F|` by union over R variables. -/
 theorem schwartz_zippel_fri
-    {F : Type*} [CommRing F] [IsDomain F]
+    {F : Type*} [CommRing F] [IsDomain F] [DecidableEq F]
     (p : Polynomial F) (hp : p ≠ 0) :
     p.roots.toFinset.card ≤ p.natDegree := by
   refine le_trans (Multiset.toFinset_card_le _) ?_

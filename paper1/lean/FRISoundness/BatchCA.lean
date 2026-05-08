@@ -131,6 +131,7 @@ theorem batch_ca_per_coord_bad_card
     ((Finset.univ : Finset F).filter
       (fun α => ∃ c ∈ C, card L ≤ (agreeSet (linComb rest fᵢ α) c).card + d)).card
     ≤ 1 := by
+  classical
   rw [Finset.card_le_one]
   intro α₁ hα₁ α₂ hα₂
   rw [Finset.mem_filter] at hα₁ hα₂
@@ -165,8 +166,9 @@ theorem batch_ca_aggregate
       (Finset.univ : Finset F).filter
         (fun α => ∃ c ∈ C,
           card L ≤ (agreeSet (linComb (rest i) (f i) α) c).card + d))).card
-    ≤ Fintype.card ι :=
-  batch_ca_bad_count
+    ≤ Fintype.card ι := by
+  classical
+  exact batch_ca_bad_count
     (fun i => (Finset.univ : Finset F).filter
       (fun α => ∃ c ∈ C,
         card L ≤ (agreeSet (linComb (rest i) (f i) α) c).card + d))

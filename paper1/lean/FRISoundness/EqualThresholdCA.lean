@@ -169,7 +169,7 @@ theorem ca_equal_threshold
     have hγ₂ : γ₂ ∈ Γ := hmem₂
     by_contra hne
     -- Unfold the if-then-else under the membership hypothesis.
-    rw [dif_pos hγ₁, dif_pos hγ₂] at hAeq
+    simp only [dif_pos hγ₁, dif_pos hγ₂] at hAeq
     -- Now hAeq : pickA γ₁ hγ₁ = pickA γ₂ hγ₂. Use ca_equal_threshold_pair
     -- on the SHARED subset A := pickA γ₁ hγ₁.
     set A := pickA γ₁ hγ₁ with hA_def
@@ -187,7 +187,7 @@ theorem ca_equal_threshold
         refine Finset.card_le_card_of_injOn
           (fun γ => if hγ : γ ∈ Γ then pickA γ hγ else ∅) ?_ hinj
         intro γ hγ
-        rw [dif_pos hγ]
+        simp only [dif_pos hγ]
         exact hmem γ hγ
     _ = Nat.choose (card L) (card L - w) := by
         rw [Finset.card_powersetCard, Finset.card_univ]
