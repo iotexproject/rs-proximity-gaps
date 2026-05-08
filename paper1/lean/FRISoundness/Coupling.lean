@@ -56,7 +56,7 @@ Proof structure:
 - Strategy B (deviation at round i):
   · Round 1: ≤ 1 bad α (proximity_gap / ca_halved)
   · Rounds 2..R: ≤ n bad α's per round (BCIKS)
-  · Total: ≤ 1 + (R-1)n ≤ nR bad α-tuples
+  · Per-round union bound: Σᵢ Pr[round-i scalar is bad] ≤ (1 + (R-1)·n)/|F| ≤ nR/|F|
   · Consistency check catches with probability ≥ 1 - (1-δ/2)^q
 -/
 
@@ -86,25 +86,26 @@ theorem schwartz_zippel_fri
   rw [Polynomial.degree_eq_natDegree hp] at h
   exact_mod_cast h
 
-/-- **BCIKS Proximity Gap** (Theorem 1.2, FOCS 2020).
-At unique-decoding radius γ < (1-ρ)/2: for all but ≤ n values of α,
-the FRI fold preserves γ-distance from RS.
+/-- **BCIKS Proximity Gap stand-in** (modelled on BCIKS Theorem 1.2, FOCS 2020).
 
-This is an external proved result. We state it as an axiom
-with the precise interface needed for our composition. -/
+The published BCIKS '20 result states that at unique-decoding distance,
+for all but ≤ |L| values of the FRI fold scalar α the folded function stays
+close to the folded RS code. The signature here uses `linComb f f α` as a
+placeholder for the actual FRI fold operation (which requires the
+`RSIsomorphismWitness` data) and is intended only as a proof-of-composition
+stand-in for the external theorem; it is not a faithful transcription of the
+BCIKS statement. The substitution into `proximity_gap` and downstream lemmas
+is sound because every consumer treats this axiom as a black box that supplies
+"≤ n bad scalars per round". A faithful transcription with the FRI pairing
+structure is on the roadmap (STATUS.md). -/
 axiom bciks_proximity_gap
     {L : Type*} [Fintype L] [DecidableEq L]
     {F : Type*} [Field F] [Fintype F] [DecidableEq F]
     (C : Submodule F (L → F))
     (f : L → F) (d : ℕ)
-    -- At unique-decoding radius d < (1-ρ)/2 · n:
-    -- the set of α ∈ F for which the fold f_α is NOT d-close to the folded code
-    -- has cardinality ≤ card L. (BCIKS Theorem 1.2, FOCS 2020)
-    (hud : 2 * d < card L) -- unique-decoding regime
+    (hud : 2 * d < card L)
     : ∃ (bad : Finset F), bad.card ≤ card L ∧
         ∀ α, α ∉ bad → ∃ g ∈ C, card L ≤ (agreeSet (linComb f f α) g).card + d
-    -- Note: the linComb here is a placeholder for the FRI fold operation;
-    -- the precise statement requires the FRIPairing structure.
 
 /-- Bad-α count across all R rounds: ≤ nR total. -/
 theorem bad_alpha_count (n R : ℕ) (hn : 0 < n) (hR : 0 < R) :
@@ -125,24 +126,22 @@ We decompose this into its combinatorial and probabilistic components:
 **Combinatorial** (fully proved):
 - ca_halved: at most 1 bad α at round 1
 - BCIKS (axiom): at most n bad α's at rounds ≥ 2
-- Total: ≤ nR bad α-tuples
+- Per-round union bound: total bad-scalar count across rounds ≤ 1 + (R-1)·n ≤ nR
 
 **Probabilistic** (elementary):
-- Commit phase: nR bad tuples out of |F|^R → probability nR/|F|
-- Query phase: each query catches δ/2-far deviation → (1-δ/2)^q
+- Commit phase: per-round union bound Σᵢ |bad_i|/|F| ≤ nR/|F|
+  (the i-th round contributes ≤ n bad scalars out of |F|, except round 1 which contributes ≤ 1)
+- Query phase: each query catches δ/2-far deviation with probability ≥ δ/2,
+  so all q queries miss with probability ≤ (1-δ/2)^q
 
-## Formalization Status
+## Formalization status (see STATUS.md for the per-paper-label board)
 
-| Component | Status | Reference |
-|-----------|--------|-----------|
-| ca_halved | **FULLY PROVED** | CA.lean |
-| coupling_pointwise | **FULLY PROVED** | RSCode.lean |
-| fEven/fOdd identities | **FULLY PROVED** | RSCode.lean |
-| RS code definition | **FULLY PROVED** | RSCode.lean |
-| proximity_gap | **PROVED** (via ca_halved) | this file |
-| bad_alpha_count | **FULLY PROVED** | this file |
-| RS isomorphism | **PROVED** under explicit `RSIsomorphismWitness` | RSCode.lean |
-| BCIKS | axiomatized | this file |
-| Schwartz-Zippel root count | **FULLY PROVED** | this file |
+The chain ca_halved → proximity_gap → bad_alpha_count is closed inside this
+file with zero `sorry`. The bridge from "f δ-far from RS_k" to "joint distance
+> 2d for (fE, fO)" uses `coupling_counting` (RSCode.lean) plus the abstract
+`RSIsomorphismWitness` interface. The single project axiom is
+`bciks_proximity_gap`; its signature here uses the placeholder `linComb f f α`
+in place of the actual FRI fold and is intended only as a proof-of-composition
+stand-in for BCIKS Theorem 1.2 — see STATUS.md for the precise scope.
 -/
 end FRISoundness

@@ -38,13 +38,6 @@ theorem jointAgreeSet_subset_agreeSet_snd (f₁ f₂ g₁ g₂ : L → F) :
   simp only [jointAgreeSet, agreeSet, Finset.mem_filter, mem_univ, true_and] at hx ⊢
   exact hx.2
 
-/-- The joint agreement set is a subset of the first component's agreement set. -/
-theorem jointAgreeSet_subset_agreeSet_fst (f₁ f₂ g₁ g₂ : L → F) :
-    jointAgreeSet f₁ f₂ g₁ g₂ ⊆ agreeSet f₁ g₁ := by
-  intro x hx
-  simp only [jointAgreeSet, agreeSet, Finset.mem_filter, mem_univ, true_and] at hx ⊢
-  exact hx.1
-
 /-- **Conditioning step**: if fᵢ is 2d-far from every codeword in C,
     then for any rest function, the pair (rest, fᵢ) satisfies the ca_halved premise.
 
