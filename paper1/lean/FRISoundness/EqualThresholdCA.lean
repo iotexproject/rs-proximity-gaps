@@ -187,7 +187,7 @@ theorem ca_equal_threshold
         refine Finset.card_le_card_of_injOn
           (fun γ => if hγ : γ ∈ Γ then pickA γ hγ else ∅) ?_ hinj
         intro γ hγ
-        simp only [Finset.mem_coe, dif_pos hγ]
+        simp only [dif_pos hγ]
         exact hmem γ hγ
     _ = Nat.choose (card L) (card L - w) := by
         rw [Finset.card_powersetCard, Finset.card_univ]

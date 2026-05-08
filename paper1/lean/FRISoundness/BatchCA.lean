@@ -120,10 +120,10 @@ Specializes `batch_ca_at_most_one` to the cardinality of the entire bad set
 of α-values: if `fᵢ` is `2d`-far from `C`, then the set
 `{α ∈ F : ∃ c ∈ C, agreement ≥ n − d}` has cardinality `≤ 1`. -/
 
+open Classical in
 /-- **Per-coordinate bad set is at most a singleton.** Combines
     `batch_ca_at_most_one` with `Finset.card_le_one` to give a direct
     cardinality bound. -/
-open Classical in
 theorem batch_ca_per_coord_bad_card
     [Fintype F]
     (C : Submodule F (L → F))
@@ -145,6 +145,7 @@ The full quantitative statement: across `m` "varying coordinates" (one per
 error is `m/|F|` — recovering the standard batch-CA bound used by
 STIR/WHIR proofs. -/
 
+open Classical in
 /-- **Aggregate batch-CA bound** (paper Appendix A, Theorem batch-ca).
 
 For each `i ∈ ι`, suppose `fᵢ` is `2d`-far from the codeword space `C` and
@@ -156,7 +157,6 @@ the union of the per-coordinate bad sets
 has cardinality at most `|ι|`. Each `Bᵢ` is a singleton (or empty) by
 `batch_ca_per_coord_bad_card`; `batch_ca_bad_count` then applies the
 elementary union-bound on `|ι|` singletons. -/
-open Classical in
 theorem batch_ca_aggregate
     [Fintype F]
     (C : Submodule F (L → F))
