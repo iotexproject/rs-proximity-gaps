@@ -40,15 +40,9 @@ also updated in-place to match.
   `F_q` with `q > 100` (e.g. `F_{2^8}`, `F_{2^12}`, `F_{2^16}`) the
   reported `max_M` / `max_NOT` are sample maxima over the first 100
   lambdas, not the field-wide maximum.
-- `paper2-deployment-l3/issue419_boundary_lift_universal.py` —
-  hard-coded at `(p, n_2, k_2) = (257, 32, 8)`; samples 500 random
-  configs and uses the first 50 per `K` parity.  Empirical spot check
-  for `thm:boundary-lift-closure`; the universality (any no-full kernel)
-  is established in the paper proof, not here.
-- `paper2-deployment-l3/issue419_large_K_sweep.py` — currently focuses
-  on `K=16` only; broader `K=12, 14, 16` coverage is split across
-  `issue419_case3_BW_total_K.py` and `issue419_stratum_B_empirical_K.py`
-  (see `paper2-deployment-l3/README.md`).
+
+For Paper 2 deployment-scale spot-check caveats, see
+[`../../paper2/scripts/CAVEATS.md`](../../paper2/scripts/CAVEATS.md).
 
 ## What we are **not** caveating
 
