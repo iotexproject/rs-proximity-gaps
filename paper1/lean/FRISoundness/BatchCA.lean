@@ -123,6 +123,7 @@ of α-values: if `fᵢ` is `2d`-far from `C`, then the set
 /-- **Per-coordinate bad set is at most a singleton.** Combines
     `batch_ca_at_most_one` with `Finset.card_le_one` to give a direct
     cardinality bound. -/
+open Classical in
 theorem batch_ca_per_coord_bad_card
     [Fintype F]
     (C : Submodule F (L → F))
@@ -131,7 +132,6 @@ theorem batch_ca_per_coord_bad_card
     ((Finset.univ : Finset F).filter
       (fun α => ∃ c ∈ C, card L ≤ (agreeSet (linComb rest fᵢ α) c).card + d)).card
     ≤ 1 := by
-  classical
   rw [Finset.card_le_one]
   intro α₁ hα₁ α₂ hα₂
   rw [Finset.mem_filter] at hα₁ hα₂
@@ -156,6 +156,7 @@ the union of the per-coordinate bad sets
 has cardinality at most `|ι|`. Each `Bᵢ` is a singleton (or empty) by
 `batch_ca_per_coord_bad_card`; `batch_ca_bad_count` then applies the
 elementary union-bound on `|ι|` singletons. -/
+open Classical in
 theorem batch_ca_aggregate
     [Fintype F]
     (C : Submodule F (L → F))
@@ -167,7 +168,6 @@ theorem batch_ca_aggregate
         (fun α => ∃ c ∈ C,
           card L ≤ (agreeSet (linComb (rest i) (f i) α) c).card + d))).card
     ≤ Fintype.card ι := by
-  classical
   exact batch_ca_bad_count
     (fun i => (Finset.univ : Finset F).filter
       (fun α => ∃ c ∈ C,
