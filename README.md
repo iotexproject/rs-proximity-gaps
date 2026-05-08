@@ -31,6 +31,7 @@ rs-proximity-gaps/
     paper.pdf                  Paper 1 manuscript
     PROOF_CHAIN.md             Step-by-step trace of Paper 1's main theorem
     lean/                      Lean 4 + Mathlib formalization
+      STATUS.md                Per-theorem status board (paper label ↔ Lean identifier)
       FRISoundness/            Named theorems (zero `sorry`, 1 external axiom)
       lakefile.toml, lean-toolchain
     scripts/                   Python verification scripts (stdlib only)
