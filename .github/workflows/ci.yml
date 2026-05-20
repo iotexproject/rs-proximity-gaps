@@ -48,10 +48,13 @@ jobs:
       - name: Verify zero sorry in named theorems
         run: |
           # Match `sorry` as a real Lean token (not as a backticked reference
-          # in a docstring like `\`sorry\``). We strip backtick-wrapped occurrences
+          # in a docstring like `sorry`). We strip backtick-wrapped occurrences
           # and any obviously-comment lines before searching.
+          # NOTE: use grep -F here -- in GNU grep `\`` is the start-of-buffer
+          # anchor, not a literal backtick, so a regex `\`sorry\`` would only
+          # match a line that is exactly "sorry" and never filter docstrings.
           hits=$(grep -RIn --include='*.lean' -E '\bsorry\b' FRISoundness/ \
-                 | grep -v '\`sorry\`' \
+                 | grep -vF '`sorry`' \
                  | grep -v -E '^[^:]+:[0-9]+:\s*--' \
                  || true)
           if [ -n "$hits" ]; then
